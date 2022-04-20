@@ -88,24 +88,8 @@ tbl %>%
 
 head(dff <- cbind(times, tbl))
 
-
-library(gtsummary)
-
 dff %>%
   pivot_longer(cols = namesL, values_to = 'Obs') -> dff_longer
-
-dff_longer
-
-dff_longer %>% 
-  select(V1, name, Obs) %>% # V3, Stage, hpf,
-  filter(name %in% c('Canal-3', 'Canal-4')) %>%
-  drop_na(Obs) %>%
-  # sample_n(100) %>% 
-  tbl_summary(by = name,
-    statistic = list(all_continuous() ~ "{mean} ({sd})",
-      all_categorical() ~ "{n} / {N} ({p}%)")) %>%
-  add_ci() %>%
-  add_p() -> md_table
 
 
 dff %>%
