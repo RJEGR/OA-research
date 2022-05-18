@@ -5,6 +5,8 @@ rm(list = ls()) # Limpiar la memoria de la sesion de R
 
 options(stringsAsFactors = FALSE) # 
 
+ggsavepath <- paste0(getwd(), '/Figures')
+
 #
 
 # Define Color Palette: ----
@@ -44,6 +46,14 @@ df <- do.call(rbind, df)
 
 df %>% as_tibble()
 
+recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
+
+level_key <- structure(recode_pH, names = unique(df$pH))
+
+df %>% ungroup() %>% mutate(pH = recode_factor(pH, !!!level_key)) -> df
+
+
+
 df %>%
   mutate(N = `Aspecto.1`+ `Aspecto.2`) %>%
   mutate(across(c(5:6),
@@ -56,7 +66,7 @@ df_longer %>%
   ggplot(aes(x = ID, y = value*100, fill = name)) +
   geom_col(position = position_stack(reverse = TRUE)) +
   coord_flip() +
-  scale_fill_manual('', values = getPalette) +
+  # scale_fill_manual('', values = getPalette) +
   theme_bw(base_size = 10, base_family = "GillSans") +
   theme(
     legend.position = 'bottom',
@@ -71,51 +81,20 @@ psave +
 # hacer un barplot con barras de error para 24 hpf unicamente comparando el % de aspectos 
 
 library(rstatix)
-
-IC <- function(x, conf = 0.99) {
-  a <- mean(x)
-  sd <- sd(x)
-  n <- length(x)
-  err <- qnorm(p = conf, mean = a, sd = sd, lower.tail = F) * sd / sqrt(n)
-  
-  return(err)
-}
-
-qqfun <- function(x) {
-  x <- x[x > 0]
-  qq <- qqnorm(x, plot.it = F) 
-  qq %>% as_tibble()
-}
-
-zfun <- function(x) {
-  x <- x[x > 0]
-  z <- c((x - mean(x)) / sd(x))
-  # z %>% as_tibble()
-  return(z)
-}
-
-source("~/Documents/GitHub/Estadistica_UABC/anova_and_gaussianity.R")
-
-# Is gaussian?  ----
-# test caldo de la bruja de todos los datos
+# remove Outlies?  ----
+# 
 
 df_longer %>% 
-  mutate(x = value) %>%
-  drop_na(x) %>%
-  group_by(pH, hpf) %>%
-  summarise(n= sum(x > 0),
-    Zmax = max(Ztransform(x)),
-    Zmin = min(Ztransform(x)),
-    rCal = Rcalculate_coeff(x),
-    rCri = Rcritical_coeff(n),
-    gaussian = ifelse(rCal > rCri, TRUE, FALSE),
-    outliers = sum(abs(Ztransform(x) > 3)))
+  group_by(pH, hpf) %>% 
+  # identify_outliers(value)
+  mutate(is.outlier = is_outlier(value), 
+    is.extreme = is_extreme(value)) -> df_longer
 
-# not! ----
 
-  # facet_grid(hpf~pH)
+df_longer %>% group_by(pH, hpf, is.outlier) %>% tally() %>%
+  filter(is.outlier %in% TRUE)
 
-# There are outliers? ----
+source(paste0(getwd(), '/stats.R'))
 
 subtitle <- expression('Outlier detection by the i Standard Deviations from the Mean')
 caption <- expression('Zscore = (x - mean(x)) / sd(x)')
@@ -151,64 +130,108 @@ outliersdf %>%
     values = c('black', 'red')) +
   theme(legend.position = "none")
 
-# Normality ----
-# After remove outliers (if there are) What is the degree of normally are our Observed data (multicolinearity)
+# 1) test if gaussianity (FALSE) ----
 
-# include corplot of Expected vs abundance relationship 
-# library(corpcor)
-# 
-caption = c('Observed vs Expected Pearson Coefficients.\nIt highlight the degree of association between variables.\nTherefore we argue homogeneity through our sampling.')
+df_longer %>% 
+  filter(is.outlier == FALSE) %>% 
+  group_by(pH, hpf) %>% rstatix::shapiro_test(value) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE))
 
-outliersdf %>%
-  filter(outlier == FALSE) %>%
-  mutate(pH = as.factor(pH), hpf = as.factor(hpf)) %>%
-  group_by(hpf, pH) %>%
-  rstatix::cor_test(x,y) -> cor_df
 
-# heatmap or
-m <- cor_df %>% 
-  select(hpf, pH, cor) %>%
-  pivot_wider(values_from = cor, names_from = pH) %>%
-  as.data.frame(row.names = hpf)
-
-hc <- hclust(dist(m[-1]), method = "ward.D")
-
-hc$labels <- m$hpf
-
-cor_df$p
-
-cor_df %>%
-  # summarise(corr = cor(x,y), cov = cov(x,y)) %>%
-  ggplot(aes(pH, hpf, fill = cor)) + 
-  geom_tile(color = 'white', size = 0.5) + # aes(alpha = 1-p)
-  geom_text(aes(label = cor), color = 'white') +
-  theme_classic(base_size = 12, base_family = "GillSans") +
-  ggsci::scale_fill_gsea(name="Corr", reverse = T) +
-  scale_x_discrete(position = 'top') +
-  labs(x = '', caption = caption) +
-  ggh4x::scale_y_dendrogram(hclust = hc) 
-
-# barp
-
-cor_df %>%
-  ggplot(aes(y = cor, hpf, fill = pH)) +
-  geom_bar(stat = "identity", width = 0.7, 
-    position = position_dodge(width = 0.75)) +
-  theme_classic(base_size = 12, base_family = "GillSans") 
-
-# not ----
+# homocelasticidad (FALSE) ----
 
 # (omit) homocelasticidad or homogeneity of variance across groups
 
-# df_longer %>%
-#   # filter(hpf == 24) %>%
-#   filter(name %in% 'Aspecto.1') %>%
-#   drop_na(value) %>% 
-#   levene_test(value ~ as.factor(pH))
-
-# (omit) The p-value of the Levene’s test is significant, suggesting that there is a significant difference between the variances of the two groups. Therefore, we’ll use the Weltch t-test, which doesn’t assume the equality of the two variances.
+df_longer %>%
+  group_by(hpf) %>%
+  levene_test(value ~ as.factor(pH)) %>%
+  mutate(hom_var = ifelse(p > 0.05, TRUE, FALSE))
 
 # Lets test non parametric comparsion between pH across the times
+
+# Nos interesa comparar el  % de larvas que, por tratamiento, se observo un mayor/menor % competencia entre una fase y otra. Para ello, consideramos el Aspecto 2, a las 24 hpf, donde se evalue el numero de individuos presentes, en cada replica, que presentaban caracteristicas de larvas trocoforas. Los valores de Aspecto 2 o 1 son normalizados respecto al total de los individuos (N) y aplico prueba a priori y posteriori para considerar diferencias entre los tratamientos. 
+
+
+# Asi que,
+df_longer %>%
+  ggplot() +
+  geom_col(aes(y = value, x = as.factor(hpf), fill = pH), position = position_dodge2()) +
+  facet_grid(~ name)
+
+df_longer %>% 
+  group_by(pH, hpf, name) %>%
+  rstatix::get_summary_stats(value) %>% 
+  mutate(ymin = mean-se, ymax = mean+se) -> df_longer_stats
+ 
+df_longer_stats %>%
+  filter(name %in% 'Aspecto.2') %>%
+  ggplot(aes(x = as.factor(hpf), y = mean, color = pH)) +
+  geom_point() +
+  # geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.05) +
+  geom_path(aes(group = pH)) +
+  facet_grid(~ name) +
+  scale_y_continuous(labels = scales::percent) -> psave
+
+psave + 
+  scale_color_viridis_d('', option = "plasma", end = .7) +
+  theme_classic(base_family = "GillSans", base_size = 10) +
+  theme(strip.background = element_rect(fill = 'white'),
+    panel.border = element_blank()) +
+  labs(y = '',  x = 'Time (hpf)')
+
+# instead of summary version, try
+
+
+df_longer %>%
+  filter(name %in% 'Aspecto.2') %>%
+  ggplot(aes(x = as.factor(hpf), y = value, color = pH)) +
+  geom_point(alpha = 0.5, position = position_dodge2(width = 0.2)) +
+  stat_summary(fun=median, geom ="line", aes(group = pH), size= 0.5, position = position_dodge2(width = 0.2)) +
+  scale_y_continuous(labels = scales::percent) +
+  scale_color_viridis_d('', option = "plasma", end = .7) +
+  theme_classic(base_family = "GillSans", base_size = 10) +
+  theme(strip.background = element_rect(fill = 'white'),
+    panel.border = element_blank()) +
+  labs(y = '',  x = 'Time (hpf)') -> psave
+
+
+df_longer %>%
+  filter(name %in% 'Aspecto.2') %>%
+  group_by(hpf) %>%
+  mutate(pH = as.factor(pH)) %>%
+  rstatix::kruskal_test(value ~ pH) %>%
+  adjust_pvalue(method = "none") %>%
+  add_significance("p") -> kruskal.stats
+
+df_longer %>%
+  filter(name %in% 'Aspecto.2') %>%
+  group_by(hpf) %>%
+  mutate(pH = as.factor(pH)) %>%
+  pairwise_wilcox_test(value ~ pH, 
+    # ref.group = "8", 
+    conf.level = 0.95) %>%
+  adjust_pvalue(method = "none") %>%
+  add_significance("p") -> stats.test
+
+stats.test %>% add_xy_position(x = "hpf", group = 'pH', dodge = 0.2) -> stats
+
+title <- get_pwc_label(stats)
+
+subtitle <- get_description(kruskal.stats)
+
+
+psave + 
+  theme(legend.position = 'top') +
+  ggpubr::stat_pvalue_manual(stats, label = "p.signif", 
+    remove.bracket = T, tip.length = 0.01, linetype = 'dashed', hide.ns = F) +
+    labs(title = title, subtitle = subtitle) -> psave
+
+ggsave(psave, 
+  filename = 'competency.png', path = ggsavepath, 
+  width = 5, height = 3.5)
+
+
+write_rds(df_longer, file = paste0(getwd(), 'competency.rds'))
 
 # The Wilcoxon rank sum test is a non-parametric alternative to the independent two samples t-test for comparing two independent groups of samples, in the situation where the data are not normally distributed
 
@@ -224,13 +247,6 @@ df %>%
   geom_boxplot() -> psave
 
 
-stats.test %>% add_xy_position(x = "pH") -> stats
-
-psave + 
-  ggpubr::stat_pvalue_manual(stats, label = "p.adj", 
-    remove.bracket = F, tip.length = 0) +
-  theme_bw(base_family = "GillSans", base_size = 14)
-
 # By pct
 
 # geom_bar(stat = "identity", width = 0.7, 
@@ -244,10 +260,7 @@ psave +
 #   vjust=.7, color="black", position=position_dodge(width = .5)) +
 # ggsci::scale_fill_uchicago()
 
-# nos interesa comparar el  % de larvas que, por tratamiento, se observo un mayor/menor % competencia entre una fase y otra. Para ello, consideramos el Aspecto 1, a las 24 hpf, donde se evalue el numero de individuos presentes, en cada replica, que presentaban caracteristicas de larvas trocoforas. Los valores de Aspecto 1 son normalizados respecto al total de los individuos (N) y aplico prueba a priori y posteriori para considerar diferencias entre los tratamientos. 
 
-
-# Asi que,
 
 df_longer %>% filter(hpf == 24) %>% filter(name %in% 'Aspecto.1') -> df4viz
 
@@ -303,5 +316,3 @@ subtitle <- get_pwc_label(stats)
 psave + 
   ggpubr::stat_pvalue_manual(stats, hide.ns = T, label = "p.adj") +
   labs(subtitle = subtitle, y = 'Average', x = 'pH')
-
-stats %>% view()

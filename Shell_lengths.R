@@ -1,4 +1,8 @@
 # Morfoemtry
+# Revisar como podemos corregir los valores de tamano, para evidenciar el efecto de la acidifciacion y no el efecto de un retrazo en el desarrollo??: Ej. Chronic exposure to pH 7.7 or pH 7.4 sea water decreased stomach pH by 0.3 or 0.5 units indicating gastric alkalinity could not be maintained. (Fig. 1b,c). This effect was still evident when gastric pH values were corrected for developmental stage, demonstrating that gastric pH reduction can be attributed to ocean acidification rather than to developmental delay. 
+
+# Stumpp, M., et al. (2013). Digestion in sea urchin larvae impaired under ocean acidification. Nature climate change, 3(12), 1044-1049.
+
 
 rm(list = ls())
 
@@ -137,7 +141,7 @@ df %>%
 
 stats.test %>% add_xy_position() -> stats
 
-stats$y.position <- stats$y.position+out_stats$sd
+
 
 title <- get_pwc_label(stats)
 subtitle <- get_test_label(kruskal.stats, detailed = TRUE)
@@ -147,6 +151,8 @@ df %>%
   summarise(
     a = mean(L1), sd = sd(L1), IC = IC(L1),
     upper = a+sd, lower = a-sd, n = n()) -> out_stats
+
+stats$y.position <- stats$y.position+out_stats$sd
 
 psave + 
   ggpubr::stat_pvalue_manual(stats, hide.ns = T, tip.length = 0.001) +
@@ -168,13 +174,13 @@ m <- round(min(L))
 M <- round(max(L))
 
 out_stats %>%
-  ggplot(aes(y = a, x = as.factor(pH), fill = as.factor(pH))) + 
+  ggplot(aes(y = a, x = as.factor(pH))) + # fill = as.factor(pH)
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(axis.text.x = element_text(angle = 45, 
     hjust = 1, vjust = 1, size = 10)) +
-  # geom_line(aes(group = pH), orientation = "x", linetype = 'dashed') +
-  # geom_point() +
-  geom_bar(stat="identity") +
-  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) 
-# scale_fill_manual('', values = getPalette[-3]) +
-# scale_y_continuous(breaks = seq(m,M, by = 100)) 
+  geom_bar(stat="identity", position = position_dodge(width = 0.5)) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) +
+  ggpubr::stat_pvalue_manual(stats, hide.ns = T, tip.length = 0.001) +
+  labs(title = title, subtitle = subtitle, 
+    y = 'Shell length', x = 'pH') +
+  theme_classic(base_size = 10, base_family = "GillSans") 

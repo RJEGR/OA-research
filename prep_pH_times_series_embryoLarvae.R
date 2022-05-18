@@ -7,11 +7,13 @@
 # Treatments:
 # Experimental I (pH 7.6): c('Canal-1', 'Canal-3')
 # Experimental II (pH 7.8): c('Canal-2', 'Canal-4')
+# Canal 3 y 4 were collected from the fish tank
 # # From February 04 to 09 pH measures were registered by the sensors every 5 seconds
 
 # 1) Embrio to Larva dataset ----
 
 rm(list = ls())
+if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE)
 
@@ -19,7 +21,7 @@ library(tidyverse)
 
 source(paste0(getwd(), "/stats.R"))
 
-path <- '~/Documents/DOCTORADO/pH_measures/2022_/'
+path <- '~/Documents/DOCTORADO/pH_measures/2022_/embryo_larvae_dataset/'
 
 pattern_f <- '.dat$'
 
@@ -31,17 +33,42 @@ df %>% distinct(date)
 
 cols <- names(df %>% select_if(is.numeric))
 
+# Recode canal to experimental names
+recode_w <- c("Canal-1", "Canal-2", 'Experimental-I', 'Experimental-II')
+recode_w <- structure(recode_w, names = cols)
+
 df %>% 
   mutate(id = 1:nrow(.)) %>%
   pivot_longer(cols = all_of(cols), values_to = 'Obs') %>%
   drop_na(Obs) %>%
-  mutate(name = ifelse(name %in% c('Canal-1', 'Canal-3'),'Experimental I', 'Experimental II')) %>%
+  mutate(name = recode(name, !!!recode_w)) %>%
+  filter(name %in% c('Experimental-I', 'Experimental-II')) %>%
   mutate(dataset = 'Embrio_to_Larvae') -> df_longer
 
 write_rds(df_longer, file = paste0(getwd(), '/pH_embryoLarvae_longer_set.rds'))
 # write_rds(df_longer, file = paste0(path, '/pH_embryoLarvae_longer_set.rds'))
 
 # End here or
+
+# filter date and pH based on DIC/TA results
+
+library(lubridate)
+
+df %>%
+  mutate(date = paste0(date,"T",hour)) %>%
+  mutate(date = lubridate::mdy_hms(date)) %>%
+  mutate(hour = hour(date)) %>%
+  filter(between(hour, 11, 12)) %>%
+  pivot_longer(cols = all_of(cols), values_to = 'Obs') %>%
+  drop_na(Obs) %>%
+  mutate(name = ifelse(name %in% c('Canal-1', 'Canal-3'),
+    'Experimental I', 'Experimental II')) %>%
+  mutate(date = date(date)) %>%
+  group_by(name, date) %>%
+  summarise(a = mean(Obs), sd = sd(Obs), n = n()) %>% 
+  arrange(date)
+  
+  
 # Previs
 # -----
 

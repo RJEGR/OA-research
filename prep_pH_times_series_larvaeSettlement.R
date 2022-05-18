@@ -30,12 +30,17 @@ df %>% arrange(-desc(date)) %>% distinct(date)
 
 cols <- names(df %>% select_if(is.numeric))
 
+# Recode canal to experimental names
+recode_w <- c("Canal-1", "Canal-2", 'Experimental-I', 'Experimental-II')
+recode_w <- structure(recode_w, names = cols)
+
 df %>% 
   mutate(id = 1:nrow(.)) %>%
   pivot_longer(cols = all_of(cols), values_to = 'Obs') %>%
   drop_na(Obs) %>%
-  filter(name %in% c('Canal-3', 'Canal-4')) %>%
-  mutate(name = ifelse(name %in% 'Canal-3','Experimental I', 'Experimental II')) %>%
+  mutate(name = recode(name, !!!recode_w)) %>%
+  filter(name %in% c('Experimental-I', 'Experimental-II')) %>%
+  # mutate(name = ifelse(name %in% 'Canal-3','Experimental I', 'Experimental II')) %>%
   mutate(dataset = 'Larvae_to_Settlement') -> df_longer
 
 # df_longer %>% group_by(name) %>% summarise(quantile(Obs))
@@ -46,3 +51,19 @@ write_rds(df_longer, file = paste0(getwd(), '/pH_larvaeSettlement_longer_set.rds
 # End here or
 # Previs
 # -----
+
+# filter date and pH based on DIC/TA results
+
+library(lubridate)
+
+df_longer %>%
+  filter(grepl('03/03/2022', date)) %>%
+  mutate(date = paste0(date,"T",hour)) %>%
+  mutate(date = lubridate::mdy_hms(date)) %>%
+  mutate(hour = hour(date)) %>% 
+  mutate(date = date(date)) %>%
+  filter(between(hour, 15, 15)) %>%
+  group_by(name, date) %>%
+  summarise(a = mean(Obs), sd = sd(Obs), n = n()) %>% 
+  arrange(date) %>% view()
+

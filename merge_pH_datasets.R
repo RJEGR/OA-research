@@ -10,23 +10,17 @@
 
 
 rm(list = ls())
+if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE)
 
 library(tidyverse)
 
-# namesL <- c('Canal-1', 'Canal-2', 'Canal-3', 'Canal-4')
-# 
-# getPalette <- RColorBrewer::brewer.pal(4, 'Paired')
-# 
-# getPalette <- structure(getPalette, names = namesL) 
-
-
 ggsavepath <- paste0(getwd(), '/Figures')
 
 source(paste0(getwd(), "/stats.R"))
 
-files <- list.files(path = getwd(), pattern = 'rds$', full.names = T)
+files <- list.files(path = getwd(), pattern = 'longer_set.rds$', full.names = T)
 
 rds <- lapply(files, read_rds)
 
@@ -34,7 +28,11 @@ df_longer <- do.call(rbind, rds)
 
 rm(rds)
 
-# Evaluamos outliers ----
+df_longer %>% distinct(date, name, dataset) -> mtd
+
+nameLevs <- c('Experimental-I', 'Experimental-II', 'Control')
+
+# Evaluamos outliers (omit this version) ----
 
 df_longer %>%
   group_by_at(c('date', 'name')) %>%
@@ -72,14 +70,17 @@ do.call(rbind,l) %>%
 
 psave
 
-# filtering datasets ----
+
+
+# 0) filtering outliers datasets ----
+
 library(rstatix)
 
 # df_longer %>% group_by(name) %>% rstatix::identify_outliers(Obs, coef = 3)
 df_longer %>% group_by(name, date) %>% mutate(is.outlier = is_outlier(Obs), is.extreme = is_extreme(Obs)) -> df_longer
 
-df_longer %>% group_by(name, is.extreme) %>% tally()
-df_longer %>% group_by(name, is.outlier) %>% tally()
+# df_longer %>% group_by(name, is.extreme) %>% tally()
+# df_longer %>% group_by(name, is.outlier) %>% tally()
 
 # df_longer %>% ggplot(aes(Obs, fill = name)) + geom_histogram() + facet_grid(~is.outlier)
 # df_longer %>% ggplot(aes(Obs, fill = name)) + geom_histogram() + facet_grid(~is.extreme)
@@ -92,43 +93,80 @@ df_longer %>% group_by(name, is.outlier) %>% tally()
 #   drop_na(z) -> df_summ
 
 # Prepare filtered dataset
-df_longer %>% filter(is.outlier == 'FALSE') -> df_longer
+df_longer %>% filter(is.outlier == 'FALSE') %>% select(-is.outlier, -is.extreme) -> df_longer
+
+# 1) Gaussianity ----
 
 df_longer %>%
-  group_by(date, name) %>%
+  group_by(name) %>% 
+  sample_n(100) %>%
+  rstatix::shapiro_test(Obs) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE))
+
+# si al menos un subjconjunto de los datos NO es gaussino, una media no describe bien el comportamiento de los datos!!!
+
+# 2) Homocelasticidad (TRUE) ----
+# Before doing parametric or not test, lets to analyze homogeneity of variance across experimental Levene’s test:
+
+df_longer %>%
+  # group_by(name) %>%
+  ungroup() %>%
+  levene_test(Obs ~ as.factor(name)) %>%
+  mutate(hom_var = ifelse(p > 0.05, TRUE, FALSE))
+
+# Therefore we choose non parametric test to analyze difference b/ groups
+# podemos sugerir un corte basado en horasy no fecha para una mejor interptretacion
+
+library(lubridate)
+
+df_longer %>%
+  ungroup() %>% # <--- necesario para lubridates
+  # sample_n(1000) %>%
+  mutate(date = paste0(date,"T",hour)) %>%
+  mutate(date = lubridate::mdy_hms(date)) %>%
+  mutate(hour = hour(date)) -> df_longer
+
+df_longer %>%
+  mutate(date = date(date)) %>%
+  group_by(date, hour, name) %>% # <--- este es un corte basado en horas por dia
+  # group_by(date, name) %>%
   mutate(value = Obs) %>%
   summarise(
     a = mean(value), sd = sd(value), IC = IC(value),
-    upper = a+IC, lower = a-IC,
+    upper = a+sd, lower = a-sd,
     zupper = a+(3*sd), zlower = a-(3*sd), n = n()) -> out_stats
 
-saveRDS(out_stats, df_longer, file = paste0(getwd(), '/pH_dataset.Rdata'))
+write_rds(df_longer, file = paste0(getwd(), '/pH_aLLdatasets_longer.rds'))
+write_tsv(df_longer, file = paste0(getwd(), '/pH_aLLdatasets_longer.tsv'))
+
+write_rds(out_stats, file = paste0(getwd(), '/pH_aLLdatasets_by_hour_stats.rds'))
 
 # previz (omit) -----
 
-distinct(out_stats, date) %>% pull(date) -> recode_date
+out_stats %>% ungroup() %>% distinct(date) %>% pull(date) %>% as.character() -> recode_date
 
 struc_group <- c('Embryo', rep('Larvae', 5), rep('Settlement', 26))
 
 level_key <- structure(struc_group, names = recode_date)
 
-out_stats %>% mutate(g = recode_factor(date, !!!level_key)) -> out_stats
+out_stats %>% mutate(g = recode_factor(as.factor(date), !!!level_key)) -> out_stats
 
 Labels <- c('Control', 'Experimental I', 'Experimental II')
   
 out_stats %>%
   mutate(date = factor(date, levels = recode_date)) %>%
-  ggplot(aes(y = a, x = date, color = name)) + 
+  ggplot(aes(y = a, x = hour, color = name)) + 
+  facet_wrap(date ~ .) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(axis.text.x = element_text(angle = 45, 
     hjust = 1, vjust = 1, size = 10)) +
-  # geom_point(aes(size = n), alpha = 0.5) +
-  geom_line(aes(group = name), orientation = "x", linetype = 'dashed') +
+  geom_point(alpha = 0.5, size = 0.7) +
+  # geom_line(aes(group = name), orientation = "x") + # , linetype = 'dashed'
   # scale_color_manual('', values = getPalette,
     # limits = namesL[-1], labels = Labels) +
-  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.2) +
+  geom_errorbar(aes(ymin = lower, ymax = upper), width = 0.1) +
   scale_y_continuous(n.breaks = 10) +
-  theme_classic(base_family = "GillSans", base_size = 14) +
+  theme_classic(base_family = "GillSans", base_size = 10) +
   # facet_grid(.~g, scales = 'free_x', space = 'free', switch = 'x') +
   # theme(legend.position = 'top',
   #   panel.border = element_blank(), 
@@ -142,20 +180,56 @@ out_stats %>%
     axis.line.x = element_blank()) +
   labs(y = 'Average pH', x = '') -> psave
 
+
+# psave
+
+ggsave(psave, 
+  filename = 'pH_times_series_average_day.png', 
+  path = ggsavepath, width = 7, height = 10)
+
+
+library(gganimate)
+
+anim <- out_stats %>%
+  ungroup() %>%
+  mutate(date = factor(date, levels = recode_date)) %>%
+  ggplot(aes(y = a, x = hour), size = 3) +
+  geom_point(aes(color = name)) +
+  theme_classic(base_family = "GillSans", base_size = 14) +
+  labs(y = 'pH average', x = 'Hour of the day') +
+  transition_states(date, 
+    transition_length = 2,
+    state_length = 1)
+
+
+anim + 
+  enter_fade() + 
+  exit_shrink() +
+  ggtitle('Now showing {closest_state}',
+    subtitle = 'Frame {frame} of {nframes}') -> anim
+
+animate(
+  anim + exit_fly(y_loc = 1),
+  renderer = av_renderer()
+)
+
+# anim_save("")
+
 # Anadimos un bottom plot del conteo de datos que se usaron por dia
 
 out_stats %>% 
-  group_by(g, date) %>%
+  group_by(date) %>%
   summarise(l = length(name), N = sum(n), n = N/l) %>%
   # mutate(pct = n / sum(n)) %>%
   mutate(date = factor(date, levels = recode_date)) %>%
   ggplot() +
-  geom_point(aes(size = n, x = date, y = as.factor(1))) +
+  geom_col(aes(y = n, x = date)) +
+  # geom_point(aes(size = n, x = date, y = as.factor(1))) +
   # geom_col(aes(y = n, x = date), width = 0.5) +
   # scale_fill_manual('', values = getPalette,
     # limits = namesL[-1], labels = Labels) +
   theme_classic(base_family = "GillSans", base_size = 14) +
-  facet_grid(.~g, scales = 'free_x', space = 'free', switch = 'x') +
+  # facet_grid(.~name, scales = 'free_x', space = 'free', switch = 'x') +
   theme(legend.position = 'bottom',
     axis.line.x = element_blank(),
     panel.border = element_blank(), 
@@ -180,7 +254,7 @@ pout
 
 ggsave(pout, 
   filename = 'pH_times_series_average.png', 
-  path = path, width = 7, height = 5)
+  path = ggsavepath, width = 7, height = 5)
 
 out_stats %>%
   mutate(date = factor(date, levels = recode_date)) %>%
@@ -200,12 +274,13 @@ out_stats %>%
 
 
 
-# Statistical test ----
+# 3) Statistical test ----
 # Buscamos diferencias entre las medias de pH en los sistemas. La intencion es evaluar si hubo o no diferencias entre los dias y/o en que grado. Una vez hecha la prueba, hacemos un promedio por sistema siempre y cuando no haya dif significativas entre las medias.
 
 library(rstatix)
 
 # Identify outliers
+
 out_stats %>% group_by(name) %>% identify_outliers(a)
 
 # The normality assumption can be checked by computing the Shapiro-Wilk test. If the data is normally distributed, the p-value should be greater than 0.05.
@@ -250,6 +325,7 @@ subtitle <- get_test_label(kruskal.stats, detailed = TRUE)
 # and plot
 
 out_stats %>%
+  mutate(name = factor(name, levels = nameLevs )) %>%
   ungroup() %>%
   # mutate(name = factor(name, levels = c('Canal-3', 'Canal-4', 'Canal-2'))) %>%
   ggplot(aes(y = a, x = as.factor(name))) + 
@@ -257,9 +333,10 @@ out_stats %>%
   theme(axis.text.x = element_text(angle = 45, 
     hjust = 1, vjust = 1, size = 10)) +
   stat_boxplot(geom ='errorbar', width = 0.07) +
-  geom_boxplot(width = 0.3, outlier.alpha = 0) +
-  geom_point(aes(size = n), alpha = 0.5) +
-  stat_summary(fun=mean, geom="point", shape=23, size=1, color = 'red') +
+  geom_boxplot(width = 0.3, outlier.alpha = 0, size = 1) +
+  # geom_point(aes(size = n), alpha = 0.5) +
+  # stat_summary(fun=mean, geom="point", shape=23, size=1, color = 'red') +
+  stat_summary(fun=median, geom ="line", aes(group = 2), size= 1, color = 'blue') +
   theme_classic(base_family = "GillSans", base_size = 14) +
   theme(legend.position = 'bottom') + 
   scale_y_continuous(n.breaks = 10) +
@@ -279,12 +356,93 @@ psave +
 psave
 
 out_stats %>%
+  mutate(name = factor(name, levels = nameLevs)) %>%
   group_by(name) %>%
-  summarise(a = mean(a))
+  rstatix::get_summary_stats(a) %>%
+  select(name ,n, mean, median, sd)
 
 
-ggsave(psave, filename = 'average_pH_boxplot.png', path = ggsavepath, 
-  width = 5, height = 5)
+ggsave(psave, filename = 'average_pH_boxplot.png', path = ggsavepath, width = 5, height = 7)
+
+# PCA ----
+
+out_stats %>% filter(name%in% 'Control') %>% 
+  ungroup() %>% summarise(A = mean(a), sd = sd(a)) %>% c() -> vector
+
+
+
+# by dates
+out_stats %>%
+  ungroup() %>%
+  select(date, a, name) %>%
+  pivot_wider(names_from = name, values_from = a) %>% 
+  mutate(Control = ifelse(is.na(Control), 
+    rnorm(18, mean = vector$A, sd = vector$sd), Control)) -> PCAdat
+
+# by treatments
+# not working yet
+
+# df_longer %>%
+#   ungroup() %>%
+#   filter(dataset %in% 'Embrio_to_Larvae') %>%
+#   mutate(id = paste0(id, "-", name)) %>%
+#   select(id, date, Obs) %>%
+#   pivot_wider(names_from = date, values_from = Obs, values_fn = mean) %>%
+#   drop_na() -> PCAdat
+# 
+
+head(data <- data.frame(row.names = PCAdat$date, PCAdat[-1]))
+
+PCA <- prcomp(data, center = FALSE, scale. = FALSE)
+
+percentVar <- round(100*PCA$sdev^2/sum(PCA$sdev^2),1)
+
+sd_ratio <- sqrt(percentVar[2] / percentVar[1])
+
+PCAdf <- data.frame(PC1 = PCA$x[,1], PC2 = PCA$x[,2])
+
+PCAdf %>% dist(method = "euclidean") %>% 
+  hclust() %>% cutree(., 3) %>% 
+  as_tibble(rownames = 'date') %>% 
+  mutate(cluster = paste0('C', value)) %>% 
+  dplyr::select(-value) -> hclust_res
+
+# n <- length(unique(mtd$Diagnosis))
+# 
+# getPalette <- RColorBrewer::brewer.pal(n, 'Paired')
+# 
+# axis_col <- structure(getPalette, names = unique(mtd$Diagnosis))
+
+
+PCAdf %>%
+  mutate(date = rownames(.)) %>%
+  left_join(hclust_res) %>%
+  left_join(mtd %>% ungroup() %>% distinct(date, dataset)) %>%
+  ggplot(., aes(PC1, PC2)) +
+  geom_point(aes(color = dataset)) +
+  # ggforce::geom_mark_hull(aes(group = as.factor(cluster)), 
+    # fill = 'grey', con.colour = 'grey') +
+  # ggrepel::geom_text_repel(aes(label = sample_id, color = Diagnosis), 
+    # alpha = 1, size = 4, max.overlaps = 10) +
+  labs(caption = '') +
+  xlab(paste0("PC1, VarExp: ", percentVar[1], "%")) +
+  ylab(paste0("PC2, VarExp: ", percentVar[2], "%")) +
+  # theme_classic(base_family = "GillSans", base_size = 16) +
+  theme(plot.title = element_text(hjust = 0.5), legend.position = 'top')
+
+
+# find dates pHs ----
+
+df_longer %>%
+  filter(grepl('03/03/2022', date)) %>%
+  mutate(date = paste0(date,"T",hour)) %>%
+  mutate(date = lubridate::mdy_hms(date)) %>%
+  mutate(hour = hour(date)) %>% 
+  mutate(date = date(date)) %>%
+  filter(between(hour, 13, 13)) %>%
+  group_by(name, date) %>%
+  summarise(a = mean(Obs), sd = sd(Obs), n = n()) %>% 
+  arrange(date) %>% view()
 
 
 

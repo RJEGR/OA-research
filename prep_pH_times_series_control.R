@@ -27,6 +27,7 @@ df %>% distinct(date)
 
 cols <- names(df %>% select_if(is.numeric))
 
+
 df %>% 
   mutate(id = 1:nrow(.)) %>%
   pivot_longer(cols = all_of(cols), values_to = 'Obs') %>%
@@ -50,7 +51,7 @@ df_longer %>%
   ggplot(aes(id, Obs, color = name, group = name)) +
   geom_point(alpha = 0.5, size = 0.1) +
   scale_y_continuous(breaks = seq(7,8.15, by = 0.1)) +
-  scale_x_continuous(breaks = seq(0, x_breaks, by = 12)) +
+  # scale_x_continuous(breaks = seq(0, x_breaks, by = 12)) +
   labs(y = 'pH', x = 'Hour') +
   theme_bw(base_size = 10, base_family = "GillSans") +
   theme(
