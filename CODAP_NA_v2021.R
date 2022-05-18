@@ -12,6 +12,9 @@
 # EAST: -65.45
 # SOUTH: 18.83
 
+
+# test viz from: https://odv.awi.de/
+
 rm(list=ls())
 
 library(tidyverse)
@@ -83,6 +86,9 @@ names(pacific_df)[which(grepl('calculated', names(pacific_df)))] <- c('pH', 'fCO
 names(pacific_df)[which(grepl('recommended', names(pacific_df)))] <- c('Salinity', 'Oxygen')
 names(pacific_df)[which(grepl('CTD', names(pacific_df)))] <- c('PRES', 'Temp')
 
+pathout <- "/Users/cigom/Documents/GitHub/OA-research/rproject"
+
+write_rds(pacific_df, file = paste0(pathout, '/pacific_codap_na_v2021.rds'))
 # Carbonate_insitu_calculated
 # CO3-2
 # the continental shelf of western North America from Queen Charlotte Sound, Canada, to San Gregorio Baja California Sur, Mexico
@@ -492,14 +498,14 @@ pacific_df %>%
   filter(value > 0) %>%
   group_by(Latitude, Longitude, var) %>%  # Year_UTC,
   # summarise_at(vars(vars), mean) 
-  summarise(mean(value)) -> map_in
+  summarise(a = mean(value)) -> map_in
 
-map_in %>% pull(Temp) %>% max() -> limit
+# map_in %>% pull(Temp) %>% max() -> limit
 
 gg1 +
-  geom_point(data = subset(map_in, ), 
+  geom_point(data = subset(map_in, var == 'Temp'), 
              aes(Longitude, Latitude,
-                 color = Temp), 
+                 color = a), 
              alpha = 1, size = 0.5, fill = 'NA') + # shape = 15
   ggsci::scale_color_gsea(name = '') + # Temp (°C)
   # scale_size_continuous(name = '', guide = 'none') + 
@@ -514,9 +520,9 @@ gg1 +
 # pH
 
 gg +
-  geom_point(data = map_in, 
+  geom_point(data = subset(map_in, var == 'pH'), 
              aes(Longitude, Latitude,
-                 color = pH), 
+                 color = a), 
              alpha = 1, size = 0.5, fill = 'NA') + # shape = 15
   scale_color_viridis_c(name = '') + # pH
   # scale_size_continuous(name = '', guide = 'none') + 
@@ -531,9 +537,9 @@ gg +
 # aragonite
 
 gg +
-  geom_point(data = map_in, 
+  geom_point(data = subset(map_in, var == 'Aragonite'), 
              aes(Longitude, Latitude,
-                 color = Aragonite), 
+                 color = a), 
              alpha = 1, size = 0.5, fill = 'NA') + # shape = 15
   scale_colour_gradient(low = "yellow", high = "red",  name = '') + #Ara
   # scale_size_continuous(name = '', guide = 'none') + 
@@ -682,3 +688,50 @@ grd
 
 library(gstat)
 i = idw(Temp~1, no2.sf, grd)
+
+
+# DIC vs TA ----
+
+pacific_df %>% count(oce)
+pacific_df %>% distinct(var)
+
+vars <- c('pH', 'TALK', 'DIC', 'Temp', 'Oxygen', 'fCO2')
+
+pacific_df %>% 
+  filter(round(Latitude) == 25) %>%
+  filter(var %in% vars) %>%
+  filter(value > 0) %>%
+  ggplot(aes(y = Depth, x = value)) +
+  facet_grid(.~ var, scales = 'free_x', labeller=label_parsed) +
+  geom_point(shape = 0.7) +
+  # scale_y_reverse(breaks = seq(0, 200, by = 50)) +
+  scale_y_reverse(breaks = seq(0, 3500, by = 500)) +
+  geom_smooth(orientation = "y", method = 'loess') +
+  labs(caption = 'Perfil vertical del Pacifico Norte, (25°N)',
+    y = expression(~Profundidad~(dbar)),
+    x = '') +
+  theme_bw(base_family = "GillSans", base_size = 10) +
+  theme(strip.background = element_blank()) -> p1
+
+# pacific_df %>% fdistinct()
+
+pal <- wesanderson::wes_palette("Zissou1", 21, 
+  type = "discrete")
+
+pacific_df %>% 
+  filter(round(Latitude) == 25) %>%
+  filter(var %in% c('pH', 'TALK', 'DIC')) %>%
+  filter(value > 0) %>%
+  drop_na(value) %>%
+  pivot_wider(values_from = value, names_from = var) %>%
+  ggplot(aes(DIC, TALK, color = pH)) +
+  geom_smooth(method = 'lm', se = F, color = 'black') +
+  ggpubr::stat_cor() +
+  geom_point() +
+  scale_color_gradientn(colours =  pal) +
+  # facet_grid(~oce) +
+  theme_bw(base_family = "GillSans", base_size = 10) +
+  theme(strip.background = element_blank()) -> p2
+
+p1 + p2 + 
+  patchwork::plot_layout(widths = c(3,1))

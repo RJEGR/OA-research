@@ -1,6 +1,16 @@
-# volts ----
-# c('V5','V6','V7','V8','V9')
+# Ricardo Gomez- Reyes
+# comprobar la sensibilidad entre buffers y sensores de pH
+# evaluamos una prueba priori y posteriori de diferencias entre los datos medidos entre los sensores
 
+# Todos los sensores se introdujeron tanto en buffer de pH 4 y 7 
+
+rm(list = ls())
+
+options(stringsAsFactors = FALSE, show_col_types = FALSE)
+
+library(readr)
+library(tidyverse)
+source(paste0(getwd(), "/stats.R"))
 
 path <- '~/Documents/DOCTORADO/pH_measures/2022_/'
 
@@ -8,18 +18,118 @@ file <- 'pH_buffer*'
 
 file <- list.files(path, pattern = file, full.names = TRUE)
 
-df <- lapply(file, read.table)
+df <- lapply(file, read_table, col_names = F)
 
 
-df1 <- do.call(rbind, df)
+df <- do.call(rbind, df)
 
 namesL <- c('Canal-1', 'Canal-2', 'Canal-3', 'Canal-4')
 
-names(df1)[5:9] <- c(namesL, 'Canal-x')
+# ordering data
+
+df <- df %>% select_if(is.numeric)
+
+data <- df %>% select(any_of(c('X10','X11','X12','X13')))
+
+
+dist.method <- 'euclidean'; linkage.method <- 'complete'
+
+hclust(dist(data, method = dist.method), 
+  method = linkage.method) %>% cutree(2) -> cutree
+
+
+data %>% 
+  mutate(cutree = cutree) %>%
+  pivot_longer(cols = names(data), values_to = 'x') %>%
+  mutate(g = NA) %>%
+  mutate(g = ifelse(between(x, 4.0,4.5), 'pH-4',
+    ifelse(between(x, 7,7.5), 'pH-7', g))) %>%
+  drop_na(g) -> data_longer
+
+# clean data ----
+
+library(rstatix)
+
+data_longer %>%
+  group_by(g, name) %>%
+  mutate(is.outlier = is_outlier(x), 
+    is.extreme = is_extreme(x)) -> data_longer
+
+
+data_longer %>% filter(!is.outlier %in% TRUE) %>%
+  ungroup(g) -> data_longer
+
+
+data_longer %>%
+  group_by(name,g) %>%
+  summarise(a = mean(x), sd = sd(x), 
+    IC = IC(x), n = length(x)) -> df_stats
+
+df_stats
+
+# data_longer %>% ggpubr::ggqqplot('x', color = 'g')
+
+data_longer %>% 
+  group_by(name, g) %>%
+  # summarise(qqfun(x)) %>%
+  shapiro_test(x) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE))
+
+# 2) Homocelasticidad (TRUE) ----
+# Before doing parametric or not test, lets to analyze homogeneity of variance across experimental Levene’s test:
+
+data_longer %>%
+  group_by(name) %>%
+  levene_test(x ~ as.factor(g)) %>%
+  mutate(hom_var = ifelse(p > 0.05, TRUE, FALSE))
+
+# we processed to continue w/ a non parametric analysis.
+
+data_longer %>% 
+  group_by(g) %>%
+  kruskal_test(x ~ name) %>%
+  adjust_pvalue(method = "none") %>%
+  add_significance("p") -> kruskal.stats
+
+# Interpretation: As the p-value is less than the significance level 0.05, we can conclude that there are significant differences between the treatment groups.
+
+
+data_longer %>% 
+  ggplot(aes(y = x, x = name)) + 
+  # geom_boxplot(outlier.alpha = 0) -> psave
+  geom_point(alpha = 0.3) +
+  stat_boxplot(geom ='errorbar',
+    width = 0.2, position = position_dodge(0.6)) +
+  facet_grid(~ g, scales = 'free_y') -> psave
+
+
+
+# Additionally, The Wilcoxon rank sum test is a non-parametric alternative to the independent two samples t-test for comparing two independent groups of samples, in the situation where the data are not normally distributed
+
+data_longer %>%
+  group_by(g) %>%
+  pairwise_wilcox_test(x ~ name, 
+    conf.level = 0.95) %>%
+  adjust_pvalue(method = "BH") %>%
+  add_significance("p") -> stats.test
+
+
+stats.test %>% add_xy_position() -> stats
+
+title <- get_pwc_label(stats)
+
+subtitle <- get_test_label(kruskal.stats, detailed = TRUE)
+
+# stats$y.position <- stats$y.position+out_stats$sd
+
+psave + 
+  ggpubr::stat_pvalue_manual(stats, hide.ns = T, tip.length = 0.001) +
+  labs(title = title, subtitle = subtitle, 
+    y = 'pH', x = '') +
+  theme_classic(base_size = 10, base_family = "GillSans") 
 
 # mVolts
 
-library(tidyverse)
 
 df1 %>% as_tibble() %>%
   mutate(Buffer = ifelse(between(V10, 4.0,4.15), '4',
