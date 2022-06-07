@@ -2,14 +2,117 @@
 
 # CLEAR OBJECT LIST AND IMAGE CANVAS   
 rm(list = ls());
+
 if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE)
+
+ggsavepath <- paste0(getwd(), '/Figures')
 
 library(tidyverse)
 library(patchwork)
 
 # Question 1 ----
+# Fuerza ionica, coef de actividad y coef de equilibrio (o disociacion)
+
+# df %>%
+pattern <- 'kinetics_equilibrium_co2_seawater_activity.csv'  
+
+fcsv <- list.files(path = getwd(), pattern = pattern, full.names = T)
+
+df <- read_csv(fcsv, comment = '#', skip_empty_rows = T) %>%
+  drop_na() %>%
+  arrange(desc(Measured)) %>%
+  mutate(id = 1:nrow(.))
+# 
+
+Labels <- df$Ion
+
+
+index <- paste0(ifelse(df$Electron > 1, df$Electron, ''), df$Charge)
+
+
+df %>% mutate(Ion = paste0(Ion,"^'", index,"'")) -> df
+
+Lorder <- df$Ion
+# 
+# df %>% mutate(Ion = forcats::fct_recode())
+
+cols <- c("Measured", "Calculated", "Davies eq")
+
+df %>% 
+  pivot_longer(cols = cols, values_to = 'gamma') %>%
+  filter(grepl('Calc', name))-> df_longer
+
+ggplot(data = df_longer, aes(y = gamma, x = id, group = name)) +
+  # geom_path(size = 1, color = 'grey', linetype = 'dashed') +
+  geom_point(size = 2) +
+  ggrepel::geom_label_repel(
+    aes(label = Ion, y = gamma, x = id), parse = T, 
+    label.size = 0, fill = 'Transparent', family = "GillSans")  +
+  scale_color_manual('', values = c('black','blue')) +
+  labs(y = expression('Total Activity'~ (gamma[t])), 
+    x = "Ions in Seawater",
+    caption = expression('T'[c] ~ '= 25 C and S = 35')) +
+  theme_classic(base_size = 18, base_family = "GillSans") +
+  theme(legend.position = 'top', axis.text.x = element_blank()) -> p1
+ 
+
+ggsave(p1, filename = 'Total_activity.png', path = ggsavepath, width = 5, height = 3.5)
+
+# then
+
+pattern <- 'kinetics_equilibrium_co2_seawater_ion_strength.csv'
+
+fcsv <- list.files(path = getwd(), pattern = pattern, full.names = T)
+
+df2 <- read_csv(fcsv, comment = '#', skip_empty_rows = T) %>% drop_na()
+
+Labels <- df2$Ion
+
+
+index <- paste0(ifelse(df2$Electron > 1, df2$Electron, ''), df2$Charge)
+
+
+df2 %>% mutate(Ion = paste0(Ion,"^'", index,"'")) %>%
+  mutate(Ion = factor(Ion, levels = rev(Lorder))) %>%
+  mutate(id = as.numeric(Ion)) %>% drop_na() -> df2
+
+
+
+df2 %>%
+  ggplot(aes(y = Ion, x = as.factor(I), fill = gama)) +
+  geom_tile(color = 'white', size = 0.5) +
+  scale_y_discrete(labels = sapply(rev(Lorder), function(i) parse(text=i))) +
+  theme_classic(base_size = 12, base_family = "GillSans") +
+  theme(legend.position = 'top') +
+  labs(
+    x = "Ionic strength", 
+    y = "Ions in Seawater", fill = expression(gamma[f]),
+    caption = expression('T'[c] ~ '= 25 C; Predicted Free Activity')) +
+  scale_fill_gradient2(labels = scales::parse_format(), low = '#D61E00', mid = 'white', high = '#4521AC') -> p2
+
+ggsave(p2, filename = 'ionic_strength.png', path = ggsavepath, width = 2.7, height = 4)
+
+
+# Salinity vs ionic strength
+
+
+pattern <- 'kinetics_equilibrium_co2_seawater_strength_and_salinity.csv'
+
+fcsv <- list.files(path = getwd(), pattern = pattern, full.names = T)
+
+df3 <- read_csv(fcsv, comment = '#', skip_empty_rows = T) %>% drop_na()
+
+df3 %>% 
+  # mutate(gama = I*gama) %>%
+  ggplot(aes(y = I, x = Salinidad)) +
+  geom_point() +
+  xlim(10,NA) +
+  scale_y_discrete(breaks = seq(0,1, by = 0.5)) +
+  labs(y = "Ionic strength", x = "Salinity") +
+  theme_classic(base_size = 18, base_family = "GillSans")
+
 
 # Test codap data
 # # test viz from: https://odv.awi.de/
@@ -155,4 +258,170 @@ ggplot(df, aes(x = pH, fill = g)) +
 #   summarise(q = qbox(pH)) %>%
 #   ggplot(aes(x = q, y = ))
 
-    
+# Question 3 ------
+# Estimates the Normal Distribution
+
+SEED <- 1234
+set.seed(SEED)
+eta <- c(1, 0)
+gamma <- c(1.8, 0.4)
+N <- 200
+x <- rnorm(N, 2, 2)
+z <- rnorm(N, 0, 2)
+mu <- binomial(link = logit)$linkinv(eta[1] + eta[2]*x)
+phi <- binomial(link = log)$linkinv(gamma[1] + gamma[2]*z)
+y <- rbeta(N, mu * phi, (1 - mu) * phi)
+
+dens <- density(y)$y
+
+df <- rbind(data.frame(x = 1:length(dens), g = 'Metabolite Production', dens), 
+  data.frame(x = 1:length(dens),g = 'Oxigen Consumption', dens = 1-dens))
+
+df %>%
+  as_tibble() %>%
+  ggplot(aes(y = dens, x = x, group = g)) +
+  geom_hline(yintercept = c(0.15, 0.95), linetype="dashed", alpha=0.5, size = 1) +
+  geom_line(size = 3, alpha = 0.7) +
+  ylim(0,1) +
+  xlim(0,300) +
+  theme_classic(base_size = 16, base_family = "GillSans") +
+  labs(x = 'Tiempo', y = '[ . ]') +
+  theme(legend.position = 'top',
+    panel.border = element_blank(),
+        axis.text.x = element_blank(),
+    axis.ticks.x = element_blank())
+
+df %>%
+  as_tibble() %>%
+  mutate(densc = ifelse(grepl('Oxigen', g), 0.8, 0.25)) %>%
+  ggplot(aes(y = densc, x = x, group = g)) +
+  geom_hline(yintercept = c(0.15, 0.95), linetype="dashed", alpha=0.5, size = 1) +
+  geom_line(size = 3, alpha = 0.7) +
+  ylim(0,1) +
+  xlim(0,150) +
+  theme_classic(base_size = 16, base_family = "GillSans") +
+  labs(x = 'Tiempo', y = '[ . ]') +
+  theme(legend.position = 'top',
+    panel.border = element_blank(),
+    axis.text.x = element_blank(),
+    axis.ticks = element_blank(),
+    axis.line = element_blank())
+
+# meta-analisis de respuesta de kroekel ----
+
+pattern <- 'kroekel_meta_analysis_of_AO_effect.csv'
+
+fcsv <- list.files(path = getwd(), pattern = pattern, full.names = T)
+
+df <- read_csv(fcsv, comment = '#', skip_empty_rows = T) 
+
+names(df)
+
+cols <- c("Genus species" ,"Taxa", "Life stage", "Duration of exp. (days)","Calcification","Development","Growth", "Metabolism","Photosynthesis","Reproduction","Survival")
+
+pivot <- c("Calcification","Development","Growth", "Metabolism","Photosynthesis","Reproduction","Survival")
+
+df %>% distinct(`Life stage`)
+
+df %>% select(cols) %>% 
+  # filter(grepl('Haliotis', `Genus species`)) %>% 
+  pivot_longer(cols = pivot, values_to =  'Experiments', 
+    names_to = 'Response') %>% 
+  drop_na(Experiments) %>%
+  filter(grepl('larva|juvenile', `Life stage`)) %>%
+  mutate(days = as.numeric(`Duration of exp. (days)`)) %>%
+  drop_na(days) %>% filter(between(days, 0,50)) %>%
+  mutate(Taxa = stringr::str_to_sentence(Taxa)) %>%
+  mutate(`Life stage` = stringr::str_to_sentence(`Life stage`))-> df_long
+
+df_long %>% distinct(`Life stage`)
+
+
+
+df_long %>%group_by(Taxa) %>% 
+  tally(Experiments, sort = T) %>% pull(Taxa) -> Ltaxa
+
+df_long %>%  
+  mutate(Taxa = factor(Taxa, levels = Ltaxa)) -> df_long
+
+
+# 
+
+df_long %>%  
+  ggplot(aes(x = Taxa, y = Experiments)) +
+  geom_col(fill = 'grey') +
+  theme_classic(base_size = 14, base_family = "GillSans") +
+  labs(y = '# Experiments', x = '') +
+  theme(axis.text.x = element_blank(),
+    axis.ticks.x = element_blank(),
+    axis.line.x = element_blank()) -> p1
+  # geom_bar(stat = "identity", position=position_dodge())
+
+df_long %>%
+  group_by(Taxa, Response) %>%
+  tally(Experiments) %>%
+  # mutate(Response = factor(Response, levels = pivot)) %>%
+  mutate(Response = factor(Response, levels = rev(pivot))) %>%
+  ggplot(aes(x = Taxa, y = Response, fill = Response)) +
+  geom_tile(color = 'white', size = 0.2) +
+  scale_y_discrete(limits = pivot) +
+  geom_text(aes(label = n), color = 'white', family= "GillSans") +
+  theme_classic(base_size = 14, base_family = "GillSans") +
+  theme(legend.position = 'nonea',
+    axis.text.x = element_text(angle = 45, 
+    hjust = 1, vjust = 1, size = 10)) -> p2
+
+p1 / p2 + patchwork::plot_layout(heights = c(1,3))
+
+
+df_long %>%
+  filter(Taxa %in% Ltaxa[1:3]) %>%
+  mutate(genus = sapply(strsplit(`Genus species`, " "), "[", 1)) %>%
+  group_by(genus) %>%
+  tally(Experiments, sort = T) %>%
+  pull(genus) -> Lgenus
+
+
+df_long %>%
+  filter(Taxa %in% Ltaxa[1:3]) %>%
+  mutate(genus = sapply(strsplit(`Genus species`, " "), "[", 1)) %>%
+  group_by(genus, Taxa, Response) %>%
+  tally(Experiments, sort = T) %>% 
+  group_by(genus) %>% mutate(pct = n/sum(n)) %>%
+  mutate(genus = factor(genus, levels = rev(Lgenus))) %>%
+  mutate(Response = factor(Response, levels = rev(pivot))) %>%
+  # mutate(pct = Experiments/sum(Experiments)) %>%
+  # mutate(Taxa = factor(Taxa, levels = rev(Ltaxa))) %>%
+  ggplot(aes(x = pct, y = genus, fill = Response)) +
+  geom_col() + facet_grid(Taxa ~ ., scales = 'free_y', space = 'free') +
+  theme_classic(base_size = 14, base_family = "GillSans") +
+  theme(axis.text.x = element_text(angle = 45, 
+    hjust = 1, vjust = 1, size = 10),
+    strip.background = element_rect(color = 'white'))
+
+# sapply(strsplit(string, ":"), "[", 2)
+
+
+
+df_long %>%
+  group_by(Taxa) %>%
+  mutate(pct = Experiments/sum(Experiments)) %>%
+  mutate(Taxa = factor(Taxa, levels = rev(Ltaxa))) %>%
+  ggplot(aes(x = pct, y = Taxa, fill = Response)) +
+  geom_col()
+
+df_long %>%
+  mutate(Taxa = factor(Taxa, levels = rev(Ltaxa))) %>%
+  # aes(x = Taxa, y = Experiments)
+  ggplot(aes(fill = Experiments, y = Taxa, x = Response)) +
+  geom_tile(color = 'white', size = 0.2)
+
+  
+# 
+df_long %>%
+  ggplot(aes(days, fill = `Life stage`)) +
+  geom_histogram(alpha = 0.5)
+
+
+# 
+  

@@ -483,4 +483,34 @@ var1 <- df$TA[1]
 var2 <- df$DIC[1]
 
 carb(flag = 15, var1 = var1, var2 = var2, T = 16, S = 33, P = 1)
-# bjerrum(K1=K1(), K2=NULL, K3=NULL, phmin=2, phmax=12)
+
+bjerrum(K1=K1(), K2=K2(), phmin=2, phmax=12, lwd = 5)
+
+legend("left",
+  lty=1:3,
+  lwd=3,legend=c(expression(CO[2]),expression(HCO[3]^"-"), expression(CO[3]^"2-")))
+
+
+phmin=2;phmax=12;by=0.1
+
+pH <- seq(phmin, phmax, by = by)
+
+res <- speciation(K1=K1(), K2=K2(), pH, conc = 1)
+
+plot_data <- data.frame(res, pH) %>% as_tibble()
+
+# devtools::install_github("xuan-liang/ggmatplot")
+library(ggmatplot)
+
+ggmatplot(pH, res, plot_type = "both")
+
+plot_data %>%
+  # pivot_longer(cols = c('C1', 'C2', 'C3')) %>%
+  ggplot(aes(y = C1*C4, x = pH)) +
+  geom_line() 
+  # ylim(0,1)
+
+ggplot(plot_data, aes(x=id,y=value,group=variable,colour=variable)) +
+  geom_point()+
+  geom_line(aes(lty=variable)) +
+  scale_y_log10(breaks=c(1,2,5,10,25))
