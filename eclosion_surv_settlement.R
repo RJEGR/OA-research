@@ -1,5 +1,8 @@
 # Prep matrices de datos de:
 # evaluar diff estadisticas de los datos 
+
+# El n de los datos es 6
+
 # 1) Eclosion (ES NECESARIO DISCUTIR ESTE PROXI) = corresponde a los datos de respirometria, donde se evaluo el numero de individous que corresponden a larvas y huevos presentes en muestras a las 24 h
 
 # 2) supervivencia al final del experimento
@@ -10,11 +13,13 @@
 # 3) colocar los resultados estadisticos en los tres graficos
 
 rm(list = ls())
+
 if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE)
 
 library(tidyverse)
+
 library(rstatix)
 
 
@@ -24,17 +29,52 @@ source(paste0(getwd(), "/stats.R"))
 
 competency <- read_rds(paste0(getwd(), 'competency.rds'))
 
-files <- list.files(path = getwd(), pattern = 'df.csv')
+# mini test ----
+competency %>% 
+  group_by(pH, hpf, name) %>%
+  rstatix::get_summary_stats(value, type = "quantile") -> df_longer_stats
+
+df_longer_stats %>%
+  filter(name %in% 'Aspecto.2') %>%
+  ggplot(aes(x = as.factor(hpf), y = `50%`, color = pH, group = pH)) +
+  # facet_grid(~ name) +
+  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
+    width = 0.1, position = position_dodge(width = 0.3)) +
+  geom_path(position = position_dodge(width = 0.3), size = 1) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Quantiles (25,50,75)', x = 'Time (hpf)') +
+  scale_y_continuous(labels = scales::percent) -> ps
+
+ps + 
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'top')
+
+ggsave(ps, filename = 'test.png', path = ggsavepath, 
+  width = 5.5, height = 3)
 
 # ECLOSION ---------
 
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
+
+pHLevel <- levels(unique(competency$pH))
+
+pHpalette <- pHpalette[match( pHLevel, names(pHpalette))]
+
+df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) %>% as_tibble() -> df
+
+files <- list.files(path = getwd(), pattern = 'df.csv')
+
 head(ecl_df <- read.csv(files[1]) %>% as_tibble())
 
-recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
+ecl_df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) -> ecl_df
 
-level_key <- structure(recode_pH, names = unique(ecl_df$pH))
+# recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
 
-ecl_df %>% ungroup() %>% mutate(pH = recode_factor(pH, !!!level_key)) -> ecl_df
+# level_key <- structure(recode_pH, names = unique(ecl_df$pH))
+
+# ecl_df %>% ungroup() %>% mutate(pH = recode_factor(pH, !!!level_key)) -> ecl_df
 
 # proportions
 
@@ -266,7 +306,7 @@ prop_df_longer %>%
   summarise(a = mean(value), sd = sd(value), n = n()) %>%
   mutate(ymin = a-sd, ymax = a+sd) -> out_stats
 
-pHLevs <- c('Control', 'Experimental-I', 'Experimental-II')
+# pHLevs <- c('Control', 'Experimental-I', 'Experimental-II')
 
 out_stats %>%
   # mutate(pH = factor(pH, levels = pHLevs)) %>%
@@ -287,6 +327,7 @@ psave +
     hjust = 1, vjust = 1, size = 7)) -> psave
 
 subtitle <- 'data need to be test w/ glm'
+
 psave + 
   ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
     remove.bracket = F, tip.length = 0.01, 
@@ -561,6 +602,7 @@ ggsave(psave,
   width = 5, height = 3.5)
 
 # *) MERGE PCT AND PLOT -------
+
 cols <- c('hpf', 'pH', 'Design','pct')
 
 competency %>% mutate(Design = 'Long-term Chronic stress', pct = value) %>% 
@@ -703,4 +745,6 @@ fit_log_mod <- log_mod %>%
   fit(pH ~ hpf*Design, data = bind_data)
 
 fit_log_mod %>% tidy()
+
+#
 

@@ -19,6 +19,7 @@ library(tidyverse)
 library(ggplot2)
 library(lubridate)
 library(rstatix)
+library(flextable)
 
 ggsavepath <- paste0('~/Documents/GitHub/OA-research/rproject/Figures/')
 
@@ -37,6 +38,10 @@ files <- list.files(path = path, pattern = pattern, full.names = T)
 mtd_df <- read_csv(list.files(path = path, pattern = mtd_file, full.names = T)) %>% 
   select(ID, N, Design) %>% mutate(Design = ifelse(Design %in% 'Control', 'Blank', Design))
 
+#
+
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
+
 
 # Drop blanks spots were found larvae
 
@@ -46,11 +51,11 @@ mtd_df %>%
 
 mtd_df %>% count(Design)
 
-namespH <- c("7.6","7.8","8")
+# namespH <- c("7.6","7.8","8")
 
-recodeL <- c('Experimental-I', 'Experimental-II', 'Control')
+# recodeL <- c('Experimental-I', 'Experimental-II', 'Control')
 
-level_key <- structure(recodeL, names = namespH)
+# level_key <- structure(recodeL, names = namespH)
 
 
 read_sdr <- function(file) {
@@ -77,11 +82,14 @@ df <- lapply(files, read_sdr)
 
 head(df <- do.call(rbind, df))
 
-df %>% distinct(pH)
+df %>% distinct(pH) %>% pull() %>% rev() -> pHLevel
+
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 df %>% distinct(lubridate::date(date))
 
 df %>% distinct(hpf) %>% arrange(hpf) %>% pull() -> hpfL
+
 
 # average of , Tinternal ??
 # 
@@ -92,6 +100,14 @@ df %>% group_by(pH, hpf) %>%
   mutate(ymin = a-sd, ymax = a+sd) %>%
   mutate(hpf = factor(hpf, hpfL))
 
+# Internal salinity
+
+df %>% group_by(pH, hpf) %>%
+  summarise(a = mean(`Salinity [g/1000g]`), 
+    sd = sd(`Salinity [g/1000g]`),
+    var = var((`Salinity [g/1000g]`))) %>%
+  mutate(ymin = a-sd, ymax = a+sd) %>%
+  mutate(hpf = factor(hpf, hpfL))
 
 # wrangling data -----
 
@@ -326,7 +342,7 @@ delta_time <- function(.x,.y) {
 
 # Delta t no siempre es la misma posicion
 
-delta_o2 <- function(x) { max(x) - min(x) } # cantidad de O2 consumido!!
+scope_o2 <- function(x) { max(x) - min(x) } # cantidad de O2 consumido!!
 
 # test 
 # cutoff times????
@@ -335,19 +351,20 @@ delta_o2 <- function(x) { max(x) - min(x) } # cantidad de O2 consumido!!
 df_longer %>% 
   group_by(ID) %>% # hpf, pH, Spot
   summarise(#sd = sd(Ox), n = n(), 
-    delta_o = delta_o2(Ox), delta_time(date, Ox)) %>%
+    scope = scope_o2(Ox), delta_time(date, Ox)) %>%
   mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>%
   right_join(mtd_df, by = 'ID') %>%
   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
   mutate(hpf = factor(hpf, hpfL)) %>%
   ggplot(aes(x,y)) + geom_point(aes(color = pH)) + 
   facet_wrap(~hpf, scales = 'free', nrow = 1) 
+
 # 
 # 
 # df_longer %>% 
 #   group_by(ID) %>% # hpf, pH, Spot
 #   summarise(#sd = sd(Ox), n = n(), 
-#     delta_o = delta_o2(Ox), delta_time(date, Ox)) %>%
+#     scope = scope_o2(Ox), delta_time(date, Ox)) %>%
 #   mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>%
 #   right_join(mtd_df, by = 'ID') %>%
 #   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
@@ -364,10 +381,10 @@ df_longer %>%
 df_longer %>% 
   group_by(ID) %>% # hpf, pH, Spot
   summarise(#sd = sd(Ox), n = n(), 
-    delta_o = delta_o2(Ox), delta_time(date, Ox)) %>%
+    scope = scope_o2(Ox), delta_time(date, Ox)) %>%
   mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>% 
   right_join(mtd_df, by = 'ID') %>% 
-  mutate(rate = delta_o/hour) %>%
+  mutate(rate = scope/hour) %>%
   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
   select(-Spot, -mins, -y,-x) %>%
   mutate(hpf = factor(hpf, hpfL)) -> df_stats 
@@ -406,7 +423,7 @@ df_stats %>%
 
 #  GaD
 # 20/05/2022 !! aqi vamos bien -----
-# REVISAR LA FORMULA DEL AJUSTE!!!!
+#
 # 
 
 # view outliers 
@@ -415,6 +432,10 @@ df_stats %>% select_if(is.double) %>% names() -> cols
 
 df_stats %>%
   select(-N) %>%
+  group_by(hpf, pH) %>%
+  mutate(is.outlier = is_outlier(r_ind_adj)) %>%
+  filter(!is.outlier %in% TRUE) %>%
+  select(-is.outlier) %>%
   pivot_longer(cols = cols[-2]) %>%
   mutate(name = factor(name, levels = cols[-2])) %>%
   ggplot(aes(x = pH, y = value)) +
@@ -423,10 +444,13 @@ df_stats %>%
   theme(axis.text.x = element_text(angle = 45,
     hjust = 1, vjust = 1, size = 10)) +
   stat_boxplot(geom ='errorbar', width = 0.07) +
-  geom_point(alpha = 0.5) +
-  geom_boxplot(width = 0.3, outlier.alpha = 1, outlier.color = 'red') +
-  stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5)
-  # stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue')
+  # geom_point(alpha = 0.5) +
+  geom_boxplot(width = 0.3, outlier.alpha = 0, outlier.color = 'red') +
+  stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5) -> psave
+
+ggsave(psave,
+  filename = 'oxygen_rate_facet.png', path = ggsavepath,
+  width = 4.5, height = 5)
 
 
 # 0) Remove outliers ----- 
@@ -494,11 +518,10 @@ df_stats %>%
 
 post.test %>% add_xy_position(x = "pH") -> stats
 
-stats$groups
 
 title <- get_pwc_label(stats)
 
-subtitle <- get_test_label(prior.stats, detailed = TRUE)
+subtitle <- get_test_label(prior.stats, detailed = F)
 
 # plor as boxplot
 # o2/Ind (Umol h-1 L-1)
@@ -530,17 +553,29 @@ ggsave(psave,
 
 
 # at the end
+
+# df_stats %>%
+#   group_by(hpf, pH) %>%
+#   summarise(a = mean(r_ind_adj), sd = sd(r_ind_adj), 
+#     ymin = a-sd, ymax = a+sd, n = n()) %>%
+
 df_stats %>%
-  group_by(hpf, pH) %>%
-  summarise(a = mean(r_ind_adj), sd = sd(r_ind_adj), 
-    ymin = a-sd, ymax = a+sd, n = n()) %>%
-  ggplot(aes(x = hpf, y = a, color = pH, group = pH)) +
+  rstatix::get_summary_stats(type = 'quantile') %>%
+  filter(!variable %in% 'N') %>%
+  ggplot(aes(x = hpf, y = `50%`, color = pH, group = pH)) +
+  facet_grid(variable ~., scales = "free_y") +
   geom_point(position = position_dodge(width = 0), size = 3, alpha = 0.5) +
-  geom_errorbar(aes(ymin = ymin, ymax = ymax), 
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`), 
     width = 0.1, position = position_dodge(width = 0)) +
   geom_path(position = position_dodge(width = 0), size = 1) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
-  theme_bw(base_family = "GillSans", base_size = 14)
+  # theme_bw(base_family = "GillSans", base_size = 14) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Quantiles (25,50,75)') -> ps
+
+ggsave(ps,
+  filename = 'oxygen_rate_facet_by_hpf.png', path = ggsavepath,
+  width = 3, height = 5.0)
+
 
 
 
@@ -550,11 +585,14 @@ df_stats %>%
 
 # Los controles (blancos) son siempre las columnas A[1-6]
 
+df <- read_sdr(files[6])
+
+cols <- names(df)
+
 blank_cols <- cols[grepl('^A[1-6]$', cols)]
 
 sample_cols <- cols[grepl('^[B][1-6]$', cols)] # '^[B-D][1-6]$
 
-df <- read_sdr(files[6])
 
 # df %>% head() %>% view()
 
@@ -564,7 +602,7 @@ df %>%
   ggplot(aes(x = name, y = row_id, fill = value)) + 
   # geom_tile(color = 'white', size = 0.2) +
   geom_raster() +
-  scale_fill_viridis_c(name = "Pearson", direction = -1)
+  scale_fill_viridis_c(name = "", direction = -1)
 
 df %>% 
   select(row_id, all_of(sample_cols)) %>%
@@ -572,7 +610,7 @@ df %>%
   ggplot(aes(x = name, y = row_id, fill = value)) + 
   # geom_tile(color = 'white', size = 0.2) +
   geom_raster() +
-  scale_fill_viridis_c(name = "Pearson", direction = -1)
+  scale_fill_viridis_c(name = "", direction = -1)
 
 df
 # # 2.1) evaluar por archivo la formula ( O2[B] - O2[A] ) / ( T[B] - T[A]) = delta 
@@ -614,46 +652,6 @@ ggplot() +
   # geom_smooth(data = df, aes(x = row_id, y = A1), se = T, method = lm)
   geom_curve(data = segment_df, aes(x = x, y = y, xend = xend, yend = yend))
 
-
-x <- df$date
-y <- df$A1
-
-# x[which(y == max(y))[1]] # x
-# x[which(y == min(y))[1]] # xend
-# 
-
-
-time_rate <- function(x,y) {
-  pos1 <- which(y == max(y))
-  pos2 <- which(y == min(y))
-  out <- x[pos1] - x[pos2] 
-  return(abs(out))
-  }
-
-# time <- as.numeric(rate(df$date)) # el delta tiempo es en funcion de los valores de de y (Oxigen)
-
-time_rate(x,y)[1] # ya son horas!
-
-time_rate(x,y)
-
-time <- as.numeric(time_rate(x,y)[1])
-
-time_rate(df)
-
-# min(df$date)
-# max(df$date)
-
-apply(df[sample_cols], 2, rate) 
-apply(df[blank_cols], 2, rate)
-
-
-df %>% 
-  group_by(hpf, pH) %>%
-  summarise_at(vars(sample_cols), .funs = rate)
-
-# En base a un promedio de consumo de oxigeno ponderamos el tiempo
-
-
 # test respR -----
 # install.packages("respR")
 # https://januarharianto.github.io/respR/
@@ -661,6 +659,7 @@ df %>%
 library(respR) # load the package
 
 # 1. test auto-rate
+
 df %>% 
   select(min, all_of(sample_cols)) %>%
   inspect(time = 1, oxygen = 2, plot = F) %>% # select columns 1 and 15 and inspect the data, then
@@ -674,6 +673,7 @@ df %>%
 
 # 2. Calculate background rate
 # Example https://www.mdpi.com/2673-1924/2/1/2/htm
+
 df %>% 
   select(min, all_of(blank_cols)) %>%
   inspect(time = 1, oxygen = 2:7) %>%

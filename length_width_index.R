@@ -16,43 +16,74 @@ pattern <- 'length_width_dataset.csv'
 
 file <- list.files(path = getwd(), pattern = pattern, full.names = T)
 
+# pHL <- c(8.0,7.8,7.6)
+
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
+
 df <- read_csv(file, show_col_types = FALSE) %>% 
   rename('Length' = `L1 (um)`,'Width' =  `L2 (um)`) %>%
   drop_na(Length, Width) %>%
-  mutate_at(vars("Length","Width"), function(x) x / 10) %>% # divide by factor 10X to convert units to um
+  mutate_at(vars("Length","Width"), function(x) x / 4) %>% # divide by factor 4X to convienent units
   select(hpf, pH, group, Length, Width, Stage, Shell)
+
+df %>% distinct(pH) %>% pull() -> pHLevel
+
+df %>% distinct(hpf) %>% arrange(hpf) %>% pull() -> hpfL
+
+df %>% mutate(pH = factor(pH, levels = pHLevel)) %>%
+  mutate(hpf = factor(hpf, levels = hpfL))  -> df
+
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 # prepare index
 
 df %>%
-  ggplot(aes(Length, Width, group = pH)) + # color = as.factor(pH),  
+  ggplot(aes(Length, Width)) + # color = as.factor(pH),  group = pH
   facet_grid(~ pH ) +
   geom_point(alpha = 0.5, shape = 1) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
-  geom_smooth(se = F, method = lm, color = 'blue') +
-  ggpubr::stat_cor(method = "pearson", cor.coef.name = "R", p.accuracy = 0.001) +
+  # scale_color_viridis_d('', option = "plasma", end = .7) +
+  geom_smooth(se = T, method = lm, color = 'blue', size = 0.7) +
+  xlim(0,400) +
+  ggpubr::stat_cor(method = "spearman", 
+    cor.coef.name = "R", p.accuracy = 0.001, label.y = 250, family = "GillSans") +
   labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
   theme_classic(base_family = "GillSans", base_size = 14) +
-  theme(strip.background = element_rect(fill = 'white', color = 'white'),
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
     panel.border = element_blank()) -> psave
 
 
-ggsave(psave, filename = 'Body_index_cor.png', path = ggsavepath, width = 5, height = 3)
+ggsave(psave, filename = 'Body_index_cor.png', path = ggsavepath, width = 5, height = 2)
 
 
+df %>%
+  ggplot(aes(Length, Width, color = as.factor(pH))) + 
+  geom_smooth(se = F, method = lm, size = 1.3, alpha = 0.5) +
+  xlim(0,400) +
+  labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank()) +
+  scale_color_manual("", values = pHpalette) +
+  theme(legend.position = 'none')
 
 df %>%
   group_by(pH) %>%
-  cor_test(Length,Width, method = 'pearson')
+  cor_test(Length,Width, method = 'spearman') %>%
+  add_significance("p") %>%
+  select(pH, var1, var2, cor, method, p.signif) %>%
+  flextable() %>% 
+  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+  autofit(add_w = 0, add_h = 0) %>%
+  align(align = "center")
 
-df %>%
-  ggplot(aes(Length, Width, color = as.factor(hpf))) + # color = as.factor(pH),  
-  facet_grid(~ pH ) +
-  geom_point(alpha = 0.5, shape = 1) +
-  labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
-  theme_classic(base_family = "GillSans", base_size = 14) +
-  theme(strip.background = element_rect(fill = 'white', color = 'white'),
-    panel.border = element_blank())
+# df %>%
+#   ggplot(aes(Length, Width, color = as.factor(hpf))) + # color = as.factor(pH),  
+#   facet_grid(~ pH ) +
+#   geom_point(alpha = 0.5, shape = 1) +
+#   labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
+#   theme_classic(base_family = "GillSans", base_size = 14) +
+#   theme(strip.background = element_rect(fill = 'white', color = 'white'),
+#     panel.border = element_blank())
 
 df %>%
   group_by(hpf, pH) %>%
@@ -70,8 +101,16 @@ df %>%
   filter(!is.extreme %in% TRUE) %>% 
   select(-is.extreme) -> df_filtered
 
+df_filtered %>%
+  # filter(hpf %in% '24') %>%
+  group_by(pH, Stage) %>%
+  rstatix::get_summary_stats(type = "quantile") %>%
+  flextable() %>% 
+  bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+  autofit(add_w = 0, add_h = 0) %>%
+  align(align = "center")
 
-# 1) test if gaussianity (PARTIAL FALSE) ----
+# 1) test if gaussianity (FALSE) ----
 
 df_filtered %>% 
   group_by(hpf, pH) %>% 
@@ -99,7 +138,7 @@ df_filtered %>%
   group_by(hpf) %>%
   rstatix::kruskal_test(Index ~ pH) %>%
   adjust_pvalue(method = "none") %>%
-  add_significance("p") -> kruskal.stats
+  add_significance("p") -> prior.stats
 
 # we found difference between treatment in all/any of the development times
 
@@ -110,48 +149,130 @@ df_filtered %>%
 df_filtered %>%
   group_by(hpf) %>%
   pairwise_wilcox_test(Index ~ pH,  conf.level = 0.95) %>%
-  adjust_pvalue() %>%
-  add_significance() -> stats.test
+  adjust_pvalue(method = "fdr") %>%
+  add_significance() -> post.test
 
-stats.test %>% add_xy_position(x = "pH", scales = "free_y") -> stats
+post.test %>% add_xy_position(x = "pH") -> stats
 
-stats$groups
+title <- get_pwc_label(stats, "text")
 
-title <- get_pwc_label(stats)
+# subtitle <- get_test_label(prior.stats, detailed = F)
 
-# get_test_label(kruskal.stats, detailed = TRUE)[1]
+subtitle <- get_description(prior.stats)
 
-subtitle <- get_description(kruskal.stats)
-
+caption <- paste0(subtitle,"; ", title)
 
 df_filtered %>%
   mutate(pH = as.factor(pH)) %>%
   # mutate(vars = factor(vars, levels = varsf)) %>%
-  ggplot(aes(y = Index, x = pH,  group = pH)) +
+  ggplot(aes(y = Index, x = pH,  group = pH, color = pH)) +
   facet_wrap(~ hpf,nrow = 1) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   stat_boxplot(geom ='errorbar', width = 0.3) +
   geom_boxplot(width = 0.3, outlier.alpha = 0) +
-  # geom_point(alpha = 0.5, size = 0.5, position = position_dodge2(width = 0.3), aes(color = as.factor(pH))) +
   stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue') +
-  # scale_fill_viridis_d('', option = "plasma", end = .7) +
-  scale_y_continuous(n.breaks = 5) -> psave
+  scale_y_continuous(n.breaks = 5) +
+  labs(y = 'Growth Index') +
+  scale_color_manual("", values = pHpalette) -> psave
+
+df_filtered %>%
+  select(-Length, -Width) %>%
+  rstatix::get_summary_stats(type = "quantile") %>%
+  ggplot(aes(x = pH, y = `50%`, color = pH, group = pH)) +
+  facet_wrap(~ hpf,nrow = 1) +
+  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 12) +
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
+    width = 0.2, position = position_dodge(width = 0.3)) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Growth Index') -> psave
+
+psave + 
+  ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
+    remove.bracket = F, tip.length = 0.01,  hide.ns = T, size = 2.5) +
+  labs(caption = caption) -> psave
 
 
-psave + theme(strip.background = element_rect(fill = 'white', color = 'white'),
-  panel.border = element_blank()) +
-  labs(y = 'Body Index', x = 'pH') -> psave
-
-# psave
-
-# psave +  ggpubr::stat_pvalue_manual(stats)
-# 
-# psave + 
-#   ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
-#     remove.bracket = F, tip.length = 0.01, linetype = 'dashed', hide.ns = T) +
-#   labs(subtitle = subtitle, title = title, y = 'Body Index', x = 'pH') -> psave
-
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank(), legend.position = 'top') -> psave
 
 ggsave(psave, filename = 'Body_index.png', path = ggsavepath, 
-  width = 7, height = 3)
+  width = 5, height = 3.5)
 
+#  as line, only upper quantiles
+
+df_filtered %>%
+  group_by(hpf, pH) %>%
+  rstatix::get_summary_stats(type = "quantile") %>%
+  ggplot(aes(x = hpf, y = `50%`, color = pH, group = pH)) +
+  facet_grid(~ variable) +
+  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
+    width = 0.1, position = position_dodge(width = 0.3)) +
+  geom_path(position = position_dodge(width = 0.3), size = 1) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Quantiles (25,50,75)') -> ps
+
+ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank(), legend.position = 'top') -> ps
+
+  
+
+ggsave(ps, filename = 'Body_index_facet.png', path = ggsavepath, 
+  width = 5.5, height = 3)
+
+# Throchophore shell ----
+
+df %>%
+  filter(hpf %in% '24') %>%
+  count(Stage) %>%
+  group_by(pH) %>%
+  mutate(n = n/sum(n), n = n*100) %>%
+  mutate(n = paste0(round(n), ' %')) %>%
+  pivot_wider(values_from = n, names_from = Stage) %>%
+  flextable() %>% 
+  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+  autofit(add_w = 0, add_h = 0) %>%
+  align(align = "center")
+
+# Normal shelled
+# Abnormal shelled
+# Unshelled
+
+level_key <- c("nrs" = "Normal shelled", "ans" = "Abnormal shelled", "uns" = "Unshelled")
+
+caption <- "Trochophore larvae scored as one of possible morphological groups"
+
+df %>%
+  filter(hpf %in% '24') %>%
+  count(Shell) %>%
+  mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
+  group_by(pH) %>%
+  mutate(pct = n/sum(n)) %>%
+  ggplot(aes(y = pct, x = Shell, fill = pH)) +
+  geom_col(position = "dodge2") +
+  scale_y_continuous(labels = scales::percent) +
+  scale_fill_manual("", values = pHpalette) +
+  labs(y = '%', x = '', caption = caption) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  theme(panel.border = element_blank(), legend.position = 'top') -> ps
+
+
+ggsave(ps, filename = 'throchophore_score.png', path = ggsavepath, 
+  width = 4.5, height = 3)  
+
+df %>%
+  filter(hpf %in% '24') %>%
+  group_by(pH, Stage) %>%
+  rstatix::get_summary_stats(type = "quantile") %>%
+  ggplot(aes(x = pH, y = `50%`, color = pH, group = pH)) +
+  facet_grid(Stage ~ variable) +
+  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
+    width = 0.1, position = position_dodge(width = 0.3)) +
+  geom_path(position = position_dodge(width = 0.3), size = 1) +
+  scale_color_manual("", values = pHpalette)
+  
+  

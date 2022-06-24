@@ -46,13 +46,19 @@ df <- do.call(rbind, df)
 
 df %>% as_tibble()
 
-recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
+# recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
+# level_key <- structure(recode_pH, names = unique(df$pH))
 
-level_key <- structure(recode_pH, names = unique(df$pH))
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
 
-df %>% ungroup() %>% mutate(pH = recode_factor(pH, !!!level_key)) -> df
+pHLevel <- rev(unique(df$pH))
 
+pHpalette <- pHpalette[match( pHLevel, names(pHpalette))]
+df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) %>% as_tibble() -> df
 
+# df %>% ungroup() %>% mutate(pH = recode_factor(pH, !!!level_key)) -> df
+
+# EDA -----
 
 df %>%
   mutate(N = `Aspecto.1`+ `Aspecto.2`) %>%
@@ -89,6 +95,10 @@ df_longer %>%
   # identify_outliers(value)
   mutate(is.outlier = is_outlier(value), 
     is.extreme = is_extreme(value)) -> df_longer
+
+df_longer %>% filter(!is.outlier %in% TRUE) %>% select(-is.outlier, -is.extreme) -> df_longer
+
+write_rds(df_longer, file = paste0(getwd(), 'competency.rds'))
 
 
 df_longer %>% group_by(pH, hpf, is.outlier) %>% tally() %>%
@@ -151,33 +161,32 @@ df_longer %>%
 
 # Nos interesa comparar el  % de larvas que, por tratamiento, se observo un mayor/menor % competencia entre una fase y otra. Para ello, consideramos el Aspecto 2, a las 24 hpf, donde se evalue el numero de individuos presentes, en cada replica, que presentaban caracteristicas de larvas trocoforas. Los valores de Aspecto 2 o 1 son normalizados respecto al total de los individuos (N) y aplico prueba a priori y posteriori para considerar diferencias entre los tratamientos. 
 
-
+# 
 # Asi que,
-df_longer %>%
-  ggplot() +
-  geom_col(aes(y = value, x = as.factor(hpf), fill = pH), position = position_dodge2()) +
-  facet_grid(~ name)
 
 df_longer %>% 
   group_by(pH, hpf, name) %>%
-  rstatix::get_summary_stats(value) %>% 
-  mutate(ymin = mean-se, ymax = mean+se) -> df_longer_stats
+  rstatix::get_summary_stats(value, type = "quantile") -> df_longer_stats
  
 df_longer_stats %>%
   filter(name %in% 'Aspecto.2') %>%
-  ggplot(aes(x = as.factor(hpf), y = mean, color = pH)) +
-  geom_point() +
-  # geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.05) +
-  geom_path(aes(group = pH)) +
-  facet_grid(~ name) +
-  scale_y_continuous(labels = scales::percent) -> psave
+  ggplot(aes(x = as.factor(hpf), y = `50%`, color = pH, group = pH)) +
+  # facet_grid(~ name) +
+  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
+    width = 0.1, position = position_dodge(width = 0.3)) +
+  geom_path(position = position_dodge(width = 0.3), size = 1) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Quantiles (25,50,75)', x = 'Time (hpf)') +
+  scale_y_continuous(labels = scales::percent) -> ps
 
-psave + 
-  scale_color_viridis_d('', option = "plasma", end = .7) +
-  theme_classic(base_family = "GillSans", base_size = 10) +
-  theme(strip.background = element_rect(fill = 'white'),
-    panel.border = element_blank()) +
-  labs(y = '',  x = 'Time (hpf)')
+ps + 
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'top')
+
+ggsave(ps, filename = 'test.png', path = ggsavepath, 
+  width = 5.5, height = 3)
 
 # instead of summary version, try
 
