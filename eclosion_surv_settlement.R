@@ -1,7 +1,7 @@
 # Prep matrices de datos de:
 # evaluar diff estadisticas de los datos 
 
-# El n de los datos es 6
+# El n de los datos es 6, que corresponde a cada pecera por tratamiento o pull de spots por respirometria
 
 # 1) Eclosion (ES NECESARIO DISCUTIR ESTE PROXI) = corresponde a los datos de respirometria, donde se evaluo el numero de individous que corresponden a larvas y huevos presentes en muestras a las 24 h
 
@@ -62,7 +62,7 @@ pHLevel <- levels(unique(competency$pH))
 
 pHpalette <- pHpalette[match( pHLevel, names(pHpalette))]
 
-df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) %>% as_tibble() -> df
+# df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) %>% as_tibble() -> df
 
 files <- list.files(path = getwd(), pattern = 'df.csv')
 

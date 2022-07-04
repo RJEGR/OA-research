@@ -11,6 +11,7 @@
 # CLEAR OBJECT LIST AND IMAGE CANVAS   
 rm(list = ls());
 
+
 if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE)
@@ -42,7 +43,12 @@ mtd_df <- read_csv(list.files(path = path, pattern = mtd_file, full.names = T)) 
 
 pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
 
+pHLevel <- c("8", "7.8", "7.6")
 
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
+
+
+# hpfL <- c("24",  "48",  "60", "108", "624")
 # Drop blanks spots were found larvae
 
 mtd_df %>% 
@@ -359,24 +365,6 @@ df_longer %>%
   ggplot(aes(x,y)) + geom_point(aes(color = pH)) + 
   facet_wrap(~hpf, scales = 'free', nrow = 1) 
 
-# 
-# 
-# df_longer %>% 
-#   group_by(ID) %>% # hpf, pH, Spot
-#   summarise(#sd = sd(Ox), n = n(), 
-#     scope = scope_o2(Ox), delta_time(date, Ox)) %>%
-#   mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>%
-#   right_join(mtd_df, by = 'ID') %>%
-#   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
-#   mutate(hpf = factor(hpf, hpfL)) %>%
-#   group_by(hpf, pH, Design) %>% 
-#   summarise(a = mean(hour), sd = sd(hour), n = n()) %>%
-#   mutate(ymin = sd-a, ymax = sd+a) %>%
-#   ggplot(aes(y = a, x = hpf, color = pH)) + 
-#   facet_grid(~Design) +
-#   geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
-#   geom_errorbar(aes(ymin = ymin, ymax = ymax), 
-#     width = 0.1, position = position_dodge(width = 0.3))
 
 df_longer %>% 
   group_by(ID) %>% # hpf, pH, Spot
@@ -387,7 +375,8 @@ df_longer %>%
   mutate(rate = scope/hour) %>%
   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
   select(-Spot, -mins, -y,-x) %>%
-  mutate(hpf = factor(hpf, hpfL)) -> df_stats 
+  mutate(hpf = factor(hpf, hpfL)) %>%
+  mutate(pH = factor(pH, levels = pHLevel)) -> df_stats 
 
 # df_stats %>% group_by(hpf, pH, Design) %>% tally() 
 
@@ -402,14 +391,16 @@ df_stats  %>%
 df_stats  %>%
   filter(Design %in% 'Blank') %>%
   group_by(hpf, pH) %>%
-  summarise(av_r_blank = mean(rate),
-    sd_r_blank = sd(rate), n = n()) -> df_stats_blank
+  summarise(av_r_b = mean(rate),
+    sd_r_b = sd(rate), 
+    av_scope_b = mean(scope), 
+    sd_scope_b = sd(scope), n = n()) -> df_stats_blank
 
 df_stats %>%
   filter(!Design %in% 'Blank') %>%
   left_join(df_stats_blank, by = c('hpf', 'pH')) %>%
-  mutate(r_adj = (rate - av_r_blank), r_ind = rate/N, r_ind_adj = r_adj/N) %>% 
-  select(!c(hour, Design, av_r_blank, sd_r_blank, n)) -> df_stats
+  mutate(scope_adj = (scope - av_scope_b) ,r_adj = (rate - av_r_b), r_ind = rate/N, r_ind_adj = r_adj/N) %>% 
+  select(!c(hour, Design, av_r_b, sd_r_b, av_scope_b, sd_scope_b, n)) -> df_stats
 
 
 df_stats %>%
@@ -430,15 +421,18 @@ df_stats %>%
 
 df_stats %>% select_if(is.double) %>% names() -> cols
 
+cols <- c("scope","scope_adj", "rate","r_adj","r_ind","r_ind_adj")
+
 df_stats %>%
   select(-N) %>%
   group_by(hpf, pH) %>%
   mutate(is.outlier = is_outlier(r_ind_adj)) %>%
   filter(!is.outlier %in% TRUE) %>%
   select(-is.outlier) %>%
-  pivot_longer(cols = cols[-2]) %>%
-  mutate(name = factor(name, levels = cols[-2])) %>%
-  ggplot(aes(x = pH, y = value)) +
+  pivot_longer(cols = cols) %>%
+  mutate(name = factor(name, levels = cols)) %>%
+  filter(grepl("_adj", name)) %>%
+  ggplot(aes(x = pH, y = value, color = pH, fill = pH)) +
   facet_grid(name ~ hpf, scales = 'free') +
   # theme_bw(base_family = "GillSans", base_size = 14) +
   theme(axis.text.x = element_text(angle = 45,
@@ -446,7 +440,16 @@ df_stats %>%
   stat_boxplot(geom ='errorbar', width = 0.07) +
   # geom_point(alpha = 0.5) +
   geom_boxplot(width = 0.3, outlier.alpha = 0, outlier.color = 'red') +
-  stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5) -> psave
+  stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5, color = 'grey') +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) +
+  theme_classic(base_family = "GillSans", base_size = 12) +
+  labs(y = '') -> psave
+
+
+
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank(), legend.position = 'top') -> psave
 
 ggsave(psave,
   filename = 'oxygen_rate_facet.png', path = ggsavepath,
@@ -526,30 +529,33 @@ subtitle <- get_test_label(prior.stats, detailed = F)
 # plor as boxplot
 # o2/Ind (Umol h-1 L-1)
 
-ylabs <- expression(O[2]~"Rate ("*mu*"mol"~h^-1~L^-1~Ind^-1*")")
+ylabs <- expression("Rate ("*O[2]~mu*"mol"~h^-1~L^-1~Ind^-1*")")
 
 df_stats %>% 
   ggplot(aes(x = pH, y = r_ind_adj, group = pH)) +
   facet_grid(~ hpf) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   # scale_color_viridis_d('', option = "plasma", end = .7) +
-  geom_boxplot(width = 0.3) +
+  geom_boxplot(aes(color = pH, fill = pH), width = 0.3) +
   # stat_boxplot(geom ='errorbar', width = 0.3,)
-  stat_summary(fun = median, geom ="line", aes(group = 2),size= 0.5, color = 'blue') +
-  labs(y = ylabs) -> psave
+  stat_summary(fun = median, geom ="line", aes(group = 2),size= 0.5, color = 'gray') +
+  labs(y = ylabs) +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) -> psave
 
 
 psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
-  panel.border = element_blank()) -> psave
+  panel.border = element_blank(),
+  legend.position = "top") -> psave
 
 psave + 
   ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
     remove.bracket = F, tip.length = 0.01,  hide.ns = T) +
-  labs(subtitle = title) -> psave
+  labs(caption = title) -> psave
 
 ggsave(psave,
   filename = 'oxygen_rate.png', path = ggsavepath,
-  width = 5.5, height = 3.0)
+  width = 5.5, height = 3.5)
 
 
 # at the end
@@ -562,6 +568,7 @@ ggsave(psave,
 df_stats %>%
   rstatix::get_summary_stats(type = 'quantile') %>%
   filter(!variable %in% 'N') %>%
+  filter(grepl("_adj", variable)) %>%
   ggplot(aes(x = hpf, y = `50%`, color = pH, group = pH)) +
   facet_grid(variable ~., scales = "free_y") +
   geom_point(position = position_dodge(width = 0), size = 3, alpha = 0.5) +
@@ -576,8 +583,13 @@ ggsave(ps,
   filename = 'oxygen_rate_facet_by_hpf.png', path = ggsavepath,
   width = 3, height = 5.0)
 
+# data input for model ------
 
-
+df_stats %>%
+  select(hpf, pH, r_ind_adj) %>%
+  rstatix::get_summary_stats(type = 'mean_sd') %>%
+  select(-variable, -n, -sd) %>%
+  pivot_wider(names_from = pH, values_from = mean)
 
 
 

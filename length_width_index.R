@@ -9,6 +9,7 @@ options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(ggplot2)
 library(rstatix)
+library(flextable)
 
 ggsavepath <- paste0(getwd(), '/Figures/')
 
@@ -36,8 +37,33 @@ df %>% mutate(pH = factor(pH, levels = pHLevel)) %>%
 pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 # prepare index
+df %>%
+  group_by(hpf, pH) %>%
+  mutate(Index = sqrt(Length*Width)) -> df
 
 df %>%
+  group_by(hpf, pH) %>%
+  mutate(is.extreme = is_extreme(Index)) %>%
+  filter(!is.extreme %in% TRUE) %>% 
+  select(-is.extreme) -> df
+
+# 0) Remove (index) outliers ----- 
+nrow(df)
+
+df %>% group_by(hpf, pH) %>% identify_outliers(Index) %>% group_by(hpf, pH) %>% tally(is.extreme)
+
+# df_filtered <- df
+
+df %>%
+  group_by(hpf, pH) %>%
+  mutate(is.extreme = is_extreme(Index)) %>%
+  filter(!is.extreme %in% TRUE) %>%
+  select(-is.extreme) -> df_filtered
+
+#
+
+
+df_filtered %>%
   ggplot(aes(Length, Width)) + # color = as.factor(pH),  group = pH
   facet_grid(~ pH ) +
   geom_point(alpha = 0.5, shape = 1) +
@@ -55,7 +81,7 @@ df %>%
 ggsave(psave, filename = 'Body_index_cor.png', path = ggsavepath, width = 5, height = 2)
 
 
-df %>%
+df_filtered %>%
   ggplot(aes(Length, Width, color = as.factor(pH))) + 
   geom_smooth(se = F, method = lm, size = 1.3, alpha = 0.5) +
   xlim(0,400) +
@@ -66,7 +92,7 @@ df %>%
   scale_color_manual("", values = pHpalette) +
   theme(legend.position = 'none')
 
-df %>%
+df_filtered %>%
   group_by(pH) %>%
   cor_test(Length,Width, method = 'spearman') %>%
   add_significance("p") %>%
@@ -85,28 +111,14 @@ df %>%
 #   theme(strip.background = element_rect(fill = 'white', color = 'white'),
 #     panel.border = element_blank())
 
-df %>%
-  group_by(hpf, pH) %>%
-  mutate(Index = sqrt(Length*Width)) -> df
 
-
-# 0) Remove (index) outliers ----- 
-nrow(df)
-
-df %>% group_by(hpf, pH) %>% identify_outliers(Index) %>% group_by(hpf, pH) %>% tally(is.extreme)
-
-df %>%
-  group_by(hpf, pH) %>%
-  mutate(is.extreme = is_extreme(Index)) %>%
-  filter(!is.extreme %in% TRUE) %>% 
-  select(-is.extreme) -> df_filtered
 
 df_filtered %>%
   # filter(hpf %in% '24') %>%
   group_by(pH, Stage) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
   flextable() %>% 
-  bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
   autofit(add_w = 0, add_h = 0) %>%
   align(align = "center")
 
@@ -222,6 +234,21 @@ ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 ggsave(ps, filename = 'Body_index_facet.png', path = ggsavepath, 
   width = 5.5, height = 3)
 
+
+# df_filtered %>%
+#   group_by(hpf, pH) %>%
+#   rstatix::get_summary_stats(type = "mean_se") %>%
+  # mutate(ymax = mean+se, ymin = mean-se) %>%
+  # ggplot(aes(x = hpf, y = mean, color = pH, group = pH)) +
+  # facet_grid(~ variable) +
+  # geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
+  # theme_bw(base_family = "GillSans", base_size = 14) +
+  # geom_errorbar(aes(ymin = ymin, ymax = ymax),
+  #   width = 0.1, position = position_dodge(width = 0.3)) +
+  # geom_path(position = position_dodge(width = 0.3), size = 1) +
+  # scale_color_manual("", values = pHpalette) +
+  # labs(y = 'mean_se')
+
 # Throchophore shell ----
 
 df %>%
@@ -243,6 +270,8 @@ df %>%
 level_key <- c("nrs" = "Normal shelled", "ans" = "Abnormal shelled", "uns" = "Unshelled")
 
 caption <- "Trochophore larvae scored as one of possible morphological groups"
+
+
 
 df %>%
   filter(hpf %in% '24') %>%
@@ -276,3 +305,168 @@ df %>%
   scale_color_manual("", values = pHpalette)
   
   
+df %>%
+  filter(hpf %in% '24') %>%
+  count(pH) %>%
+  ungroup() %>%
+  # mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
+  # arrange(Shell) %>%
+  select(pH, n) %>%
+  flextable() %>% 
+  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+  autofit(add_w = 0, add_h = 0) %>%
+  align(align = "center") %>%
+  merge_v() 
+  # bg(~ pH == '8', 
+  #   j = c('pH','n'), 
+  #   bg = "#4575b4", part = "body") %>%
+  # bg(~ pH == '7.8', 
+  #   j = c('pH','n'), 
+  #   bg = "#abdda4", part = "body") %>%
+  # bg(~ pH == '7.6', 
+  #   j = c('pH','n'), 
+  #   bg = "#d73027", part = "body")
+
+
+
+# data inputs for model ----
+
+df_filtered %>%
+  select(hpf, pH, Index) %>%
+  group_by(hpf, pH) %>%
+  rstatix::get_summary_stats(type = "quantile", probs = 0.5) %>%
+  select(-n, - variable) %>%
+  pivot_wider(names_from = pH, values_from = `50%`)
+
+df_filtered %>%
+  group_by(pH, hpf) %>%
+  cor_test(Length,Width, method = 'spearman') %>%
+  add_significance("p") %>%
+  select(hpf, pH, cor) %>%
+  pivot_wider(names_from = pH, values_from = cor)
+
+
+df %>%
+  filter(hpf %in% '24') %>%
+  count(Shell) %>%
+  mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
+  group_by(pH) %>%
+  mutate(pct = n/sum(n)) %>% 
+  filter(Shell %in% "Abnormal shelled") %>%
+  select(hpf, pH, pct) %>%
+  pivot_wider(names_from = pH, values_from = pct)
+  
+# Cluster analysis
+# Based on Bayesian information Criterion (BIC) search (support) the presence of k size groups among the longged measurements. Coutts, F. J., et al (2018). Evidence of sensory-driven behavior in the Ediacaran organism Parvancorina: Implications and autecological interpretations.
+
+# https://datasciencebook.ca/clustering.html#
+
+library(tidymodels)
+
+fit <- lm(Length ~ Width + hpf:pH, df_filtered)
+
+tidy(fit)
+
+glance(fit)
+
+augment(fit) %>%
+  ggplot(aes(Length, Width, color = pH)) +
+  geom_point() +
+  geom_line(aes(y = .fitted)) 
+  # facet_grid(~ hpf)
+
+
+# library(mclust)
+library(mclust)
+M <- df_filtered %>% ungroup() %>% select(Length,Width)
+
+d_clust <- Mclust(as.matrix(log(M)), G=1:7, 
+  modelNames = mclust.options("emModelNames"))
+d_clust$BIC
+plot(d_clust)
+
+# or
+
+standardized_data <- M %>%
+  mutate(across(everything(), scale))
+
+df_clust <- kmeans(standardized_data, centers = 3)
+df_clust
+
+
+library(broom)
+
+clustered_data <- augment(df_clust, standardized_data)
+
+cluster_plot <- ggplot(clustered_data,
+  aes(x = Length, 
+    y = Width, 
+    color = .cluster), 
+  size = 2) +
+  geom_point() +
+  labs(x = "Length (standardized)", 
+    y = "Width (standardized)", 
+    color = "Cluster") + 
+  scale_color_manual(values = c("dodgerblue3",
+    "darkorange3",  
+    "goldenrod1")) + 
+  theme(text = element_text(size = 12))
+
+cluster_plot
+
+glance(df_clust)
+
+
+clust_ks <- tibble(k = 1:9)
+clust_ks <- tibble(k = 1:9) %>%
+  rowwise() %>%
+  mutate(clusts = list(kmeans(standardized_data, k)))
+
+clust_ks %>%
+  pull(clusts) %>%
+  pluck(1)
+
+
+clust_ks <- tibble(k = 1:9) %>%
+  rowwise() %>%
+  mutate(clusts = list(kmeans(standardized_data, k, nstart = 10, k)),
+    glanced = list(glance(clusts)))
+
+
+clustering_statistics <- clust_ks %>%
+  unnest(glanced)
+
+clustering_statistics
+
+elbow_plot <- ggplot(clustering_statistics, aes(x = k, y = tot.withinss)) +
+  geom_point() +
+  geom_line() +
+  xlab("K") +
+  ylab("Total within-cluster sum of squares") +
+  scale_x_continuous(breaks = 1:9) + 
+  theme(text = element_text(size = 12))
+
+elbow_plot
+
+# ggord ----
+library(ggord)
+# principal components analysis with the iris data set
+# prcomp
+
+df_filtered %>% 
+  sample_n(46, replace = TRUE) %>%
+  mutate(n = 1:46) %>%
+  ungroup() %>%
+  mutate(n = paste0(n, "-", hpf)) %>%
+  select(n, pH, Index) %>%
+  # mutate(Index = log10(Index)) %>%
+  pivot_wider(names_from = pH, values_from = Index) %>%
+  unnest(cols = c(`8`, `7.8`, `7.6`)) %>%
+  separate(n, into = c('id', 'hpf'), sep = '-')-> M
+
+ord <- prcomp(M[, 3:5], scale. = T)
+
+p <- ggord(ord,M$hpf, ellipse = FALSE, hull = TRUE, facet = F)
+p
+
+library(factoextra)

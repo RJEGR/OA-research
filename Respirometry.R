@@ -15,16 +15,16 @@ ggsavepath <- paste0(getwd(), '/Figures')
 
 # RColorBrewer::display.brewer.all() # Revisamos todas las paletas de colores que tenemos
 
-getPalette <- RColorBrewer::brewer.pal(3, 'Set1')
+# getPalette <- RColorBrewer::brewer.pal(3, 'Set1')
 
 # Cvalues <- structure(getPalette, names = colNames)
 
-namesL <- c('8.0', '8.0', '7.6', '7.8')
+# namesL <- c('8.0', '8.0', '7.6', '7.8')
 
 
-getPalette <- RColorBrewer::brewer.pal(4, 'Paired')
+# getPalette <- RColorBrewer::brewer.pal(4, 'Paired')
 
-getPalette <- structure(getPalette, names = namesL) 
+# getPalette <- structure(getPalette, names = namesL) 
 
 
 #
