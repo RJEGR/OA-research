@@ -12,11 +12,13 @@
 
 # pix <- 0.0037823997617386 # depend on the screen space (NxN)
 
+# add 48 hrs!!! ----
+
 rm(list = ls());
 
 if(!is.null(dev.list())) dev.off()
 
-options(stringsAsFactors = FALSE)
+options(readr.show_col_types = FALSE, stringsAsFactors = FALSE)
 
 library(tidyverse)
 library(ggplot2)
@@ -40,10 +42,10 @@ df <- read_csv(file, show_col_types = FALSE) %>%
 
 df %>% distinct(pH) %>% pull() -> pHLevel
 
-# df %>% distinct(hpf) %>% arrange(hpf) %>% pull() -> hpfL
+hpfL <- c(48, 60, 108)
 
-df %>% mutate(pH = factor(pH, levels = pHLevel)) -> df
-  # mutate(hpf = factor(hpf, levels = hpfL))  -> df
+df %>% mutate(pH = factor(pH, levels = pHLevel)) %>%
+  mutate(hpf = factor(hpf, levels = hpfL))  -> df
 
 
 pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
@@ -54,7 +56,7 @@ df %>% group_by(hpf, pH) %>% select(Area, Frac, Mean, RawIntDen) %>%
   mutate(Area = sqrt(Area)) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
   ggplot(aes(x = pH, y = `50%`, color = pH, group = pH)) +
-  facet_wrap(hpf ~ variable,nrow = 1, scales = 'free_y') +
+  facet_wrap(hpf ~ variable, scales = 'free_y') +
   geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
   theme_bw(base_family = "GillSans", base_size = 12) +
   geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
@@ -72,7 +74,8 @@ df %>%
   group_by(hpf, pH) %>%
   mutate(outlier = is_outlier(Area)) %>%
   filter(!outlier %in% TRUE) %>%
-  select(-outlier) -> df_filtered
+  select(-outlier) %>%
+  mutate(Area = sqrt(Area))-> df_filtered
 
 
 # 1) test if gaussianity (FALSE) ----
@@ -122,17 +125,30 @@ subtitle <- get_description(prior.stats)
 
 caption <- paste0(subtitle,"; ", title)
 
+df_filtered %>%  tally() %>% mutate(label = paste0(pH))
+
 df_filtered %>%
   # mutate(vars = factor(vars, levels = varsf)) %>%
   ggplot(aes(y = Area, x = pH,  group = pH, color = pH)) +
   facet_wrap(~ hpf, nrow = 1) +
   theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_jitter(width=0.1,alpha=0.2, height = 0.1, size = 0.7, shape = 1) +
   stat_boxplot(geom ='errorbar', width = 0.3) +
-  geom_boxplot(width = 0.3, outlier.alpha = 0) +
+  geom_boxplot(aes(fill = pH), width = 0.3, outlier.alpha = 0) +
   # stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue') +
   scale_y_continuous(n.breaks = 5) +
-  labs(y = expression("Birefringence (Pixels"^2*")")) +
-  scale_color_manual("", values = pHpalette) -> psave
+  labs(y = expression("Birefringence (Pixels)")) + # if not sqrt(Area) use "Birefringence (Pixels"^2*")"
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) -> psave
+
+
+# How to add n of values
+# psave +  geom_text(stat = 'summary', vjust = -1,
+#   color = 'black', family = "GillSans", size = 2.7,
+#   fun.data = function(d) c(
+#   y = quantile(d, 0.75, names = F) + 1.5 * IQR(d),
+#   label = length(d)))
+# 
 
 # 
 # df_filtered %>%
@@ -156,18 +172,32 @@ psave +
 psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
   panel.border = element_blank(), legend.position = 'top') -> psave
 
-psave + scale_y_continuous(labels = function(x) format(x, scientific = TRUE)) -> psave
+# psave + scale_y_continuous(labels = function(x) format(x, scientific = TRUE)) -> psave
+
 
 ggsave(psave, filename = 'birrefrigency.png', path = ggsavepath, 
-  width = 3.5, height = 4.5)
+  width = 5.7, height = 3.5)
 
-#
+
+# TEsts
+
+df_filtered %>%
+  mutate(x = Area/Mean, y = sqrt(Area)) %>%
+  ggplot(aes(Area, y)) +
+  geom_jitter()
+ #
 
 df_filtered %>%
   ggplot(aes(Frac, fill = pH)) +
   geom_histogram(bins = 100) +
   scale_fill_manual("", values = pHpalette) +
   facet_grid(~ pH)
+
+df_filtered %>%
+  ggplot(aes(RawIntDen, color = pH)) +
+  geom_density() +
+  scale_color_manual("", values = pHpalette) 
+  # facet_grid(~ pH)
 
 # Solo a las 60 horas se ve un decremento, pero a 108 resulta que los pixeles fueron mas completos en las meuestras de pH hacido, . Esto porque el n es muy pequeno, 
 df_filtered %>%
