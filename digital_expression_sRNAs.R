@@ -367,10 +367,13 @@ library(flashClust)
 
 # 
 count <- x %>% select_at(samNames)
+
 rownames(count) <- annotdf$ID
 
 # count <- count[-1,] # Considera meter EL1a como control negativo, ya que no interactua con alguna proteina de la biogenesis, sin embargo debido a que representa un outlier dentro de los datos, puede generar zesgos, asi que lo sacamos
 datExpr <- log2(count[-1,]+1)
+
+dim(datExpr <- datExpr[1:nrow(datExpr),1:4])
 
 datExpr <- t(datExpr) # log2(count+1) # 
 
@@ -551,19 +554,30 @@ nGenes = ncol(datExpr)
 nSamples = nrow(datExpr)
 
 sam <- rownames(datExpr)
+
 x <- sapply(strsplit(sam, "_"), `[`, 1)
 
 g <- unique(x)
 
-binSamples <- data.frame(G = as.numeric(g[1] == x),
-                         DG =  as.numeric(g[2] == x),
-                         HAE =  as.numeric(g[3] == x),
-                         MUS =  as.numeric(g[4] == x),
-                         MAN =  as.numeric(g[5] == x),
-                         GON =  as.numeric(g[6] == x),
-                         DEV =  as.numeric(g[7] == x))
+# binSamples <- data.frame(G = as.numeric(g[1] == x),
+#                          DG =  as.numeric(g[2] == x),
+#                          HAE =  as.numeric(g[3] == x),
+#                          MUS =  as.numeric(g[4] == x),
+#                          MAN =  as.numeric(g[5] == x),
+#                          GON =  as.numeric(g[6] == x),
+#                          DEV =  as.numeric(g[7] == x))
+# 
 
-datTraits <- data.frame(row.names = sam,  binSamples)
+binSamples <- diag(nrow = 4,ncol = 4)
+colnames(binSamples) <- sam
+rownames(binSamples) <- sam
+# 
+# prevelancedf = apply(X = t(datExpr),
+#   MARGIN = 1,
+#   FUN = function(x){sum(x > 0)})
+
+
+# datTraits <- data.frame(row.names = sam,  binSamples)
 
 # Recalculate MEs with color labels
 
@@ -626,10 +640,12 @@ allData_df <- gMM_df %>%
 allData_df %>% group_by(moduleColor) %>% count() -> dat_text
 
 # considere Development results (GS.DEV)
+allData_df %>% mutate(moduleMemberCorr = abs(moduleMemberCorr), GS = abs(GS.G_334215),
+  p.GS = p.GS.G_334215) -> allData_df
 
 allData_df %>%
-  mutate(moduleMemberCorr = abs(moduleMemberCorr), GS = abs(GS.DEV)) %>%
-  ggplot(aes(moduleMemberCorr, GS, color = p.GS.DEV)) +
+  # mutate(moduleMemberCorr = abs(moduleMemberCorr), GS = abs(GS.DEV)) %>%
+  ggplot(aes(moduleMemberCorr, GS, color = GS)) +
   geom_point(size = 0.7, alpha = 0.7) +
   scale_color_viridis_c(name = "Significance",
                         breaks = c(0, 0.25 ,0.5, 0.75, 1), 
@@ -645,8 +661,8 @@ allData_df %>%
 ##
 
 ggplot() + geom_point(data = allData_df,
-                      aes(moduleMemberCorr, abs(GS.DEV), alpha = p.GS.DEV, 
-                          color = p.GS.DEV), size = 0.7) + 
+                      aes(moduleMemberCorr, abs(GS), alpha = p.GS, 
+                          color = p.GS), size = 0.7) + 
   facet_wrap(~ moduleColor) + theme_classic(base_size = 16, base_family = "GillSans") +
   labs(x = 'Module membership', y = 'Gene Significance') 
 

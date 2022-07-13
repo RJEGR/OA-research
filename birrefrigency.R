@@ -52,6 +52,8 @@ pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 # EDA ----
 
+df %>% group_by(hpf, pH) %>% tally()
+
 df %>% group_by(hpf, pH) %>% select(Area, Frac, Mean, RawIntDen) %>% 
   mutate(Area = sqrt(Area)) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
