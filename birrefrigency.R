@@ -12,7 +12,7 @@
 
 # pix <- 0.0037823997617386 # depend on the screen space (NxN)
 
-# add 48 hrs!!! ----
+# Clean canvas and memory ----
 
 rm(list = ls());
 
@@ -58,17 +58,30 @@ df %>% group_by(hpf, pH) %>% select(Area, Frac, Mean, RawIntDen) %>%
   mutate(Area = sqrt(Area)) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
   ggplot(aes(x = pH, y = `50%`, color = pH, group = pH)) +
-  facet_wrap(hpf ~ variable, scales = 'free_y') +
+  facet_wrap(hpf ~ variable, scales = 'free') +
   geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
   theme_bw(base_family = "GillSans", base_size = 12) +
   geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
     width = 0.2, position = position_dodge(width = 0.3)) +
   scale_color_manual("", values = pHpalette)
 
+# RawIntDen, Area and y (sqrt(A)) are positive correlated
+
+df %>% group_by(hpf, pH) %>% select(Area, Frac, Mean, RawIntDen) %>% 
+  mutate(y = sqrt(Area)) %>%
+  ungroup() %>%
+  rstatix::cor_mat(vars = c('y','Area', 'Frac', 'Mean', 'RawIntDen'), method = 'spearman') %>%
+  cor_reorder() %>%
+  pull_lower_triangle() %>%
+  cor_plot(label = TRUE)
+  
+
 # 0) Remove (index) outliers ----- 
 nrow(df)
 
 df %>% group_by(hpf, pH) %>% identify_outliers(Area) %>% group_by(hpf, pH) %>% tally(is.outlier)
+
+  
 
 # df_filtered <- df
 
@@ -150,9 +163,15 @@ df_filtered %>%
 #   fun.data = function(d) c(
 #   y = quantile(d, 0.75, names = F) + 1.5 * IQR(d),
 #   label = length(d)))
-# 
 
-# 
+# # 
+
+psave +  geom_text(stat = 'summary', vjust = -1,
+  color = 'black', family = "GillSans", size = 2.7,
+  fun.data = function(d) c(
+  y = 1, label = length(d)))
+
+# # 
 # df_filtered %>%
 #   select(Area) %>%
 #   rstatix::get_summary_stats(type = "quantile") %>%
@@ -186,7 +205,7 @@ ggsave(psave, filename = 'birrefrigency.png', path = ggsavepath,
 df_filtered %>%
   mutate(x = Area/Mean, y = sqrt(Area)) %>%
   ggplot(aes(Area, y)) +
-  geom_jitter()
+  geom_jitter() 
  #
 
 df_filtered %>%
@@ -201,7 +220,8 @@ df_filtered %>%
   scale_color_manual("", values = pHpalette) 
   # facet_grid(~ pH)
 
-# Solo a las 60 horas se ve un decremento, pero a 108 resulta que los pixeles fueron mas completos en las meuestras de pH hacido, . Esto porque el n es muy pequeno, 
+# Solo a las 108 horas se ve un decremento, pero a 60 resulta que los pixeles fueron mas completos en las meuestras de pH hacido, . Esto porque el n es muy pequeno,
+
 df_filtered %>%
   mutate(mineralized = 'Less') %>%
   mutate(mineralized = ifelse(between(Frac, 90, 100), 'Fully', mineralized)) %>%
