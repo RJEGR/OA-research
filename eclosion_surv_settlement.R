@@ -22,12 +22,25 @@ library(tidyverse)
 
 library(rstatix)
 
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
 
 ggsavepath <- paste0(getwd(), '/Figures')
 
 source(paste0(getwd(), "/stats.R"))
 
 competency <- read_rds(paste0(getwd(), 'competency.rds'))
+
+competency %>% distinct(pH) %>% pull(pH) %>% levels() -> pHLevel
+
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
+
+#
+
+namespH <- c("7.6","7.8","8")
+
+recodeL <- c('Experimental-I', 'Experimental-II', 'Control')
+
+level_key <- structure(namespH, names = recodeL)
 
 # mini test ----
 competency %>% 
@@ -56,11 +69,6 @@ ggsave(ps, filename = 'test.png', path = ggsavepath,
 
 # ECLOSION ---------
 
-pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
-
-pHLevel <- levels(unique(competency$pH))
-
-pHpalette <- pHpalette[match( pHLevel, names(pHpalette))]
 
 # df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) %>% as_tibble() -> df
 
@@ -621,6 +629,11 @@ bind_data <- rbind(competency, surv_df_pct, sett_df) %>%
 write_rds(bind_data,file = paste0(getwd(), '/bind_data_competencies.rds'))
 
 #
+
+bind_data <- read_rds(paste0(getwd(), '/bind_data_competencies.rds'))
+bind_data %>% mutate(pH = recode_factor(pH, !!!level_key)) %>% 
+  mutate(pH = factor(pH, levels = pHLevel)) -> bind_data
+  
 bind_data %>% 
   group_by(pH, hpf, Design) %>%
   rstatix::get_summary_stats(pct) %>% 
@@ -634,7 +647,7 @@ df_longer_stats %>%
   geom_path(position = position_dodge(width = 0.2), size = 1) +
   facet_grid(~ Design, scales = 'free_x', space = 'free_x') +
   scale_y_continuous(labels = scales::percent) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
+  scale_color_manual("", values = pHpalette) +
   theme_classic(base_family = "GillSans", base_size = 14) +
   theme(strip.background = element_blank(),
     panel.border = element_blank(),
@@ -718,7 +731,8 @@ bind_data %>%
 
 stat_test
 
-stat_test %>% filter(!p.adj.signif %in% 'ns') %>% select(Design, time, group1, group2, p.adj, p.adj.signif)
+stat_test %>% filter(!p.adj.signif %in% 'ns')#%>% 
+  # select(term, time, group1, group2, p.adj, p.adj.signif)
 
 stat_test %>% add_xy_position(x = 'pH',dodge = 1) -> stats
 

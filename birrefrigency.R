@@ -54,6 +54,7 @@ pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 df %>% group_by(hpf, pH) %>% tally()
 
+
 df %>% group_by(hpf, pH) %>% select(Area, Frac, Mean, RawIntDen) %>% 
   mutate(Area = sqrt(Area)) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
@@ -93,10 +94,11 @@ df %>%
   mutate(Area = sqrt(Area))-> df_filtered
 
 
-# 1) test if gaussianity (FALSE) ----
+# 1) test if gaussianity (PARTIAL FALSE) ----
 
 df_filtered %>% 
   group_by(hpf, pH) %>% 
+  # ungroup() # caldo de datos es falso
   rstatix::shapiro_test(Area) %>%
   mutate(gauss = ifelse(p > 0.05, TRUE, FALSE)) 
 
@@ -236,3 +238,17 @@ df_filtered %>%
   labs(y = '%', x = 'Mineralized') +
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(panel.border = element_blank(), legend.position = 'top') 
+
+# 
+
+vars <- ToothGrowth %>% get_summary_stats() %>% names()
+vars <- vars[-c(1,2)]
+
+df_filtered %>% group_by(hpf, pH) %>% 
+  select(Area) %>% 
+  # rstatix::get_summary_stats(type = "quantile") %>% view()
+  rstatix::get_summary_stats(type = "full") %>% view()
+rstatix::cor_mat(vars = vars, method = 'spearman') %>%
+  cor_reorder() %>%
+  pull_lower_triangle() %>%
+  cor_plot(label = TRUE)

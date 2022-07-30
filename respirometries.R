@@ -163,7 +163,7 @@ dfviz %>%
   geom_boxplot(width = 0.3, outlier.alpha = 1, outlier.color = 'red',
     outlier.shape = 1,outlier.size = 0.5) +
   # geom_point(position = position_dodge(width = 0.3)) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
+  scale_color_manual('', values = pHpalette) +
   labs(x = 'hpf', y = ylab, caption = 'Blank Spots') -> p0
 
 p0
@@ -306,7 +306,7 @@ dfviz %>%
     color = as.factor(pH), group = Spot)) + 
   geom_path() + 
   theme_bw(base_family = "GillSans", base_size = 12) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
+  scale_color_manual('', values = pHpalette) +
   facet_grid(as.factor(hpf) ~ Design, scales = 'free') -> p1
 
 ggsave(p1, 
@@ -324,7 +324,7 @@ dfviz %>%
   geom_smooth(se = F, method = lm) +
   theme_bw(base_family = "GillSans", base_size = 12) +
   facet_grid(hpf ~ Design, scales = 'free_x') +
-  scale_color_viridis_d('', option = "plasma", end = .7) -> p2
+  scale_color_manual('', values = pHpalette) -> p2
 
 ggsave(p2, 
   filename = 'oxygen_rate_lm.png', path = ggsavepath, 
@@ -440,7 +440,7 @@ df_stats %>%
   stat_boxplot(geom ='errorbar', width = 0.07) +
   # geom_point(alpha = 0.5) +
   geom_boxplot(width = 0.3, outlier.alpha = 0, outlier.color = 'red') +
-  stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5, color = 'grey') +
+  # stat_summary(fun = median, geom ="line", aes(group = 2), size= 0.5, color = 'grey') +
   scale_color_manual("", values = pHpalette) +
   scale_fill_manual("", values = pHpalette) +
   theme_classic(base_family = "GillSans", base_size = 12) +
@@ -453,7 +453,7 @@ psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 
 ggsave(psave,
   filename = 'oxygen_rate_facet.png', path = ggsavepath,
-  width = 4.5, height = 5)
+  width = 4.5, height = 3.5)
 
 
 # 0) Remove outliers ----- 
@@ -535,10 +535,15 @@ df_stats %>%
   ggplot(aes(x = pH, y = r_ind_adj, group = pH)) +
   facet_grid(~ hpf) +
   theme_bw(base_family = "GillSans", base_size = 14) +
-  # scale_color_viridis_d('', option = "plasma", end = .7) +
-  geom_boxplot(aes(color = pH, fill = pH), width = 0.3) +
+  # geom_boxplot(aes(color = pH, fill = pH), width = 0.3) +
+  # geom_jitter(aes(color = pH),
+  #   width=0.1,alpha=0.2, height = 0.1, size = 1.2, shape = 1) +
+  stat_boxplot(aes(color = pH),
+    geom ='errorbar', width = 0.3) +
+  geom_boxplot(aes(color = pH, fill = pH), 
+    width = 0.3, outlier.alpha = 0) +
   # stat_boxplot(geom ='errorbar', width = 0.3,)
-  stat_summary(fun = median, geom ="line", aes(group = 2),size= 0.5, color = 'gray') +
+  # stat_summary(fun = median, geom ="line", aes(group = 2),size= 0.5, color = 'gray') +
   labs(y = ylabs) +
   scale_color_manual("", values = pHpalette) +
   scale_fill_manual("", values = pHpalette) -> psave
@@ -553,6 +558,8 @@ psave +
     remove.bracket = F, tip.length = 0.01,  hide.ns = T) +
   labs(caption = title) -> psave
 
+psave
+
 ggsave(psave,
   filename = 'oxygen_rate.png', path = ggsavepath,
   width = 5.5, height = 3.5)
@@ -566,22 +573,28 @@ ggsave(psave,
 #     ymin = a-sd, ymax = a+sd, n = n()) %>%
 
 df_stats %>%
+  select(r_ind_adj) %>%
   rstatix::get_summary_stats(type = 'quantile') %>%
   filter(!variable %in% 'N') %>%
   filter(grepl("_adj", variable)) %>%
   ggplot(aes(x = hpf, y = `50%`, color = pH, group = pH)) +
-  facet_grid(variable ~., scales = "free_y") +
+  # facet_grid(variable ~., scales = "free_y") +
   geom_point(position = position_dodge(width = 0), size = 3, alpha = 0.5) +
   geom_errorbar(aes(ymin = `25%`, ymax = `75%`), 
     width = 0.1, position = position_dodge(width = 0)) +
   geom_path(position = position_dodge(width = 0), size = 1) +
   # theme_bw(base_family = "GillSans", base_size = 14) +
   scale_color_manual("", values = pHpalette) +
-  labs(y = 'Quantiles (25,50,75)') -> ps
+  labs(y = ylabs) -> ps
+
+ps + theme_bw(base_family = "GillSans", base_size = 12) + 
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(),
+    legend.position = "top") -> ps
 
 ggsave(ps,
   filename = 'oxygen_rate_facet_by_hpf.png', path = ggsavepath,
-  width = 3, height = 5.0)
+  width = 3, height = 2.5)
 
 # data input for model ------
 

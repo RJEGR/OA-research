@@ -234,6 +234,187 @@ ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 ggsave(ps, filename = 'Body_index_facet.png', path = ggsavepath, 
   width = 5.5, height = 3)
 
+# 5) geometric morphometric shape analyses: ----
+vars <- c('Length', 'Width', 'Index','Area')
+
+df_filtered %>% 
+  mutate(Area = pi*(Length * Width)) %>%
+  # group_by(pH) %>%
+  # rstatix::cor_test(vars = 'Area', method = 'spearman')
+  ungroup() %>%
+  rstatix::cor_mat(vars = vars, method = 'spearman')
+
+
+df_filtered %>% 
+  mutate(Area = sqrt(pi*(Length * Width))) %>%
+  # group_by(pH) %>%
+  select(Area) %>%
+  rstatix::get_summary_stats(type = 'mean_sd')
+
+# Area de un figura forma de huevo =
+# D = r1 x r2 (ie. largo x ancho o radio mayor x radio menor)
+# area = D*pi
+
+vars <- c('Length', 'Width', 'Index','Area','h','b')
+
+# a 24 hpf, tanto lado 1 y lado 2 son de una estructura de apariencia distinta al resto (ie. veligery trocofora)
+
+df_filtered %>% 
+  mutate(
+    # P = pi * ((Length/2) + (Width/2)),
+    Area = pi * ((Length/2) * (Width/2)),
+    b = Length-Width, # base del triangulo equilatero
+    a = Width/2, # altura del mismo
+    h = sqrt((a)^2 + b^2), # pendiente (hipotenusa) del t. eq.
+    y = a + b) %>%
+  # ungroup() %>% rstatix::cor_mat(vars = vars, method = 'spearman')
+  select(h) %>%
+  rstatix::get_summary_stats(type = 'mean_sd') %>%
+  ggplot(aes(y = mean, x = pH)) +
+  geom_col() +
+  facet_grid(~ hpf)
+
+# the good one
+
+df_filtered %>% 
+  mutate(
+    b = Length-Width, # base del triangulo equilatero
+    a = Width/2, # altura del mismo
+    h = sqrt((a)^2 + b^2)) %>%
+  filter(!hpf %in% '24') -> tbl
+
+
+tbl %>% group_by(hpf, pH) %>% 
+  identify_outliers(Index) %>% 
+  group_by(hpf, pH) %>% tally(is.outlier)
+
+tbl %>%
+  group_by(hpf, pH) %>%
+  mutate(is.outlier = is_outlier(h)) %>%
+  filter(!is.outlier %in% TRUE) %>%
+  select(-is.outlier) -> tbl
+
+# 5.1) GAuss (T) ----
+
+tbl %>% 
+  group_by(hpf, pH) %>% 
+  rstatix::shapiro_test(h) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE)) 
+
+# so
+tbl %>%
+  select(h) %>%
+  rstatix::get_summary_stats(type = 'mean_sd') %>%
+  ggplot(aes(y = mean, x = pH)) +
+  geom_col() +
+  facet_grid(~ hpf)
+
+# 5.2) Homocelasticidad (PARTIAL T) ----
+
+tbl %>%
+  group_by(pH) %>%
+  levene_test(h ~ as.factor(hpf)) %>%
+  mutate(hom_var = ifelse(p > 0.05, TRUE, FALSE))
+
+# 5.3) Statistical priori test----
+
+# Kruskal-Wallis test by rank is a non-parametric alternative to one-way ANOVA test, which extends the two-samples Wilcoxon test in the situation where there are more than two groups. It’s recommended when the assumptions of one-way ANOVA test are not met. 
+
+tbl %>% 
+  group_by(hpf) %>%
+  rstatix::kruskal_test(h ~ pH) %>%
+  adjust_pvalue(method = "none") %>%
+  add_significance("p") -> prior.stats
+
+#
+# we found difference between treatment in all/any of the development times
+
+# 5.4) Statistical posteriori test ----
+
+# En vista de que encontramos outliers y normalidad, pero no homocelasticidad, evaluamos a traves de un test de wilcoxon
+
+tbl %>%
+  group_by(hpf) %>%
+  # pairwise_wilcox_test(h ~ pH,  conf.level = 0.95) %>%
+  pairwise_t_test(h ~ pH) %>%
+  adjust_pvalue(method = "fdr") %>%
+  add_significance() -> post.test
+
+post.test %>% add_xy_position(x = "pH") -> stats
+
+title <- get_pwc_label(stats, "text")
+
+# subtitle <- get_test_label(prior.stats, detailed = F)
+
+subtitle <- get_description(prior.stats)
+
+caption <- paste0(subtitle,"; ", title)
+
+tbl %>% 
+  ggplot(aes(x = pH, y = h, fill = pH, color = pH)) +
+  facet_wrap(~ hpf,nrow = 1) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_jitter(width=0.1,alpha=0.2, height = 0.1, size = 0.7, shape = 1) +
+  stat_boxplot(geom ='errorbar', width = 0.2) +
+  geom_boxplot(aes(fill = pH), width = 0.3, outlier.alpha = 0, coef = 0) +
+  labs(y = 'Shell Growth') +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) -> psave
+
+psave + 
+  ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
+    remove.bracket = F, tip.length = 0.01,  hide.ns = T, size = 2.5) +
+  labs(caption = caption) -> psave
+
+
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank(), legend.position = 'top') -> psave
+
+ggsave(psave, filename = 'transition_shell_growth.png', path = ggsavepath, 
+  width = 5, height = 3.5)
+
+# 6) TCD ----
+# TCD (μm/día) = (LCi - LCf )/t; donde: LCf y LCi corresponden a la longitud final e inicial de las conchas de las larvas, y t es el tiempo entre las mediciones 
+
+tbl %>% 
+  mutate(P = pi * ((Length/2) + (Width/2))) %>%
+  group_by(hpf, pH) %>% 
+  rstatix::shapiro_test(P) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE)) 
+
+show <- '50%'
+
+df_filtered %>%
+  mutate(P = pi * ((Length/2) + (Width/2))) %>%
+  select(Index) %>%
+  rstatix::get_summary_stats(type = 'quantile', show = show) %>%
+  # rstatix::get_summary_stats(type = 'mean_sd', show = 'mean') %>%
+  select(-n, -variable) %>%
+  pivot_wider(names_from = hpf, values_from = show) %>%
+  mutate(TDC = abs(`24` - `108`) / (108-24) ) %>% view()
+  
+
+library(tidymodels)
+
+lm_mod <- linear_reg() %>%
+  set_engine("lm")
+
+formula <- formula( 'Area ~ pH:hpf')
+
+lm_fit <- linear_reg() %>%
+  set_engine("lm") %>%
+  fit(formula, data = df_filtered)
+
+library(dotwhisker)
+
+lm_fit %>% tidy() %>%
+    dwplot(dot_args = list(size = 2, color = "black"),
+      whisker_args = list(color = "black"),
+      vline = geom_vline(xintercept = 0, colour = "grey50", linetype = 2)) + 
+  xlab("b Coefficient")
+
+# The beta estimate (or beta coeff) determines the direction and strength of the relationship between the two variables.
+# A beta of zero suggests there is no association between the two variables. However, if the beta value is positive, the relationship is positive. If the value is negative, the relationship is negative. Further, the larger the number, the bigger the effect is.
 
 # df_filtered %>%
 #   group_by(hpf, pH) %>%
