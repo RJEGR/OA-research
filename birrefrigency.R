@@ -201,6 +201,7 @@ psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 ggsave(psave, filename = 'birrefrigency.png', path = ggsavepath, 
   width = 5.7, height = 3.5)
 
+write_rds(df_filtered %>%, )
 
 # TEsts
 

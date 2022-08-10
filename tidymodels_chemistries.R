@@ -37,6 +37,15 @@ ggsavepath <- paste0(getwd(), '/Figures')
 
 nameLevs <- c('Experimental-I', 'Experimental-II', 'Control')
 
+level_key <- c("Experimental-I"="7.6","Experimental-II"="7.8","Control"="8")
+
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4", `8`= "#4575b4")
+
+pHLevel <- c("8", "7.8", "7.6")
+
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
+
+
 varsf <- c('DIC', 'TA', 'HCO3', 'CO3', 'Aragonite', 'Calcite')
 
 
@@ -238,6 +247,10 @@ df_longer %>% ungroup() %>% filter(vars %in% varsf) %>% filter(is.outlier == FAL
   mutate(vars = factor(vars, levels = varsf))-> df_longer_stast
 
 df_longer_stast %>% 
+  mutate(name = recode_factor(name, !!!level_key)) %>%
+  mutate(name = factor(name, levels = pHLevel)) -> df_longer_stast
+
+df_longer_stast %>% 
   group_by(vars)%>%
   rstatix::kruskal_test(value ~ name) %>%
   adjust_pvalue(method = "none") %>%
@@ -272,22 +285,25 @@ subtitle <- get_description(kruskal.stats)
 
 df_longer_stast %>%
   mutate(vars = factor(vars, levels = varsf)) %>%
-  ggplot(aes(y = value, x = as.factor(name))) +
+  ggplot(aes(y = value, x = name)) +
   facet_wrap(~ vars, scales = 'free_y', nrow = 1) +
   theme_bw(base_family = "GillSans", base_size = 14) +
-  stat_boxplot(geom ='errorbar', width = 0.07) +
-  geom_boxplot(width = 0.3, outlier.alpha = 0) +
-  geom_point(alpha = 0.5) +
-  stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue') +
+  stat_boxplot(aes(color = name),geom ='errorbar', width = 0.07) +
+  geom_boxplot(aes(fill = name, color = name), width = 0.3, outlier.alpha = 0) +
+  geom_jitter(aes(color = name), width=0.1,alpha=0.2, 
+    height = 0.1, size = 2, shape = 1) +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) +
+  # stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue') +
   # stat_summary(fun=mean, geom ="point", aes(group = 2), size= 0.5, color = 'black') 
   theme_bw(base_family = "GillSans", base_size = 10) +
   scale_y_continuous(n.breaks = 10) +
   labs(y = '', x = '') -> psave
 
-
-psave + theme(strip.background = element_rect(fill = 'white'),
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
   panel.border = element_blank(),
-  axis.text.x = element_text(angle = 45, 
+  axis.text.x = element_text(
+    # angle = 45, 
   hjust = 1, vjust = 1, size = 10)) -> psave
 
 psave + 
@@ -297,7 +313,8 @@ psave +
 
 
 ggsave(psave, filename = 'stasts_vars.png', path = ggsavepath, 
-  width = 10, height = 4)
+  width = 10, height = 3.5)
+
 
 # 5) Veredicto -----
 
@@ -316,11 +333,14 @@ df_longer_stast %>%
   ggpubr::stat_cor(method = "pearson", 
     cor.coef.name = "R", 
     p.accuracy = 0.001) +
-  scale_color_viridis_d('', option = "plasma", end = .7) +
+  labs(x = '') +
+  scale_color_manual(values = pHpalette) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(legend.position = 'top') -> psave
 
-# psave + facet_grid(~ is.outlier)
+
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank()) -> psave
 
 ggsave(psave, filename = 'ph_vs_vars_cor.png', path = ggsavepath, width = 17, height = 5)
 
@@ -359,11 +379,14 @@ cor_df %>%
   ggh4x::scale_y_dendrogram(hclust = hc) +
   theme(axis.ticks.length = unit(3, "pt")) -> corheatplot
 
-
-ggsave(corheatplot, filename = 'ph_vs_vars_cor_heatmap.png', path = ggsavepath, width =5, height = 2.5)
+# 
+# ggsave(corheatplot, filename = 'ph_vs_vars_cor_heatmap.png', path = ggsavepath, width =5, height = 2.5)
 
 
 # Clustering ----
+df %>% 
+  mutate(name = recode_factor(name, !!!level_key)) %>%
+  mutate(name = factor(name, levels = pHLevel)) -> df
 
 df %>%
   # filter(!grepl('2021', date)) %>%
@@ -371,7 +394,8 @@ df %>%
   facet_grid(~ name) +
   geom_smooth(se = F, method = lm, color = 'black', linetype = 'dashed') +
   # ggforce::geom_mark_hull(fill = 'grey', con.colour = 'grey') +
-  geom_point(size = 4, alpha = 0.7) +
+  # geom_point(size = 4, alpha = 0.7) +
+  geom_text(aes(label = round(pH, 3)))
   # scale_color_viridis_d(option = "plasma", end = .7) +
   theme(legend.position = 'top') +
   ggpubr::stat_cor(method = "pearson", 
@@ -390,14 +414,18 @@ ggsave(psave, filename = 'TA_DIC.png', path = ggsavepath, width = 6, height = 2.
 # 
 
 df %>%
-  ggplot(aes(pH, pHNBS_predicted, color = name)) +
+  ggplot(aes(pH, pHNBS_predicted)) +
   geom_smooth(se = F, method = lm) +
-  geom_point() +
+  geom_point(alpha = 1, shape = 1) + # , aes(color = name)
   ggpubr::stat_cor(method = "pearson",
     cor.coef.name = "R", alternative = 'greater',
-    p.accuracy = 0.001) +
-  scale_color_viridis_d(option = "plasma", end = .7)
+    p.accuracy = 0.001, size = 2.5, family = "GillSans") +
+  scale_color_manual("", values = pHpalette) +
+  theme_classic(base_family = "GillSans", base_size = 12) +
+  labs(y  = expression("pH"["NBS"]~"(CO"[2]*"Sys)"), x = expression("pH"["NBS"])) -> p
 
+ggsave(p, filename = 'predicted_measured_pH.png', 
+  path = ggsavepath, width = 2.5, height = 2.5)
 
 # test  
 # ggplot(df, aes(y = nDIC, x = pH, group = name, col = name)) + 
@@ -473,9 +501,11 @@ predict_vars <- function(form, data, new_data, lev = 0.95) {
 
 # predict_vars('DIC', df, new_points) 
 
-fit_data <- df %>% filter(name %in% 'Control')
+fit_data <- df %>% filter(name == 8)
 
-new_data <- new_points %>% filter(name %in% 'Control')
+new_points %>% mutate(name = recode_factor(name, !!!level_key)) -> new_points
+
+new_data <- new_points %>% filter(name == 8)
 
 form <- 'DIC ~ pH'
 
@@ -483,7 +513,7 @@ predict_vars(form, fit_data, new_data) -> plot_data
 
 plot_data$data %>%
   mutate(ymin = .pred_lower, ymax = .pred_upper) %>%
-  ggplot(aes(y = .pred, x = id, color = name)) + 
+  ggplot(aes(y = .pred, x = 1:nrow(.), color = name)) + 
   # facet_grid(vars ~ ., scales = 'free_y') +
   theme_bw(base_family = "GillSans", base_size = 14) +
   geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.1, alpha = 0.3) +
@@ -627,14 +657,14 @@ plot_data %>%
   # ylim(0,NA) +
   geom_hline(yintercept = 1, color = 'grey', linetype = 'dashed') +
   geom_path(aes(group = name), linejoin = "mitre", size =1) +
-  theme_classic(base_family = "GillSans", base_size = 14) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
   theme(legend.position = 'top', panel.border = element_blank(),
     # axis.ticks.x = element_blank(),
     axis.line.x = element_blank(),
     axis.text.x = element_text(angle = 45, 
       hjust = 1, vjust = 1, size = 10)) +
   labs(y = expression(Omega["ara"] ~ (Predicted))) +
-  scale_color_viridis_d('', option = "plasma", end = .7) -> psave
+  scale_color_manual("", values = pHpalette) -> psave
 
 ggsave(psave, filename = 'time_serie_vars.png', 
   path = ggsavepath, width = 10, height = 5)
@@ -742,12 +772,13 @@ plot_data %>%
 plot_data %>%
   filter(vars %in% varsf) %>%
   group_by(vars) %>%
-  pairwise_wilcox_test(.pred ~ name, ref.group = 'Control', conf.level = 0.95) %>%
+  pairwise_wilcox_test(.pred ~ name, ref.group = '8', conf.level = 0.95) %>%
   # tukey_hsd(.pred ~ name) %>% # If ANOVA used as priori
   adjust_pvalue() %>%
   add_significance() -> stats.test
 
-stats.test %>% add_xy_position(x = "name", scales = "free_y") -> stats
+stats.test %>% add_xy_position(x = "name", scales = "free_y") %>% 
+  mutate(vars = factor(vars, levels = varsf)) -> stats
 
 # stats$y.position <- max(out_stats$a)+out_stats$sd
 
@@ -760,25 +791,25 @@ subtitle <- get_test_label(prior.test, detailed = TRUE)
 # value ~ name
 
 plot_data %>%
+  mutate(name = factor(name, levels = pHLevel)) %>%
   filter(vars %in% varsf) %>%
   mutate(vars = factor(vars, levels = varsf)) %>%
-  ggplot(aes(y = .pred, x = as.factor(name))) +
+  ggplot(aes(y = .pred, x = name)) +
   facet_wrap(~ vars, scales = 'free_y', nrow = 1) +
   theme_bw(base_family = "GillSans", base_size = 14) +
-  stat_boxplot(geom ='errorbar', width = 0.07) +
-  geom_boxplot(width = 0.3, outlier.alpha = 0) +
+  stat_boxplot(aes(color = name), geom ='errorbar', width = 0.07) +
+  geom_boxplot(aes(color = name, fill = name), width = 0.3, outlier.alpha = 0) +
   # geom_point(alpha = 0.5) +
-  stat_summary(fun=mean, geom="point", shape=23, size=1, color = 'red') +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette) +
+  stat_summary(fun=median, geom="point", shape=23, size=1, color = 'red') +
   theme_bw(base_family = "GillSans", base_size = 10) +
   scale_y_continuous(n.breaks = 10) +
   labs(y = '', x = '') +
   stat_summary(fun=median, geom ="line", aes(group = 2), size= 0.5, color = 'blue')  -> psave
 
-
-psave + theme(strip.background = element_rect(fill = 'white'),
-  panel.border = element_blank(),
-  axis.text.x = element_text(angle = 45, 
-    hjust = 1, vjust = 1, size = 10)) -> psave
+psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  panel.border = element_blank()) -> psave
 
 psave + 
   ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 

@@ -50,18 +50,27 @@ df %>%
 # 0) Remove (index) outliers ----- 
 nrow(df)
 
-df %>% group_by(hpf, pH) %>% identify_outliers(Index) %>% group_by(hpf, pH) %>% tally(is.extreme)
+df %>% group_by(hpf, pH) %>% 
+  identify_outliers(Index) %>% 
+  group_by(hpf, pH) %>% tally(is.outlier)
 
 # df_filtered <- df
 
 df %>%
   group_by(hpf, pH) %>%
-  mutate(is.extreme = is_extreme(Index)) %>%
-  filter(!is.extreme %in% TRUE) %>%
-  select(-is.extreme) -> df_filtered
+  mutate(is.outlier = is_outlier(Index)) %>%
+  filter(!is.outlier %in% TRUE) %>%
+  select(-is.outlier) -> df_filtered
 
-#
+# 0.1) correlation ----
+# Test if gaussianity (FALSE)
 
+df_filtered %>% 
+  group_by(pH) %>% 
+  rstatix::shapiro_test(Index) %>%
+  mutate(gauss = ifelse(p > 0.05, TRUE, FALSE)) 
+
+# use spearman because the non normality
 
 df_filtered %>%
   ggplot(aes(Length, Width)) + # color = as.factor(pH),  group = pH
@@ -283,6 +292,12 @@ df_filtered %>%
     h = sqrt((a)^2 + b^2)) %>%
   filter(!hpf %in% '24') -> tbl
 
+vars <- c('Length', 'Width', 'Index','h')
+
+tbl %>% 
+  ungroup() %>%
+  rstatix::cor_mat(vars = vars, method = 'spearman')
+
 
 tbl %>% group_by(hpf, pH) %>% 
   identify_outliers(Index) %>% 
@@ -292,7 +307,10 @@ tbl %>%
   group_by(hpf, pH) %>%
   mutate(is.outlier = is_outlier(h)) %>%
   filter(!is.outlier %in% TRUE) %>%
-  select(-is.outlier) -> tbl
+  select(-is.outlier) %>%
+  select(-b, -a) -> tbl
+
+write_rds(tbl, paste0(getwd(), '/length_width_dataset.rds'))
 
 # 5.1) GAuss (T) ----
 
@@ -373,6 +391,17 @@ psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 ggsave(psave, filename = 'transition_shell_growth.png', path = ggsavepath, 
   width = 5, height = 3.5)
 
+show <- 'mean'
+
+tbl %>%
+  select(h) %>%
+  rstatix::get_summary_stats(type = 'mean_sd', 
+    show = show) %>%
+  select(hpf, pH, show) %>%
+  pivot_wider(values_from = show, names_from = pH) %>%
+  view()
+  
+  
 # 6) TCD ----
 # TCD (μm/día) = (LCi - LCf )/t; donde: LCf y LCi corresponden a la longitud final e inicial de las conchas de las larvas, y t es el tiempo entre las mediciones 
 
@@ -453,6 +482,24 @@ level_key <- c("nrs" = "Normal shelled", "ans" = "Abnormal shelled", "uns" = "Un
 caption <- "Trochophore larvae scored as one of possible morphological groups"
 
 
+# 
+# df %>%
+#   filter(hpf %in% '24') %>%
+#   count(Shell) %>%
+#   mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
+#   group_by(pH) %>%
+#   mutate(pct = n/sum(n)) %>%
+#   ggplot(aes(y = pct, x = Shell, fill = pH)) +
+#   geom_col(position = "dodge2") +
+#   scale_y_continuous(labels = scales::percent) +
+#   scale_fill_manual("", values = pHpalette) +
+#   labs(y = '%', x = '', caption = caption) +
+#   theme_bw(base_family = "GillSans", base_size = 14) +
+#   theme(panel.border = element_blank(), legend.position = 'top') -> ps
+# 
+
+# devtools::install_github("kevinsblake/NatParksPalettes")
+library(NatParksPalettes)
 
 df %>%
   filter(hpf %in% '24') %>%
@@ -460,17 +507,22 @@ df %>%
   mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
   group_by(pH) %>%
   mutate(pct = n/sum(n)) %>%
-  ggplot(aes(y = pct, x = Shell, fill = pH)) +
-  geom_col(position = "dodge2") +
-  scale_y_continuous(labels = scales::percent) +
-  scale_fill_manual("", values = pHpalette) +
-  labs(y = '%', x = '', caption = caption) +
+  mutate(pH = factor(pH, levels = rev(pHLevel))) %>%
+  ggplot(aes(x = pct, y = pH, fill = Shell)) +
+  geom_col(position = position_stack(reverse = TRUE)) +
+  scale_x_continuous(labels = scales::percent) +
+  labs(y = '', x = '', caption = caption) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(panel.border = element_blank(), legend.position = 'top') -> ps
 
+values <- natparks.pals("Yosemite", 3, direction = 1) # "Yellowstone"
+
+ps + scale_fill_manual("", values=values) -> ps
 
 ggsave(ps, filename = 'throchophore_score.png', path = ggsavepath, 
-  width = 4.5, height = 3)  
+  width = 4.6, height = 3)  
+
+# Hay diferencias entre la proporcion de trocoforas y veliger a 24 horas con respecto al tamano??
 
 df %>%
   filter(hpf %in% '24') %>%

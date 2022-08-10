@@ -1,3 +1,6 @@
+# TEST: The chi-square test of independence is used to analyze the frequency table (i.e. contengency table) formed by two categorical variables. The chi-square test evaluates whether there is a significant association between the categories of the two variables 
+# http://www.sthda.com/english/wiki/chi-square-test-of-independence-in-r
+
 rm(list = ls())
 
 if(!is.null(dev.list())) dev.off()
@@ -7,7 +10,6 @@ options(stringsAsFactors = FALSE)
 library(tidyverse)
 library(flextable)
 library(rstatix)
-
 
 ggsavepath <- paste0(getwd(), '/Figures')
 
@@ -114,3 +116,31 @@ df_filtered %>%
   filter(Stress %in% "Acute") %>%
   select(hpf, pH, mean) %>%
   pivot_wider(names_from = pH, values_from = mean)
+
+# visto en: https://doi.org/10.1093/icesjms/fsx017
+# To evaluate proportional ...  as a function of measured pH in combination with DO or calcification group, proportions data were logit transformed and evaluated for any significant response to pH and DO using Generalized Linear Models (GLMs) in R (Warton and Hui, 2011). In this paper, we demonstrated using theory, examples, and simulations that logistic regression and its random-effects counterpart have advantages over analysis of arcsine-transformed data in power and interpretability
+
+# Transform dataset ----
+
+# logit {car}
+# Computes the logit transformation logit = log[p/(1 - p)] for the proportion p.
+
+df_filtered %>% mutate(logit = car::logit(pct)) -> df_filtered
+
+# revisar metodo en; https://peerj.com/articles/4794/
+
+library(tidymodels)
+
+formula <- formula('logit ~ pH:hpf')
+
+log_fit <- glm(formula, data = df_filtered)
+
+tidy(log_fit)
+
+# model <- glm(formula, family = poisson, data = df)
+# model <- rstanarm::stan_glm(formula = formula, data = df)
+
+# check_model(model)
+# rstanarm::prior_summary(model)
+# check_zeroinflation(model)
+

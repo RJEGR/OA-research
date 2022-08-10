@@ -32,6 +32,21 @@ df_longer %>% distinct(date, name, dataset) -> mtd
 
 nameLevs <- c('Experimental-I', 'Experimental-II', 'Control')
 
+namespH <- c("7.6","7.8","8")
+
+level_key <- structure(namespH, names = nameLevs)
+
+
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4",`8.0`= "#4575b4", `8`= "#4575b4")
+
+pHLevel <- c(8, 7.8, 7.6)
+
+pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
+
+df_longer %>%
+  mutate(name = recode_factor(name, !!!level_key)) %>%
+  mutate(name = factor(name, levels = pHLevel)) -> df_longer
+
 # Evaluamos outliers (omit this version) ----
 
 df_longer %>%
@@ -301,7 +316,6 @@ out_stats %>%
   adjust_pvalue(method = "none") %>%
   add_significance("p") -> kruskal.stats
 
-
 # Statistical posteriori test----
 
 # En vista de que encontramos outliers y no normalidad, evaluamos a traves de un test de wilcoxon
@@ -325,44 +339,69 @@ subtitle <- get_test_label(kruskal.stats, detailed = TRUE)
 # and plot
 
 out_stats %>%
-  mutate(name = factor(name, levels = nameLevs )) %>%
   ungroup() %>%
   # mutate(name = factor(name, levels = c('Canal-3', 'Canal-4', 'Canal-2'))) %>%
   ggplot(aes(y = a, x = as.factor(name))) + 
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(axis.text.x = element_text(angle = 45, 
     hjust = 1, vjust = 1, size = 10)) +
-  stat_boxplot(geom ='errorbar', width = 0.07) +
-  geom_boxplot(width = 0.3, outlier.alpha = 0, size = 1) +
+  stat_boxplot(aes(color = name), geom ='errorbar', width = 0.07) +
+  geom_boxplot(aes(color = name, fill = name),
+    width = 0.3, outlier.alpha = 0, size = 1) +
   # geom_point(aes(size = n), alpha = 0.5) +
-  # stat_summary(fun=mean, geom="point", shape=23, size=1, color = 'red') +
-  stat_summary(fun=median, geom ="line", aes(group = 2), size= 1, color = 'blue') +
-  theme_classic(base_family = "GillSans", base_size = 14) +
+  stat_summary(fun=mean, geom="point", shape=23, size=1, color = 'black') +
+  # stat_summary(fun=median, geom ="line", aes(group = 2), size= 1, color = 'blue') +
+  theme_bw(base_family = "GillSans", base_size = 14) +
   theme(legend.position = 'bottom') + 
-  scale_y_continuous(n.breaks = 10) +
-  # scale_x_discrete(labels = c("Experimental I", "Experimental II", 'Control')) +
+  # scale_y_continuous(n.breaks = 10) +
+  scale_color_manual('', values = pHpalette) +
+  scale_fill_manual('', values = pHpalette) +
   scale_size('Set Size', range = c(0,5)) +
-  labs(y = 'Average pH', x = '') -> psave
+  labs(y = expression("pH"["NBS"]), x = 'Sistema') -> psave
 
 # psave + coord_flip()  -> psave
 
-psave + theme(panel.border = element_blank()) -> psave
+psave + theme(panel.border = element_blank(), 
+  legend.position = 'none') -> psave
+
+caption <- c(title, ",", subtitle)
 
 psave + 
   ggpubr::stat_pvalue_manual(stats, label = "p.adj.signif", 
-    remove.bracket = F, tip.length = 0.01, linetype = 'dashed') +
-  labs(subtitle = subtitle, title = title) -> psave
+    remove.bracket = F, tip.length = 0.01, linetype = 'dashed') -> psave
+  # labs(caption = caption) -> psave
 
-psave
+lab <- function(x) { paste0("(", x, ")")}
+
+# How to add n of values
+psave +  geom_text(stat = 'summary', vjust = -1,
+  color = 'black', family = "GillSans", size = 2.7,
+  fun.data = function(d) c(
+  y = 7.2,
+  label = length(d))) -> psave
+
+# psave
+
+# psave + 
+#   # scale_y_continuous(
+#   #   breaks = seq(7, 8.5, by = 0.01),
+#   #   limits = c(7,8.5),
+#   #   n.breaks = 5,
+#   #   labels= seq(7, 8.5, by = 0.01)) +
+#   annotation_logticks(side = 'l', 
+#     outside = TRUE)  +
+#   coord_cartesian(clip = "off")
 
 out_stats %>%
-  mutate(name = factor(name, levels = nameLevs)) %>%
   group_by(name) %>%
   rstatix::get_summary_stats(a) %>%
   select(name ,n, mean, median, sd)
 
+kruskal.stats
+stats.test %>% view()
 
-ggsave(psave, filename = 'average_pH_boxplot.png', path = ggsavepath, width = 5, height = 7)
+ggsave(psave, filename = 'average_pH_boxplot.png', 
+  path = ggsavepath, width = 3.5, height = 4.5)
 
 # PCA ----
 
