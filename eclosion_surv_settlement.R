@@ -78,6 +78,7 @@ head(ecl_df <- read.csv(files[1]) %>% as_tibble())
 
 ecl_df %>% mutate(pH = factor(as.character(pH), levels = pHLevel)) -> ecl_df
 
+ecl_df %>% view()
 # recode_pH <- c('Experimental-I', 'Experimental-II', 'Control')
 
 # level_key <- structure(recode_pH, names = unique(ecl_df$pH))

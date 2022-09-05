@@ -28,7 +28,6 @@ library(rstatix)
 source(paste0(getwd(), "/stats.R"))
 
 
-
 path <- '~/Documents/DOCTORADO/pH_measures/'
 
 # path <- "/Users/cigom/Documents/GitHub/OA-research/"
@@ -46,7 +45,7 @@ pHLevel <- c("8", "7.8", "7.6")
 pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 
-varsf <- c('DIC', 'TA', 'HCO3', 'CO3', 'Aragonite', 'Calcite')
+varsf <- c('DIC', 'TA', 'HCO3', 'CO3', 'Aragonite', 'Calcite', 'pCO2_matm')
 
 
 np_file <- '/pH_aLLdatasets_by_hour_stats.rds' # '/pH_aLLdatasets_stats.rds'
@@ -54,26 +53,79 @@ np_file <- '/pH_aLLdatasets_by_hour_stats.rds' # '/pH_aLLdatasets_stats.rds'
 new_points <- read_rds(paste0(getwd(), np_file)) %>% 
   ungroup() %>%
   rename('pH' = a) %>%
-  mutate(name = factor(name, levels = nameLevs)) %>%
-  select(date, hour, name, pH, sd)
+  # mutate(name = factor(name, levels = nameLevs)) %>%
+  select(date, hour, name, pH, sd, se)
 
+#
+# 669 datos para pH 7.6 y 7.8
+# Solo 308 (o 374) registros para pH 8
+
+
+new_points %>% ungroup() %>% 
+  filter(name %in% '8') %>%
+  distinct(date, hour) -> date_ph_8
+
+# needs  name     pH      sd    id columns
+# rnorm(1E5, mean = fill_ph$a, sd = fill_ph$sd)
+
+new_points %>% filter(name%in%  '8') %>% 
+  summarise(a = mean(pH), sd = sd(pH), 
+    se = sd/sqrt(n())) -> obs_dataset
+
+
+dat <- rnorm(1E5, mean = obs_dataset$a, sd = obs_dataset$sd)
+
+pool_ph <- function(x, n = 100) { 
+  
+  # x <- rnorm(n, mean = obs_dataset$a, sd = obs_dataset$sd)
+  x <- dat
+  
+  y <-  sample(x, n, replace = T)
+  
+  a <- mean(y)
+  
+  sd <- sd(y)
+  
+  se <- sd/sqrt(n)
+  
+  # z <-  (max(y) - mean(y)) / sd(y)
+  
+  df <- data.frame(a,sd, se)
+  
+  return(df)
+}
+
+# pool_ph(fill_ph)
+
+new_points %>% ungroup() %>% 
+  distinct(date, hour) %>% 
+  anti_join(date_ph_8) %>%
+  group_by(date, hour) %>%
+  doo(~ pool_ph(fill_ph)) %>%
+  # rename() %>%
+  mutate('pH' = a, name = '8') %>%
+  select(names(new_points)) %>%
+  rbind(new_points) %>% 
+  as_tibble() -> new_points
+#
 
 new_points %>% ungroup() %>% 
   mutate(hour = reorder(hour, date)) %>% 
   group_by(name) %>% mutate(id = 1:length(hour)) -> new_points
 
+new_points %>% count(name)
+
 
 new_points %>% filter(!name %in% 'Control') %>% 
   filter(grepl('2022-02-22', date)) %>% filter(id == 370) # hour 20 when data control start to record
 
-new_points %>% 
-  mutate(id = ifelse(name %in% 'Control', id+370, id)) -> new_points
+# new_points %>%  mutate(id = ifelse(name %in% 'Control', id+370, id)) -> new_points
 
 
 csv_file <- 'DIC_TA_Predicted_vars.csv' # replaced for 'quimicas.csv'
 
 measured_vars <- c('DIC','TA','pH_measured','sd','n', 'Sal')
-calculate_vars <- c('pHNBS_predicted','HCO3', 'CO3', 'CO2', 'Aragonite', 'Calcite') # mmol/kgSW
+calculate_vars <- c('pHNBS_predicted','HCO3', 'CO3', 'CO2', 'pCO2_matm','Aragonite', 'Calcite') # mmol/kgSW
 
 
 
@@ -92,6 +144,14 @@ read_csv(paste0(getwd(), "/",csv_file), skip = 1, show_col_types = FALSE) %>%
   filter(!grepl('2021', date)) %>%
   mutate(name = factor(name, levels = nameLevs)) -> df
 
+which_vars <- c('DIC', 'TA', 'CO3', 'Aragonite')
+
+df %>%
+  group_by(name) %>%
+  rstatix::get_summary_stats(all_of(which_vars)) %>%
+  select(name , variable, n, mean, median, sd, se) %>%
+  view()
+
 df$pH
 
 # Replace Control pH using a normal data from the set 
@@ -104,7 +164,8 @@ n_vals <- df %>% filter(name%in% 'Control') %>% pull(pH) %>% is.na() %>% sum()
 
 set.seed(20220505)
 
-new_points %>% filter(name%in% 'Control') %>% summarise(a = mean(pH), sd = sd(pH)) -> fill_ph
+new_points %>% filter(name%in%  '8') %>% 
+  summarise(a = mean(pH), sd = sd(pH)) -> fill_ph
 
 fill_ph <- rnorm(1E5, mean = fill_ph$a, sd = fill_ph$sd)
 
@@ -144,11 +205,23 @@ df %>%
   group_by(name) %>%
   mutate(nDIC = mean(Sal)*(DIC/Sal), nTA = mean(Sal)*(TA/Sal)) -> df
 
+
+which_vars <- c('DIC', 'TA', 'CO3', 'Aragonite')
+
+df %>%
+  group_by(name) %>%
+  rstatix::get_summary_stats(all_of(which_vars)) %>%
+  select(name , variable, n, mean, median, sd, se) %>%
+  view()
+
 # clean outliers from df
 write_tsv(df, file = paste0(path, '/quimicas_v2.tsv'))
 
-sum(df$date %in% unique(new_points$date)) # sin embargo, no tengo datos de pH de control para las mediciones de DIC/TA hechas en esas fechas
+sum(df$date %in% unique(new_points$date)) # sin embargo, no tengo datos de pH de control para las mediciones de DIC/TA hechas en esas fechas, pero suponemos, debido a los bajos numeros de sd y error standar, las estimaciones son apropiadas como se hicieron.
 
+
+  
+  
 
 # DIC/TA vs pH
 
@@ -243,6 +316,7 @@ df %>% rstatix::get_summary_stats() %>%
 
 # varsf <- c('DIC', 'TA', 'HCO3', 'CO3', 'Aragonite')
 
+
 df_longer %>% ungroup() %>% filter(vars %in% varsf) %>% filter(is.outlier == FALSE) %>%
   mutate(vars = factor(vars, levels = varsf))-> df_longer_stast
 
@@ -257,6 +331,13 @@ df_longer_stast %>%
   add_significance("p") -> kruskal.stats
 
 kruskal.stats
+
+df_longer_stast %>% 
+  group_by(vars)%>%
+  rstatix::welch_anova_test(value ~ name) %>%
+  adjust_pvalue(method = "none") %>%
+  add_significance("p") 
+
 
 # 4.2) Statistical posteriori test----
 
@@ -395,7 +476,7 @@ df %>%
   geom_smooth(se = F, method = lm, color = 'black', linetype = 'dashed') +
   # ggforce::geom_mark_hull(fill = 'grey', con.colour = 'grey') +
   # geom_point(size = 4, alpha = 0.7) +
-  geom_text(aes(label = round(pH, 3)))
+  geom_text(aes(label = round(pH, 3))) +
   # scale_color_viridis_d(option = "plasma", end = .7) +
   theme(legend.position = 'top') +
   ggpubr::stat_cor(method = "pearson", 
@@ -427,12 +508,25 @@ df %>%
 ggsave(p, filename = 'predicted_measured_pH.png', 
   path = ggsavepath, width = 2.5, height = 2.5)
 
+
+# test anova for difference between pH datasets ---- 
+
+df %>%
+  select(pH, pHNBS_predicted) %>%
+  pivot_longer(-name, names_to = 'pH') %>%
+  # shapiro_test(value) %>%
+  # mutate(gauss = ifelse(p > 0.05, TRUE, FALSE)) 
+  ungroup() %>%
+  rstatix::anova_test(value ~ pH) 
+
+
+
 # test  
-# ggplot(df, aes(y = nDIC, x = pH, group = name, col = name)) + 
-#   geom_point() + 
+# ggplot(df, aes(y = nDIC, x = pH, group = name, col = name)) +
+#   geom_point() +
 #   geom_smooth(se = F, method = lm, ) +
-#   ggpubr::stat_cor(method = "pearson", 
-#     cor.coef.name = "R", 
+#   ggpubr::stat_cor(method = "pearson",
+#     cor.coef.name = "R",
 #     p.accuracy = 0.001) +
 #   labs(y = 'DIC (Measured)') +
 #   scale_color_viridis_d(option = "plasma", end = .7) +
@@ -456,6 +550,7 @@ ggplot(df, aes(y = TA-DIC, x = pH, group = name, col = name)) +
 
 ggsave(psave, filename = 'TA_less_DIC_pH.png', path = ggsavepath, width = 4, height = 3)
 
+# THEREFORE LINEARITY
 # Start regresion ----
 
 lm_mod <- linear_reg() %>%
@@ -464,7 +559,7 @@ lm_mod <- linear_reg() %>%
 # Prediction ----
 # Based on the pH, lets predict vars across names ----
 
-vars <- c('DIC','TA','Sal', 'pHNBS_predicted','HCO3', 'CO3', 'CO2', 'Aragonite', 'Calcite') # mmol/kgSW
+vars <- c('DIC','TA','Sal', 'pHNBS_predicted','HCO3', 'CO3', 'pCO2_matm', 'Aragonite', 'Calcite') # mmol/kgSW
 
 
 predict_vars <- function(form, data, new_data, lev = 0.95) {
@@ -591,6 +686,12 @@ do.call(rbind, out) -> plot_data
 plot_data %>% 
   mutate(vars = sub(" ~ pH [*] name", '', vars)) -> plot_data
 
+fileName <- paste0(getwd(), '/predicted_vars.rds')
+
+write_rds(plot_data, file =fileName)
+
+# ESTIMATE PERFORMANCE ----
+
 fit_data <- c()
 
 for(i in vars) {
@@ -604,6 +705,31 @@ for(i in vars) {
   fit_data[[i]] <- data$fit_data
 }
 
+fileName <- paste0(getwd(), '/fit_data_vars.rds')
+
+write_rds(fit_data, fileName)
+
+# Estimate these metrics:
+# Root Mean Squared Error
+lapply(fit_data, performance_rmse)
+performance_rmse(fit_data$DIC) 
+performance_mse(fit_data$a)
+performance(fit_data$DIC)
+
+do.call(rbind, lapply(fit_data, performance))
+ 
+set.seed(1234)
+size <- 100
+times <- 10
+
+obs <- df %>% group_by(name) %>% 
+  sample_n(size, replace = TRUE) 
+
+pred <-  sample_n(out$DIC, size, replace = TRUE) 
+
+rsq_vec(obs$DIC, pred$.pred)
+
+
 # 
 
 plot_data %>% 
@@ -611,8 +737,15 @@ plot_data %>%
   group_by(name, vars) %>%
   rstatix::get_summary_stats(.pred) %>%
   filter(vars %in% c('DIC', 'TA', 'CO3', 'Aragonite')) %>%
-  select(name , vars, n, mean, median, sd) %>%
-  arrange(vars)
+  select(name , vars, n, mean, median, sd, se) %>%
+  arrange(vars) %>% view()
+
+
+new_points %>% 
+  group_by(name) %>%
+  rstatix::get_summary_stats(pH) %>%
+  select(name , n, mean, median, sd, se) %>%
+  view()
 
 # check_model(fit_data$CO2, check = "pp_check", panel = F)
 
@@ -623,7 +756,7 @@ plot_data %>%
 plot_data %>% ungroup() %>% distinct(date, id) %>% 
   mutate(month = lubridate::month(date, label = T), 
     day = lubridate::day(date)) %>%
-  group_by(date) %>%sample_n(1) -> date_reorder
+  group_by(date) %>% sample_n(1) -> date_reorder
   # pull(date) %>% as.character()
 
 date_reorder %>% pull(id) -> breaks
@@ -634,12 +767,19 @@ max <- length(breaks)
 
 limits <- c(seq(1, 32, by = 7), max)
 
-plot_data %>% ggplot(aes(y = pH, x = id, color = name)) + 
+scale_x_date(labels = date_format("%b"))
+
+plot_data %>% 
+  ggplot(aes(y = pH, x = date, color = name)) + 
   theme_bw(base_family = "GillSans", base_size = 14) +
   # scale_x_reverse(breaks = breaks,labels = date_labels) +
   # scale_x_continuous('', breaks = breaks[limits], labels = date_labels[limits]) +
   # ylim(0,NA) +
-  geom_path(aes(group = name), linejoin = "mitre")
+  scale_x_date(labels = date_format("%d"),
+    name = "time in days") +
+  # geom_point()
+  geom_line()
+  # geom_path(aes(group = name), linejoin = "mitre")
 
 plot_data %>%
   # filter(vars %in% c(varsf, 'CO2')) %>%
@@ -692,7 +832,28 @@ plot_data %>%
   #   p.accuracy = 0.001) +
   scale_color_viridis_d(option = "plasma", end = .7)
   
+# now pH
 
+new_points %>%
+  mutate(ymin = pH-se, ymax = pH+se) %>%
+  ggplot(aes(y = pH, x = id, color = name)) + 
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  geom_hline(yintercept = 8, color = 'grey', linetype = 'dashed') +
+  geom_path(aes(group = name), linejoin = "mitre", size =1) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
+  theme(legend.position = 'top', panel.border = element_blank(),
+    # axis.ticks.x = element_blank(),
+    axis.line.x = element_blank(),
+    axis.text.x = element_text(angle = 45, 
+      hjust = 1, vjust = 1, size = 10)) +
+  labs(y = expression('pH')) +
+  scale_color_manual("", values = pHpalette) -> psave
+
+ggsave(psave, filename = 'time_serie_pH.png', 
+  path = ggsavepath, width = 10, height = 5)
+
+
+psave + geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.1, alpha = 0.1) -> psave
 
 library(ggdensity)
 

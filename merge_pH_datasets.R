@@ -92,7 +92,9 @@ psave
 library(rstatix)
 
 # df_longer %>% group_by(name) %>% rstatix::identify_outliers(Obs, coef = 3)
-df_longer %>% group_by(name, date) %>% mutate(is.outlier = is_outlier(Obs), is.extreme = is_extreme(Obs)) -> df_longer
+df_longer %>% group_by(name, date) %>% 
+  mutate(is.outlier = is_outlier(Obs), 
+    is.extreme = is_extreme(Obs)) -> df_longer
 
 # df_longer %>% group_by(name, is.extreme) %>% tally()
 # df_longer %>% group_by(name, is.outlier) %>% tally()
@@ -108,7 +110,8 @@ df_longer %>% group_by(name, date) %>% mutate(is.outlier = is_outlier(Obs), is.e
 #   drop_na(z) -> df_summ
 
 # Prepare filtered dataset
-df_longer %>% filter(is.outlier == 'FALSE') %>% select(-is.outlier, -is.extreme) -> df_longer
+df_longer %>% filter(is.outlier == 'FALSE') %>% 
+  select(-is.outlier, -is.extreme) -> df_longer
 
 # 1) Gaussianity ----
 
@@ -147,9 +150,14 @@ df_longer %>%
   # group_by(date, name) %>%
   mutate(value = Obs) %>%
   summarise(
-    a = mean(value), sd = sd(value), IC = IC(value),
-    upper = a+sd, lower = a-sd,
-    zupper = a+(3*sd), zlower = a-(3*sd), n = n()) -> out_stats
+    a = mean(value), 
+    sd = sd(value), 
+    n = n(),
+    se = sd/sqrt(n) 
+    # IC = IC(value),
+    # upper = a+sd, lower = a-sd,
+    # zupper = a+(3*sd), zlower = a-(3*sd), n = n()
+    ) -> out_stats
 
 write_rds(df_longer, file = paste0(getwd(), '/pH_aLLdatasets_longer.rds'))
 write_tsv(df_longer, file = paste0(getwd(), '/pH_aLLdatasets_longer.tsv'))
@@ -160,11 +168,17 @@ write_rds(out_stats, file = paste0(getwd(), '/pH_aLLdatasets_by_hour_stats.rds')
 
 out_stats %>% ungroup() %>% distinct(date) %>% pull(date) %>% as.character() -> recode_date
 
-struc_group <- c('Embryo', rep('Larvae', 5), rep('Settlement', 26))
+struc_group <- c(rep('Embryo', 2), rep('Larvae', 4), rep('Settlement', 26))
 
 level_key <- structure(struc_group, names = recode_date)
 
 out_stats %>% mutate(g = recode_factor(as.factor(date), !!!level_key)) -> out_stats
+
+write_rds(out_stats, file = paste0(getwd(), '/pH_aLLdatasets_by_hour_stats.rds'))
+
+
+
+
 
 Labels <- c('Control', 'Experimental I', 'Experimental II')
   
@@ -393,11 +407,12 @@ psave +  geom_text(stat = 'summary', vjust = -1,
 #   coord_cartesian(clip = "off")
 
 out_stats %>%
-  group_by(name) %>%
+  group_by(name,g) %>%
   rstatix::get_summary_stats(a) %>%
-  select(name ,n, mean, median, sd)
+  select(g, name ,n, mean, median, se, sd)
 
 kruskal.stats
+
 stats.test %>% view()
 
 ggsave(psave, filename = 'average_pH_boxplot.png', 
@@ -484,4 +499,29 @@ df_longer %>%
   arrange(date) %>% view()
 
 
+
+## Agosto 2022 ----
+
+
+out_stats %>%
+  ggplot(aes(fill = name, color = name, pH)) +
+  geom_histogram() +
+  geom_rug() +
+  facet_wrap(~ g, scales = 'free_y') +
+  scale_color_manual('', values = pHpalette) +
+  scale_fill_manual('', values = pHpalette) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank())
+
+#pH_time_series_data_cleaned_grid 
+
+
+df_longer %>%
+  ggplot(aes(fill = name, color = name, Obs)) +
+  geom_histogram() +
+  geom_rug() +
+  facet_wrap(~ dataset, scales = 'free_y') +
+  scale_color_manual('', values = pHpalette) +
+  scale_fill_manual('', values = pHpalette)
 

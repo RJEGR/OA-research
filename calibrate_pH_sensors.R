@@ -25,11 +25,16 @@ df <- do.call(rbind, df)
 
 namesL <- c('Canal-1', 'Canal-2', 'Canal-3', 'Canal-4')
 
+
+df %>% ggplot(aes(X5, X10)) + geom_jitter() + ggpubr::stat_cor()
+
 # ordering data
 
 df <- df %>% select_if(is.numeric)
 
 data <- df %>% select(any_of(c('X10','X11','X12','X13')))
+
+df1 <- df %>% select(any_of(c('X5','X6','X7','X8')))
 
 
 dist.method <- 'euclidean'; linkage.method <- 'complete'
@@ -63,7 +68,7 @@ data_longer %>% filter(!is.outlier %in% TRUE) %>%
 data_longer %>%
   group_by(name,g) %>%
   summarise(a = mean(x), sd = sd(x), 
-    IC = IC(x), n = length(x)) -> df_stats
+    IC = IC(x), n = length(x), se = sd/sqrt(n)) -> df_stats
 
 df_stats
 
@@ -129,13 +134,15 @@ psave +
   theme_classic(base_size = 10, base_family = "GillSans") 
 
 # mVolts
+df1 <- df
 
+# c('X5','X6','X7','X8')
 
 df1 %>% as_tibble() %>%
-  mutate(Buffer = ifelse(between(V10, 4.0,4.15), '4',
-    ifelse(between(V10, 7,7.15), '7', NA))) %>%
+  mutate(Buffer = ifelse(between(X10, 4.0,4.15), '4',
+    ifelse(between(X10, 7,7.15), '7', NA))) %>%
   drop_na(Buffer) %>%
-  pivot_longer(cols = namesL, names_to = 'Canal') %>%
+  pivot_longer(cols = c('X5','X6','X7','X8'), names_to = 'Canal') %>%
   group_by(Buffer, Canal) %>%
   summarise(Mean = mean(value), n = n()) %>% 
   pivot_wider(names_from = Canal, values_from = Mean) %>% view()

@@ -102,14 +102,68 @@ df_filtered %>%
   theme(legend.position = 'none')
 
 df_filtered %>%
+  mutate(golden_ratio = (Length+Width)/Length) %>%
   group_by(pH) %>%
-  cor_test(Length,Width, method = 'spearman') %>%
+  cor_test(golden_ratio,Index, method = 'spearman') %>%
   add_significance("p") %>%
   select(pH, var1, var2, cor, method, p.signif) %>%
   flextable() %>% 
   # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
   autofit(add_w = 0, add_h = 0) %>%
   align(align = "center")
+
+
+# Golden ratio (ie Proporcion aurea) ----
+# Proxi del crecimiento longitudinal
+
+# The golden ratio, also known as the golden section or golden proportion, is obtained when two segment lengths have the same proportion as the proportion of their sum to the larger of the two lengths. The value of the golden ratio, which is the limit of the ratio of consecutive Fibonacci numbers, has a value of approximately 1.618.
+
+# The formula for the golden ratio is as follows. Let the larger of the two segments be a and the smaller be denoted as b The golden ratio is then (a+b)/a = a/b
+
+# a / phi es ~ b y b / phi es ~ c, donde c es el valor previo en la sucesion figonacci
+
+
+phi <- 1.618033988749
+
+df_filtered %>%
+  mutate(
+    golden_ratio = (Length+Width)/Length,
+    # y = golden_ratio,
+    y  = golden_ratio - phi
+    ) %>%
+  ggplot(aes(x = pH, y = y, color = pH, fill = pH)) +
+  # facet_grid(~ hpf ) +
+  geom_jitter(alpha = 0.5) +
+  stat_boxplot(geom ='errorbar', width = 0.3) +
+  geom_boxplot(width = 0.3, outlier.alpha = 0) +
+  scale_color_manual("", values = pHpalette) +
+  scale_fill_manual("", values = pHpalette)
+
+# df_filtered %>%
+#   mutate(
+#     golden_ratio = (Length+Width)/Length,
+#     symmetry = phi - golden_ratio,
+#     Width_predicted = Length/phi) %>%
+#   ggplot(aes(symmetry, fill = pH)) +
+#   # facet_grid(~ hpf) +
+#   geom_density(bins = 100, alpha = 0.5) +
+#   scale_fill_manual("", values = pHpalette)
+
+# predicted vs observed analysis? ----
+df_filtered %>%
+  mutate(
+    # golden_ratio = (Length+Width)/Length,
+    predicted_Width = Length/phi,
+    predicted_Length = Width*phi
+    ) %>%
+  ggplot(aes(predicted_Width, Width)) +
+  facet_grid(hpf ~ pH) +
+  geom_point(alpha = 0.5, shape = 1) +
+  # scale_color_viridis_d('', option = "plasma", end = .7) +
+  geom_smooth(se = T, method = lm, color = 'blue', size = 0.7) +
+  xlim(0,400) +
+  ggpubr::stat_cor(method = "spearman", 
+    cor.coef.name = "R", p.accuracy = 0.001, label.y = 250, family = "GillSans")
 
 # df %>%
 #   ggplot(aes(Length, Width, color = as.factor(hpf))) + # color = as.factor(pH),  
@@ -224,9 +278,10 @@ ggsave(psave, filename = 'Body_index.png', path = ggsavepath,
 
 df_filtered %>%
   group_by(hpf, pH) %>%
+  select(Index) %>%
   rstatix::get_summary_stats(type = "quantile") %>%
   ggplot(aes(x = hpf, y = `50%`, color = pH, group = pH)) +
-  facet_grid(~ variable) +
+  # facet_grid(~ variable) +
   geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
@@ -241,10 +296,15 @@ ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
   
 
 ggsave(ps, filename = 'Body_index_facet.png', path = ggsavepath, 
-  width = 5.5, height = 3)
+  width = 3, height = 3)
 
 # 5) geometric morphometric shape analyses: ----
 vars <- c('Length', 'Width', 'Index','Area')
+
+df_filtered %>% 
+  mutate(Area = pi*(Length * Width)) %>%
+  group_by(pH) %>%
+  rstatix::cor_test(vars = 'Index', method = 'spearman')
 
 df_filtered %>% 
   mutate(Area = pi*(Length * Width)) %>%
@@ -266,7 +326,7 @@ df_filtered %>%
 
 vars <- c('Length', 'Width', 'Index','Area','h','b')
 
-# a 24 hpf, tanto lado 1 y lado 2 son de una estructura de apariencia distinta al resto (ie. veligery trocofora)
+# a 24 hpf, tanto lado 1 y lado 2 son de una estructura de apariencia distinta al resto (ie. veligery)
 
 df_filtered %>% 
   mutate(
@@ -458,109 +518,6 @@ lm_fit %>% tidy() %>%
   # geom_path(position = position_dodge(width = 0.3), size = 1) +
   # scale_color_manual("", values = pHpalette) +
   # labs(y = 'mean_se')
-
-# Throchophore shell ----
-
-df %>%
-  filter(hpf %in% '24') %>%
-  count(Stage) %>%
-  group_by(pH) %>%
-  mutate(n = n/sum(n), n = n*100) %>%
-  mutate(n = paste0(round(n), ' %')) %>%
-  pivot_wider(values_from = n, names_from = Stage) %>%
-  flextable() %>% 
-  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center")
-
-# Normal shelled
-# Abnormal shelled
-# Unshelled
-
-level_key <- c("nrs" = "Normal shelled", "ans" = "Abnormal shelled", "uns" = "Unshelled")
-
-caption <- "Trochophore larvae scored as one of possible morphological groups"
-
-
-# 
-# df %>%
-#   filter(hpf %in% '24') %>%
-#   count(Shell) %>%
-#   mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
-#   group_by(pH) %>%
-#   mutate(pct = n/sum(n)) %>%
-#   ggplot(aes(y = pct, x = Shell, fill = pH)) +
-#   geom_col(position = "dodge2") +
-#   scale_y_continuous(labels = scales::percent) +
-#   scale_fill_manual("", values = pHpalette) +
-#   labs(y = '%', x = '', caption = caption) +
-#   theme_bw(base_family = "GillSans", base_size = 14) +
-#   theme(panel.border = element_blank(), legend.position = 'top') -> ps
-# 
-
-# devtools::install_github("kevinsblake/NatParksPalettes")
-library(NatParksPalettes)
-
-df %>%
-  filter(hpf %in% '24') %>%
-  count(Shell) %>%
-  mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
-  group_by(pH) %>%
-  mutate(pct = n/sum(n)) %>%
-  mutate(pH = factor(pH, levels = rev(pHLevel))) %>%
-  ggplot(aes(x = pct, y = pH, fill = Shell)) +
-  geom_col(position = position_stack(reverse = TRUE)) +
-  scale_x_continuous(labels = scales::percent) +
-  labs(y = '', x = '', caption = caption) +
-  theme_bw(base_family = "GillSans", base_size = 14) +
-  theme(panel.border = element_blank(), legend.position = 'top') -> ps
-
-values <- natparks.pals("Yosemite", 3, direction = 1) # "Yellowstone"
-
-ps + scale_fill_manual("", values=values) -> ps
-
-ggsave(ps, filename = 'throchophore_score.png', path = ggsavepath, 
-  width = 4.6, height = 3)  
-
-# Hay diferencias entre la proporcion de trocoforas y veliger a 24 horas con respecto al tamano??
-
-df %>%
-  filter(hpf %in% '24') %>%
-  group_by(pH, Stage) %>%
-  rstatix::get_summary_stats(type = "quantile") %>%
-  ggplot(aes(x = pH, y = `50%`, color = pH, group = pH)) +
-  facet_grid(Stage ~ variable) +
-  geom_point(position = position_dodge(width = 0.3), size = 3, alpha = 0.5) +
-  theme_bw(base_family = "GillSans", base_size = 14) +
-  geom_errorbar(aes(ymin = `25%`, ymax = `75%`),
-    width = 0.1, position = position_dodge(width = 0.3)) +
-  geom_path(position = position_dodge(width = 0.3), size = 1) +
-  scale_color_manual("", values = pHpalette)
-  
-  
-df %>%
-  filter(hpf %in% '24') %>%
-  count(pH) %>%
-  ungroup() %>%
-  # mutate(Shell = recode_factor(Shell, !!!level_key)) %>%
-  # arrange(Shell) %>%
-  select(pH, n) %>%
-  flextable() %>% 
-  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center") %>%
-  merge_v() 
-  # bg(~ pH == '8', 
-  #   j = c('pH','n'), 
-  #   bg = "#4575b4", part = "body") %>%
-  # bg(~ pH == '7.8', 
-  #   j = c('pH','n'), 
-  #   bg = "#abdda4", part = "body") %>%
-  # bg(~ pH == '7.6', 
-  #   j = c('pH','n'), 
-  #   bg = "#d73027", part = "body")
-
-
 
 # data inputs for model ----
 
