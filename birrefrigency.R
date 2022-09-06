@@ -129,8 +129,8 @@ df_filtered %>%
 
 df_filtered %>%
   group_by(hpf) %>%
-  pairwise_wilcox_test(Area ~ pH,  conf.level = 0.95) %>%
-  adjust_pvalue(method = "fdr") %>%
+  pairwise_wilcox_test(Area ~ pH,  conf.level = 0.95, ref.group = '8.0') %>%
+  adjust_pvalue(method = "bonferroni") %>%
   add_significance() -> post.test
 
 
@@ -201,7 +201,43 @@ psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
 ggsave(psave, filename = 'birrefrigency.png', path = ggsavepath, 
   width = 5.7, height = 3.5)
 
-write_rds(df_filtered %>%, )
+
+# hten ----
+
+
+
+df_filtered %>%
+  group_by(hpf, pH) %>%
+  rstatix::get_summary_stats(Area) %>%
+  select(hpf, pH, n, mean, median, se, iqr, mad) -> summary_stats
+
+stats %>% select(hpf, group2, p.adj.signif) %>% 
+  rename('pH' = 'group2') %>%
+  right_join(summary_stats) %>% # view()
+  mutate(ymax = mean+se, ymin = mean-se) %>%
+  mutate(pH = factor(pH, levels = pHLevel)) %>%
+  # filter(hpf %in% '108') %>%
+  ggplot(aes(x = pH, y = mean, color = pH, group = pH)) +
+  facet_grid(~ hpf) +
+  geom_text(aes(y = ymax + 10, label= p.adj.signif),
+    size = 2.5, position = position_dodge(width = 0.3),
+    family = 'GillSans',fontface = "bold",
+    vjust= 0, color="black") +
+  geom_point(size = 3, alpha = 0.5, position = position_dodge(width = 0.3)) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
+  geom_errorbar(aes(ymin = ymin, ymax = ymax), 
+    width = 0.1, position = position_dodge(width = 0.3)) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Birefrigence (Pixels)') +
+  # ylim(170, 250) +
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'top') -> ps2
+
+ggsave(ps2, filename = 'birefrigency_2.png', path = ggsavepath, 
+  width = 3.6, height = 2.7)
+
+
+# write_rds(df_filtered %>%, )
 
 # TEsts
 
