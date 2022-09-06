@@ -92,6 +92,7 @@ ggsave(psave, filename = 'Body_index_cor.png', path = ggsavepath, width = 5, hei
 
 df_filtered %>%
   ggplot(aes(Length, Width, color = as.factor(pH))) + 
+  geom_jitter(alpha = 0.2, shape = 1) +
   geom_smooth(se = F, method = lm, size = 1.3, alpha = 0.5) +
   xlim(0,400) +
   labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
@@ -99,6 +100,7 @@ df_filtered %>%
   theme(strip.background = element_rect(fill = 'grey', color = 'white'),
     panel.border = element_blank()) +
   scale_color_manual("", values = pHpalette) +
+  ylim(100, 240) +
   theme(legend.position = 'none')
 
 df_filtered %>%
@@ -128,8 +130,8 @@ phi <- 1.618033988749
 df_filtered %>%
   mutate(
     golden_ratio = (Length+Width)/Length,
-    # y = golden_ratio,
-    y  = golden_ratio - phi
+    y = golden_ratio,
+    # y  = golden_ratio - phi
     ) %>%
   ggplot(aes(x = pH, y = y, color = pH, fill = pH)) +
   # facet_grid(~ hpf ) +
@@ -138,6 +140,14 @@ df_filtered %>%
   geom_boxplot(width = 0.3, outlier.alpha = 0) +
   scale_color_manual("", values = pHpalette) +
   scale_fill_manual("", values = pHpalette)
+
+#
+
+df_filtered %>%
+  mutate(
+    golden_ratio = (Length+Width)/Length,
+    y = golden_ratio,
+  ) 
 
 # df_filtered %>%
 #   mutate(
@@ -164,6 +174,22 @@ df_filtered %>%
   xlim(0,400) +
   ggpubr::stat_cor(method = "spearman", 
     cor.coef.name = "R", p.accuracy = 0.001, label.y = 250, family = "GillSans")
+
+#
+
+df_filtered %>%
+  mutate(
+    golden_ratio = (Length+Width)/Length,
+    predicted_Width = Length/phi,
+    predicted_Length = Width*phi
+  ) %>%
+  ungroup() %>% select_if(is.numeric) %>%
+  cor_mat() %>% cor_reorder() %>%
+  pull_lower_triangle() %>%
+  cor_plot(label = TRUE)
+  # group_by(pH) %>%
+  # select() %>%
+  # cor_test(vars = c('Length', 'Width', 'predicted_Width', 'predicted_Length', 'golden_ratio', 'Index'))
 
 # df %>%
 #   ggplot(aes(Length, Width, color = as.factor(hpf))) + # color = as.factor(pH),  
@@ -223,8 +249,8 @@ df_filtered %>%
 
 df_filtered %>%
   group_by(hpf) %>%
-  pairwise_wilcox_test(Index ~ pH,  conf.level = 0.95) %>%
-  adjust_pvalue(method = "fdr") %>%
+  pairwise_wilcox_test(Index ~ pH,  conf.level = 0.95, ref.group = '8') %>%
+  adjust_pvalue(method = "bonferroni") %>%
   add_significance() -> post.test
 
 post.test %>% add_xy_position(x = "pH") -> stats
@@ -272,7 +298,7 @@ psave + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
   panel.border = element_blank(), legend.position = 'top') -> psave
 
 ggsave(psave, filename = 'Body_index.png', path = ggsavepath, 
-  width = 5, height = 3.5)
+  width = 5, height = 3)
 
 #  as line, only upper quantiles
 
@@ -293,10 +319,65 @@ df_filtered %>%
 ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
   panel.border = element_blank(), legend.position = 'top') -> ps
 
-  
+# or by mean and s.e ----
 
+# stats %>% select(hpf, group2, p.adj.signif) %>% view()
+
+
+df_filtered %>%
+  group_by(hpf, pH) %>%
+  rstatix::get_summary_stats(Index) %>%
+  select(hpf, pH, n, mean, median, se, iqr, mad) -> summary_stats
+
+stats %>% select(hpf, group2, p.adj.signif) %>% 
+  rename('pH' = 'group2') %>%
+  right_join(summary_stats) %>%
+  mutate(ymax = mean+se, ymin = mean-se) %>%
+  mutate(pH = factor(pH, levels = pHLevel)) %>%
+  ggplot(aes(x = hpf, y = mean, color = pH, group = pH)) +
+  # geom_text(aes(y = ymax + 1, label= p.adj.signif), 
+    # size = 4.5, 
+    # family = 'GillSans',fontface = "bold",
+    # vjust= 0, color="black") +
+  # facet_grid(~ variable) +
+  geom_point(size = 3, alpha = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 16) +
+  geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.1) +
+  geom_path(size = 1.2) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Growth Index') -> ps
+
+ps + theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'top') -> ps
+  
 ggsave(ps, filename = 'Body_index_facet.png', path = ggsavepath, 
-  width = 3, height = 3)
+    width = 3, height = 2.7)
+  
+# or
+
+stats %>% select(hpf, group2, p.adj.signif) %>% 
+  rename('pH' = 'group2') %>%
+  right_join(summary_stats) %>%
+  filter(!hpf %in% '24') %>%
+  mutate(ymax = mean+se, ymin = mean-se) %>%
+  mutate(pH = factor(pH, levels = pHLevel)) %>%
+  ggplot(aes(x = pH, y = mean, color = pH, group = pH)) +
+  facet_grid(~ hpf) +
+  geom_text(aes(y = ymax + 10, label= p.adj.signif),
+  size = 2.5, position = position_dodge(width = 0.3),
+  family = 'GillSans',fontface = "bold",
+  vjust= 0, color="black") +
+  geom_point(size = 3, alpha = 0.5, position = position_dodge(width = 0.3)) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
+  geom_errorbar(aes(ymin = ymin, ymax = ymax), width = 0.1, position = position_dodge(width = 0.3)) +
+  scale_color_manual("", values = pHpalette) +
+  labs(y = 'Growth Index') +
+  # ylim(170, 250) +
+  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'top') -> ps2
+
+ggsave(ps2, filename = 'Body_index_facet_2.png', path = ggsavepath, 
+  width = 3.6, height = 2.7)
 
 # 5) geometric morphometric shape analyses: ----
 vars <- c('Length', 'Width', 'Index','Area')
