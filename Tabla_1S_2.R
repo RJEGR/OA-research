@@ -9,11 +9,15 @@
 # Design = Estres Acumulativo (Cronico) y Agudo (Factor A)
 # Pct = Valor Relativo de Larvas
 
+library(tidyverse)
+
 rm(list = ls())
 
 if(!is.null(dev.list())) dev.off()
 
 options(stringsAsFactors = FALSE, readr.show_col_types = FALSE)
+
+setwd("/Users/cigom/Documents/GitHub/OA-research/rproject/")
 
 bind_d_1 <- paste0(getwd(),'/Table_1S - bind_data.rds')
 
@@ -112,8 +116,11 @@ bind_data %>%
   theme_classic(base_family = "GillSans", base_size = 14) +
   theme(panel.border = element_blank()) +
   labs(x = '', y = '') +
-  scale_color_manual("", values = pHpalette)
-  
+  scale_color_manual("", values = pHpalette) -> p
+
+p
+
+library(rstatix)
 
 bind_data %>% # bind_data
   filter(Development %in% 'A') %>%
@@ -216,7 +223,7 @@ stat_out %>%
   select(pH,`24`,`30`,`48`,`60`,`108`,`624`) %>%
   ggradar(font.radar = "GillSans", legend.position = "top") +
   scale_color_manual("", values = pHpalette) +
-  scale_fill_manual("", values = pHpalette)
+  scale_fill_manual("", values = pHpalette) 
 
 stat_out %>%
   ggplot(aes(x = hpf, y = mean, color = pH, group = pH)) +

@@ -62,6 +62,9 @@ df %>%
   filter(!is.outlier %in% TRUE) %>%
   select(-is.outlier) -> df_filtered
 
+
+write_rds(df_filtered, paste0(getwd(), '/length_width_dataset.rds'))
+
 # 0.1) correlation ----
 # Test if gaussianity (FALSE)
 

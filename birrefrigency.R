@@ -37,7 +37,8 @@ file <- list.files(path = getwd(), pattern = pattern, full.names = T)
 
 
 df <- read_csv(file, show_col_types = FALSE) %>% 
-  separate(g, into = c('hpf', 'pH'), sep = '_') #%>%
+  separate(g, into = c('hpf', 'pH'), sep = '_') %>%
+  mutate(pH = recode(pH, '8.0' = '8'))
   # mutate(Frac = Mean/Max)
 
 df %>% distinct(pH) %>% pull() -> pHLevel
@@ -93,6 +94,7 @@ df %>%
   select(-outlier) %>%
   mutate(Area = sqrt(Area))-> df_filtered
 
+write_rds(df_filtered, paste0(getwd(), '/birefrigence.rds'))
 
 # 1) test if gaussianity (PARTIAL FALSE) ----
 
@@ -259,7 +261,7 @@ df_filtered %>%
   scale_color_manual("", values = pHpalette) 
   # facet_grid(~ pH)
 
-# Solo a las 108 horas se ve un decremento, pero a 60 resulta que los pixeles fueron mas completos en las meuestras de pH hacido, . Esto porque el n es muy pequeno,
+# Solo a las 108 horas se ve un decremento, pero a 60 resulta que los pixeles fueron mas completos en las meuestras de pH hacido, . Esto porque el n es muy pequeno, entonces los incremente
 
 df_filtered %>%
   mutate(mineralized = 'Less') %>%
