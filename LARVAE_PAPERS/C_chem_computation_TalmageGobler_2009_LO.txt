@@ -1,0 +1,120 @@
+/* DATA DESCRIPTION:
+Citation:	Talmage, Stephanie C; Gobler, Christopher J (2009): Seawater carbonate chemistry and survival of mollusks: Mercenaria mercenaria, Argopecten irradians, and Crassostrea virginica during experiments, 2009. PANGAEA, https://doi.org/10.1594/PANGAEA.756661, 
+	Supplement to: Talmage, SC; Gobler, CJ (2009): The effects of elevated carbon dioxide concentrations on the metamorphosis, size, and survival of larval hard clams (Mercenaria mercenaria), bay scallops (Argopecten irradians), and Eastern oysters (Crassostrea virginica). Limnology and Oceanography, 54(6), 2072-2080, https://doi.org/10.4319/lo.2009.54.6.2072
+Abstract:	We present experiments that examined the metamorphosis, growth, and survivorship of larvae from three species of commercially and ecologically valuable shellfish (Mercenaria mercenaria, Argopecten irradians, and Crassostrea virginica) at the levels of CO2 projected to occur during the 21st century and beyond. Under CO2 concentrations estimated to occur later this century (~66 Pa, 650 ppm), M. mercenaria and A. irradians larvae exhibited dramatic declines (>50%) in survivorship as well as significantly delayed metamorphosis and significantly smaller sizes. Although C. virginica larvae also experienced lowered growth and delayed metamorphosis at ~66 Pa CO2, their survival was only diminished at ~152 Pa CO2. The extreme sensitivity of larval stages of shellfish to enhanced levels of CO2 indicates that current and future increases in pelagic CO2 concentrations may deplete or alter the composition of shellfish populations in coastal ecosystems.
+Keyword(s):	Animalia; Argopecten irradians; Bottles or small containers/Aquaria (<20 L); Crassostrea virginica; Development; Laboratory experiment; Mercenaria mercenaria; Mollusca; Mortality/Survival; North Atlantic; Pelagos; Single species; Zooplankton
+Project(s):	European network of excellence for Ocean Ecosystems Analysis (EUR-OCEANS) (URI: http://www.eur-oceans.eu/)
+	European Project on Ocean Acidification (EPOCA) (URI: https://en.wikipedia.org/wiki/European_Project_on_Ocean_Acidification)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Funding:	Seventh Framework Programme (FP7), grant/award no. 211384: European Project on Ocean Acidification (URI: https://cordis.europa.eu/project/rcn/87798/factsheet/en)
+	Sixth Framework Programme (FP6), grant/award no. 511106: European network of excellence for Ocean Ecosystems Analysis (URI: https://cordis.europa.eu/project/rcn/75677/factsheet/en)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI).
+Parameter(s):	Species (Species) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Experimental treatment (Exp treat) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Experiment day [day] (Exp day) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Salinity (Sal) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Salinity, standard deviation [±] (Sal std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Temperature, water [°C] (Temp) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Temperature, standard deviation [±] (T std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	pH (pH) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: pH meter * COMMENT: Total scale, hydrogen ion concentration in µmol/l
+	pH, standard deviation [±] (pH std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Carbon dioxide, partial pressure [Pa] (pCO2) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbon dioxide, partial pressure, standard deviation [±] (pCO2 std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Calcite saturation state (Omega Cal) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Calcite saturation state, standard deviation [±] (Omega Cal std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Aragonite saturation state (Omega Arg) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state, standard deviation [±] (Omega Arg std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Carbon, inorganic, dissolved [µmol/l] (DIC) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: EGM-4 Environmental Gas Analyzer (PP Systems) using a Liqui-CelH Membrane (Membr
+	Carbon, inorganic, dissolved, standard deviation [±] (DIC std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Carbonate ion [µmol/l] ([CO3]2-) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbon dioxide, standard deviation [±] (CO2 std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Alkalinity, total [mmol(eq)/l] (AT) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Alkalinity, total, standard deviation [±] (AT std dev) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Carbonate system computation flag (CSC flag) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: Total scale, hydrogen ion concentration in µmol/kg
+	Carbon dioxide [µmol/kg] (CO2) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Alkalinity, total [µmol/kg] (AT) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Veliger, larvae [%] (Veliger larv) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Pediveliger, larvae [%] (Pediveliger larv) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Metamorphosed, larvae [%] (Metamorph larv) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Survival [%] (Survival) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+	Mortality [%] (Mortality) * PI: Talmage, Stephanie C (stalmage@ic.sunysb.edu)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	2461 data points
+*/
+Species	Exp treat	Exp day [day]	Sal	Sal std dev [±]	Temp [°C]	T std dev [±]	pH (Total scale, hydrogen ion con...)	pH std dev [±]	pCO2 [Pa] (Calculated using CO2SYS)	pCO2 std dev [±]	Omega Cal (Calculated using CO2SYS)	Omega Cal std dev [±]	Omega Arg (Calculated using CO2SYS)	Omega Arg std dev [±]	DIC [µmol/l] (EGM-4 Environmental Gas Analy...)	DIC std dev [±]	[CO3]2- [µmol/l] (Calculated using CO2SYS)	CO2 std dev [±]	AT [mmol(eq)/l] (Calculated using CO2SYS)	AT std dev [±]	CSC flag (Calculated using seacarb afte...)	pH (Total scale, hydrogen ion con...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	AT [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)	Veliger larv [%]	Pediveliger larv [%]	Metamorph larv [%]	Survival [%]	Mortality [%]
+Mercenaria mercenaria	High_pCO2	4	28	1	24	0.52	7.49	0.021	150	18	1.33	0.121	0.85	0.120	1850	159	54	8	1.888	0.020	9	7.36	57.85	1920.87	1914.75	1724.18	34.63	1816.7	1810.6	0.57	0.88	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	High_pCO2	7	28	1	24	0.52	7.49	0.021	150	18	1.33	0.121	0.85	0.120	1850	159	54	8	1.888	0.020	9	7.36	57.85	1920.87	1914.75	1724.18	34.63	1816.7	1810.6	0.57	0.88	99.27	1.10	0.00	100.00	
+Mercenaria mercenaria	High_pCO2	11	28	1	24	0.52	7.49	0.021	150	18	1.33	0.121	0.85	0.120	1850	159	54	8	1.888	0.020	9	7.36	57.85	1920.87	1914.75	1724.18	34.63	1816.7	1810.6	0.57	0.88	22.71	46.52	3.30	72.53	
+Mercenaria mercenaria	High_pCO2	14	28	1	24	0.52	7.49	0.021	150	18	1.33	0.121	0.85	0.120	1850	159	54	8	1.888	0.020	9	7.36	57.85	1920.87	1914.75	1724.18	34.63	1816.7	1810.6	0.57	0.88	1.47	22.34	7.69	31.50	
+Mercenaria mercenaria	High_pCO2	18	28	1	24	0.52	7.49	0.021	150	18	1.33	0.121	0.85	0.120	1850	159	54	8	1.888	0.020	9	7.36	57.85	1920.87	1914.75	1724.18	34.63	1816.7	1810.6	0.57	0.88	0.00	5.86	18.68	24.54	-6.3
+Mercenaria mercenaria	Mid_pCO2	4	28	1	24	0.52	7.84	0.042	64	8	2.98	0.623	1.92	0.421	1850	249	121	3	2.002	0.021	9	7.70	26.30	873.33	870.55	1715.00	75.36	1816.7	1901.5	1.23	1.91	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Mid_pCO2	7	28	1	24	0.52	7.84	0.042	64	8	2.98	0.623	1.92	0.421	1850	249	121	3	2.002	0.021	9	7.70	26.30	873.33	870.55	1715.00	75.36	1816.7	1901.5	1.23	1.91	89.92	1.21	0.00	91.13	
+Mercenaria mercenaria	Mid_pCO2	11	28	1	24	0.52	7.84	0.042	64	8	2.98	0.623	1.92	0.421	1850	249	121	3	2.002	0.021	9	7.70	26.30	873.33	870.55	1715.00	75.36	1816.7	1901.5	1.23	1.91	25.40	44.76	3.30	73.46	
+Mercenaria mercenaria	Mid_pCO2	14	28	1	24	0.52	7.84	0.042	64	8	2.98	0.623	1.92	0.421	1850	249	121	3	2.002	0.021	9	7.70	26.30	873.33	870.55	1715.00	75.36	1816.7	1901.5	1.23	1.91	0.81	18.55	6.05	25.40	
+Mercenaria mercenaria	Mid_pCO2	18	28	1	24	0.52	7.84	0.042	64	8	2.98	0.623	1.92	0.421	1850	249	121	3	2.002	0.021	9	7.70	26.30	873.33	870.55	1715.00	75.36	1816.7	1901.5	1.23	1.91	0.00	1.61	12.90	14.52	-6.7
+Mercenaria mercenaria	Ambient_pCO2	4	28	1	24	0.52	8.02	0.021	36	4	3.68	0.222	2.37	0.124	1580	109	150	5	1.792	0.079	9	7.88	14.60	484.84	483.30	1441.07	95.85	1551.5	1684.4	1.57	2.43	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Ambient_pCO2	7	28	1	24	0.52	8.02	0.021	36	4	3.68	0.222	2.37	0.124	1580	109	150	5	1.792	0.079	9	7.88	14.60	484.84	483.30	1441.07	95.85	1551.5	1684.4	1.57	2.43	99.18	0.82	0.00	100.00	
+Mercenaria mercenaria	Ambient_pCO2	11	28	1	24	0.52	8.02	0.021	36	4	3.68	0.222	2.37	0.124	1580	109	150	5	1.792	0.079	9	7.88	14.60	484.84	483.30	1441.07	95.85	1551.5	1684.4	1.57	2.43	21.43	70.60	7.97	100.00	
+Mercenaria mercenaria	Ambient_pCO2	14	28	1	24	0.52	8.02	0.021	36	4	3.68	0.222	2.37	0.124	1580	109	150	5	1.792	0.079	9	7.88	14.60	484.84	483.30	1441.07	95.85	1551.5	1684.4	1.57	2.43	0.00	16.76	68.96	85.71	
+Mercenaria mercenaria	Ambient_pCO2	18	28	1	24	0.52	8.02	0.021	36	4	3.68	0.222	2.37	0.124	1580	109	150	5	1.792	0.079	9	7.88	14.60	484.84	483.30	1441.07	95.85	1551.5	1684.4	1.57	2.43	0.00	0.00	75.82	75.82	-1.8
+Crassostrea virginica	High_pCO2	3	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	100.00	0.00	0.00	100.00	
+Crassostrea virginica	High_pCO2	6	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	83.85	0.00	0.00	83.85	
+Crassostrea virginica	High_pCO2	10	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	64.10	0.38	0.00	64.49	
+Crassostrea virginica	High_pCO2	14	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	22.69	24.74	2.95	50.38	
+Crassostrea virginica	High_pCO2	17	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	0.00	12.18	27.05	39.23	
+Crassostrea virginica	High_pCO2	20	28	1	24	0.51	7.50	0.012	150	5	1.43	0.121	0.92	0.032	1920	41	58	7	1.961	0.039	9	7.36	60.04	1993.56	1987.20	1789.42	35.94	1885.4	1878.5	0.59	0.91	0.00	15.00	20.38	35.38	-3.9
+Crassostrea virginica	Mid_pCO2	3	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	100.00	0.00	0.00	100.00	
+Crassostrea virginica	Mid_pCO2	6	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	82.26	0.00	0.00	82.26	
+Crassostrea virginica	Mid_pCO2	10	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	75.27	2.02	0.00	77.28	
+Crassostrea virginica	Mid_pCO2	14	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	18.95	51.34	6.05	76.34	
+Crassostrea virginica	Mid_pCO2	17	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	0.00	43.55	25.94	69.49	
+Crassostrea virginica	Mid_pCO2	20	28	1	24	0.52	7.85	0.031	63	5	2.97	0.233	1.91	0.111	1840	18	121	4	1.996	0.054	9	7.71	25.55	848.30	845.60	1704.64	76.65	1806.8	1894.5	1.25	1.94	0.00	18.82	42.07	60.89	-1.9
+Crassostrea virginica	Ambient_pCO2	3	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	100.00	0.00	0.00	100.00	
+Crassostrea virginica	Ambient_pCO2	6	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	99.88	0.00	0.00	99.88	
+Crassostrea virginica	Ambient_pCO2	10	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	85.29	4.78	0.00	90.07	
+Crassostrea virginica	Ambient_pCO2	14	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	5.98	41.51	14.83	62.32	
+Crassostrea virginica	Ambient_pCO2	17	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	0.00	22.25	31.34	53.59	
+Crassostrea virginica	Ambient_pCO2	20	28	1	24	0.52	8.07	0.012	36	2	4.52	0.241	2.91	0.123	1770	67	180	25	2.014	0.012	9	7.92	14.84	492.83	491.26	1606.13	117.13	1738.1	1896.3	1.91	2.97	0.00	5.14	43.78	48.92	-3.5
+Argopecten irradians	High_pCO2	5	28	1	24	0.53	7.48	0.061	163	27	1.41	0.123	0.91	0.120	1980	54	57	6	2.011	0.024	9	7.35	63.34	2103.10	2096.39	1844.77	36.21	1944.3	1934.0	0.59	0.92	100.00	0.00	0.00	100.00	
+Argopecten irradians	High_pCO2	8	28	1	24	0.53	7.48	0.061	163	27	1.41	0.123	0.91	0.120	1980	54	57	6	2.011	0.024	9	7.35	63.34	2103.10	2096.39	1844.77	36.21	1944.3	1934.0	0.59	0.92	99.62	0.00	0.00	99.62	
+Argopecten irradians	High_pCO2	12	28	1	24	0.53	7.48	0.061	163	27	1.41	0.123	0.91	0.120	1980	54	57	6	2.011	0.024	9	7.35	63.34	2103.10	2096.39	1844.77	36.21	1944.3	1934.0	0.59	0.92	0.00	32.08	21.46	53.54	
+Argopecten irradians	High_pCO2	16	28	1	24	0.53	7.48	0.061	163	27	1.41	0.123	0.91	0.120	1980	54	57	6	2.011	0.024	9	7.35	63.34	2103.10	2096.39	1844.77	36.21	1944.3	1934.0	0.59	0.92	0.00	3.85	6.67	10.51	
+Argopecten irradians	High_pCO2	19	28	1	24	0.53	7.48	0.061	163	27	1.41	0.123	0.91	0.120	1980	54	57	6	2.011	0.024	9	7.35	63.34	2103.10	2096.39	1844.77	36.21	1944.3	1934.0	0.59	0.92	0.00	1.54	2.31	3.85	-7.9
+Argopecten irradians	Mid_pCO2	5	28	1	24	0.53	7.84	0.032	69	5	2.90	0.240	1.87	0.121	1900	15	118	3	2.047	0.030	9	7.70	27.01	896.94	894.08	1761.35	77.40	1865.8	1951.9	1.26	1.96	100.00	0.00	0.00	100.00	
+Argopecten irradians	Mid_pCO2	8	28	1	24	0.53	7.84	0.032	69	5	2.90	0.240	1.87	0.121	1900	15	118	3	2.047	0.030	9	7.70	27.01	896.94	894.08	1761.35	77.40	1865.8	1951.9	1.26	1.96	99.41	0.00	0.00	99.41	
+Argopecten irradians	Mid_pCO2	12	28	1	24	0.53	7.84	0.032	69	5	2.90	0.240	1.87	0.121	1900	15	118	3	2.047	0.030	9	7.70	27.01	896.94	894.08	1761.35	77.40	1865.8	1951.9	1.26	1.96	0.00	48.43	15.16	63.58	
+Argopecten irradians	Mid_pCO2	16	28	1	24	0.53	7.84	0.032	69	5	2.90	0.240	1.87	0.121	1900	15	118	3	2.047	0.030	9	7.70	27.01	896.94	894.08	1761.35	77.40	1865.8	1951.9	1.26	1.96	0.00	2.95	9.89	12.84	
+Argopecten irradians	Mid_pCO2	19	28	1	24	0.53	7.84	0.032	69	5	2.90	0.240	1.87	0.121	1900	15	118	3	2.047	0.030	9	7.70	27.01	896.94	894.08	1761.35	77.40	1865.8	1951.9	1.26	1.96	0.00	1.57	2.56	4.13	-7.8
+Argopecten irradians	Ambient_pCO2	5	28	1	24	0.53	8.08	0.034	36	3	4.80	0.420	3.06	0.341	1830	66	194	26	2.087	0.051	9	7.93	14.98	497.25	495.67	1658.29	123.75	1797.0	1962.8	2.02	3.14	100.00	0.00	0.00	100.00	
+Argopecten irradians	Ambient_pCO2	8	28	1	24	0.53	8.08	0.034	36	3	4.80	0.420	3.06	0.341	1830	66	194	26	2.087	0.051	9	7.93	14.98	497.25	495.67	1658.29	123.75	1797.0	1962.8	2.02	3.14	99.81	0.00	0.00	99.81	
+Argopecten irradians	Ambient_pCO2	12	28	1	24	0.53	8.08	0.034	36	3	4.80	0.420	3.06	0.341	1830	66	194	26	2.087	0.051	9	7.93	14.98	497.25	495.67	1658.29	123.75	1797.0	1962.8	2.02	3.14	0.00	53.54	29.29	82.84	
+Argopecten irradians	Ambient_pCO2	16	28	1	24	0.53	8.08	0.034	36	3	4.80	0.420	3.06	0.341	1830	66	194	26	2.087	0.051	9	7.93	14.98	497.25	495.67	1658.29	123.75	1797.0	1962.8	2.02	3.14	0.00	0.00	59.33	59.33	
+Argopecten irradians	Ambient_pCO2	19	28	1	24	0.53	8.08	0.034	36	3	4.80	0.420	3.06	0.341	1830	66	194	26	2.087	0.051	9	7.93	14.98	497.25	495.67	1658.29	123.75	1797.0	1962.8	2.02	3.14	0.00	0.00	51.87	51.87	-3.8
+Mercenaria mercenaria	High_pCO2	4	28	1	24	0.52	7.79	0.012	73	2	2.57	0.123	1.66	0.042	1830	12	105	10	1.961	0.018	9	7.65	29.27	971.97	968.87	1701.12	66.62	1797.0	1866.6	1.09	1.69	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	High_pCO2	7	28	1	24	0.52	7.79	0.012	73	2	2.57	0.123	1.66	0.042	1830	12	105	10	1.961	0.018	9	7.65	29.27	971.97	968.87	1701.12	66.62	1797.0	1866.6	1.09	1.69	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	High_pCO2	11	28	1	24	0.52	7.79	0.012	73	2	2.57	0.123	1.66	0.042	1830	12	105	10	1.961	0.018	9	7.65	29.27	971.97	968.87	1701.12	66.62	1797.0	1866.6	1.09	1.69	13.11	31.05	0.57	44.73	
+Mercenaria mercenaria	High_pCO2	13	28	1	24	0.52	7.79	0.012	73	2	2.57	0.123	1.66	0.042	1830	12	105	10	1.961	0.018	9	7.65	29.27	971.97	968.87	1701.12	66.62	1797.0	1866.6	1.09	1.69	1.14	21.37	10.26	32.76	
+Mercenaria mercenaria	High_pCO2	15	28	1	24	0.52	7.79	0.012	73	2	2.57	0.123	1.66	0.042	1830	12	105	10	1.961	0.018	9	7.65	29.27	971.97	968.87	1701.12	66.62	1797.0	1866.6	1.09	1.69	0.00	8.55	11.40	19.94	-8.2
+Mercenaria mercenaria	Mid_pCO2	4	28	1	24	0.51	7.88	0.021	60	4	3.15	0.101	2.03	0.102	1850	8	129	6	2.020	0.034	9	7.74	23.92	794.32	791.79	1710.33	82.41	1816.7	1914.0	1.35	2.09	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Mid_pCO2	7	28	1	24	0.51	7.88	0.021	60	4	3.15	0.101	2.03	0.102	1850	8	129	6	2.020	0.034	9	7.74	23.92	794.32	791.79	1710.33	82.41	1816.7	1914.0	1.35	2.09	97.98	0.00	0.00	97.98	
+Mercenaria mercenaria	Mid_pCO2	11	28	1	24	0.51	7.88	0.021	60	4	3.15	0.101	2.03	0.102	1850	8	129	6	2.020	0.034	9	7.74	23.92	794.32	791.79	1710.33	82.41	1816.7	1914.0	1.35	2.09	20.00	55.07	1.37	76.43	
+Mercenaria mercenaria	Mid_pCO2	13	28	1	24	0.51	7.88	0.021	60	4	3.15	0.101	2.03	0.102	1850	8	129	6	2.020	0.034	9	7.74	23.92	794.32	791.79	1710.33	82.41	1816.7	1914.0	1.35	2.09	0.00	47.81	19.95	67.76	
+Mercenaria mercenaria	Mid_pCO2	15	28	1	24	0.51	7.88	0.021	60	4	3.15	0.101	2.03	0.102	1850	8	129	6	2.020	0.034	9	7.74	23.92	794.32	791.79	1710.33	82.41	1816.7	1914.0	1.35	2.09	0.00	28.96	33.33	62.30	-3.8
+Mercenaria mercenaria	Low_pCO2	4	28	1	24	0.52	7.97	0.022	49	2	4.00	0.222	2.58	0.122	1910	61	163	5	2.126	0.034	9	7.83	19.92	661.31	659.20	1751.82	103.84	1875.6	2006.2	1.70	2.63	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Low_pCO2	7	28	1	24	0.52	7.97	0.022	49	2	4.00	0.222	2.58	0.122	1910	61	163	5	2.126	0.034	9	7.83	19.92	661.31	659.20	1751.82	103.84	1875.6	2006.2	1.70	2.63	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Low_pCO2	11	28	1	24	0.52	7.97	0.022	49	2	4.00	0.222	2.58	0.122	1910	61	163	5	2.126	0.034	9	7.83	19.92	661.31	659.20	1751.82	103.84	1875.6	2006.2	1.70	2.63	17.23	54.85	6.80	78.88	
+Mercenaria mercenaria	Low_pCO2	13	28	1	24	0.52	7.97	0.022	49	2	4.00	0.222	2.58	0.122	1910	61	163	5	2.126	0.034	9	7.83	19.92	661.31	659.20	1751.82	103.84	1875.6	2006.2	1.70	2.63	0.00	57.52	13.83	71.36	
+Mercenaria mercenaria	Low_pCO2	15	28	1	24	0.52	7.97	0.022	49	2	4.00	0.222	2.58	0.122	1910	61	163	5	2.126	0.034	9	7.83	19.92	661.31	659.20	1751.82	103.84	1875.6	2006.2	1.70	2.63	0.00	26.46	39.08	65.53	-3.5
+Mercenaria mercenaria	Ambient_pCO2	4	28	1	24	0.52	8.02	0.012	41	2	4.14	0.133	2.67	0.111	1800	16	169	1	2.036	0.005	9	7.88	16.64	552.36	550.60	1641.73	109.19	1767.6	1911.8	1.78	2.77	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Ambient_pCO2	7	28	1	24	0.52	8.02	0.012	41	2	4.14	0.133	2.67	0.111	1800	16	169	1	2.036	0.005	9	7.88	16.64	552.36	550.60	1641.73	109.19	1767.6	1911.8	1.78	2.77	100.00	0.00	0.00	100.00	
+Mercenaria mercenaria	Ambient_pCO2	11	28	1	24	0.52	8.02	0.012	41	2	4.14	0.133	2.67	0.111	1800	16	169	1	2.036	0.005	9	7.88	16.64	552.36	550.60	1641.73	109.19	1767.6	1911.8	1.78	2.77	21.93	65.80	7.05	94.78	
+Mercenaria mercenaria	Ambient_pCO2	13	28	1	24	0.52	8.02	0.012	41	2	4.14	0.133	2.67	0.111	1800	16	169	1	2.036	0.005	9	7.88	16.64	552.36	550.60	1641.73	109.19	1767.6	1911.8	1.78	2.77	0.00	50.39	37.86	88.25	
+Mercenaria mercenaria	Ambient_pCO2	15	28	1	24	0.52	8.02	0.012	41	2	4.14	0.133	2.67	0.111	1800	16	169	1	2.036	0.005	9	7.88	16.64	552.36	550.60	1641.73	109.19	1767.6	1911.8	1.78	2.77	0.00	32.11	53.79	85.90	-1.4

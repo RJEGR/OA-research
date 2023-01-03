@@ -119,6 +119,7 @@ df %>%
 
 library(patchwork)
 p1+p2+plot_layout(widths = c(1,4))
+
 p/p2
 
 df %>%
@@ -130,17 +131,47 @@ df %>%
   labs(x = expression(A[260]/A[280]), y = expression("Total RNA" ~ (µg))) +
   geom_text(aes(label = P), size = 2, family = "GillSans")
 
+pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4", `8`= "#4575b4")
+
+
 df %>%
+  filter(hpf %in% c('24', '110')) %>%
+  filter(pH != 7.8) %>%  view()
   mutate(A280 = A260/A260_A280) %>%
   mutate(A260_A280 = ifelse(A260_A280 > 5, NA, A260_A280)) %>%
   ggplot(aes(A260_A280, Total_RNA_ug, color = as.factor(pH))) +
+  # geom_point(size = 0.5) +
   facet_grid( ~ hpf,scales = 'free_y') +
-  theme_bw(base_size = 10, base_family = "GillSans") +
+  theme_bw(base_size = 14, base_family = "GillSans") +
   labs(x = expression(A[260]/A[280]), y = expression("Total RNA" ~ (µg))) +
-  geom_text(aes(label = P), size = 2.5, family = "GillSans") +
-  scale_color_manual("", values = getPalette[-3]) +
-  theme(legend.position = 'none')
+  ggrepel::geom_text_repel(aes(label = P), max.overlaps = 12, size = 7, family = "GillSans") +
+  scale_color_manual("", values = pHpalette[c(1,3)]) +
+  theme(
+    # strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'top')
+  
 
+df %>%
+  filter(hpf %in% c('24', '110')) %>%
+  filter(Stress %in% 'Chronic') %>%
+  mutate(A260_A280 = ifelse(A260_A280 > 5, NA, A260_A280)) %>%
+  ggplot(aes(x = as.factor(pH), y = A260_A280, color = as.factor(pH))) +
+  geom_boxplot() +
+  # geom_point(aes(size = Total_RNA_ug), shape = 3, alpha = 0.5) +
+  ggrepel::geom_text_repel(aes(label = P), 
+    size = 4, family = "GillSans") +
+  facet_grid( ~ hpf,scales = 'free_y') +
+  theme_bw(base_size = 14, base_family = "GillSans") +
+  labs(y = expression(A[260]/A[280]), x = 'pH') +
+  scale_color_manual("", values = pHpalette) +
+  theme(
+    # strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'none') 
+  
 # test ggdensity
 # Not good enough <---
 # remotes::install_github("jamesotto852/ggdensity")

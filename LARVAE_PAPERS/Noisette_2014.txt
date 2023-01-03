@@ -1,0 +1,293 @@
+/* DATA DESCRIPTION:
+Citation:	Noisette, Fanny; Comtet, Thierry; Legrand, Erwann; Bordeyne, Francois; Davoult, Dominique; Martin, Sophie (2014): Does Encapsulation Protect Embryos from the Effects of Ocean Acidification? The Example of Crepidula fornicata. PANGAEA, https://doi.org/10.1594/PANGAEA.833402, 
+	Supplement to: Noisette, F et al. (2014): Does Encapsulation Protect Embryos from the Effects of Ocean Acidification? The Example of Crepidula fornicata. PLoS ONE, 9(3), e93021, https://doi.org/10.1371/journal.pone.0093021
+Abstract:	Early life history stages of marine organisms are generally thought to be more sensitive to environmental stress than adults. Although most marine invertebrates are broadcast spawners, some species are brooders and/or protect their embryos in egg or capsules. Brooding and encapsulation strategies are typically assumed to confer greater safety and protection to embryos, although little is known about the physico-chemical conditions within egg capsules. In the context of ocean acidification, the protective role of encapsulation remains to be investigated. To address this issue, we conducted experiments on the gastropod Crepidula fornicata. This species broods its embryos within capsules located under the female and veliger larvae are released directly into the water column. C. fornicata adults were reared at the current level of CO2 partial pressure (pCO2) (390 µatm) and at elevated levels (750 and 1400 µatm) before and after fertilization and until larval release, such that larval development occurred entirely at a given pCO2. The pCO2 effects on shell morphology, the frequency of abnormalities and mineralization level were investigated on released larvae. Shell length decreased by 6% and shell surface area by 11% at elevated pCO2 (1400 µatm). The percentage of abnormalities was 1.5- to 4-fold higher at 750 µatm and 1400 µatm pCO2, respectively, than at 390 µatm. The intensity of birefringence, used as a proxy for the mineralization level of the larval shell, also decreased with increasing pCO2. These negative results are likely explained by increased intracapsular acidosis due to elevated pCO2 in extracapsular seawater. The encapsulation of C. fornicata embryos did not protect them against the deleterious effects of a predicted pCO2 increase. Nevertheless, C. fornicata larvae seemed less affected than other mollusk species. Further studies are needed to identify the critical points of the life cycle in this species in light of future ocean acidification.
+Keyword(s):	Animalia; Benthic animals; Benthos; Bottles or small containers/Aquaria (<20 L); Coast and continental shelf; Crepidula fornicata; Growth/Morphology; Laboratory experiment; Mollusca; North Atlantic; Single species; Temperate
+Further details:	Lavigne, Héloise; Epitalon, Jean-Marie; Gattuso, Jean-Pierre (2014): seacarb: seawater carbonate chemistry with R. R package version 3.0. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Coverage:	LATITUDE: 48.666920 * LONGITUDE: -3.883580
+	DATE/TIME START: 2011-11-30T00:00:00 * DATE/TIME END: 2011-11-30T00:00:00
+Event(s):	Morlaix_Bay * LATITUDE: 48.666920 * LONGITUDE: -3.883580 * DATE/TIME: 2011-11-30T00:00:00 * METHOD/DEVICE: Experiment (EXP)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne et al, 2014) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation is 2014-06-17.
+Parameter(s):	Species (Species) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: treatment
+	Length [µm] (l) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: shell
+	Height [µm] (h) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: shell
+	Area [µm**2] (Area) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: shell
+	Plane angle [rad] (Plane ang) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: formed by the abnormality
+	Distance [µm] (Distance) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: between the theoretical curve of the shell and the forest point (extreme point) of
+	the deformity
+	Ratio (Ratio) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: ange/distance
+	Birefringence intensity [pixel] (Birefringence I) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * COMMENT: mean gray value of shell
+	Replicates [#] (Repl) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca)
+	Temperature, water [°C] (Temp) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca)
+	Temperature, water, standard error [±] (T std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca)
+	pH (pH) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Potentiometric * COMMENT: total scale
+	pH, standard error [±] (pH std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Potentiometric * COMMENT: total scale
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air), standard error [±] (pCO2water_SST_wet std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Alkalinity, total [µmol/kg] (AT) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Potentiometric titration
+	Alkalinity, total, standard error [±] (AT std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Potentiometric titration
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbon, inorganic, dissolved, standard error [±] (DIC std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state (Omega Arg) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state, standard error [±] (Omega Arg std e) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Salinity (Sal) * PI: Noisette, Fanny (https://orcid.org/0000-0002-9672-2870, fanny_noisette@uqar.ca)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	6822 data points
+*/
+Species	pCO2water_SST_wet [µatm] (treatment)	l [µm] (shell)	h [µm] (shell)	Area [µm**2] (shell)	Plane ang [rad] (formed by the abnormality)	Distance [µm] (between the theoretical curve...)	Ratio (ange/distance)	Birefringence I [pixel] (mean gray value of shell)	Repl [#]	Temp [°C]	T std e [±]	pH (total scale, Potentiometric)	pH std e [±] (total scale, Potentiometric)	pCO2water_SST_wet [µatm] (Calculated using CO2SYS)	pCO2water_SST_wet std e [±] (Calculated using CO2SYS)	AT [µmol/kg] (Potentiometric titration)	AT std e [±] (Potentiometric titration)	DIC [µmol/kg] (Calculated using CO2SYS)	DIC std e [±] (Calculated using CO2SYS)	Omega Arg (Calculated using CO2SYS)	Omega Arg std e [±] (Calculated using CO2SYS)	Sal	CSC flag (Calculated using seacarb afte...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Crepidula fornicata (mollusk)	390	423.649	291.844	972232.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	477.081	278.755	1060460.9					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	416.097	253.114	848376.4					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	487.969	266.881	1059478.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	449.575	257.963	972959.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	384.853	210.684	666256.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	404.867	243.097	763633.9					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	386.997	230.459	686300.0					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	523.964	316.204	1220948.2					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	380.890	225.166	662689.4					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	418.388	247.158	784633.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	351.542	198.665	529757.2					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	506.775	281.127	1208421.9					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	433.619	290.209	965020.9					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	460.283	291.900	1076151.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	489.937	304.201	1110394.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	401.775	244.026	735625.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	483.602	283.738	1121373.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	371.822	215.176	650645.4					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	468.251	280.554	1034980.3					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	427.532	256.763	884827.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	420.498	251.801	775473.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	417.611	250.559	767803.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	413.402	247.552	812507.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	386.493	242.529	748093.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	456.782	259.650	1035167.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	389.838	232.735	712820.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	430.580	261.506	878586.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	393.782	236.595	725687.0					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	433.925	282.651	879249.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	414.816	259.128	780570.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	443.851	273.979	867309.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	415.811	264.151	800255.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	419.207	251.715	827008.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	452.942	267.499	958462.0					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	426.717	261.275	879024.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	429.998	262.177	873852.2					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	415.434	251.079	829670.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	421.921	265.550	808351.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	426.126	269.406	832790.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	405.899	247.217	826026.5					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	437.797	256.165	894385.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	409.058	262.105	787042.0					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	425.107	265.770	874029.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	417.117	251.095	789808.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	445.047	284.526	915996.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	427.809	275.009	921060.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	411.312	268.337	790650.3					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	421.745	264.712	878451.2					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	417.800	249.452	811714.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	408.584	271.459	831116.0					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	435.717	251.587	847343.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	426.319	270.020	866030.1					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	416.672	266.827	834562.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	411.737	259.024	784008.9					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	439.532	253.829	857588.7					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	426.515	260.409	847250.3					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	440.042	261.425	891025.6					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	403.659	247.687	748656.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390	445.810	257.237	854355.8					23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	750	409.955	259.599	796607.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	409.888	271.182	817841.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	385.929	256.870	771424.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	408.887	269.111	831261.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	401.285	268.354	806441.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	383.932	244.261	719116.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	396.771	250.411	778245.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	427.114	272.444	933931.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	410.436	260.105	819631.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	421.015	265.164	857562.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	415.066	274.930	861457.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	442.370	271.017	935569.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.051	268.354	882499.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	419.769	273.419	869002.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	409.104	259.038	801765.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	389.092	253.263	749573.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	417.570	247.962	850350.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	417.346	272.164	864653.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	402.082	258.842	855506.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	427.269	281.365	909545.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	412.206	249.029	758714.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	427.479	273.980	869902.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.675	255.028	818497.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	408.871	266.097	855376.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	432.441	269.808	918400.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	417.715	250.251	824795.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	399.114	260.273	838195.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	377.755	250.251	762165.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	411.843	257.579	803430.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	394.242	252.746	789068.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	408.087	265.476	842612.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.544	261.575	835933.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	422.266	265.688	872429.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	400.967	266.844	814727.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	406.276	260.524	785821.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	424.819	268.093	811599.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	410.141	258.424	814717.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	406.672	244.023	754878.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	413.343	271.218	872877.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	399.126	236.862	739725.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	424.230	263.612	871325.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	417.848	262.635	841286.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	433.833	256.148	840703.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	421.950	269.549	861192.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	411.656	241.870	777655.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	416.198	252.865	869597.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	401.062	242.185	790775.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	403.481	244.803	783119.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	411.035	249.802	838396.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	409.153	245.040	816176.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	396.713	239.889	741796.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	376.437	222.198	719213.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	405.907	253.252	826781.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	437.148	264.133	941844.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	413.968	247.654	892267.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	405.480	227.005	800681.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	386.244	243.602	743209.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	391.234	253.712	767725.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.283	251.968	840976.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	390.198	238.218	787666.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	401.109	237.010	792448.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	380.941	228.939	728958.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	393.309	236.910	762049.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	386.678	238.598	740611.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	370.035	233.068	678916.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	415.491	251.680	799738.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	413.825	252.194	790472.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	418.895	266.773	902146.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	414.422	260.573	857986.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	403.540	238.860	800748.1					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	388.920	242.562	706849.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	401.746	236.079	740607.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	397.468	250.941	748227.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	414.749	249.116	819119.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	374.963	238.860	773002.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	388.379	255.718	777152.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	420.751	263.119	866439.8					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	379.200	240.247	726118.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	380.364	233.083	720209.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.623	253.112	793140.5					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	399.757	233.708	787698.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	391.707	242.573	740780.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	399.582	253.112	804870.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	397.126	257.750	804184.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	407.354	247.873	831263.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	385.291	235.561	744343.0					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	370.492	235.772	711575.6					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	408.751	257.064	862879.9					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	359.743	236.355	672611.4					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	387.622	248.941	805252.7					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	387.670	245.007	728594.3					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750	406.756	231.457	825755.2					23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	1400	406.677	246.002	774231.5					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	403.111	243.662	769842.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	405.010	240.518	724001.3					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	384.300	246.511	734533.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	377.613	254.729	765935.4					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	388.630	253.586	784604.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	467.862	256.063	994041.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	477.002	268.205	1066636.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	436.750	264.176	832028.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	421.657	251.482	782711.3					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	414.367	277.615	831985.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	422.359	268.810	809856.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	407.758	255.370	739636.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	404.887	243.945	753944.1					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	405.589	244.023	749867.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	427.593	262.780	839200.3					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	374.370	230.646	645345.3					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	374.995	226.995	653946.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	366.144	228.204	665975.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	388.501	244.881	728874.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	398.614	252.308	761322.1					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	408.191	253.969	778542.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	415.678	229.952	823031.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	367.927	237.195	650547.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	422.031	261.453	796452.1					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	406.177	238.843	748858.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	395.372	239.284	688156.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	372.197	230.118	702572.9					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	386.220	222.567	719677.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	380.881	234.686	666466.1					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	412.951	251.280	772673.6					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	393.937	244.227	743357.5					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	397.636	256.785	784941.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	388.961	254.279	711202.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	405.755	250.922	808120.4					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	416.530	271.513	851776.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	417.627	249.029	817764.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	417.679	249.495	791816.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	372.805	232.591	651962.4					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	407.143	250.672	820404.3					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	398.969	259.431	800007.9					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	393.933	253.697	758123.5					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	397.079	246.434	749671.9					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	371.875	235.720	654466.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	378.237	236.321	652222.7					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	402.906	259.864	791411.1					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	405.417	243.963	721823.0					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	418.538	255.338	816551.8					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	397.537	250.726	761604.6					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	406.677	246.002	774231.5					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400	403.111	243.662	769842.2					23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	390				155.0	5.20	0.0335		23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390				142.1	3.81	0.0268		23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390				154.5	4.56	0.0295		23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390				142.1	7.62	0.0536		23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	750				142.9	7.62	0.0533		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750				98.4	6.90	0.0701		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750				139.1	7.86	0.0565		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750				151.2	8.20	0.0542		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750				137.9	18.08	0.1311		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750				145.7	6.87	0.0472		23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	1400				150.0	7.26	0.0484		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				135.0	11.82	0.0876		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				143.6	7.90	0.0550		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				136.0	5.70	0.0419		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				145.6	12.80	0.0879		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				149.7	11.59	0.0774		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				135.7	12.43	0.0916		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				146.2	25.52	0.1746		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				159.3	5.56	0.0349		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				152.5	6.87	0.0450		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				149.6	5.72	0.0382		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				162.0	5.72	0.0353		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400				154.4	5.40	0.0350		23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	390							107.9520	23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390							112.4153	23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390							123.6800	23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390							126.1445	23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	390							130.8340	23	18.4	0.5	8.02	0.01	550	10	2391	2	2152	5	2.70	0.05	35.1	8	15.1	447.3	445.8	1963.4	174.3	2152.8	2.69	4.16
+Crepidula fornicata (mollusk)	750							74.1063	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750							65.0300	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750							73.4840	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750							76.7343	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750							90.3565	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	750							76.9593	23	18.6	0.5	7.77	0.01	858	19	2395	3	2266	4	1.68	0.04	35.1	8	29.0	865.0	862.0	2132.2	107.2	2268.5	1.66	2.56
+Crepidula fornicata (mollusk)	1400							46.9806	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							50.2768	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							61.6664	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							53.3946	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							74.6545	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							47.8560	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							55.6442	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47
+Crepidula fornicata (mollusk)	1400							63.0922	23	18.4	0.5	7.51	0.01	1652	41	2394	3	2359	4	0.96	0.03	35.0	8	55.9	1654.6	1648.9	2243.6	61.4	2360.9	0.95	1.47

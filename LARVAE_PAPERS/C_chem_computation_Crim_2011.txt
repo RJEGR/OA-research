@@ -1,0 +1,44 @@
+/* DATA DESCRIPTION:
+Citation:	Crim, Ryan N; Sunday, Jennifer M; Harley, Christopher D G (2011): Seawater carbonate chemistry and shell length of northern abalone (Haliotis kamtschatkana) during experiments, 2011. PANGAEA, https://doi.org/10.1594/PANGAEA.771909, 
+	Supplement to: Crim, RN et al. (2011): Elevated seawater CO2 concentrations impair larval development and reduce larval survival in endangered northern abalone (Haliotis kamtschatkana). Journal of Experimental Marine Biology and Ecology, 400(1-2), 272-277, https://doi.org/10.1016/j.jembe.2011.02.002
+Abstract:	Increasing levels of anthropogenic carbon dioxide in the world's oceans are resulting in a decrease in the availability of carbonate ions and a drop in seawater pH. This process, known as ocean acidification, is a potential threat to marine populations via alterations in survival and development. To date, however, little research has examined the effects of ocean acidification on rare or endangered species. To begin to assess the impacts of acidification on endangered northern abalone (Haliotis kamtschatkana) populations, we exposed H. kamtschatkana larvae to various levels of CO2 [400 ppm (ambient), 800 ppm, and 1800 ppm CO2] and measured survival, settlement, shell size, and shell development. Larval survival decreased by ca. 40% in elevated CO2 treatments relative to the 400 ppm control. However, CO2 had no effect on the proportion of surviving larvae that metamorphosed at the end of the experiment. Larval shell abnormalities became apparent in approximately 40% of larvae reared at 800 ppm CO2, and almost all larvae reared at 1800 ppm CO2 either developed an abnormal shell or lacked a shell completely. Of the larvae that did not show shell abnormalities, shell size was reduced by 5% at 800 ppm compared to the control. Overall, larval development of H. kamtschatkana was found to be sensitive to ocean acidification. Near future levels of CO2 will likely pose a significant additional threat to this species, which is already endangered with extinction due in part to limited reproductive output and larval recruitment.
+Keyword(s):	Animalia; Bottles or small containers/Aquaria (<20 L); Coast and continental shelf; Development; Growth/Morphology; Haliotis kamtschatkana; Laboratory experiment; Mollusca; Mortality/Survival; North Pacific; Pelagos; Single species; Temperate; Zooplankton
+Project(s):	European network of excellence for Ocean Ecosystems Analysis (EUR-OCEANS) (URI: http://www.eur-oceans.eu/)
+	European Project on Ocean Acidification (EPOCA) (URI: https://en.wikipedia.org/wiki/European_Project_on_Ocean_Acidification)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Funding:	Seventh Framework Programme (FP7), grant/award no. 211384: European Project on Ocean Acidification (URI: https://cordis.europa.eu/project/rcn/87798/factsheet/en)
+	Sixth Framework Programme (FP6), grant/award no. 511106: European network of excellence for Ocean Ecosystems Analysis (URI: https://cordis.europa.eu/project/rcn/75677/factsheet/en)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI).
+Parameter(s):	Experimental treatment (Exp treat) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Salinity (Sal) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Salinity, standard deviation [±] (Sal std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Temperature, water [°C] (Temp) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Temperature, standard deviation [±] (T std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	pH (pH) * PI: Crim, Ryan N (ryancrim@gmail.com) * METHOD/DEVICE: pH meter (Omega PHH-830) * COMMENT: NBS scale
+	pH, standard deviation [±] (pH std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Alkalinity, total [µmol/kg] (AT) * PI: Crim, Ryan N (ryancrim@gmail.com) * METHOD/DEVICE: Alkalinity, Gran titration (Gran, 1950) (URI: https://doi.org/10.3891/acta.chem.scand.04-0559)
+	Alkalinity, total, standard deviation [±] (AT std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, larvae [#] (H. kamtschatkana larv) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, larvae, standard deviation [±] (H. kamtschatkana larv std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, normal [%] (H. kamtschatkana normal) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, normal, standard deviation [±] (H. kamtschatkana normal std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, shell length [µm] (H. kamtschatkana sl) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Haliotis kamtschatkana, shell length, standard deviation [±] (H. kamtschatkana sl std dev) * PI: Crim, Ryan N (ryancrim@gmail.com)
+	Carbonate system computation flag (CSC flag) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: Total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	76 data points
+*/
+Exp treat	Sal	Sal std dev [±]	Temp [°C]	T std dev [±]	pH (NBS scale, pH meter (Omega PH...)	pH std dev [±]	AT [µmol/kg] (Alkalinity, Gran titration (G...)	AT std dev [±]	H. kamtschatkana larv [#]	H. kamtschatkana larv std dev [±]	H. kamtschatkana normal [%]	H. kamtschatkana normal std dev [±]	H. kamtschatkana sl [µm]	H. kamtschatkana sl std dev [±]	CSC flag (Calculated using seacarb afte...)	pH (Total scale, Calculated using...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Initial									531	27														
+Control	34.42	0.19	12	0.1	8.29	0.01	1978.08	56.04	307	92	98	3	289	4	26	8.18	9.76	237.54	236.66	1576.78	156.36	1742.90	2.38	3.74
+pCO2=800	34.56	0.19	12	0.1	8.06	0.02	1969.64	60.00	174	88	61	24	276	7	26	7.95	17.97	437.52	435.90	1711.70	100.33	1830.00	1.53	2.40
+pCO2=1800	34.62	0.16	12	0.1	7.78	0.02	1971.67	44.44	192	61	0	1			26	7.67	36.53	889.81	886.52	1826.99	56.27	1919.80	0.86	1.34

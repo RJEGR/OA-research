@@ -1,0 +1,136 @@
+/* DATA DESCRIPTION:
+Citation:	Milazzo, Marco; Rodolfo-Metalpa, Riccardo; Chan, B S Vera; Fine, Maoz; Alessi, Cinzia; Thiyagarajan, Vengatesen; Hall-Spencer, Jason M; Chemello, Renato (2014): Ocean acidification impairs vermetid reef recruitment. PANGAEA, https://doi.org/10.1594/PANGAEA.836006, 
+	Supplement to: Milazzo, M et al. (2014): Ocean acidification impairs vermetid reef recruitment. Scientific Reports, 4, https://doi.org/10.1038/srep04189
+Abstract:	Vermetids form reefs in sub-tropical and warm-temperate waters that protect coasts from erosion, regulate sediment transport and accumulation, serve as carbon sinks and provide habitat for other species. The gastropods that form these reefs brood encapsulated larvae; they are threatened by rapid environmental changes since their ability to disperse is very limited. We used transplant experiments along a natural CO2 gradient to assess ocean acidification effects on the reef-building gastropod Dendropoma petraeum. We found that although D. petraeum were able to reproduce and brood at elevated levels of CO2, recruitment success was adversely affected. Long-term exposure to acidified conditions predicted for the year 2100 and beyond caused shell dissolution and a significant increase in shell Mg content. Unless CO2 emissions are reduced and conservation measures taken, our results suggest these reefs are in danger of extinction within this century, with significant ecological and socioeconomic ramifications for coastal systems.
+Keyword(s):	Animalia; Benthic animals; Benthos; CO2 vent; Coast and continental shelf; Dendropoma petraeum; Field experiment; Growth/Morphology; Mediterranean Sea; Mollusca; Mortality/Survival; Neogoniolithon brassica-florida; Reproduction; Single species; Temperate
+Further details:	Lavigne, Héloise; Epitalon, Jean-Marie; Gattuso, Jean-Pierre (2014): seacarb: seawater carbonate chemistry with R. R package version 3.0. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Coverage:	MEDIAN LATITUDE: 38.392767 * MEDIAN LONGITUDE: 14.873011 * SOUTH-BOUND LATITUDE: 38.205680 * WEST-BOUND LONGITUDE: 14.258170 * NORTH-BOUND LATITUDE: 38.420800 * EAST-BOUND LONGITUDE: 14.964220
+	DATE/TIME START: 2010-11-01T00:00:00 * DATE/TIME END: 2011-11-01T00:00:00
+Event(s):	NW_Sicily * LATITUDE: 38.377138 * LONGITUDE: 14.821536 * DATE/TIME START: 2010-11-01T00:00:00 * DATE/TIME END: 2011-11-01T00:00:00 * METHOD/DEVICE: Experiment (EXP)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne et al, 2014) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation is 2014-09-16.
+Parameter(s):	LATITUDE (Latitude) * GEOCODE
+	LONGITUDE (Longitude) * GEOCODE
+	Species (Species) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Figure (Fig) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Incubation duration [months] (Inc dur) * PI: Milazzo, Marco (marmilazzo@iol.it) * COMMENT: exposure
+	Site (Site) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Replicate (Replicate) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Recruitment [#/cm**2] (Recruitment) * PI: Milazzo, Marco (marmilazzo@iol.it) * COMMENT: living
+	Survival [%] (Survival) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Abundance per area [#/m**2] (Abund a) * PI: Milazzo, Marco (marmilazzo@iol.it) * COMMENT: adults
+	Recruitment [#/cm**2] (Recruitment) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Coverage [%] (Cov) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Magnesium/Calcium ratio [mmol/mol] (Mg/Ca) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Strontium/Calcium ratio [mmol/mol] (Sr/Ca) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Salinity (Sal) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Salinity, standard error [±] (Sal std e) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Temperature, water [°C] (Temp) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	Temperature, water, standard error [±] (T std e) * PI: Milazzo, Marco (marmilazzo@iol.it)
+	pH (pH) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Potentiometric * COMMENT: NBS scale
+	pH, standard error [±] (pH std e) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Potentiometric * COMMENT: NBS scale
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air), standard error [±] (pCO2water_SST_wet std e) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Alkalinity, total [µmol/kg] (AT) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Potentiometric titration
+	Alkalinity, total, standard error [±] (AT std e) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Potentiometric titration
+	Aragonite saturation state (Omega Arg) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state, standard error [±] (Omega Arg std e) * PI: Milazzo, Marco (marmilazzo@iol.it) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	2248 data points
+*/
+Latitude	Longitude	Species	Fig	Inc dur [months] (exposure)	Site	Replicate	Recruitment [#/cm**2] (living)	Survival [%]	Abund a [#/m**2] (adults)	Recruitment [#/cm**2]	Cov [%]	Mg/Ca [mmol/mol]	Sr/Ca [mmol/mol]	Sal	Sal std e [±]	Temp [°C]	T std e [±]	pH (NBS scale, Potentiometric)	pH std e [±] (NBS scale, Potentiometric)	pCO2water_SST_wet [µatm] (Calculated using CO2SYS)	pCO2water_SST_wet std e [±] (Calculated using CO2SYS)	AT [µmol/kg] (Potentiometric titration)	AT std e [±] (Potentiometric titration)	Omega Arg (Calculated using CO2SYS)	Omega Arg std e [±] (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	pH (total scale, Calculated using...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+38.41960	14.96097		2A	6	Low pH	1	0.055	70.0						37.9	0.1	25.6	0.8	7.43	0.05	2998	354	2508	12	1.23	0.11	26	7.30	81.89	2981.65	2972.34	2373.85	55.23	2510.97	0.86	1.30
+38.41960	14.96097		2A	6	Low pH	2	0.017	100.0						37.9	0.1	25.6	0.8	7.43	0.05	2998	354	2508	12	1.23	0.11	26	7.30	81.89	2981.65	2972.34	2373.85	55.23	2510.97	0.86	1.30
+38.41960	14.96097		2A	6	Low pH	3	0.025	75.0						37.9	0.1	25.6	0.8	7.43	0.05	2998	354	2508	12	1.23	0.11	26	7.30	81.89	2981.65	2972.34	2373.85	55.23	2510.97	0.86	1.30
+38.41960	14.96097		2A	12	Low pH	1	0.000	0.0						37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097		2A	12	Low pH	2	0.010	50.0						37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097		2A	12	Low pH	3	0.020	50.0						37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41973	14.96160		2A	6	Mid pH	1	0.023	100.0						37.8	0.1	25.6	0.8	7.87	0.03	985	94	2520	6	2.64	0.17	26	7.74	27.34	995.05	991.94	2180.94	139.41	2347.69	2.17	3.28
+38.41973	14.96160		2A	6	Mid pH	2	0.030	100.0						37.8	0.1	25.6	0.8	7.87	0.03	985	94	2520	6	2.64	0.17	26	7.74	27.34	995.05	991.94	2180.94	139.41	2347.69	2.17	3.28
+38.41973	14.96160		2A	6	Mid pH	3	0.058	90.0						37.8	0.1	25.6	0.8	7.87	0.03	985	94	2520	6	2.64	0.17	26	7.74	27.34	995.05	991.94	2180.94	139.41	2347.69	2.17	3.28
+38.41973	14.96160		2A	12	Mid pH	1	0.036	80.0						37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160		2A	12	Mid pH	2	0.061	100.0						37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160		2A	12	Mid pH	3	0.038	80.0						37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41988	14.96272		2A	6	High pH	1	0.609	100.0						38.0	0.1	25.3	0.8	8.06	0.02	601	27	2519	3	3.30	0.12	26	7.93	16.47	595.68	593.81	2030.87	200.19	2247.54	3.11	4.70
+38.41988	14.96272		2A	6	High pH	2	0.118	86.7						38.0	0.1	25.3	0.8	8.06	0.02	601	27	2519	3	3.30	0.12	26	7.93	16.47	595.68	593.81	2030.87	200.19	2247.54	3.11	4.70
+38.41988	14.96272		2A	6	High pH	3	0.118	92.9						38.0	0.1	25.3	0.8	8.06	0.02	601	27	2519	3	3.30	0.12	26	7.93	16.47	595.68	593.81	2030.87	200.19	2247.54	3.11	4.70
+38.41988	14.96272		2A	12	High pH	1	0.362	92.3						37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272		2A	12	High pH	2	0.279	100.0						37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272		2A	12	High pH	3	0.136	100.0						37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.42080	14.96422		2A	12	CTL_Vent	1	0.166	66.7						37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422		2A	12	CTL_Vent	2	0.097	100.0						37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422		2A	12	CTL_Vent	3	0.255	73.7						37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.20568	14.25817		2A	12	CTL_Core	1	0.250	90.9						37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817		2A	12	CTL_Core	2	0.148	85.0						37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817		2A	12	CTL_Core	3	0.243	75.7						37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	1			9344	0.078				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	2			2863	0.017				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	3			14393	0.020				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	4			8153	0.040				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	5			7234	0.033				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Dendropoma petraeum (mollusk)	2B		Low pH	6			6933	0.000				37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	1			21551	0.065				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	2			14845	0.045				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	3			5953	0.023				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	4			10248	0.030				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	5			23661	0.061				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	2B		Mid pH	6			15252	0.048				37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	1			15749	0.609				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	2			29463	0.136				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	3			30669	0.127				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	4			15749	0.392				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	5			24339	0.279				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	2B		High pH	6			22832	0.136				37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	1			7988	0.248																									
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	2			17859	0.097																									
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	3			12509	0.345																									
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	4			27806	0.275																									
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	5			25997	0.174																									
+		Dendropoma petraeum (mollusk)	2B		CTL_C_V	6			20346	0.322																									
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	1				0.078	30.3			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	2				0.017	57.1			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	3				0.033	19.2			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	4				0.000	17.9			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	5				0.020	48.9			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41960	14.96097	Neogoniolithon brassica-florida (macroalga)	2C		Low pH	6				0.040	34.9			37.4	0.2	21.5	0.5	7.31	0.03	3923	307	2506	8	0.91	0.06	26	7.18	117.00	3822.41	3809.85	2415.75	37.06	2569.81	0.57	0.87
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	1				0.023	18.6			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	2				0.030	33.3			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	3				0.065	54.4			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	4				0.045	21.9			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	5				0.061	33.8			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Neogoniolithon brassica-florida (macroalga)	2C		Mid pH	6				0.048	32.4			37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	1				0.609	35.7			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	2				0.136	20.8			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	3				0.127	46.2			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	4				0.392	10.5			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	5				0.279	22.5			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Neogoniolithon brassica-florida (macroalga)	2C		High pH	6				0.136	33.4			37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.42080	14.96422	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Vent	1				0.248	24.3			37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Vent	2				0.097	56.4			37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Vent	3				0.345	84.0			37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.20568	14.25817	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Core	4				0.275	37.9			37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Core	5				0.174	80.9			37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817	Neogoniolithon brassica-florida (macroalga)	2C		CTL_Core	6				0.322	35.4			37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.41973	14.96160	Dendropoma petraeum (mollusk)	4		Mid pH	1						16.236	2.303	37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	4		Mid pH	2						14.287	1.961	37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41973	14.96160	Dendropoma petraeum (mollusk)	4		Mid pH	3						24.966	1.901	37.2	0.1	21.4	0.5	7.73	0.02	1385	91	2517	5	1.89	0.10	26	7.61	42.35	1378.43	1373.90	2293.26	91.84	2427.45	1.41	2.16
+38.41988	14.96272	Dendropoma petraeum (mollusk)	4		High pH	1						14.769	2.428	37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	4		High pH	2						8.938	3.075	37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.41988	14.96272	Dendropoma petraeum (mollusk)	4		High pH	3						4.681	2.326	37.5	0.1	21.4	0.5	8.03	0.01	633	28	2524	4	2.90	0.08	26	7.91	19.46	634.48	632.39	2109.49	169.86	2298.81	2.61	3.99
+38.42080	14.96422	Dendropoma petraeum (mollusk)	4		CTL_Vent	1						5.951	2.226	37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422	Dendropoma petraeum (mollusk)	4		CTL_Vent	2						9.774	3.437	37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.42080	14.96422	Dendropoma petraeum (mollusk)	4		CTL_Vent	3						4.320	2.119	37.6	0.1	21.4	0.4	8.15	0.01	468	15	2525	4	3.44	0.34	26	8.03	14.01	457.01	455.51	2004.04	213.27	2231.32	3.27	5.00
+38.20568	14.25817	Dendropoma petraeum (mollusk)	4		CTL_Core	1						7.679	2.243	37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817	Dendropoma petraeum (mollusk)	4		CTL_Core	2						5.068	2.224	37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817	Dendropoma petraeum (mollusk)	4		CTL_Core	3						5.206	2.242	37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19
+38.20568	14.25817	Dendropoma petraeum (mollusk)	4		CTL_Core	4						4.454	3.057	37.7	0.2	22.2	0.5	8.16	0.01	462	11	2518	2	3.39	0.07	26	8.03	13.34	444.62	443.17	1977.17	221.33	2211.84	3.40	5.19

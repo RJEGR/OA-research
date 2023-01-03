@@ -96,10 +96,33 @@ input %>%
   left_join(join_dat, by = c('SPECIES.ALPHA_3_CODE'='3A_Code')) %>% 
   group_by(CPC_Class_En) %>%
   summarise(VALUE = sum(VALUE)) %>%
-  mutate(PCT = VALUE/sum(VALUE), PCT = PCT*100) %>% 
+  mutate(PCT = VALUE/sum(VALUE)) %>% filter(PCT > 0.01) %>%
+  mutate(CPC_Class_En = fct_reorder(CPC_Class_En, PCT, .desc = TRUE)) %>%
   ggplot(aes(PCT, CPC_Class_En)) +
-  geom_col()
+  geom_col() +
+  scale_x_continuous(labels = scales::percent)
   
+
+# pattern <- c("Coral and similar products", "Octopus, live, fresh or chilled", "Cuttle fish and squid")
+# 
+# ommit <- unique(join_dat$CPC_Class_En)
+# ommit[grep(pattern, ommit)]
+# 
+
+input %>%
+  group_by(SPECIES.ALPHA_3_CODE, PERIOD) %>%
+  summarise(VALUE = sum(VALUE)) %>%
+  filter(VALUE > 0) %>%
+  left_join(join_dat, by = c('SPECIES.ALPHA_3_CODE'='3A_Code')) %>% 
+  group_by(CPC_Class_En, PERIOD) %>%
+  summarise(VALUE = sum(VALUE)) %>%
+  # filter(grepl(ommit, CPC_Class_En))
+  mutate(color = ifelse(grepl('Abalone', CPC_Class_En), 'Abalone', '')) %>%
+  ggplot(aes(x = PERIOD, y = VALUE, group = CPC_Class_En, color = color)) +
+  geom_path(size = 6, lineend = 'round') +
+  scale_y_log10() +
+  labs(x = 'Periodo', y = expression(Log[10]), subtitle = MEASURE_UNITS) +
+  scale_color_manual(values = c('black', 'blue'))
   
 # map ----
 

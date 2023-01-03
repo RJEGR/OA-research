@@ -1,0 +1,173 @@
+/* DATA DESCRIPTION:
+Citation:	Kurihara, Haruko; Kato, Shoji; Ishimatsu, Atsushi (2007): Seawater carbonate chemistry and processes during experiments with Crassostrea gigas, 2007. PANGAEA, https://doi.org/10.1594/PANGAEA.721193, 
+	Supplement to: Kurihara, H et al. (2007): Effects of increased seawater pCO2 on early development of the oyster Crassostrea gigas. Aquatic Biology, 1(1), 91-98, https://doi.org/10.3354/ab00009
+Abstract:	This study demonstrated that the increased partial pressure of CO2 (pCO2) in seawater and the attendant acidification that are projected to occur by the year 2300 will severely impact the early development of the oyster Crassostrea gigas. Eggs of the oyster were artificially fertilized and incubated for 48 h in seawater acidified to pH 7.4 by equilibrating it with CO2-enriched air (CO2 group), and the larval morphology and degree of shell mineralization were compared with the control treatment (air-equilibrated seawater). Only 5% of the CO2 group developed into normal 'D-shaped' veliger larvae as compared with 68% in the control group, although no difference was observed between the groups up to the trochophore stage. Thus, during embryogenesis, the calcification process appears to be particularly affected by low pH and/or the low CaCO3 saturation state of high-CO2 seawater. Veliger larvae with fully mineralized shells accounted for 30% of the CO2-group larvae, compared with 72% in the control (p < 0.005). Shell mineralization was completely inhibited in 45% of the CO2-group larvae, but only in 16% of the control (p < 0.05). Normal D-shaped veligers of the control group exhibited increased shell length and height between 24 and 48 h after fertilization, while the few D-shaped veligers of the CO2 group showed no shell growth during the same period. Our results suggest that future ocean acidification will have deleterious impacts on the early development of marine benthic calcifying organisms.
+Keyword(s):	Animalia; Bottles or small containers/Aquaria (<20 L); Calcification/Dissolution; Coast and continental shelf; Crassostrea gigas; Development; Growth/Morphology; Laboratory experiment; Mollusca; North Pacific; Pelagos; Single species; Temperate; Zooplankton
+Project(s):	European network of excellence for Ocean Ecosystems Analysis (EUR-OCEANS) (URI: http://www.eur-oceans.eu/)
+	European Project on Ocean Acidification (EPOCA) (URI: https://en.wikipedia.org/wiki/European_Project_on_Ocean_Acidification)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Funding:	Seventh Framework Programme (FP7), grant/award no. 211384: European Project on Ocean Acidification (URI: https://cordis.europa.eu/project/rcn/87798/factsheet/en)
+	Sixth Framework Programme (FP6), grant/award no. 511106: European network of excellence for Ocean Ecosystems Analysis (URI: https://cordis.europa.eu/project/rcn/75677/factsheet/en)
+Event(s):	Kurihara_etal_07 * METHOD/DEVICE: Experiment (EXP)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI).
+Parameter(s):	Experimental treatment (Exp treat) * PI: Kurihara, Haruko
+	Carbonate system computation flag (CSC flag) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Temperature, water [°C] (Temp) * PI: Kurihara, Haruko
+	Salinity (Sal) * PI: Kurihara, Haruko * METHOD/DEVICE: Refractometer (Atago 100-S)
+	pH (pH) * PI: Kurihara, Haruko * METHOD/DEVICE: pH meter (Mettler Toledo, USA) * COMMENT: NBS scale
+	pH (pH) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: Total scale
+	Alkalinity, total [µmol/kg] (AT) * PI: Kurihara, Haruko * METHOD/DEVICE: pH meter (PHM290, Radiometer)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon dioxide [µmol/kg] (CO2) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Proportion [%] (Prop) * PI: Kurihara, Haruko * COMMENT: of each stage
+	Crassostrea gigas, larvae length [µm] (C. gigas larv l) * PI: Kurihara, Haruko * METHOD/DEVICE: Measured
+	Crassostrea gigas, larvae height [µm] (C. gigas larv h) * PI: Kurihara, Haruko * METHOD/DEVICE: Measured
+	Crassostrea gigas, non mineralized [%] (C. gigas non min) * PI: Kurihara, Haruko * METHOD/DEVICE: Measured
+	Crassostrea gigas, partially mineralized [%] (C. gigas part min) * PI: Kurihara, Haruko * METHOD/DEVICE: Measured
+	Crassostrea gigas, fully mineralized [%] (C. gigas ful min) * PI: Kurihara, Haruko * METHOD/DEVICE: Measured
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	2170 data points
+*/
+Exp treat	CSC flag (Calculated using seacarb afte...)	Temp [°C]	Sal (Refractometer (Atago 100-S))	pH (NBS scale, pH meter (Mettler ...)	pH (Total scale, Calculated using...)	AT [µmol/kg] (pH meter (PHM290, Radiometer))	DIC [µmol/kg] (Calculated using seacarb afte...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)	Prop [%] (of each stage)	C. gigas larv l [µm] (Measured)	C. gigas larv h [µm] (Measured)	C. gigas non min [%] (Measured)	C. gigas part min [%] (Measured)	C. gigas ful min [%] (Measured)
+Control; Stage: Egg; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: 2 cell; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: 4 cell; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: 8 cell; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: 16 cell; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: Morula; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: Blastula; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: Gastrula; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: Trocophore; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: D-shaped; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+Control; Stage: Abnormal; Duration: 0h	26	23	33.7	8.2	8.08	1964.0	1703.1	9.40	1517.16	176.53	313.38	312.37	2.80	4.28						
+CO2; Stage: Egg; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: 2 cell; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: 4 cell; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: 8 cell; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: 16 cell; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: Morula; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: Blastula; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: Gastrula; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: Trocophore; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: D-shaped; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+CO2; Stage: Abnormal; Duration: 0h	26	23	33.7	7.4	7.28	1964.0	1982.6	72.06	1875.35	35.19	2401.91	2394.16	0.56	0.85						
+Control; Stage: Egg; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	43.4					
+Control; Stage: 2 cell; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	19.4					
+Control; Stage: 4 cell; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	13.4					
+Control; Stage: 8 cell; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	14.4					
+Control; Stage: 16 cell; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	4.8					
+Control; Stage: Morula; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.4					
+Control; Stage: Blastula; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Gastrula; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Trocophore; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: D-shaped; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Abnormal; Duration: 2h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	4.2					
+CO2; Stage: Egg; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	43.2					
+CO2; Stage: 2 cell; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	21.8					
+CO2; Stage: 4 cell; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	18.0					
+CO2; Stage: 8 cell; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	7.6					
+CO2; Stage: 16 cell; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	1.6					
+CO2; Stage: Morula; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	0.4					
+CO2; Stage: Blastula; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	0.0					
+CO2; Stage: Gastrula; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	0.0					
+CO2; Stage: Trocophore; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	0.0					
+CO2; Stage: D-shaped; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	0.0					
+CO2; Stage: Abnormal; Duration: 2h	26	23	33.7	7.5	7.32	1964.0	1971.6	65.73	1867.61	38.26	2191.12	2184.05	0.61	0.93	7.4					
+Control; Stage: Egg; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	31.6					
+Control; Stage: 2 cell; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	4.0					
+Control; Stage: 4 cell; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	7.4					
+Control; Stage: 8 cell; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	12.8					
+Control; Stage: 16 cell; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	32.8					
+Control; Stage: Morula; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	6.8					
+Control; Stage: Blastula; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Gastrula; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Trocophore; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: D-shaped; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	0.0					
+Control; Stage: Abnormal; Duration: 3h	26	23	33.7	8.2	8.04	1964.0	1722.2	10.46	1546.87	164.87	348.82	347.70	2.61	4.00	4.6					
+CO2; Stage: Egg; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	38.6					
+CO2; Stage: 2 cell; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	5.8					
+CO2; Stage: 4 cell; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	10.8					
+CO2; Stage: 8 cell; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	15.8					
+CO2; Stage: 16 cell; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	16.0					
+CO2; Stage: Morula; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	5.4					
+CO2; Stage: Blastula; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	0.0					
+CO2; Stage: Gastrula; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	0.0					
+CO2; Stage: Trocophore; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	0.0					
+CO2; Stage: D-shaped; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	0.0					
+CO2; Stage: Abnormal; Duration: 3h	26	23	33.7	7.5	7.32	1964.0	1973.3	66.68	1868.85	37.77	2222.71	2215.54	0.60	0.92	7.6					
+Control; Stage: Egg; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	22.2					
+Control; Stage: 2 cell; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	0.0					
+Control; Stage: 4 cell; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	0.2					
+Control; Stage: 8 cell; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	0.4					
+Control; Stage: 16 cell; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	0.6					
+Control; Stage: Morula; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	7.2					
+Control; Stage: Blastula; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	30.0					
+Control; Stage: Gastrula; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	31.6					
+Control; Stage: Trocophore; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	2.0					
+Control; Stage: D-shaped; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	1.0					
+Control; Stage: Abnormal; Duration: 8h	26	23	33.7	8.2	8.04	1964.0	1719.2	10.29	1542.22	166.69	342.93	341.82	2.64	4.04	4.8					
+CO2; Stage: Egg; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	27.8					
+CO2; Stage: 2 cell; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	0.2					
+CO2; Stage: 4 cell; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	0.2					
+CO2; Stage: 8 cell; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	0.2					
+CO2; Stage: 16 cell; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	4.4					
+CO2; Stage: Morula; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	17.4					
+CO2; Stage: Blastula; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	24.4					
+CO2; Stage: Gastrula; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	21.0					
+CO2; Stage: Trocophore; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	0.0					
+CO2; Stage: D-shaped; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	0.0					
+CO2; Stage: Abnormal; Duration: 8h	26	23	33.7	7.5	7.33	1964.0	1969.9	64.80	1866.34	38.76	2159.89	2152.93	0.61	0.94	4.4					
+Control; Stage: Egg; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	2.0					
+Control; Stage: 2 cell; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: 4 cell; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: 8 cell; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: 16 cell; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: Morula; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: Blastula; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.6					
+Control; Stage: Gastrula; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	0.0					
+Control; Stage: Trocophore; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	11.8					
+Control; Stage: D-shaped; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	65.4	55.16	66.88			
+Control; Stage: Abnormal; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88	20.2					
+Control; Stage: Embryos; Duration: 24h	26	23	33.7	8.2	8.02	1964.0	1730.0	10.94	1558.93	160.13	364.78	363.60	2.54	3.88				23.77	10.20	66.03
+CO2; Stage: Egg; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	6.6					
+CO2; Stage: 2 cell; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.0					
+CO2; Stage: 4 cell; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.2					
+CO2; Stage: 8 cell; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.0					
+CO2; Stage: 16 cell; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.0					
+CO2; Stage: Morula; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.0					
+CO2; Stage: Blastula; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.8					
+CO2; Stage: Gastrula; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	0.0					
+CO2; Stage: Trocophore; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	11.2					
+CO2; Stage: D-shaped; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	4.4	61.64	72.46			
+CO2; Stage: Abnormal; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90	76.8					
+CO2; Stage: Embryos; Duration: 24h	26	23	33.7	7.4	7.31	1964.0	1976.2	68.32	1870.94	36.94	2277.44	2270.09	0.59	0.90				48.79	34.03	17.17
+Control; Stage: Egg; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.2					
+Control; Stage: 2 cell; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: 4 cell; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: 8 cell; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: 16 cell; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: Morula; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: Blastula; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: Gastrula; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	0.0					
+Control; Stage: Trocophore; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	2.3					
+Control; Stage: D-shaped; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	68.4	50.94	56.04			
+Control; Stage: Abnormal; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85	29.1					
+Control; Stage: Embryos; Duration: 48h	26	23	33.7	8.2	8.02	1964.0	1731.9	11.06	1561.86	158.97	368.80	367.62	2.52	3.85				15.57	11.95	72.49
+CO2; Stage: Egg; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	2.2					
+CO2; Stage: 2 cell; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: 4 cell; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: 8 cell; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: 16 cell; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: Morula; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: Blastula; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.2					
+CO2; Stage: Gastrula; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	0.0					
+CO2; Stage: Trocophore; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	2.1					
+CO2; Stage: D-shaped; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	4.5	48.89	56.73			
+CO2; Stage: Abnormal; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86	90.9					
+CO2; Stage: Embryos; Duration: 48h	26	23	33.7	7.4	7.29	1964.0	1982.0	71.70	1874.95	35.35	2390.03	2382.32	0.56	0.86				44.90	24.83	30.27

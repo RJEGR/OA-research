@@ -35,15 +35,15 @@ fit_data <- read_rds(fileName)
 # Estimate these metrics:
 # Root Mean Squared Error
 # lapply(fit_data, performance_rmse)
-# performance_rmse(fit_data$DIC) 
-# performance_mse(fit_data$DIC)
-# performance(fit_data$DIC)
-# model_performance(fit_data$DIC)
+# performance_rmse(fit_data$Aragonite) 
+# performance_mse(fit_data$Aragonite)
+performance(fit_data$Aragonite)
+# model_performance(fit_data$Aragonite)
 
 
 do.call(rbind, lapply(fit_data, performance))
 
-# check_model(fit_data$DIC)
+# check_model(fit_data$Aragonite)
 
 # Summary stats by day
 
@@ -66,7 +66,10 @@ plot_data %>%
 
 plot_data %>% ungroup() %>% distinct(date) %>% pull(date) %>% as.character() -> recode_date
 
-struc_group <- c(rep('A) Embryo', 2), rep('B) Larvae', 4), rep('C) Post-larvae', 26))
+# struc_group <- c(rep('A) Embryo', 2), rep('B) Larvae', 4), rep('C) Post-larvae', 26))
+
+struc_group <- c(rep('A)', 2), rep('B)', 4), rep('C)', 26))
+
 
 level_key <- structure(struc_group, names = recode_date)
 

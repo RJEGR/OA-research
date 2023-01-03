@@ -1,0 +1,72 @@
+/* DATA DESCRIPTION:
+Citation:	Thomsen, Jörn; Stapp, Laura; Haynert, Kristin; Schade, Hanna; Danelli, Maria; Lannig, Gisela; Wegner, K Mathias; Melzner, Frank (2017): Fig. 2 - Larval performance of Baltic Sea and North Sea populations exposed to elevated pCO2. GEOMAR - Helmholtz Centre for Ocean Research Kiel, PANGAEA, https://doi.org/10.1594/PANGAEA.877951, 
+	In supplement to: Thomsen, J et al. (2017): Naturally acidified habitat selects for ocean acidification-tolerant mussels. Science Advances, 3(4), e1602411, https://doi.org/10.1126/sciadv.1602411
+Keyword(s):	Animalia; Baltic Sea; Benthic animals; Benthos; Calcification/Dissolution; Coast and continental shelf; Containers and aquaria (20-1000 L or < 1 m**2); Growth/Morphology; Laboratory experiment; Mollusca; Mytilus edulis; Single species; Temperate
+Further details:	Gattuso, Jean-Pierre; Epitalon, Jean-Marie; Lavigne, Héloise; Orr, James C; Gentili, Bernard; Proye, Aurélien; Soetaert, Karline; Rae, James (2016): seacarb: seawater carbonate chemistry with R. R package version 3.1. https://cran.r-project.org/package=seacarb
+Project(s):	Biological Impacts of Ocean Acidification (BIOACID) (URI: http://www.bioacid.de/)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Gattuso et al, 2016) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation by seacarb is 2017-07-14.
+Parameter(s):	Type (Type) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Species (Species) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Figure (Fig) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Location (Location) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Treatment: partial pressure of carbon dioxide [µatm] (Treat pCO2) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Size [µm] (Size) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de) * COMMENT: Shell size of larvae three days after fertilization
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Growth rate [µm/day] (µ) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Time in days [days] (Time) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de) * COMMENT: after fertilization
+	Number [#] (n) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de) * COMMENT: of surviving larvae in 10 ml
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Temperature, water [°C] (Temp) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Salinity (Sal) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	pH (pH) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de) * COMMENT: total scale
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	pH (pH) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de) * COMMENT: measured pH, NBS scale
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Alkalinity, total [µmol/kg] (AT) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Carbon dioxide, partial pressure [µatm] (pCO2) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Aragonite (Arg) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Standard deviation [±] (Std dev) * PI: Thomsen, Jörn (https://orcid.org/0000-0001-5109-7728, jthomsen@geomar.de)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Alkalinity, total [µmol/kg] (AT) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	722 data points
+*/
+Type	Species	Fig	Location	Treat pCO2 [µatm]	Size [µm] (Shell size of larvae three da...)	Std dev [±]	µ [µm/day]	Std dev [±]	Time [days] (after fertilization)	n [#] (of surviving larvae in 10 ml)	Std dev [±]	Temp [°C]	Std dev [±]	Sal	Std dev [±]	DIC [µmol/kg]	Std dev [±]	pH (total scale)	Std dev [±]	pH (measured pH, NBS scale)	Std dev [±]	AT [µmol/kg]	Std dev [±]	pCO2 [µatm]	Std dev [±]	[CO3]2- [µmol/kg]	Std dev [±]	Arg	Std dev [±]	CSC flag	pH (total scale)	CO2 [µmol/kg]	fCO2water_SST_wet [µatm]	pCO2water_SST_wet [µatm]	[HCO3]- [µmol/kg]	[CO3]2- [µmol/kg]	AT [µmol/kg]	Omega Arg	Omega Cal
+laboratory	Mytilus edulis (mollusk)	2a, 2b	Kiel	390	101.6	6.3	4.2	1.8				15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2a, 2b	Kiel	2400	77.3	3.3	3.8	1.6				15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2a, 2b	Sylt	390	105.4	6.8	3.4	0.7				15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2a, 2b	Sylt	2400	65.8	6.3						15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	390					3	51.0	5.0	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	2400					3	20.8	10.0	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	390					3	46.9	19.5	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	2400					3	10.2	13.0	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	390					7	35.8	2.2	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	2400					7	23.8	12.4	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	390					7	32.9	13.3	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	2400					7	5.0	6.9	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	390					14	18.3	8.1	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	2400					14	15.2	10.1	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	390					14	28.1	6.4	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	2400					14	0.6	0.8	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	390					21	9.4	5.3	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Kiel	2400					21	7.1	5.5	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	390					21	17.3	11.3	15.5	0.1	28.5	0.2	2160	14	8.02	0.02	8.16	0.01	2334	14	462	26	136.0	6.0	2.14	0.09	27	8.04	16.91	441.97	443.56	2002.68	140.41	2340.78	2.21	3.49
+laboratory	Mytilus edulis (mollusk)	2c	Sylt	2400					21	0.8	1.7	15.5	0.1	28.5	0.2	2411	30	7.33	0.01	7.46	0.01	2357	29	2588	45	31.4	0.6	0.49	0.01	27	7.34	96.71	2527.69	2536.82	2282.40	31.89	2359.16	0.50	0.79

@@ -75,7 +75,14 @@ df_filtered %>%
 
 # use spearman because the non normality
 
-df_filtered %>%
+struc_group <- c('A)', 'B)','C)')
+
+level_key <- structure(struc_group, names = pHLevel)
+
+df_filtered %>% mutate(pH = recode_factor(as.factor(pH), !!!level_key)) -> plot_data
+
+
+plot_data %>%
   ggplot(aes(Length, Width)) + # color = as.factor(pH),  group = pH
   facet_grid(~ pH ) +
   geom_point(alpha = 0.5, shape = 1) +
@@ -86,7 +93,7 @@ df_filtered %>%
     cor.coef.name = "R", p.accuracy = 0.001, label.y = 250, family = "GillSans") +
   labs(x = expression("Length ("*mu*"m)"), y = expression("Width ("*mu*"m)")) +
   theme_classic(base_family = "GillSans", base_size = 14) +
-  theme(strip.background = element_rect(fill = 'grey', color = 'white'),
+  theme(strip.background = element_rect(fill = 'white', color = 'white'),
     panel.border = element_blank()) -> psave
 
 

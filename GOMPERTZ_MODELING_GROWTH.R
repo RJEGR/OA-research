@@ -44,15 +44,17 @@ bind_data %>%
 
 # CALCIFICATIO AND GROWTH MEAN -----
 # WRAP CALCIFICATION AND GROWTH INDEX
-which_Assess <- c("Growgh Index", "Birefrigence")
+
+which_Assess <- c("Growth Index", "Birefrigence")
 
 position <- position_dodge(width = 0.7)
 
 label_a <- "A) Growth"
+
 label_b <- "B) Calcification"
 
 
-level_key <- c("Growgh Index" = label_a, "Birefrigence" = label_b)
+level_key <- c("Growth Index" = label_a, "Birefrigence" = label_b)
 
 bind_data %>% 
   filter(Assessment %in% which_Assess) %>%
@@ -268,6 +270,8 @@ quantile(Index, probs = 0.5)
 
 pred_gompertz(Index) %>% as_tibble()
 
+
+
 groups <- unique(out$g)
 
 df <- list()
@@ -291,14 +295,19 @@ plot_data %>%
   mutate(hpf = recode_factor(hpf, !!!c("24" = "30")))  -> plot_data
   
 plot_data %>%
-  ggplot(aes(x = se, color = pH)) +
+  ggplot(aes(x = Model, y = y, color = pH)) +
   facet_grid(~ hpf, scales = 'free' ) +
-  geom_point(aes(y = y), shape = 1, size = 0.4) +
-  ggpubr::stat_cor(aes(y = y, x = Model)) +
-  geom_line(aes(y = Model)) +
+  # geom_point(aes(y = y), shape = 1, size = 0.4) +
+  geom_line(size = 2, alpha = 0.7) +
+  # ggpubr::stat_cor(aes(y = y, x = Model)) +
+  # geom_line(aes(y = Model)) +
   scale_color_manual(values = pHpalette) +
   scale_fill_manual(values = pHpalette) +
-  theme_bw(base_family = "GillSans", base_size = 14)
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  labs(x = expression('Expected'~ (µm)), y = expression('Observed'~ (µm))) +
+  theme(panel.border = element_blank(), legend.position = 'none', 
+    panel.grid.major = element_blank(),
+    strip.background = element_rect(color = 'white', fill = 'white')) -> p1
   
 level_key <- c("-1" = "Failure", "1" = "Success")
 
@@ -307,15 +316,15 @@ library(NatParksPalettes)
 values <- natparks.pals("Arches", 2, direction = 1) # "Yellowstone"
 
 plot_data %>%
-  mutate(diag = y - Model, sign = sign(diag)) %>% 
+  mutate(diag = y - Model, sign = sign(diag)) %>% # diag = n veces negativo que el modelo
   group_by(pH,hpf, sign) %>% count() %>% 
-  mutate(sign = recode_factor(sign, !!!level_key)) %>%
+  mutate(sign = recode_factor(sign, !!!level_key)) %>% #view()
   pivot_wider(names_from = sign, values_from = n) %>%
   mutate(Failure = Failure/sum(Failure+Success), Success = 1 - Failure) %>%
   pivot_longer(cols = c('Failure','Success')) %>%
   mutate(name = factor(name, levels = c(c('Success', 'Failure')))) %>%
   mutate(pH = factor(pH, levels = pHL)) %>%
-  mutate(hpf = factor(hpf, levels = hpfL)) %>%
+  mutate(hpf = factor(hpf, levels = hpfL)) %>% #view()
   ggplot(aes(y = value, x = pH, fill = name)) + 
   facet_grid(~  hpf) +
   # ggh4x::facet_nested(~ Assessment + hpf, nest_line = T) +
@@ -329,7 +338,7 @@ plot_data %>%
     strip.background = element_rect(fill = 'white', color = 'white'),
     panel.border = element_blank(), 
     panel.grid = element_blank(),
-    legend.position = 'top') -> ps
+    legend.position = 'none') -> ps
 
 
 ggsavepath <- paste0(getwd(), '/Figures/')
@@ -338,11 +347,38 @@ ggsave(ps,
   filename = 'development_rate.png', path = ggsavepath, 
   width = 5, height = 3) 
 
+# i.e
+
+
+plot_data %>%
+  mutate(diag = y - Model) %>%
+  group_by(pH, hpf) %>%
+  ggplot(aes(diag, fill = pH, color = pH)) +
+  # facet_grid(~ hpf, scales = 'free' ) +
+  geom_histogram(binwidth = 0.5)+
+  # ggplot2::stat_ecdf(pad = F) +
+  geom_rug(outside = F) +
+  geom_vline(xintercept = 0, linetype="dashed", color = "black") +
+  scale_color_manual(values = pHpalette) +
+  scale_fill_manual(values = pHpalette) +
+  theme_classic(base_family = "GillSans", base_size = 14) +
+  labs(x = expression('Growth delay'~ (µm)), y = 'Count') +
+  theme(panel.border = element_blank(), legend.position = 'none', 
+    panel.grid.major = element_blank(),
+    strip.background = element_rect(color = 'white', fill = 'white')) -> p2
+
+ggsave(p2, 
+  filename = 'development_rate_hist.png', path = ggsavepath, 
+  width = 3, height = 3) 
+
+p2 + facet_grid(hpf ~ pH)
 
 # estos datos pueden testearse al modelo y hacer un estadistico de valores p, respecto al valor modelo. Entonces graficar valores (transformados) vs valores p
 
 
 # https://www.cyclismo.org/tutorial/R/pValues.html#calculating-many-p-values-from-a-t-distribution
+
+# VOLCANO ----
 
 se <- function(x,y) { sd(x)*sd(x)/x+sd(y)*sd(y)/y}
   
@@ -353,12 +389,13 @@ plot_data %>%
   mutate(t = (Model-y)/se(Model,y), 
     p = pt(-abs(t), df=pmin(Model,y)-1), sign = sign(t)) %>%
   rstatix::adjust_pvalue("p", method = "bonferroni") %>%
+  filter(p.adj < 0.05) %>%
   # la misma proporcion de sign que se reporta en el barplot superior es la misma aqui, pero determinamos la significancia
   ggplot(aes(y = -log10(p.adj), x = t)) +
   geom_vline(xintercept = 0, linetype = 'dashed', color = 'grey') +
   geom_hline(yintercept = -log10(0.05), linetype = 'dashed', color = 'grey') +
-  geom_point(shape = 1, alpha = 0.3) +
-  facet_grid(hpf ~ pH) +
+  geom_jitter(shape = 1, alpha = 0.3) +
+  # facet_grid(hpf ~ pH) +
   theme_bw(base_family = "GillSans", base_size = 14) +
   theme(panel.border = element_blank(), legend.position = 'top') +
   theme(

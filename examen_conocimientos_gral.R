@@ -131,8 +131,14 @@ pacific_df %>% distinct(var)
 
 vars <- c('pH', 'fCO2', 'Carbonate')
 
+pacific_df %>% 
+  select(Year_UTC, Month_UTC, Latitude, Longitude, Depth, vars) %>% 
+  pivot_longer(cols = vars, names_to = 'var') %>%
+  filter(value > 0) -> sbt
 
-sbt <- pacific_df %>%   filter(var %in% vars) 
+
+sbt <- sbt %>%   filter(var %in% vars) 
+
 sbt$var <- factor(sbt$var, levels = levels(factor(sbt$var)))
 
 # expression(Omega["ara"])
@@ -141,7 +147,8 @@ sbt$var <- factor(sbt$var, levels = levels(factor(sbt$var)))
 # expression(O[2]~(µmol~Kg^{-1}))
 
 levels(sbt$var)
-levels(sbt$var) <- c(expression(pCO[2]~(uatm)), "pH", expression(CO[3]^{-2}~(µmol~Kg^{-1})))
+
+levels(sbt$var) <- c(expression(CO[3]^{-2}~(µmol~Kg^{-1})), expression(pCO[2]~(uatm)), "pH")
 
 
 sbt %>% 
@@ -151,16 +158,17 @@ sbt %>%
   facet_grid(.~ var, scales = 'free_x', labeller=label_parsed,  switch = 'x') +
   geom_point(shape = 0.7) +
   # scale_y_reverse(breaks = seq(0, 200, by = 50)) +
-  scale_y_reverse(breaks = seq(0, 3500, by = 500)) +
+  scale_y_reverse(breaks = seq(0, 3500, by = 1000)) +
   scale_x_continuous(position = 'top') +
   geom_smooth(orientation = "y", method = 'loess') +
   labs(caption = 'Perfil vertical del Pacifico Norte, (25°N)',
-    y = expression(~Profundidad~(dbar)),
+    y = expression(~Depth~(dbar)),
     x = '') +
-  theme_bw(base_family = "GillSans", base_size = 10) +
-  theme(strip.background = element_blank()) -> p1
+  theme_bw(base_family = "GillSans", base_size = 12) +
+  theme(strip.background = element_blank(), 
+    panel.border = element_blank()) -> p1
 
-p1
+p1 
 
 pal <- wesanderson::wes_palette("Zissou1", 21, type = "continuous")
 
@@ -423,5 +431,137 @@ df_long %>%
   geom_histogram(alpha = 0.5)
 
 
-# 
+# Manua loa
+# https://hahana.soest.hawaii.edu/hot/
+pattern <- 'HOT_surface_CO2.csv'  
+
+fcsv <- list.files(path = getwd(), pattern = pattern, full.names = T)
+
+library(lubridate)
+library(tidyverse)
+
+vars <- c('date', 'pHcalc_insitu', 
+  'pCO2calc_insitu', 
+  'freeCO2_insitu', 'carbonate_insitu')
+
+# 'aragsatcalc_insitu', 
+
+Levelg <- c("CO2","pHcalc_insitu", "carbonate_insitu")
+
+
+read_tsv(fcsv, skip = 7) %>%
+  mutate(date = lubridate::dmy(date))  %>%
+  select(vars) %>%
+  # mutate(freeCO2_insitu = pCO2calc_insitu+freeCO2_insitu) %>%
+  # mutate(carbonate_insitu = carbonate_insitu/pHcalc_insitu) %>%
+  pivot_longer(-date, names_to = 'var') %>%
+  filter(value > 0) %>%
+  mutate(g = ifelse(grepl('CO2', var), 'CO2', var)) %>%
+  mutate(g = factor(g, levels = Levelg)) -> tbl
+
+
+levels(tbl$g)
+
+levels(tbl$g) <- c(expression(CO[2]~(mu*atm)), "pH", 
+  expression(CO[3]^{-2}~(µmol~Kg^{-1})))
+
+# wesanderson::wes_palette("Royal1", 4, type = "discrete")
+
+library(NatParksPalettes)
+
+values <- natparks.pals("Yellowstone", 4, direction = -1) # "Yellowstone"
+
+
+tbl %>%
+  # filter(grepl('CO2', var)) %>%
+  filter(grepl('carbonate', var)) %>%
+  ggplot(aes(x = date, y = value, color = var, group = var)) +
+  # facet_wrap(g  ~ ., scales = 'free_y', labeller=label_parsed, nrow = 3) +
+  geom_smooth(method = 'lm', se = F)  +
+  geom_point(alpha = 0.5, size = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  scale_y_continuous(position = 'left') +
+  theme(strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'none') +
+  scale_color_manual(values = values) +
+  labs(y = "", x = "Year") 
+  # scale_y_continuous(name = 'pH', 
+  # sec.axis = sec_axis(~.*8, name = expression(~pCO[2])))
+
+#
+
+
+tbl %>%
+  filter(grepl('pH', var)) %>% # pH, carbonate
+  ggplot(aes(x = date, value, color = var, group = var)) +
+  facet_wrap(g  ~ ., scales = 'free_y', labeller=label_parsed, nrow = 3) +
+  geom_smooth(method = 'lm', se = F)  +
+  geom_point(alpha = 0.5, size = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  scale_y_continuous(position = 'left', breaks = seq(8,8.2, by = 0.05)) +
+  theme(strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'none') +
+  scale_color_manual(values = "#CB7223") +
+  labs(y = "", x = "Year") 
+
+#
+
+tbl %>%
+  filter(grepl('carbonate', var)) %>% # pH, carbonate
+  ggplot(aes(x = date, value, color = var, group = var)) +
+  facet_wrap(g  ~ ., scales = 'free_y', labeller=label_parsed, nrow = 3) +
+  geom_smooth(method = 'lm', se = F)  +
+  geom_point(alpha = 0.5, size = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  scale_y_continuous(position = 'left') +
+  theme(strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'none') +
+  scale_color_manual(values = "#289A84") +
+  labs(y = "", x = "Year") 
+
+
+vars <- c('pHcalc_insitu', 'carbonate_insitu')
+
+
+read_tsv(fcsv, skip = 7) %>%
+  mutate(date = lubridate::dmy(date))  %>%
+  select(date, vars) %>%
+  filter_all( all_vars(. > 0)) %>%
+  ggplot() +
+  geom_point(aes(x = date, y = pHcalc_insitu*30), color = '#CB7223',
+    alpha = 0.5, size = 0.5) +
+  geom_point(aes(x = date, y = carbonate_insitu), color = '#289A84',
+    alpha = 0.5, size = 0.5) +
+  theme_bw(base_family = "GillSans", base_size = 14) +
+  theme(strip.background = element_blank(), 
+    panel.border = element_blank(), 
+    panel.grid.major = element_blank(),
+    legend.position = 'none') +
+  scale_color_manual(values = rev(values)) +
+  labs(y = "", x = "Year") +
+  scale_y_continuous(name = expression(CO[3]^{-2}~(µmol~Kg^{-1})), 
+    sec.axis = sec_axis(~./30, name = "pH"))
+
   
+
+vars <- c('pHcalc_insitu', 
+  'pCO2calc_insitu','carbonate_insitu')
+
+
+library(rstatix)
+
+read_tsv(fcsv, skip = 7) %>%
+  # mutate(date = lubridate::dmy(date))  %>%
+  select(vars) %>%
+  filter_all( all_vars(. > 0)) %>%
+  rstatix::cor_mat(method = 'spearman') %>%
+  cor_reorder() %>%
+  pull_lower_triangle() %>%
+  cor_plot(label = TRUE, method = 'square')
+

@@ -1,0 +1,386 @@
+/* DATA DESCRIPTION:
+Citation:	Ko, W K Ginger; Chan, B S Vera; Dineshram, R; Choi, K S Dennis; Li, J Adela; Yu, Ziniu; Thiyagarajan, Vengatesen (2013): Larval and post-larval stages of pacific oyster (Crassostrea gigas) are resistant to elevated CO2. PANGAEA, https://doi.org/10.1594/PANGAEA.830882, 
+	Supplement to: Ko, WKG et al. (2013): Larval and Post-Larval Stages of Pacific Oyster (Crassostrea gigas) Are Resistant to Elevated CO2. PLoS ONE, 8(5), e64147, https://doi.org/10.1371/journal.pone.0064147.t001
+Abstract:	Rising anthropogenic carbon dioxide (CO2) dissolving into coastal waters is decreasing the pH and carbonate ion concentration, thereby lowering the saturation state of calcium carbonate (CaCO3) minerals through a process named ocean acidification (OA). The unprecedented threats posed by such low pH on calcifying larvae of several edible oyster species have not yet been fully explored. Effects of low pH (7.9, 7.6, 7.4) on the early growth phase of Portuguese oyster (Crassostrea angulata) veliger larvae was examined at ambient salinity (34 ppt) and the low-salinity (27 ppt) treatment. Additionally, the combined effect of pH (8.1, 7.6), salinity (24 and 34 ppt) and temperature (24 °C and 30 °C) was examined using factorial experimental design. Surprisingly, the early growth phase from hatching to 5-day-old veliger stage showed high tolerance to pH 7.9 and pH 7.6 at both 34 ppt and 27 ppt. Larval shell area was significantly smaller at pH 7.4 only in low-salinity. In the 3-factor experiment, shell area was affected by salinity and the interaction between salinity and temperature but not by other combinations. Larvae produced the largest shell at the elevated temperature in low-salinity, regardless of pH. Thus the growth of the Portuguese oyster larvae appears to be robust to near-future pH level (> 7.6) when combined with projected elevated temperature and low-salinity in the coastal aquaculture zones of South China Sea.
+Keyword(s):	Animalia; Coast and continental shelf; Containers and aquaria (20-1000 L or < 1 m**2); Crassostrea gigas; Development; Growth/Morphology; Laboratory experiment; Mollusca; North Pacific; Pelagos; Respiration; Single species; Temperate; Temperature; Zooplankton
+Further details:	Lavigne, Héloise; Gattuso, Jean-Pierre (2011): seacarb: seawater carbonate chemistry with R. R package version 2.4. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Coverage:	LATITUDE: 36.066670 * LONGITUDE: 120.366670
+	DATE/TIME START: 2012-07-01T00:00:00 * DATE/TIME END: 2012-07-30T00:00:00
+Event(s):	Tsingdao * LATITUDE: 36.066670 * LONGITUDE: 120.366670 * DATE/TIME START: 2012-07-01T00:00:00 * DATE/TIME END: 2012-07-30T00:00:00 * METHOD/DEVICE: Experiment (EXP) * COMMENT: Adult Pacific oysters (Crassostrea gigas) were collected from the coastal area of Tsingdao (China) and transported in emersed condition to
+	Hong Kong by air via Guangzhou (China).
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation by seacarb is 2014-03-21.
+Parameter(s):	Species (Species) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Figure (Fig) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Treatment (Treat) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Incubation duration [days] (Inc dur) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Stage (Stage) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Percentage [%] (Perc) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: percentage of each stage
+	Percentage, standard deviation [±] (Perc std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: percentage of each stage
+	Size (Size) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: x10**-3 mm**2
+	Replicate (Replicate) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Individuals [#] (Ind) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Respiration rate, oxygen, per dry mass [µl/mg/h] (Resp O2/dm) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Respiration rate, standard deviation [±] (Resp std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Filtering rate [ml/mg/h] (Filter rate) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Filtering rate, standard deviation [±] (Filter rate std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Biomass, ash free dry mass [µg] (Biom AFDM) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Biomass, ash free dry mass, shell-free, standard deviation [±] (Biom SFAFDM std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Growth rate [mm**2/day] (µ) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: juvenile shell
+	Growth rate, standard deviation [±] (µ std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: juvenile shell
+	pH (pH) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Potentiometric * COMMENT: NBS scale
+	pH, standard deviation [±] (pH std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Potentiometric * COMMENT: NBS scale
+	Temperature, water [°C] (Temp) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Temperature, standard deviation [±] (T std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Salinity (Sal) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Salinity, standard deviation [±] (Sal std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Alkalinity, total [µmol/kg] (AT) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Potentiometric titration
+	Alkalinity, total, standard deviation [±] (AT std dev) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Potentiometric titration
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Calcite saturation state (Omega Cal) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state (Omega Arg) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	9573 data points
+*/
+Species	Fig	Treat	Inc dur [days]	Stage	Perc [%] (percentage of each stage)	Perc std dev [±] (percentage of each stage)	Size (x10**-3 mm**2)	Replicate	Ind [#]	Resp O2/dm [µl/mg/h]	Resp std dev [±]	Filter rate [ml/mg/h]	Filter rate std dev [±]	Biom AFDM [µg]	Biom SFAFDM std dev [±]	µ [mm**2/day] (juvenile shell)	µ std dev [±] (juvenile shell)	pH (NBS scale, Potentiometric)	pH std dev [±] (NBS scale, Potentiometric)	Temp [°C]	T std dev [±]	Sal	Sal std dev [±]	AT [µmol/kg] (Potentiometric titration)	AT std dev [±] (Potentiometric titration)	pCO2water_SST_wet [µatm] (Calculated using CO2SYS)	[CO3]2- [µmol/kg] (Calculated using CO2SYS)	Omega Cal (Calculated using CO2SYS)	Omega Arg (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	pH (total scale, Calculated using...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	11	D shaped	11.42223472	5.758516009												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	11	D shaped	15.80278737	4.251740995												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	11	D shaped	19.90686646	7.130601584												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	11	Early veliger	64.06155052	12.853568470												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	11	Early veliger	66.55549694	5.299814874												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	11	Early veliger	61.67742593	10.992003000												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	11	Late veliger	24.51621476	7.885860055												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	11	Late veliger	17.64171569	6.123361630												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	11	Late veliger	18.41570761	4.970586370												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	11	Pediveliger	0.00000000	0.000000000												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	11	Pediveliger	0.00000000	0.000000000												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	11	Pediveliger	0.00000000	0.000000000												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	16	D shaped	0.00000000	0.000000000												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	16	D shaped	0.00000000	0.000000000												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	16	D shaped	0.00000000	0.000000000												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	16	Early veliger	8.33584720	2.230540800												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	16	Early veliger	5.36026440	2.866411600												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	16	Early veliger	3.56182800	3.724234100												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	16	Late veliger	80.47343720	2.169677100												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	16	Late veliger	80.91567960	2.264705800												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	16	Late veliger	83.14191690	4.023390800												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	2	Con (pH 8.1)	16	Pediveliger	11.19071560	3.684248300												8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	2	pH 7.7	16	Pediveliger	13.72405600	2.416961800												7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	2	pH 7.4	16	Pediveliger	13.29625510	3.963960500												7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.4	11				<10000	Larvae 1	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				<10000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				<10000	Larvae 1	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				<10000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				<10000	Larvae 2	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				<10000	Larvae 2	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				<10000	Larvae 3	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				<10000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				<10000	Larvae 3	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				<10000	Larvae 4	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				<10000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				<10000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				<10000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				<10000	Larval 5	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				<10000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				>90000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				>90000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				>90000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				>90000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				>90000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				>90000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				>90000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				>90000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				>90000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				>90000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				>90000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				>90000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				>90000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				>90000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				>90000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				10000-20000	Larvae 1	8									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				10000-20000	Larvae 1	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				10000-20000	Larvae 1	17									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				10000-20000	Larvae 2	5									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				10000-20000	Larvae 2	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				10000-20000	Larvae 2	4									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				10000-20000	Larvae 3	10									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				10000-20000	Larvae 3	12									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				10000-20000	Larvae 3	9									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				10000-20000	Larvae 4	5									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				10000-20000	Larvae 4	6									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				10000-20000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				10000-20000	Larval 5	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				10000-20000	Larval 5	5									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				10000-20000	Larval 5	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				20000-30000	Larvae 1	5									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				20000-30000	Larvae 1	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				20000-30000	Larvae 1	9									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				20000-30000	Larvae 2	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				20000-30000	Larvae 2	13									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				20000-30000	Larvae 2	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				20000-30000	Larvae 3	8									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				20000-30000	Larvae 3	8									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				20000-30000	Larvae 3	10									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				20000-30000	Larvae 4	8									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				20000-30000	Larvae 4	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				20000-30000	Larvae 4	3									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				20000-30000	Larval 5	6									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				20000-30000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				20000-30000	Larval 5	12									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				30000-40000	Larvae 1	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				30000-40000	Larvae 1	6									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				30000-40000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				30000-40000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				30000-40000	Larvae 2	5									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				30000-40000	Larvae 2	3									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				30000-40000	Larvae 3	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				30000-40000	Larvae 3	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				30000-40000	Larvae 3	8									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				30000-40000	Larvae 4	3									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				30000-40000	Larvae 4	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				30000-40000	Larvae 4	5									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				30000-40000	Larval 5	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				30000-40000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				30000-40000	Larval 5	3									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				40000-50000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				40000-50000	Larvae 1	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				40000-50000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				40000-50000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				40000-50000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				40000-50000	Larvae 2	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				40000-50000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				40000-50000	Larvae 3	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				40000-50000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				40000-50000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				40000-50000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				40000-50000	Larvae 4	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				40000-50000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				40000-50000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				40000-50000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				50000-60000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				50000-60000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				50000-60000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				50000-60000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				50000-60000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				50000-60000	Larvae 2	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				50000-60000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				50000-60000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				50000-60000	Larvae 3	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				50000-60000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				50000-60000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				50000-60000	Larvae 4	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				50000-60000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				50000-60000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				50000-60000	Larval 5	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				60000-70000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				60000-70000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				60000-70000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				60000-70000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				60000-70000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				60000-70000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				60000-70000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				60000-70000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				60000-70000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				60000-70000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				60000-70000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				60000-70000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				60000-70000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				60000-70000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				60000-70000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				70000-80000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				70000-80000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				70000-80000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				70000-80000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				70000-80000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				70000-80000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				70000-80000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				70000-80000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				70000-80000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				70000-80000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				70000-80000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				70000-80000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				70000-80000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				70000-80000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				70000-80000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				80000-90000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				80000-90000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				80000-90000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				80000-90000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				80000-90000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				80000-90000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				80000-90000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				80000-90000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				80000-90000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				80000-90000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				80000-90000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				80000-90000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	11				80000-90000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	11				80000-90000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	11				80000-90000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				<10000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				<10000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				<10000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				<10000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				<10000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				<10000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				<10000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				<10000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				<10000	Larvae 3	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				<10000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				<10000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				<10000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				<10000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				<10000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				<10000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				>90000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				>90000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				>90000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				>90000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				>90000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				>90000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				>90000	Larvae 3	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				>90000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				>90000	Larvae 3	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				>90000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				>90000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				>90000	Larvae 4	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				>90000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				>90000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				>90000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				10000-20000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				10000-20000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				10000-20000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				10000-20000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				10000-20000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				10000-20000	Larvae 2	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				10000-20000	Larvae 3	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				10000-20000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				10000-20000	Larvae 3	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				10000-20000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				10000-20000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				10000-20000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				10000-20000	Larval 5	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				10000-20000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				10000-20000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				20000-30000	Larvae 1	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				20000-30000	Larvae 1	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				20000-30000	Larvae 1	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				20000-30000	Larvae 2	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				20000-30000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				20000-30000	Larvae 2	3									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				20000-30000	Larvae 3	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				20000-30000	Larvae 3	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				20000-30000	Larvae 3	5									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				20000-30000	Larvae 4	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				20000-30000	Larvae 4	5									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				20000-30000	Larvae 4	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				20000-30000	Larval 5	4									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				20000-30000	Larval 5	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				20000-30000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				30000-40000	Larvae 1	3									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				30000-40000	Larvae 1	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				30000-40000	Larvae 1	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				30000-40000	Larvae 2	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				30000-40000	Larvae 2	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				30000-40000	Larvae 2	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				30000-40000	Larvae 3	4									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				30000-40000	Larvae 3	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				30000-40000	Larvae 3	3									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				30000-40000	Larvae 4	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				30000-40000	Larvae 4	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				30000-40000	Larvae 4	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				30000-40000	Larval 5	9									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				30000-40000	Larval 5	5									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				30000-40000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				40000-50000	Larvae 1	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				40000-50000	Larvae 1	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				40000-50000	Larvae 1	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				40000-50000	Larvae 2	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				40000-50000	Larvae 2	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				40000-50000	Larvae 2	4									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				40000-50000	Larvae 3	6									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				40000-50000	Larvae 3	3									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				40000-50000	Larvae 3	8									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				40000-50000	Larvae 4	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				40000-50000	Larvae 4	5									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				40000-50000	Larvae 4	4									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				40000-50000	Larval 5	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				40000-50000	Larval 5	8									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				40000-50000	Larval 5	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				50000-60000	Larvae 1	2									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				50000-60000	Larvae 1	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				50000-60000	Larvae 1	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				50000-60000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				50000-60000	Larvae 2	8									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				50000-60000	Larvae 2	5									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				50000-60000	Larvae 3	4									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				50000-60000	Larvae 3	3									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				50000-60000	Larvae 3	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				50000-60000	Larvae 4	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				50000-60000	Larvae 4	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				50000-60000	Larvae 4	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				50000-60000	Larval 5	4									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				50000-60000	Larval 5	4									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				50000-60000	Larval 5	10									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				60000-70000	Larvae 1	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				60000-70000	Larvae 1	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				60000-70000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				60000-70000	Larvae 2	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				60000-70000	Larvae 2	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				60000-70000	Larvae 2	5									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				60000-70000	Larvae 3	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				60000-70000	Larvae 3	6									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				60000-70000	Larvae 3	6									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				60000-70000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				60000-70000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				60000-70000	Larvae 4	7									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				60000-70000	Larval 5	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				60000-70000	Larval 5	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				60000-70000	Larval 5	9									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				70000-80000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				70000-80000	Larvae 1	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				70000-80000	Larvae 1	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				70000-80000	Larvae 2	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				70000-80000	Larvae 2	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				70000-80000	Larvae 2	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				70000-80000	Larvae 3	3									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				70000-80000	Larvae 3	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				70000-80000	Larvae 3	4									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				70000-80000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				70000-80000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				70000-80000	Larvae 4	7									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				70000-80000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				70000-80000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				70000-80000	Larval 5	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				80000-90000	Larvae 1	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				80000-90000	Larvae 1	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				80000-90000	Larvae 1	0									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				80000-90000	Larvae 2	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				80000-90000	Larvae 2	2									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				80000-90000	Larvae 2	1									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				80000-90000	Larvae 3	1									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				80000-90000	Larvae 3	1									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				80000-90000	Larvae 3	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				80000-90000	Larvae 4	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				80000-90000	Larvae 4	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				80000-90000	Larvae 4	4									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	3	pH 7.4	16				80000-90000	Larval 5	0									7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	3	pH 7.7	16				80000-90000	Larval 5	0									7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	3	Con (pH 8.1)	16				80000-90000	Larval 5	2									8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	4	Con (pH 8.1)	16							3672.2	1748.5	2.460	0.913	2187.5	954.3			8.02	0.02	24.6	0.3	24.8	0.4	2040	130	622	109	2.85	1.81	26	7.87	19	622	620	1777	109	1905	1.81	2.84
+Crassostrea gigas (mollusk)	4	pH 7.7	16							1981.0	999.3	1.657	0.528	4912.5	3016.4			7.66	0.02	24.7	0.1	24.8	0.8	1970	30	1497	50	1.29	0.82	26	7.51	45	1486	1481	1850	50	1944	0.83	1.30
+Crassostrea gigas (mollusk)	4	pH 7.4	16							998.9	251.4	0.918	0.395	6500.0	2602.4			7.49	0.06	24.7	0.0	24.6	0.5	2050	140	2386	36	0.93	0.59	26	7.34	70	2339	2332	1965	36	2071	0.59	0.93
+Crassostrea gigas (mollusk)	5	Con (pH 8.1)														2.6597	1.0824	8.05	0.02	24.4	0.2	24.5	0.1	1850	340	524	104	2.70	1.72	26	7.90	16	522	521	1597	104	1716	1.72	2.70
+Crassostrea gigas (mollusk)	5	pH 7.7														3.6977	1.3130	7.67	0.02	24.4	0.1	24.3	0.3	1920	750	1429	48	1.26	0.80	26	7.52	43	1418	1413	1803	48	1894	0.80	1.26
+Crassostrea gigas (mollusk)	5	pH 7.4														6.3638	1.6174	7.37	0.02	24.5	0.1	24.6	0.5	1910	270	2874	25	0.66	0.42	26	7.22	88	2896	2887	1849	25	1962	0.42	0.66

@@ -1,0 +1,119 @@
+/* DATA DESCRIPTION:
+Citation:	Dineshram, R; Wong, Kevin K W; Shu, Xiao; Yu, Ziniu; Qian, Pei Yuan; Thiyagarajan, Vengatesen (2012): Analysis of Pacific oyster larval proteome and its response to high-CO2. PANGAEA, https://doi.org/10.1594/PANGAEA.823757, 
+	Supplement to: Dineshram, R et al. (2012): Analysis of Pacific oyster larval proteome and its response to high-CO2. Marine Pollution Bulletin, 64(10), 2160-2167, https://doi.org/10.1016/j.marpolbul.2012.07.043
+Abstract:	Most calcifying organisms show depressed metabolic, growth and calcification rates as symptoms to high-CO(2) due to ocean acidification (OA) process. Analysis of the global expression pattern of proteins (proteome analysis) represents a powerful tool to examine these physiological symptoms at molecular level, but its applications are inadequate. To address this knowledge gap, 2-DE coupled with mass spectrophotometer was used to compare the global protein expression pattern of oyster larvae exposed to ambient and to high-CO(2). Exposure to OA resulted in marked reduction of global protein expression with a decrease or loss of 71 proteins (18% of the expressed proteins in control), indicating a wide-spread depression of metabolic genes expression in larvae reared under OA. This is, to our knowledge, the first proteome analysis that provides insights into the link between physiological suppression and protein down-regulation under OA in oyster larvae.
+Keyword(s):	Animalia; Coast and continental shelf; Containers and aquaria (20-1000 L or < 1 m**2); Crassostrea gigas; Gene expression (incl. proteomics); Growth/Morphology; Laboratory experiment; Mollusca; North Pacific; Pelagos; Single species; Tropical; Zooplankton
+Further details:	Lavigne, Héloise; Gattuso, Jean-Pierre (2011): seacarb: seawater carbonate chemistry with R. R package version 2.4. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation by seacarb is 2014-02-20.
+Parameter(s):	Species (Species) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Identification (ID) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Duration, number of days [days] (Duration) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: days after fertilization
+	Replicate (Replicate) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Treatment (Treat) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Shell length [mm] (Shell l) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Protein name (Protein) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Spot intensity, relative (Spot inten) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Salinity (Sal) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Temperature, water [°C] (Temp) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	Alkalinity, total [µmol/kg] (AT) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk)
+	pH (pH) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * COMMENT: NBS scale
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbon dioxide [µmol/kg] (CO2) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Calcite saturation state (Omega Cal) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state (Omega Arg) * PI: Thiyagarajan, Vengatesen (https://orcid.org/0000-0002-2062-4799, rajan@hku.hk) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	1861 data points
+*/
+Species	ID	Duration [days] (days after fertilization)	Replicate	Treat	Shell l [mm]	Protein	Spot inten	Sal	Temp [°C]	AT [µmol/kg]	pH (NBS scale)	DIC [µmol/kg] (Calculated using CO2SYS)	pCO2water_SST_wet [µatm] (Calculated using CO2SYS)	CO2 [µmol/kg] (Calculated using CO2SYS)	[HCO3]- [µmol/kg] (Calculated using CO2SYS)	[CO3]2- [µmol/kg] (Calculated using CO2SYS)	Omega Cal (Calculated using CO2SYS)	Omega Arg (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	pH (total scale, Calculated using...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Crassostrea gigas (Mollusk)	Figure 1	4	Treatment R1	pH=7.5	0.07846			25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 1	4	Treatment R2	pH=7.5	0.08301			25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 1	4	Treatment R3	pH=7.5	0.08660			25	29										26									
+Crassostrea gigas (Mollusk)	Figure 1	6	Treatment R1	pH=7.5	0.08805			25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 1	6	Treatment R2	pH=7.5	0.08730			25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 1	6	Treatment R3	pH=7.5	0.09411			25	29										26									
+Crassostrea gigas (Mollusk)	Figure 1	4	Control R1	pH=8	0.08537			25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 1	4	Control R2	pH=8	0.08471			25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 1	4	Control R3	pH=8	0.08381			25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 1	6	Control R1	pH=8	0.09774			25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 1	6	Control R2	pH=8	0.09522			25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 1	6	Control R3	pH=8	0.10083			25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Calmodulin	7050.2	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Beta-tubulin	7065.0	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Calmodulin	4124.0	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Troponin C	3421.3	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Cytochrome C oxidase	3574.1	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Tektin	881.9	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Serine/threonine-protein phosphatase	1059.5	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		annexin	1583.7	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Nucleoside diphosphate kinase	852.5	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		Fascilin	2761.1	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R1	pH=8		vacuolar H[+]-ATPase	1193.2	25	29	1945	7.93	1799.68	634.63	17.14	1667.84	114.70	3.03	1.96	26	7.78	20.8	769.0	766.7	1706.3	98.7	1825.8	1.68	2.61
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Calmodulin	8862.9	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Beta-tubulin	5824.7	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Calmodulin	4370.8	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Troponin C	1750.8	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Cytochrome C oxidase	4298.7	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Tektin	794.3	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Serine/threonine-protein phosphatase	1707.4	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		annexin	2427.7	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Nucleoside diphosphate kinase	1439.4	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		Fascilin	3932.0	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R2	pH=8		vacuolar H[+]-ATPase	1599.2	25	29	2003	7.90	1854.70	654.03	17.66	1718.83	118.20	3.12	2.02	26	7.75	23.1	856.1	853.5	1772.7	95.7	1891.6	1.63	2.53
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Calmodulin	7928.8	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Beta-tubulin	8521.3	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Calmodulin	5441.9	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Troponin C	2798.2	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Cytochrome C oxidase	3004.4	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Tektin	1701.9	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Serine/threonine-protein phosphatase	1070.2	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		annexin	945.8	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Nucleoside diphosphate kinase	714.8	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		Fascilin	4849.1	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Control R3	pH=8		vacuolar H[+]-ATPase	875.4	25	29	1982	7.92	1834.30	646.84	17.47	1699.93	116.90	3.09	1.99	26	7.77	21.7	804.2	801.8	1743.8	98.6	1864.2	1.68	2.60
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Calmodulin	2425.3	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Beta-tubulin	2083.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Calmodulin	410.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Troponin C	418.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Cytochrome C oxidase	425.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Tektin	471.6	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Serine/threonine-protein phosphatase	415.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		annexin	4641.5	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Nucleoside diphosphate kinase	2635.2	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		Fascilin	21598.0	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R1	pH=7.5		vacuolar H[+]-ATPase	2890.8	25	29	1894	7.48	1918.19	2624.95	70.89	1814.49	32.82	0.87	0.56	26	7.33	61.9	2290.4	2283.5	1804.1	37.1	1903.0	0.63	0.98
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Calmodulin	4665.6	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Beta-tubulin	2750.1	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Calmodulin	1021.7	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Troponin C	816.0	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Cytochrome C oxidase	577.1	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Tektin	1294.6	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Serine/threonine-protein phosphatase	510.0	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		annexin	4046.9	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Nucleoside diphosphate kinase	2189.2	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		Fascilin	15283.5	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R2	pH=7.5		vacuolar H[+]-ATPase	2422.1	25	29	1570	7.47	1576.19	1926.10	52.01	1493.86	30.32	0.80	0.52	26	7.32	52.4	1941.4	1935.5	1494.6	30.0	1577.0	0.51	0.79
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Calmodulin	4879.7	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Beta-tubulin	1892.7	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Calmodulin	1321.0	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Troponin C	675.6	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Cytochrome C oxidase	1739.6	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Tektin	301.0	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Serine/threonine-protein phosphatase	367.0	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		annexin	2592.0	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Nucleoside diphosphate kinase	2175.5	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		Fascilin	15385.0	25	29																			
+Crassostrea gigas (Mollusk)	Figure 4		Treatment R3	pH=7.5		vacuolar H[+]-ATPase	2688.3	25	29																			

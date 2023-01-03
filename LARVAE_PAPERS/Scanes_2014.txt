@@ -1,0 +1,121 @@
+/* DATA DESCRIPTION:
+Citation:	Scanes, Elliot; Parker, Laura M; O'Connor, Wayne A; Ross, Pauline M (2014): Mixed effects of elevated pCO2 on fertilisation, larval and juvenile development and adult responses in the mobile subtidal scallop Mimachlamys asperrima (Lamarck, 1819). PANGAEA, https://doi.org/10.1594/PANGAEA.834430, 
+	Supplement to: Scanes, E et al. (2014): Mixed Effects of Elevated pCO2 on Fertilisation, Larval and Juvenile Development and Adult Responses in the Mobile Subtidal Scallop Mimachlamys asperrima (Lamarck, 1819). PLoS ONE, 9(4), e93649, https://doi.org/10.1371/journal.pone.0093649
+Abstract:	Ocean acidification is predicted to have severe consequences for calcifying marine organisms especially molluscs. Recent studies, however, have found that molluscs in marine environments with naturally elevated or fluctuating CO2 or with an active, high metabolic rate lifestyle may have a capacity to acclimate and be resilient to exposures of elevated environmental pCO2. The aim of this study was to determine the effects of near future concentrations of elevated pCO2 on the larval and adult stages of the mobile doughboy scallop, Mimachlamys asperrima from a subtidal and stable physio-chemical environment. It was found that fertilisation and the shell length of early larval stages of M. asperrima decreased as pCO2 increased, however, there were less pronounced effects of elevated pCO2 on the shell length of later larval stages, with high pCO2 enhancing growth in some instances. Byssal attachment and condition index of adult M. asperrima decreased with elevated pCO2, while in contrast there was no effect on standard metabolic rate or pHe. The responses of larval and adult M. asperrima to elevated pCO2 measured in this study were more moderate than responses previously reported for intertidal oysters and mussels. Even this more moderate set of responses are still likely to reduce the abundance of M. asperrima and potentially other scallop species in the world's oceans at predicted future pCO2 levels.
+Keyword(s):	Acid-base regulation; Animalia; Benthic animals; Benthos; Containers and aquaria (20-1000 L or < 1 m**2); Deep-sea; Development; Growth/Morphology; Laboratory experiment; Mimachlamys asperrima; Mollusca; Reproduction; Respiration; Single species; South Pacific; Temperate
+Further details:	Lavigne, Héloise; Epitalon, Jean-Marie; Gattuso, Jean-Pierre (2014): seacarb: seawater carbonate chemistry with R. R package version 3.0. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne et al, 2014) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation is 2014-07-25.
+Parameter(s):	Species (Species) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Figure (Fig) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Treatment (Treat) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Percentage [%] (Perc) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: fertilisation
+	Percentage, standard error [±] (Perc std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: fertilisation
+	Percentage [%] (Perc) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: trochophores
+	Percentage, standard error [±] (Perc std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: trochophores
+	Incubation duration [days] (Inc dur) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Length [µm] (l) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: d veliger larvae shell
+	Length, standard error [±] (l std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: d veliger larvae shell
+	Length [µm] (l) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: umbonate larave shell
+	Length, standard error [±] (l std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: umbonate larave shell
+	Length [µm] (l) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: pediveliger Larvae shell
+	Length, standard error [±] (l std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: pediveliger Larvae shell
+	Length [µm] (l) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: spat shell
+	Length, standard error [±] (l std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: spat shell
+	Incubation duration [weeks] (Inc dur) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Respiration rate, oxygen [mg/kg/h] (Resp O2) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: per dry tissue mass
+	Respiration rate, oxygen, standard error [±] (Resp O2 std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: per dry tissue mass
+	Condition index (CI) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Condition index, standard error [±] (CI std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Haemolymph, pH (pH (ha)) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Haemolymph, pH, standard error [±] (pH (ha) std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Individuals [%] (Ind) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: byssally attached
+	Individuals, standard error [±] (Ind std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: byssally attached
+	Temperature, water [°C] (Temp) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Temperature, water, standard error [±] (T std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Salinity (Sal) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Salinity, standard error [±] (Sal std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	pH (pH) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: NBS scale
+	pH, standard error [±] (pH std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au) * COMMENT: NBS scale
+	Alkalinity, total [µmol/kg] (AT) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Alkalinity, total, standard error [±] (AT std e) * PI: Ross, Pauline M (https://orcid.org/0000-0002-8714-5194, pm.ross@uws.edu.au)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	928 data points
+*/
+Species	Fig	Treat	Perc [%] (fertilisation)	Perc std e [±] (fertilisation)	Perc [%] (trochophores)	Perc std e [±] (trochophores)	Inc dur [days]	l [µm] (d veliger larvae shell)	l std e [±] (d veliger larvae shell)	l [µm] (umbonate larave shell)	l std e [±] (umbonate larave shell)	l [µm] (pediveliger Larvae shell)	l std e [±] (pediveliger Larvae shell)	l [µm] (spat shell)	l std e [±] (spat shell)	Inc dur [weeks]	Resp O2 [mg/kg/h] (per dry tissue mass)	Resp O2 std e [±] (per dry tissue mass)	CI	CI std e [±]	pH (ha)	pH (ha) std e [±]	Ind [%] (byssally attached)	Ind std e [±] (byssally attached)	Temp [°C]	T std e [±]	Sal	Sal std e [±]	pH (NBS scale)	pH std e [±] (NBS scale)	AT [µmol/kg]	AT std e [±]	CSC flag	pH (total scale)	CO2 [µmol/kg]	pCO2water_SST_wet [µatm]	fCO2water_SST_wet [µatm]	[HCO3]- [µmol/kg]	[CO3]2- [µmol/kg]	DIC [µmol/kg]	Omega Arg	Omega Cal
+Mimachlamys asperrima (mollusk)	1	390	84.77272727	3.653945291	86.57261050	3.056442071																			20	0.5	33.3	0.4	8.20	0.02	2340	44	26	8.07	0.01	383.20	381.92	1872.28	191.41	2076.18	3.00	4.63
+Mimachlamys asperrima (mollusk)	1	600	75.83333333	2.846375213	78.00770308	2.106205218																			20	0.5	33.3	0.4	7.89	0.02	2340	44	26	7.76	0.03	871.57	868.66	2085.12	104.38	2217.91	1.64	2.53
+Mimachlamys asperrima (mollusk)	1	750	61.66666667	1.666666667	64.31818182	4.936658783																			20	0.5	33.3	0.4	7.81	0.03	2340	44	26	7.68	0.03	1067.55	1063.98	2124.09	88.43	2247.32	1.39	2.14
+Mimachlamys asperrima (mollusk)	1	1000	56.06060606	0.934002122	50.52083333	6.126971999																			20	0.5	33.3	0.4	7.69	0.02	2340	44	26	7.56	0.05	1439.75	1434.94	2172.55	68.60	2288.08	1.08	1.66
+Mimachlamys asperrima (mollusk)	2	390					4	123.2259000	0.615141674																20	0.5	33.3	0.4	8.19	0.02	2321	36	26	8.06	0.01	390.62	389.31	1865.02	186.32	2064.08	2.92	4.51
+Mimachlamys asperrima (mollusk)	2	600					4	120.4583333	0.515840919																20	0.5	33.3	0.4	7.89	0.02	2321	36	26	7.76	0.03	864.36	861.47	2067.85	103.51	2199.54	1.62	2.51
+Mimachlamys asperrima (mollusk)	2	750					4	118.6451149	0.510724733																20	0.5	33.3	0.4	7.81	0.02	2321	36	26	7.68	0.03	1058.79	1055.25	2106.56	87.70	2228.77	1.38	2.12
+Mimachlamys asperrima (mollusk)	2	1000					4	116.0833333	0.485011094																20	0.5	33.3	0.4	7.69	0.03	2321	36	26	7.56	0.05	1427.93	1423.15	2154.68	68.03	2269.26	1.07	1.65
+Mimachlamys asperrima (mollusk)	2	390					6	124.4758065	1.756232398																20	0.5	33.3	0.4	8.19	0.02	2321	36	26	8.06	0.01	390.62	389.31	1865.02	186.32	2064.08	2.92	4.51
+Mimachlamys asperrima (mollusk)	2	600					6	125.6048387	1.176747120																20	0.5	33.3	0.4	7.89	0.02	2321	36	26	7.76	0.03	864.36	861.47	2067.85	103.51	2199.54	1.62	2.51
+Mimachlamys asperrima (mollusk)	2	750					6	121.4919355	0.622501945																20	0.5	33.3	0.4	7.81	0.02	2321	36	26	7.68	0.03	1058.79	1055.25	2106.56	87.70	2228.77	1.38	2.12
+Mimachlamys asperrima (mollusk)	2	1000					6	116.0483871	1.999934963																20	0.5	33.3	0.4	7.69	0.03	2321	36	26	7.56	0.05	1427.93	1423.15	2154.68	68.03	2269.26	1.07	1.65
+Mimachlamys asperrima (mollusk)	3	390					4			148.3870968	0.780479730														20	0.5	33.3	0.4	8.19	0.02	2329	45	26	8.06	0.01	392.02	390.71	1871.69	186.99	2071.46	2.93	4.53
+Mimachlamys asperrima (mollusk)	3	600					4			147.5806452	0.643684026														20	0.5	33.3	0.4	7.89	0.03	2329	45	26	7.76	0.03	867.43	864.52	2075.13	103.87	2207.28	1.63	2.51
+Mimachlamys asperrima (mollusk)	3	750					4			146.2365591	0.693551709														20	0.5	33.3	0.4	7.81	0.02	2329	45	26	7.68	0.03	1062.48	1058.92	2113.94	88.01	2236.58	1.38	2.13
+Mimachlamys asperrima (mollusk)	3	1000					4			149.4086022	0.938474011														20	0.5	33.3	0.4	7.69	0.02	2329	45	26	7.56	0.05	1432.86	1428.07	2162.20	68.27	2277.18	1.07	1.65
+Mimachlamys asperrima (mollusk)	3	390					6			150.3333333	0.835390719														20	0.5	33.3	0.4	8.19	0.02	2329	45	26	8.06	0.01	392.02	390.71	1871.69	186.99	2071.46	2.93	4.53
+Mimachlamys asperrima (mollusk)	3	600					6			150.3888889	0.716437023														20	0.5	33.3	0.4	7.89	0.03	2329	45	26	7.76	0.03	867.43	864.52	2075.13	103.87	2207.28	1.63	2.51
+Mimachlamys asperrima (mollusk)	3	750					6			149.7777778	0.769710255														20	0.5	33.3	0.4	7.81	0.02	2329	45	26	7.68	0.03	1062.48	1058.92	2113.94	88.01	2236.58	1.38	2.13
+Mimachlamys asperrima (mollusk)	3	1000					6			151.9444444	0.849816182														20	0.5	33.3	0.4	7.69	0.02	2329	45	26	7.56	0.05	1432.86	1428.07	2162.20	68.27	2277.18	1.07	1.65
+Mimachlamys asperrima (mollusk)	3	390					4					179.0804598	1.294813585												20	0.5	33.3	0.4	8.19	0.02	2335	44	26	8.06	0.01	393.06	391.74	1876.69	187.49	2076.99	2.94	4.54
+Mimachlamys asperrima (mollusk)	3	600					4					192.1609195	1.456862365												20	0.5	33.3	0.4	7.89	0.02	2335	44	26	7.76	0.03	869.70	866.79	2080.58	104.15	2213.08	1.63	2.52
+Mimachlamys asperrima (mollusk)	3	750					4					185.3448276	1.625048406												20	0.5	33.3	0.4	7.81	0.03	2335	44	26	7.68	0.03	1065.26	1061.69	2119.48	88.24	2242.44	1.38	2.14
+Mimachlamys asperrima (mollusk)	3	1000					4					174.7701149	2.005979508												20	0.5	33.3	0.4	7.69	0.03	2335	44	26	7.56	0.05	1436.67	1431.86	2167.85	68.45	2283.13	1.07	1.66
+Mimachlamys asperrima (mollusk)	3	390					6							1031.8	10.481										20	0.5	33.3	0.4	8.19	0.02	2333	42	26	8.06	0.01	392.72	391.40	1875.03	187.32	2075.15	2.94	4.53
+Mimachlamys asperrima (mollusk)	3	600					6							1002.1	11.944										20	0.5	33.3	0.4	7.89	0.02	2333	42	26	7.76	0.03	868.90	866.00	2078.76	104.06	2211.14	1.63	2.52
+Mimachlamys asperrima (mollusk)	3	750					6							1021.8	13.407										20	0.5	33.3	0.4	7.81	0.02	2333	42	26	7.68	0.03	1064.36	1060.80	2117.64	88.16	2240.49	1.38	2.13
+Mimachlamys asperrima (mollusk)	3	1000					6							997.6	12.871										20	0.5	33.3	0.4	7.69	0.02	2333	42	26	7.56	0.05	1435.33	1430.53	2165.96	68.39	2281.14	1.07	1.66
+Mimachlamys asperrima (mollusk)	4,5,6	390														14	976.1885037	208.32434320	16.72942950	0.494831044	7.116666667	0.097113908																				
+Mimachlamys asperrima (mollusk)	4,5,6	750														14	821.0742117	65.98906173	14.24723251	0.908028632	7.131666667	0.038159024																				
+Mimachlamys asperrima (mollusk)	4,5,6	390														28	1506.6266360	47.71200985	15.09267098	0.691423221	7.113333333	0.052577984																				
+Mimachlamys asperrima (mollusk)	4,5,6	750														28	1175.6674520	138.46088320	14.28419947	0.727012363	7.028333333	0.043467740																				
+Mimachlamys asperrima (mollusk)	4,5,6	390														35	1307.3503340	184.12854100	16.77445089	1.175153865	7.125000000	0.009574271																				
+Mimachlamys asperrima (mollusk)	4,5,6	750														35	1424.3967650	463.63572840	13.85564998	0.529761136	7.118000000	0.007852813																				
+Mimachlamys asperrima (mollusk)	7	390														2							38.30409357	5.869842076																		
+Mimachlamys asperrima (mollusk)	7	390														4							57.61953904	5.603355112																		
+Mimachlamys asperrima (mollusk)	7	390														6							56.75381264	6.241554401																		
+Mimachlamys asperrima (mollusk)	7	390														8							55.01089325	9.154864525																		
+Mimachlamys asperrima (mollusk)	7	390														10							65.50925926	5.076785231																		
+Mimachlamys asperrima (mollusk)	7	390														12							79.16666667	11.023963800																		
+Mimachlamys asperrima (mollusk)	7	390														14							80.00000000	10.183501540																		
+Mimachlamys asperrima (mollusk)	7	390														16							76.66666667	3.333333333																		
+Mimachlamys asperrima (mollusk)	7	390														18							78.88888889	2.939723679																		
+Mimachlamys asperrima (mollusk)	7	390														20							88.88888889	11.111111110																		
+Mimachlamys asperrima (mollusk)	7	390														22							80.55555556	6.406979219																		
+Mimachlamys asperrima (mollusk)	7	390														24							71.82539683	6.746031746																		
+Mimachlamys asperrima (mollusk)	7	390														26							88.74458874	10.173160170																		
+Mimachlamys asperrima (mollusk)	7	390														28							73.80952381	13.256581820																		
+Mimachlamys asperrima (mollusk)	7	390														30							85.71428571	8.247860988																		
+Mimachlamys asperrima (mollusk)	7	390														32							80.95238095	10.378330820																		
+Mimachlamys asperrima (mollusk)	7	750														2							51.66666667	1.666666667																		
+Mimachlamys asperrima (mollusk)	7	750														4							65.55555556	2.939723679																		
+Mimachlamys asperrima (mollusk)	7	750														6							62.03703704	1.515806069																		
+Mimachlamys asperrima (mollusk)	7	750														8							66.70794634	12.769353920																		
+Mimachlamys asperrima (mollusk)	7	750														10							68.20949432	4.164636535																		
+Mimachlamys asperrima (mollusk)	7	750														12							78.51851852	6.457628065																		
+Mimachlamys asperrima (mollusk)	7	750														14							48.51851852	12.007085240																		
+Mimachlamys asperrima (mollusk)	7	750														16							67.94612795	7.450441265																		
+Mimachlamys asperrima (mollusk)	7	750														18							86.59932660	3.350802776																		
+Mimachlamys asperrima (mollusk)	7	750														20							73.19865320	6.701605551																		
+Mimachlamys asperrima (mollusk)	7	750														22							62.33766234	6.632707119																		
+Mimachlamys asperrima (mollusk)	7	750														24							55.89225589	8.269746863																		
+Mimachlamys asperrima (mollusk)	7	750														26							60.75884899	4.971560833																		
+Mimachlamys asperrima (mollusk)	7	750														28							67.88897377	7.298789059																		
+Mimachlamys asperrima (mollusk)	7	750														30							84.64452214	1.640264329																		
+Mimachlamys asperrima (mollusk)	7	750														32							70.23601399	1.253337192																		

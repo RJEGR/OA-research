@@ -1,0 +1,345 @@
+/* DATA DESCRIPTION:
+Citation:	Timmins-Schiffman, Emma; O'Donnell, Michael J; Friedman, Carolyn S; Roberts, Steven B (2013): Elevated pCO2 causes developmental delay in early larval Pacific oysters, Crassostrea gigas. PANGAEA, https://doi.org/10.1594/PANGAEA.835714
+Abstract:	Increasing atmospheric CO2 equilibrates with surface seawater, elevating the concentration of aqueous hydrogen ions. This process, ocean acidification, is a future and contemporary concern for aquatic organisms, causing failures in Pacific oyster (Crassostrea gigas) aquaculture. This experiment determines the effect of elevated pCO2 on the early development of C. gigas larvae from a wild Pacific Northwest population. Adults were collected from Friday Harbor, Washington, USA (48°31.7' N, 12°1.1' W) and spawned in July 2011. Larvae were exposed to Ambient (400 µatm CO2), MidCO2 (700 µatm), or HighCO2 (1,000 µatm). After 24 h, a greater proportion of larvae in the HighCO2 treatment were calcified as compared to Ambient. This unexpected observation is attributed to increased metabolic rate coupled with sufficient energy resources. Oyster larvae raised at HighCO2 showed evidence of a developmental delay by 3 days post-fertilization, which resulted in smaller larvae that were less calcified.
+Keyword(s):	Animalia; Bottles or small containers/Aquaria (<20 L); Calcification/Dissolution; Coast and continental shelf; Crassostrea gigas; Growth/Morphology; Laboratory experiment; Mollusca; North Pacific; Pelagos; Single species; Temperate; Zooplankton
+Related to:	Timmins-Schiffman, Emma; O'Donnell, Michael J; Friedman, Carolyn S; Roberts, Steven B (2013): Elevated pCO2 causes developmental delay in early larval Pacific oysters, Crassostrea gigas. Marine Biology, 160(8), 1973-1982, https://doi.org/10.1007/s00227-012-2055-x
+Original version:	Timmins-Schiffman, Emma (2014): Data accompanying Timmins-Schiffman et al. 2013. Figshare, https://doi.org/10.6084/M9.FIGSHARE.1136057
+Further details:	Lavigne, Héloise; Epitalon, Jean-Marie; Gattuso, Jean-Pierre (2014): seacarb: seawater carbonate chemistry with R. R package version 3.0. https://cran.r-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Coverage:	LATITUDE: 48.528330 * LONGITUDE: -12.018330
+	DATE/TIME START: 2011-07-01T00:00:00 * DATE/TIME END: 2011-07-31T00:00:00
+Event(s):	Friday_Harbor * LATITUDE: 48.528330 * LONGITUDE: -12.018330 * DATE/TIME START: 2011-07-01T00:00:00 * DATE/TIME END: 2011-07-31T00:00:00 * METHOD/DEVICE: Experiment (EXP)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne et al, 2014) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation is 2014-09-11.
+Parameter(s):	Species (Species) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Treatment (Treat) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Figure (Fig) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Date (Date) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Duration, number of days [days] (Duration) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: post-fertilization
+	Identification (ID) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Length [µm] (l) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: hinge
+	Height [µm] (h) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Larvae [#] (Larvae) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: total
+	Larvae [#] (Larvae) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: trocophore
+	Larvae [#] (Larvae) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: Dhinge
+	Larvae [#] (Larvae) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: calcified
+	Larvae [#] (Larvae) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: noncalcified
+	Proportion (Prop) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * COMMENT: calcified larvae
+	Temperature, water [°C] (Temp) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Salinity (Sal) * PI: Timmins-Schiffman, Emma (emmats@uw.edu)
+	Alkalinity, total [µmol/kg] (AT) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Potentiometric titration
+	pH (pH) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Potentiometric * COMMENT: total scale
+	pH (pH) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Spectrophotometric * COMMENT: total scale
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Calcite saturation state (Omega Cal) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Aragonite saturation state (Omega Arg) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Timmins-Schiffman, Emma (emmats@uw.edu) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	7013 data points
+*/
+Species	Treat	Fig	Date	Duration [days] (post-fertilization)	ID	l [µm] (hinge)	h [µm]	Larvae [#] (total)	Larvae [#] (trocophore)	Larvae [#] (Dhinge)	Larvae [#] (calcified)	Larvae [#] (noncalcified)	Prop (calcified larvae)	Temp [°C]	Sal	AT [µmol/kg] (Potentiometric titration)	pH (total scale, Potentiometric)	pH (total scale, Spectrophotometric)	pCO2water_SST_wet [µatm] (Calculated using CO2SYS)	Omega Cal (Calculated using CO2SYS)	Omega Arg (Calculated using CO2SYS)	[CO3]2- [µmol/kg] (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	DIC [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Crassostrea gigas (mollusk)	Ambient	4		1.00		38.5								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		60.8								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		51.2								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		43.2								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		29.3								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		41.7								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		36.3								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		45.2								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		49.6								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		45.9								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		48.5								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		57.6								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		52.6								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		61.8								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	4		1.00		59.6								20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		61.6								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		59.4								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		42.1								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		43.7								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		45.3								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		48.0								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		40.1								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		24.8								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		47.8								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		31.7								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		42.6								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	4		1.00		54.8								20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		47.6								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		47.0								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		43.5								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		53.6								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		48.8								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		46.9								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		48.9								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		37.9								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		37.9								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		43.4								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		43.2								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		41.5								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		42.9								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		51.0								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		46.5								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	4		1.00		50.2								20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	Ambient	4		3.00		68.1								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		59.5								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		42.0								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		54.5								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		65.8								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		52.9								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		48.1								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		59.7								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		58.8								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		56.0								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		64.6								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		47.4								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		49.5								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	4		3.00		57.2								20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		63.1								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		67.6								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		49.2								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		61.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		60.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		55.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		62.6								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		64.7								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		72.6								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		67.6								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		60.1								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		58.7								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		67.0								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		60.9								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		59.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		69.2								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		39.3								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		65.5								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		64.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		48.5								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		62.2								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		55.4								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		57.8								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	4		3.00		61.0								20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		51.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		24.5								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		43.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		53.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		36.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		46.8								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		39.1								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		47.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		38.1								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		59.3								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		56.2								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	4		3.00		54.6								20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	Ambient	5		1.00			45.9							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			52.9							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			47.6							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			49.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			68.6							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			54.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			50.0							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			46.4							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			46.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			46.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			50.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			39.5							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			48.5							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			61.1							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	5		1.00			49.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			68.2							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			54.3							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			59.5							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			60.4							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			51.7							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			60.8							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			48.3							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			35.8							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			46.1							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			48.0							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			48.9							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			44.9							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			57.1							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			36.7							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			49.2							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			45.3							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			48.6							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			63.8							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	5		1.00			54.0							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			47.6							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			46.5							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			54.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			50.8							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			57.9							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			43.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			50.1							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			52.5							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			40.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			50.0							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			50.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			54.6							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			48.8							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			51.7							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			50.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			45.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	5		1.00			54.0							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	Ambient	5		3.00			72.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			72.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			70.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			77.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			70.7							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			71.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			80.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			75.1							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			70.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			80.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			67.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			74.3							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			61.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	5		3.00			73.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			71.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			66.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			62.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			67.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			64.2							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			68.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			68.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			67.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			75.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			73.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			74.8							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			72.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			68.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			65.7							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			67.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			60.4							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			71.7							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			69.2							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			62.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			68.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			68.8							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			64.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	5		3.00			67.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			49.4							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			53.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			61.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			57.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			44.2							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			56.1							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			47.4							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			61.3							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			69.8							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			70.0							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			65.7							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	5		3.00			65.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	Ambient	6		1.00		38.5	45.9							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		60.8	52.9							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		51.2	47.6							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		43.2	49.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		29.3	54.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		41.7	50.0							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		36.3	46.4							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		45.2	46.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		49.6	46.2							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		45.9	39.5							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		48.5	48.5							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		57.6	61.1							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		52.6	49.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		61.8	54.3							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	6		1.00		59.6	59.5							20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		61.6	51.7							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		59.4	60.8							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		42.1	35.8							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		43.7	46.1							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		45.3	48.0							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		48.0	48.9							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		40.1	44.9							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		24.8	36.7							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		47.8	49.2							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		31.7	45.3							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	6		1.00		42.6	48.6							20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		54.8	54.0							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		47.0	46.5							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		43.5	54.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		53.6	50.8							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		48.8	57.9							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		46.9	43.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		48.9	50.1							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		37.9	52.5							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		37.9	40.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		43.4	50.0							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		43.2	50.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		41.5	54.6							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		42.9	48.8							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		51.0	50.2							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		46.5	45.3							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	6		1.00		50.2	54.0							20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	Ambient	6		3.00		68.1	72.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		59.5	72.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		42.0	70.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		54.5	77.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		65.8	70.7							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		52.9	71.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		48.1	80.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		59.7	75.1							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		58.8	70.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		56.0	80.4							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		64.6	67.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		47.4	74.3							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		49.5	61.2							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	6		3.00		57.2	73.9							20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		63.1	71.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		67.6	66.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		49.2	62.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		61.4	67.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		60.4	64.2							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		55.4	68.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		62.6	68.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		64.7	67.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		72.6	75.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		67.6	73.9							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		60.1	74.8							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		58.7	72.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		67.0	68.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		59.4	65.7							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		69.2	67.0							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		39.3	60.4							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		65.5	71.7							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		64.4	69.2							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		48.5	62.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		62.2	68.6							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		55.4	68.8							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		57.8	64.1							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	6		3.00		61.0	67.5							20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		51.6	49.4							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		24.5	53.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		43.6	61.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		53.6	57.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		36.6	44.2							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		46.8	56.1							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		39.1	47.4							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		47.6	61.3							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		38.1	69.8							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		59.3	70.0							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		56.2	65.7							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	6		3.00		54.6	65.9							20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	Ambient	3	2011-07-26	1.00	105A-2			14	3	11	2	12	0.14	20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	Ambient	3	2011-07-26	1.00	105A-1			26	2	24	13	13	0.50	20.500	27.970	2005.3	7.99	7.97	466.270	2.14	1.36	120.260	8	15.09	455.94	454.43	1704.50	122.36	1841.95	1.96	3.08
+Crassostrea gigas (mollusk)	MidCO2	3	2011-07-26	1.00	103A-1			11	2	9	4	7	0.36	20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	MidCO2	3	2011-07-26	1.00	103A-2			19	3	16	9	10	0.47	20.250	27.970	1983.6	7.73	7.75	812.400	1.90	1.21	75.480	8	26.49	795.20	792.55	1794.21	76.89	1897.59	1.23	1.93
+Crassostrea gigas (mollusk)	HighCO2	3	2011-07-26	1.00	103B-1			25	0	25	19	6	0.76	20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	HighCO2	3	2011-07-26	1.00	103B-1			18	1	17	7	11	0.39	20.470	27.970	1979.6	7.64	7.61	1149.990	1.42	0.91	56.460	8	37.29	1126.02	1122.27	1837.87	57.53	1932.69	0.92	1.45
+Crassostrea gigas (mollusk)	Ambient	3	2011-07-28	3.00	105A-1			20	0	20	19	1	0.95	20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	3	2011-07-28	3.00	105A-3			10	0	10	10	0	1.00	20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	Ambient	3	2011-07-28	3.00	105A-4			2	0	2	1	1	0.50	20.460	28.910	2022.0	8.00	8.00	428.430	3.27	2.10	131.030	8	13.85	420.18	418.78	1693.30	133.32	1840.47	2.13	3.33
+Crassostrea gigas (mollusk)	MidCO2	3	2011-07-28	3.00	103A-3			52	0	52	50	2	0.96	20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	MidCO2	3	2011-07-28	3.00	103A-4			16	0	16	14	2	0.88	20.140	28.910	2022.5	7.77	7.77	780.960	2.04	1.31	81.730	8	25.41	764.19	761.64	1817.22	83.24	1925.87	1.33	2.08
+Crassostrea gigas (mollusk)	HighCO2	3	2011-07-28	3.00	103B-3			14	1	14	6	8	0.43	20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67
+Crassostrea gigas (mollusk)	HighCO2	3	2011-07-28	3.00	103B-4			4	0	4	4	0	1.00	20.410	28.910	2023.4	7.64	7.66	1030.700	1.64	1.05	65.540	8	33.29	1008.83	1005.47	1858.90	66.77	1958.97	1.07	1.67

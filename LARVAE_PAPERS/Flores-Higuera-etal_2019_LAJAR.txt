@@ -1,0 +1,63 @@
+/* DATA DESCRIPTION:
+Citation:	Flores-Higuera, Francisco A; Wördenweber, Robin; Luis-Villaseñor, Irasema E; Rochin-Arenas, Jesús A; Gómez-Gil, Bruno; Mazón-Suástegui, José Manuel; Voltolina, D (2019): Seawater carbonate chemistry and the bacterial community present in larvae and spat of Crassostrea gigas. PANGAEA, https://doi.org/10.1594/PANGAEA.913332
+Abstract:	Changes in marine environments, including pH changes, have been correlated to alterations in the physiology and disease susceptibility of cultured organisms at the early stages of development. In this study, high-throughput sequencing of the V3-V4 region of the 16S rRNA gene was performed to evaluate the bacterial
+	biodiversity of Crassostrea gigas pediveliger larvae and spat under acidic stress compared to that of larvae at normal pH value. The evaluation was performed in an experimental system with continuous water flow and pH
+	manipulation by CO2 bubbling to simulate acidification (pH 7.38 ± 0.039), using the current ocean pH conditions (pH 8.116 ± 0.023) as a reference. The results indicated that the bacterial communities associated with both pediveliger larvae and spat were modified in response to acidic conditions. The families Rhodobacteraceae and Campylobacteraceae were the most affected by the change in pH, with increases in Vibrionaceae in pediveliger larvae and Planctomycetaceae and Phyllobacteriaceae in spat detected. The results of this study demonstrate that the bacterial communities associated with C. gigas pediveliger larvae and spat are responsive to changes in ocean acidification
+Keyword(s):	Animalia; Bottles or small containers/Aquaria (<20 L); Community composition and diversity; Crassostrea gigas; Entire community; Laboratory experiment; Mollusca; Not applicable; Pelagos; Single species; Zooplankton
+Supplement to:	Flores-Higuera, Francisco A; Luis-Villaseñor, Irasema E; Rochin-Arenas, Jesús A; Gómez-Gil, Bruno; Mazón-Suástegui, José Manuel; Voltolina, Domenico; Medina-Hernández, Diana (2019): Effect of pH on the bacterial community present in larvae and spat of Crassostrea gigas. Latin American Journal of Aquatic Research, 47(3), 513-523, https://doi.org/10.3856/vol47-issue3-fulltext-13
+Further details:	Gattuso, Jean-Pierre; Epitalon, Jean-Marie; Lavigne, Héloise; Orr, James C; Gentili, Bernard; Hagens, Mathilde; Hofmann, Andreas; Mueller, Jens-Daniel; Proye, Aurélien; Rae, James; Soetaert, Karline (2019): seacarb: seawater carbonate chemistry with R. R package version 3.2.12. https://CRAN.R-project.org/package=seacarb
+Project(s):	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Gattuso et al, 2019) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI). The date of carbonate chemistry calculation by seacarb is 2020-03-06.
+Parameter(s):	Type (Type) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx) * COMMENT: study
+	Species (Species) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Registration number of species (Reg spec no) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Uniform resource locator/link to reference (URL ref) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx) * COMMENT: WoRMS Aphia ID
+	Life stage (Life stage) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Treatment (Treat) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Experiment duration [h] (Exp duration) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Shannon Diversity Index (H') * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Shannon Diversity Index, standard deviation [±] (H std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Evenness of species (E) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Evenness of species, standard deviation [±] (E std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Simpson index of diversity (Simpson I) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Simpson index of diversity, standard deviation [±] (Simpsons I std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Temperature, water [°C] (Temp) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Temperature, water, standard deviation [±] (Temp std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Salinity (Sal) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Salinity, standard deviation [±] (Sal std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	pH (pH) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx) * COMMENT: total scale
+	pH, standard deviation [±] (pH std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx) * COMMENT: total scale
+	Alkalinity, total [µmol/kg] (AT) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Partial pressure of carbon dioxide, standard deviation [±] (pCO2 std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Bicarbonate ion, standard deviation [±] ([HCO3]- std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Carbonate ion, standard deviation [±] ([CO3]2- std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Calcite saturation state (Omega Cal) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Calcite saturation state, standard deviation [±] (Omega Cal std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Aragonite saturation state (Omega Arg) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Aragonite saturation state, standard deviation [±] (Omega Arg std dev) * PI: Luis-Villaseñor, Irasema E (irasemaluis@uas.edu.mx)
+	Carbonate system computation flag (CSC flag) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon dioxide [µmol/kg] (CO2) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Yang, Yan (https://orcid.org/0000-0003-4900-5606, yangyan@xmu.edu.cn, http://mel.xmu.edu.cn/en/) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 4.0 International (CC-BY-4.0)
+Size:	384 data points
+*/
+Type (study)	Species	Reg spec no	URL ref (WoRMS Aphia ID)	Life stage	Treat	Exp duration [h]	H'	H std dev [±]	E	E std dev [±]	Simpson I	Simpsons I std dev [±]	Temp [°C]	Temp std dev [±]	Sal	Sal std dev [±]	pH (total scale)	pH std dev [±] (total scale)	AT [µmol/kg]	pCO2water_SST_wet [µatm]	pCO2 std dev [±]	[HCO3]- [µmol/kg]	[HCO3]- std dev [±]	[CO3]2- [µmol/kg]	[CO3]2- std dev [±]	Omega Cal	Omega Cal std dev [±]	Omega Arg	Omega Arg std dev [±]	CSC flag	CO2 [µmol/kg]	fCO2water_SST_wet [µatm]	pCO2water_SST_wet [µatm]	[HCO3]- [µmol/kg]	[CO3]2- [µmol/kg]	DIC [µmol/kg]	Omega Arg	Omega Cal
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Pediveliger larvae	Low pH	0	4.05		0.12		0.96		25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Pediveliger larvae	Low pH	18	3.85	0.22	0.07	0.02	0.93	0.02	25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Pediveliger larvae	Control	18	3.48	0.15	0.05	0.01	0.91	0.01	25	1	40	0.8	8.110	0.2	2030.42	263.90	24.1	1432.45	11.56	231.86	22.15	5.343	0.52	3.536	0.34	8	7.65	276.70	277.58	1449.85	225.08	1682.59	3.43	5.19
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Pediveliger larvae	Low pH	48	4.71	0.39	0.11	0.02	0.97	0.02	25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Pediveliger larvae	Control	48	4.61	0.14	0.11	0.01	0.97	0.01	25	1	40	0.8	8.110	0.2	2030.42	263.90	24.1	1432.45	11.56	231.86	22.15	5.343	0.52	3.536	0.34	8	7.65	276.70	277.58	1449.85	225.08	1682.59	3.43	5.19
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Spat	Low pH	0	4.49		0.08		0.97		25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Spat	Low pH	18	3.79	0.41	0.06	0.01	0.90	0.03	25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Spat	Control	18	4.38	0.33	0.07	0.01	0.95	0.02	25	1	40	0.8	8.110	0.2	2030.42	263.90	24.1	1432.45	11.56	231.86	22.15	5.343	0.52	3.536	0.34	8	7.65	276.70	277.58	1449.85	225.08	1682.59	3.43	5.19
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Spat	Low pH	48	3.98	0.65	0.14	0.14	0.93	0.05	25	1	40	0.8	7.384	0.4	2008.49	1864.46	234.0	1865.29	12.87	55.96	5.42	1.290	0.13	0.853	0.09	8	52.50	1897.92	1904.00	1868.95	54.53	1975.98	0.83	1.26
+laboratory	Crassostrea gigas (mollusk)	140656	https://www.marinespecies.org/aphia.php?p=taxdetails&id=140656	Spat	Control	48	4.93	0.10	0.13	0.01	0.98	0.00	25	1	40	0.8	8.110	0.2	2030.42	263.90	24.1	1432.45	11.56	231.86	22.15	5.343	0.52	3.536	0.34	8	7.65	276.70	277.58	1449.85	225.08	1682.59	3.43	5.19

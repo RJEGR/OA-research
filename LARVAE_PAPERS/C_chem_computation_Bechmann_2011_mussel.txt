@@ -1,0 +1,964 @@
+/* DATA DESCRIPTION:
+Citation:	Bechmann, Renée Katrin; Taban, Ingrid Christina; Westerlund, Stig; Godal, Brit Fjone; Arnberg, Maj; Vingen, Sjur; Ingvarsdottir, Anna; Baussant, Thierry (2011): Seawater carbonate chemistry and biological processes of Mytilus edulis during experiments, 2011. PANGAEA, https://doi.org/10.1594/PANGAEA.763290, 
+	Supplement to: Bechmann, RK et al. (2011): Effects of ocean acidification on early life stages of shrimp (Pandalus borealis) and mussel (Mytilus edulis). Journal of Toxicology and Environmental Health-Part A-Current Issues, 74(7-9), 424-438, https://doi.org/10.1080/15287394.2011.550460
+Abstract:	Ocean acidification (OA) resulting from anthropogenic emissions of carbon dioxide (CO2) has already lowered and is predicted to further lower surface ocean pH. There is a particular need to study effects of OA on organisms living in cold-water environments due to the higher solubility of CO2 at lower temperatures. Mussel larvae (Mytilus edulis) and shrimp larvae (Pandalus borealis) were kept under an ocean acidification scenario predicted for the year 2100 (pH 7.6) and compared against identical batches of organisms held under the current oceanic pH of 8.1, which acted as a control. The temperature was held at a constant 10°C in the mussel experiment and at 5°C in the shrimp experiment. There was no marked effect on fertilization success, development time, or abnormality to the D-shell stage, or on feeding of mussel larvae in the low-pH (pH 7.6) treatment. Mytilus edulis larvae were still able to develop a shell in seawater undersaturated with respect to aragonite (a mineral form of CaCO3), but the size of low-pH larvae was significantly smaller than in the control. After 2 mo of exposure the mussels were 28% smaller in the pH 7.6 treatment than in the control. The experiment with Pandalus borealis larvae ran from 1 through 35 days post hatch. Survival of shrimp larvae was not reduced after 5 wk of exposure to pH 7.6, but a significant delay in zoeal progression (development time) was observed.
+Keyword(s):	Animalia; Bottles or small containers/Aquaria (<20 L); Coast and continental shelf; Growth/Morphology; Laboratory experiment; Mollusca; Mytilus edulis; North Atlantic; Pelagos; Single species; Temperate; Zooplankton
+Project(s):	European network of excellence for Ocean Ecosystems Analysis (EUR-OCEANS) (URI: http://www.eur-oceans.eu/)
+	European Project on Ocean Acidification (EPOCA) (URI: https://en.wikipedia.org/wiki/European_Project_on_Ocean_Acidification)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Funding:	Seventh Framework Programme (FP7), grant/award no. 211384: European Project on Ocean Acidification (URI: https://cordis.europa.eu/project/rcn/87798/factsheet/en)
+	Sixth Framework Programme (FP6), grant/award no. 511106: European network of excellence for Ocean Ecosystems Analysis (URI: https://cordis.europa.eu/project/rcn/75677/factsheet/en)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI).
+Parameter(s):	Experimental treatment (Exp treat) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Species (Species) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Experiment day [day] (Exp day) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Replicates [#] (Repl) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Identification (ID) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Mytilus edulis, larvae, size [µm] (M. edulis larv size) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: Feret maximum
+	Mytilus edulis, larvae, size [µm] (M. edulis larv size) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: Feret minimum
+	Mytilus edulis, larvae, area [µm**2] (M. edulis larv area) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy
+	Mytilus edulis, larvae, perimeter [µm] (M. edulis larv perim) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy
+	Mytilus edulis, D-larvae [%] (M. edulis D-larv) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: Day 3
+	Mytilus edulis, D-larvae [%] (M. edulis D-larv) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: Day 3, deformed
+	Mytilus edulis, larvae, settled [%] (M. edulis larv sett) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: Day 64
+	Mytilus edulis, larvae, digestion stage I [%] (M. edulis larv stage I) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: 18 days post fertilization
+	Mytilus edulis, larvae, digestion stage II [%] (M. edulis larv stage II) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: 18 days post fertilization
+	Mytilus edulis, larvae, digestion stage II [%] (M. edulis larv stage II) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Microscopy * COMMENT: 18 days post fertilization
+	Salinity (Sal) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: CT-probe Aqua TROLL 100
+	Salinity, standard deviation [±] (Sal std dev) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Temperature, water [°C] (Temp) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Temperature, standard deviation [±] (T std dev) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	pH (pH) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: pH meter (Orion) * COMMENT: Header; NBS scale
+	pH, standard deviation [±] (pH std dev) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	pH (pH) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: pH meter (Orion) * COMMENT: Test Chamber; NBS scale
+	pH, standard deviation [±] (pH std dev) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Alkalinity, total [µmol/kg] (AT) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Interpretation from literature (PKDB) * COMMENT: Lower limit
+	Alkalinity, total [µmol/kg] (AT) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Interpretation from literature (PKDB) * COMMENT: Upper limit
+	Alkalinity, total [µmol/kg] (AT) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Measured
+	Alkalinity, total, standard deviation [±] (AT std dev) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Bechmann, Renée Katrin (Renee.Bechmann@iris.no) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: Total scale
+	Carbon dioxide [µmol/kg] (CO2) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	28123 data points
+*/
+Exp treat	Species	Exp day [day]	Repl [#]	ID	M. edulis larv size [µm] (Feret maximum, Microscopy)	M. edulis larv size [µm] (Feret minimum, Microscopy)	M. edulis larv area [µm**2] (Microscopy)	M. edulis larv perim [µm] (Microscopy)	M. edulis D-larv [%] (Day 3, Microscopy)	M. edulis D-larv [%] (Day 3, deformed, Microscopy)	M. edulis larv sett [%] (Day 64, Microscopy)	M. edulis larv stage I [%] (18 days post fertilization, M...)	M. edulis larv stage II [%] (18 days post fertilization, M...)	M. edulis larv stage II [%] (18 days post fertilization, M...)	Sal (CT-probe Aqua TROLL 100)	Sal std dev [±]	Temp [°C]	T std dev [±]	pH (Header; NBS scale, pH meter (...)	pH std dev [±]	pH (Test Chamber; NBS scale, pH m...)	pH std dev [±]	AT [µmol/kg] (Lower limit, Interpretation f...)	AT [µmol/kg] (Upper limit, Interpretation f...)	AT [µmol/kg] (Measured)	AT std dev [±]	DIC [µmol/kg] (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	pH (Total scale, Calculated using...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)
+Control	Mytilus edulis	3	1						100	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2						100	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3						92	4					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4						94	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5						100	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6						88	13					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7						98	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8						100	0					34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis	3	1						66	44					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2						96	4					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3						92	8					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4						90	0					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5						100	0					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6						90	0					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7						93	0					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8						97	0					34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Control	Mytilus edulis	64	1								96				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2								81				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3								98				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4								85				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6								60				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7								85				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8								36				34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis	64	1								42				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2								74				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3								66				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4								71				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6								58				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7								45				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8								38				34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Control	Mytilus edulis		1									55	32	14	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		2									58	23	19	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		3									71	29	0	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		4									71	14	14	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		5									56	17	28	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		6									74	23	3	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		7									63	21	17	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis		8									62	23	15	34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis		1									75	17	8	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		2									84	8	8	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		3									61	36	4	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		4									58	26	16	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		6									39	32	29	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		7									55	27	18	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis		8									73	20	8	34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Control	Mytilus edulis	3	1	1	112	81	7224	356							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	2	114	82	7342	365							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	3	100	74	5790	320							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	4	114	80	7163	400							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	5	104	79	6204	383							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	6	111	79	6638	381							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	7	109	75	6296	356							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	8	106	76	6343	340							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	9	107	78	6622	351							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	10	106	79	6516	340							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	11	115	84	7684	398							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	12	104	83	6394	360							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	13	102	74	5817	333							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	14	109	81	7032	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	15	107	74	6125	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	16	113	80	7010	377							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	17	102	72	5837	329							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	18	100	73	5870	332							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	19	108	79	6719	376							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	20	115	84	7637	390							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	21	108	78	6468	371							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	1	22	108	79	6890	344							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	1	115	82	7533	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	2	106	78	6506	346							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	3	107	79	6706	347							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	4	107	78	6535	344							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	5	102	76	6106	334							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	6	89	67	4773	288							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	7	105	77	6309	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	8	108	79	6659	349							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	9	101	76	6117	325							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	10	109	79	6676	373							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	11	110	83	7138	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	12	100	76	5854	339							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	13	108	79	6755	358							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	14	119	86	7979	405							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	15	103	80	6389	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	16	102	76	6131	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	17	110	78	6644	352							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	18	109	84	7038	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	19	104	77	6362	332							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	20	99	69	5107	325							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	2	21	109	75	6255	387							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	1	105	80	6426	377							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	2	104	74	6143	334							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	3	109	79	6609	380							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	4	108	65	5498	314							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	5	104	74	6083	322							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	6	108	79	6636	397							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	7	111	81	7119	350							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	8	107	79	6776	359							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	9	110	79	6841	392							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	10	106	76	6251	391							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	11	110	77	6753	382							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	12	110	83	6934	410							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	13	97	78	5795	332							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	14	108	72	6062	346							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	15	113	78	6510	392							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	16	96	70	5283	323							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	17	105	83	6469	425							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	3	18	96	70	5290	321							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	1	110	79	6911	358							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	2	110	79	6928	355							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	3	104	72	5615	353							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	4	101	74	5906	348							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	5	115	81	7574	387							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	6	104	71	5841	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	7	104	76	6261	329							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	8	101	74	5971	337							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	9	110	78	6797	354							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	10	98	72	5558	317							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	11	112	80	7211	346							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	12	116	84	7744	389							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	13	114	82	7350	373							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	14	115	82	7434	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	15	105	76	6422	342							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	16	117	82	7394	368							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	17	118	85	7974	396							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	18	111	77	6839	340							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	19	103	73	6094	324							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	20	112	84	7349	363							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	21	103	75	6150	324							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	22	110	77	6727	335							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	4	23	112	83	7243	373							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	1	106	77	6530	358							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	2	121	90	8563	396							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	3	112	81	7131	359							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	4	110	77	6733	350							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	5	102	80	6352	381							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	6	116	85	7647	397							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	7	113	86	7502	378							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	8	114	83	7392	381							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	9	107	79	6767	341							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	10	101	81	6334	380							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	11	116	85	7638	392							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	12	123	88	8355	412							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	13	116	88	7894	415							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	14	106	80	6575	347							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	15	110	81	7093	374							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	16	104	74	6010	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	17	103	74	6146	342							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	5	18	109	77	6503	383							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	1	104	75	5951	379							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	2	111	80	7088	360							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	3	107	76	6259	349							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	4	106	81	6292	361							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	5	112	80	7111	361							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	6	110	78	6808	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	7	118	81	7200	423							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	8	109	78	6297	367							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	9	104	76	6198	357							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	10	116	81	7362	383							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	11	101	75	5822	342							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	12	104	76	5987	364							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	13	113	80	7152	386							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	14	103	76	5923	384							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	15	107	78	6524	425							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	16	109	81	7034	339							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	17	99	72	5628	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	18	116	84	7096	416							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	19	102	73	5698	341							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	6	20	112	80	7167	372							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	1	110	80	6799	388							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	2	105	79	6484	342							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	3	103	76	6075	327							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	4	108	80	6791	353							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	5	113	83	7280	375							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	6	103	82	6321	396							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	7	113	77	6734	358							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	8	119	85	7849	379							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	9	114	82	7422	390							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	10	111	80	7120	344							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	11	119	86	8011	392							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	12	111	79	6954	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	13	118	87	7979	397							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	14	115	84	7582	367							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	15	113	79	7151	365							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	16	145	109	12567	470							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	17	113	80	7138	351							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	18	96	77	5722	348							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	19	104	78	6240	353							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	20	115	84	7601	387							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	21	107	80	6480	400							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	22	114	82	7508	376							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	23	108	80	6838	375							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	24	113	94	7555	390							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	25	109	80	6899	369							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	26	113	82	7424	354							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	27	114	78	7093	351							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	28	117	82	7611	376							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	29	96	78	5784	348							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	30	115	82	7446	382							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	31	112	82	7192	380							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	32	109	79	6755	350							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	33	113	82	7359	359							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	34	115	81	7461	383							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	35	115	83	7376	370							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	36	109	79	6940	341							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	37	111	81	6925	373							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	38	110	80	6897	359							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	39	117	83	7645	385							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	40	110	81	7059	356							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	7	41	110	78	6851	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	1	107	77	6549	337							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	2	98	76	5683	359							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	3	107	76	6385	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	4	111	76	6527	357							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	5	109	77	6533	353							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	6	110	75	6505	351							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	7	105	74	6231	343							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	8	108	79	6815	353							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	9	114	82	7280	387							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	10	116	80	7280	381							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	11	115	83	7417	397							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	12	114	82	7388	361							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	13	109	79	6797	345							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	14	112	82	7241	372							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	15	108	75	6266	368							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	3	8	16	98	70	5307	327							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis	3	1	1	98	71	5175	359							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	2	99	72	5624	314							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	3	109	80	6979	347							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	4	91	68	4537	310							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	5	97	73	5086	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	6	99	81	5335	356							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	7	99	73	5739	324							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	8	97	72	5541	317							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	9	102	83	6178	345							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	10	105	73	5731	365							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	11	112	78	6478	363							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	12	86	69	4487	282							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	13	107	86	6841	369							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	14	99	75	5778	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	1	15	108	78	6565	352							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	1	98	70	5328	332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	2	107	77	6423	388							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	3	105	79	6428	394							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	4	98	82	5586	412							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	5	101	75	5985	357							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	6	99	71	5767	313							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	7	104	77	6251	347							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	8	109	84	6803	447							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	9	101	77	6112	332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	10	103	74	5841	411							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	11	111	75	6225	402							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	12	103	76	6270	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	13	106	64	5171	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	14	100	75	5912	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	2	15	104	78	6240	367							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	1	100	72	5687	321							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	2	103	76	6167	332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	3	103	76	6235	328							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	4	110	79	6896	361							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	5	104	74	6011	352							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	6	107	77	6565	336							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	7	105	76	6360	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	8	107	73	5937	349							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	9	113	76	6821	373							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	10	100	73	5830	321							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	11	113	78	6862	372							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	12	109	78	6776	349							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	13	109	81	6960	371							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	14	98	68	5389	305							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	15	104	78	6381	349							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	16	104	73	5699	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	17	108	77	6574	347							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	18	100	75	5850	323							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	19	102	73	5880	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	3	20	102	76	6123	344							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	1	100	74	5870	328							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	2	104	76	6276	331							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	3	104	76	6188	346							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	4	98	75	5711	330							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	5	105	75	6236	332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	6	98	71	5653	311							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	7	105	85	6097	450							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	8	106	77	6189	356							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	9	99	73	5718	350							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	10	108	83	6920	381							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	11	111	83	7218	361							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	12	96	71	5395	302							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	13	104	76	6242	327							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	14	103	74	5883	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	15	99	73	5824	315							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	4	16	105	78	6571	330							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	1	108	80	6743	351							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	2	110	80	6954	375							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	3	104	78	6358	339							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	4	104	76	6277	329							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	5	100	75	5878	333							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	6	102	79	6493	338							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	7	107	77	6579	335							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	8	103	76	6212	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	9	94	70	5115	302							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	10	106	79	6640	341							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	11	110	83	7204	371							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	12	106	75	6355	329							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	13	117	81	7582	362							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	14	105	74	6278	326							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	15	101	75	6024	326							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	16	107	79	6697	353							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	17	106	78	6482	355							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	18	108	78	6589	354							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	19	106	75	6186	335							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	20	105	76	6199	381							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	21	98	67	5045	327							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	22	115	81	7285	355							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	23	99	73	5729	313							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	24	108	78	6732	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	25	116	82	7583	378							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	26	105	78	6440	326							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	27	106	77	6464	369							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	28	114	81	7286	391							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	29	102	75	5973	325							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	30	104	75	6171	344							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	31	108	81	6747	339							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	32	108	79	6766	387							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	33	104	83	6433	380							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	5	34	98	72	5657	321							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	1	115	81	7397	385							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	2	105	78	6474	336							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	3	110	73	6108	395							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	4	111	80	6911	441							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	5	103	78	6258	346							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	6	111	83	7182	381							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	7	103	72	5858	352							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	8	97	74	5578	321							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	9	105	76	6266	341							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	10	110	81	7016	378							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	11	103	75	6144	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	6	12	100	75	5522	370							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	1	110	78	6677	359							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	2	108	79	6428	424							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	3	114	84	6891	477							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	4	106	74	6266	362							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	5	104	75	6123	359							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	6	104	72	5537	352							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	7	109	77	6524	354							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	8	109	75	6403	344							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	9	108	76	6497	361							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	10	106	78	6579	351							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	11	99	74	5602	351							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	12	101	72	5609	327							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	13	106	79	6620	351							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	14	111	81	7154	357							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	15	114	79	6794	374							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	16	107	81	6066	423							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	17	111	80	7030	398							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	18	106	78	6495	353							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	19	100	73	5779	318							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	20	108	80	6807	365							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	21	104	77	6179	368							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	22	101	74	6017	367							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	23	108	78	6589	380							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	24	110	75	5931	386							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	25	111	78	6564	354							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	26	104	75	6161	385							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	27	108	78	6650	350							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	7	28	110	79	6632	372							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	1	108	79	6755	360							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	2	107	81	6925	381							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	3	105	78	6162	371							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	4	104	75	6111	365							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	5	110	80	6963	359							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	6	114	80	6809	411							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	7	102	73	5831	342							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	8	108	80	6849	354							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	9	110	81	6956	350							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	10	107	80	6607	350							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	11	110	79	7053	355							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	12	109	78	6795	353							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	13	100	76	5991	330							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	14	99	76	5903	336							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	15	111	79	7014	346							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	16	113	79	7061	350							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	17	99	71	5273	342							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	18	105	75	6161	334							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	19	107	77	6608	331							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	20	112	83	7097	360							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	21	111	82	7322	362							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	22	101	73	5874	314							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	23	106	78	6493	340							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	24	111	82	7309	360							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	25	112	82	7330	359							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	26	104	75	6240	340							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	27	101	74	5850	361							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	28	109	80	6859	353							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	3	8	29	110	81	6766	357							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Control	Mytilus edulis	16	1	1	226	171	30496	721							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	2	303	241	58200	1025							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	3	214	155	26079	689							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	4	320	250	63462	1174							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	5	293	234	54355	988							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	6	286	234	52872	955							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	7	310	243	60581	998							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	8	245	183	35902	777							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	9	272	216	47072	874							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	10	294	237	54858	989							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	11	295	232	55369	969							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	12	284	224	50714	912							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	13	292	229	52852	971							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	14	242	189	36735	800							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	15	311	243	60686	1074							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	16	331	263	67786	1256							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	17	291	235	54588	955							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	18	301	243	58501	1006							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	19	245	195	38019	790							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	20	289	234	53817	980							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	21	288	235	53745	953							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	22	240	192	36806	786							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	23	253	198	39765	841							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	24	225	170	30468	731							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	25	243	176	34073	801							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	26	280	225	50332	925							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	27	240	181	33706	798							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	28	255	185	36851	877							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	29	280	226	50442	934							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	1	30	294	236	55064	967							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	1	292	233	54271	1011							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	2	282	229	51032	958							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	3	272	215	46188	927							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	4	302	236	56214	966							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	5	290	234	53162	990							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	6	269	211	44500	907							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	7	265	210	44139	899							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	8	258	204	42154	829							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	9	295	242	56058	987							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	10	258	203	42128	830							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	11	295	243	56601	1022							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	12	308	244	60047	1020							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	13	302	240	58121	1003							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	14	294	225	52063	952							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	15	300	225	53343	1042							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	16	250	204	40546	809							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	17	293	219	50600	956							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	18	278	208	45077	917							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	19	239	181	34627	773							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	20	268	202	42068	854							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	21	282	221	48987	952							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	22	279	224	49655	927							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	23	297	236	56075	1011							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	24	237	183	34702	776							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	25	279	223	49629	1020							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	26	257	199	40850	838							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	27	244	186	36051	892							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	28	304	241	57053	1073							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	29	261	211	44249	862							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	30	281	226	50261	916							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	31	297	237	55777	1013							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	32	298	239	56279	976							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	33	292	228	52867	984							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	34	281	220	49854	952							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	35	239	185	35372	759							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	36	262	216	44845	895							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	37	254	188	38161	799							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	38	289	228	52632	1005							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	2	39	295	241	55987	941							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	1	262	208	43302	847							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	2	330	264	68709	1143							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	3	343	270	72235	1146							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	4	267	208	44102	866							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	5	272	215	46583	935							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	6	274	208	44720	896							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	7	257	205	42556	824							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	8	275	216	47446	898							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	9	279	220	48924	926							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	10	272	213	46944	881							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	11	320	250	63893	1088							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	3	12	292	238	55414	959							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	1	298	234	54967	1047							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	2	286	221	49940	965							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	3	271	216	46384	919							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	4	263	211	43985	882							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	5	256	198	40842	822							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	6	305	236	56328	964							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	7	271	213	46077	884							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	8	302	235	56484	1060							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	9	284	228	51160	965							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	10	330	265	69519	1164							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	11	303	232	55018	978							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	12	289	235	54517	938							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	13	291	228	52658	961							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	14	258	206	42320	915							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	15	259	209	43274	894							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	16	315	244	60758	1030							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	17	280	218	48129	950							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	18	300	238	57472	1006							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	19	280	213	47083	907							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	20	258	203	41382	886							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	21	265	199	42971	842							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	4	22	298	242	57007	999							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	1	258	202	40946	845							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	2	294	234	54210	997							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	3	286	219	50144	936							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	4	263	206	42589	850							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	5	269	215	46013	881							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	6	237	168	31730	735							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	7	293	242	56156	977							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	8	241	191	36099	814							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	9	278	215	47614	909							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	10	278	217	48404	902							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	11	239	185	34709	775							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	12	280	219	48479	911							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	13	302	242	59054	987							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	14	280	218	49428	935							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	15	293	231	54271	965							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	16	263	193	39439	841							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	17	251	202	39973	827							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	18	246	189	37048	789							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	19	247	187	36058	787							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	20	241	188	35999	774							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	21	264	206	43298	896							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	22	277	217	48423	888							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	23	269	216	46155	895							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	24	286	219	50232	930							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	25	219	166	28747	768							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	26	295	222	52295	952							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	27	243	190	37070	797							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	6	28	245	187	36685	767							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	1	317	253	64208	1098							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	2	296	241	58075	1002							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	3	279	224	50567	922							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	4	277	217	47253	925							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	5	267	213	44662	908							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	6	292	232	54046	962							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	7	230	173	31799	754							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	8	292	225	52781	931							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	9	336	262	67732	1137							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	10	279	220	49625	960							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	11	283	224	51181	994							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	12	251	197	39711	828							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	13	267	212	45187	889							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	14	219	155	26663	676							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	7	15	315	251	63119	1095							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	1	294	230	54223	940							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	2	242	193	37586	802							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	3	248	197	38918	809							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	4	299	240	57001	1012							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	5	308	248	61560	1017							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	6	283	227	50948	926							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	7	275	214	47115	911							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	8	265	206	42776	856							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	9	256	209	43036	876							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	10	291	232	53931	983							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	11	319	252	63823	1076							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	12	227	178	32147	757							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	13	311	244	59122	1022							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	14	249	194	37249	779							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	16	8	15	254	210	43047	841							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis	16	1	1	283	234	52686	966							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	2	235	186	34560	764							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	3	278	220	48868	911							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	4	256	187	38431	829							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	5	269	218	45115	914							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	6	254	207	41510	846							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	7	282	223	50485	907							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	8	268	215	45917	897							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	9	248	195	38272	796							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	1	10	230	183	33319	766							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	1	269	209	43511	917							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	2	219	168	29034	718							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	3	290	229	53218	934							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	4	278	228	49601	914							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	5	282	223	49523	913							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	6	272	211	46153	865							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	7	251	194	39599	799							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	8	264	204	42264	873							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	9	251	200	40502	823							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	10	244	186	36661	809							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	2	11	294	237	54547	968							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	1	222	171	30119	713							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	2	265	216	45650	861							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	3	250	201	40446	829							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	4	258	196	39947	829							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	5	240	200	37054	838							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	6	291	228	52489	964							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	7	310	243	58827	1080							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	8	241	201	38620	793							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	9	254	201	41017	830							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	10	258	203	41814	821							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	11	228	166	29802	752							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	12	311	242	58873	1045							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	13	280	223	49727	951							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	14	291	233	53964	1026							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	15	282	220	49147	956							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	16	264	205	43414	831							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	17	280	222	49108	929							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	18	291	231	53769	987							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	3	19	247	192	37390	797							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	1	318	247	61504	1054							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	2	226	182	32837	770							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	3	297	230	53722	950							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	4	297	221	50933	996							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	5	281	230	51289	980							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	6	256	189	38788	849							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	7	281	221	49415	998							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	8	319	254	64887	1029							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	9	248	191	37316	818							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	10	234	181	33688	760							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	11	264	204	42502	843							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	12	270	219	47420	910							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	13	311	257	63568	1023							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	14	295	224	52260	981							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	15	243	193	37459	790							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	16	230	181	32379	815							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	17	249	204	40985	804							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	18	250	199	39354	834							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	19	301	241	57772	1014							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	20	280	224	50379	901							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	4	21	277	226	49031	935							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	1	288	235	53806	976							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	2	233	181	33686	743							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	3	224	184	32504	753							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	4	249	185	36443	820							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	5	268	209	44605	951							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	6	247	186	36293	823							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	7	252	201	40846	870							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	8	253	200	40513	847							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	9	280	215	47593	1031							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	10	240	187	36006	786							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	11	249	197	39296	813							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	12	275	216	47753	940							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	13	274	214	46464	908							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	14	266	215	45148	901							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	15	306	240	59335	1009							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	16	295	229	52159	1058							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	17	279	215	48077	897							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	18	276	223	49400	968							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	19	258	210	43107	940							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	20	272	222	48523	928							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	21	287	212	48533	970							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	22	297	229	52909	998							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	23	250	200	40301	834							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	24	255	200	40479	833							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	25	231	187	34287	849							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	26	253	201	40608	833							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	27	264	200	41456	826							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	6	28	281	226	50833	977							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	1	275	220	47749	935							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	2	284	223	49469	902							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	3	236	184	34852	762							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	4	259	192	39030	818							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	5	296	243	56635	993							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	6	247	187	36763	811							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	7	285	229	51434	946							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	8	251	195	38881	871							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	9	288	226	52511	1030							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	10	276	225	49435	970							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	11	220	170	28892	1016							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	12	258	208	43016	851							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	13	249	198	38779	816							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	14	246	195	37761	808							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	15	258	207	42588	846							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	16	261	195	38968	904							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	17	273	216	46992	909							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	18	320	254	63573	1051							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	19	310	249	61454	1055							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	20	266	209	43518	864							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	21	234	184	34078	757							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	22	282	224	49102	959							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	7	23	262	205	42924	891							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	8	1	278	202	43907	879							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	8	2	280	221	49199	953							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	8	3	238	181	34385	832							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	8	4	283	216	48944	910							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	16	8	5	245	187	36860	766							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Control	Mytilus edulis	64	1	1	457	381	130189	1455							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	2	391	315	96297	1212							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	3	447	365	125260	1375							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	4	362	322	88020	1139							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	5	362	322	87241	1144							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	6	351	314	83407	1180							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	7	454	341	106323	1444							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	8	501	299	104431	1585							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	9	346	279	67775	1140							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	1	10	469	416	141590	1566							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	1	400	339	104308	1257							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	2	330	278	69826	1013							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	3	443	355	118325	1333							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	4	517	436	170723	1599							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	5	479	390	140479	1450							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	6	446	356	118558	1333							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	7	374	313	89252	1145							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	8	518	437	171039	1601							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	9	323	286	71227	1019							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	10	471	357	128373	1401							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	11	412	352	111756	1285							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	12	481	405	148388	1481							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	13	556	452	191355	1702							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	14	423	354	115104	1308							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	15	599	486	218714	1826							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	16	464	383	136133	1428							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	17	447	379	129711	1391							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	2	18	491	407	154126	1531							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	1	458	377	131998	1447							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	2	455	383	132465	1416							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	3	386	301	91063	1284							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	4	593	464	210439	1891							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	5	586	472	210236	1811							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	6	470	376	134048	1416							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	7	537	435	176264	1701							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	8	560	438	185949	1686							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	9	586	472	212164	1819							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	10	481	380	142106	1472							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	11	485	393	140790	1561							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	12	507	415	158646	1583							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	13	496	409	156011	1538							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	14	430	357	117112	1329							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	15	603	479	215977	1838							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	16	480	388	142712	1478							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	17	571	460	196881	1727							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	18	520	420	165561	1628							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	3	19	416	342	107785	1289							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	1	408	341	109650	1266							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	2	231	190	32562	695							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	3	346	303	80071	1088							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	4	293	256	57420	1014							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	5	300	265	61007	944							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	6	355	302	82412	1102							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	4	7	371	320	92843	1176							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	1	647	529	262928	2016							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	2	382	323	94181	1185							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	3	423	348	111758	1283							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	4	372	307	87399	1136							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	5	296	254	57422	937							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	6	343	295	76807	1062							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	7	484	397	143687	1607							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	8	458	387	137430	1441							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	9	587	504	226948	1845							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	10	528	442	177646	1665							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	11	372	303	88098	1156							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	12	419	350	111500	1300							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	13	491	392	148739	1500							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	14	537	417	170990	1711							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	15	273	248	51813	1019							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	16	431	374	125398	1368							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	6	17	453	392	136136	1438							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	1	575	468	202880	1769							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	2	354	297	81022	1105							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	3	558	426	182408	1735							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	4	480	404	148317	1533							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	5	529	415	168650	1580							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	6	409	327	102415	1234							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	7	453	375	131110	1397							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	8	602	499	226397	1847							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	9	539	450	186645	1680							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	10	487	394	144601	1487							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	11	492	413	158614	1563							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	12	476	398	148544	1491							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	13	460	383	136732	1429							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	14	376	313	89276	1158							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	15	505	418	164757	1579							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	16	472	396	140744	1487							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	17	477	389	141090	1452							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	18	485	421	155259	1617							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	19	607	454	209840	1865							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	20	405	338	105128	1258							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	21	301	261	59576	938							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	7	22	497	411	155019	1618							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	1	557	455	194859	1840							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	2	505	421	160773	1572							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	3	482	392	141907	1483							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	4	503	403	152850	1678							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	5	488	379	140727	1497							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	6	594	457	205616	1826							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	7	398	352	106528	1297							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	8	523	417	165261	1625							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Control	Mytilus edulis	64	8	9	402	356	109211	1274							34	0	10	0	8.09	0.03	8.06	0.05	1900.0	2300.0	2030.0	102.0	1900.2	26	7.95	19.66	447.28	445.59	1784.44	96.10	1.46	2.30
+Low pH	Mytilus edulis	64	1	1	302	275	63101	957							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	2	363	320	88700	1143							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	3	437	318	110666	1314							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	4	430	361	120268	1352							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	5	402	337	104237	1240							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	6	493	388	145926	1488							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	7	437	372	125800	1361							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	8	436	374	125586	1363							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	9	319	275	66441	988							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	10	346	296	78661	1074							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	11	390	326	96893	1200							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	1	12	386	327	94561	1194							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	1	404	338	105192	1248							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	2	328	278	68449	1102							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	3	371	316	89615	1153							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	4	427	368	120175	1341							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	5	521	407	164716	1567							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	6	557	440	187363	1738							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	7	439	376	128328	1388							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	8	524	419	168423	1610							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	9	397	335	103137	1239							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	10	444	375	119797	1541							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	11	465	394	140009	1486							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	12	409	353	110253	1269							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	13	336	297	75687	1048							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	14	361	310	87168	1132							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	15	445	370	127456	1410							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	16	410	344	109732	1266							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	17	429	352	115845	1332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	18	493	411	154698	1544							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	19	336	296	75415	1048							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	20	490	416	153808	1523							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	21	348	302	79807	1082							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	22	483	385	142251	1460							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	23	505	416	162329	1583							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	24	335	295	75287	1049							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	25	489	414	154852	1537							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	26	347	300	79172	1086							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	27	483	388	142264	1458							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	28	523	413	164543	1597							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	29	345	301	78750	1074							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	30	445	369	128390	1383							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	31	499	396	149761	1512							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	2	32	177	104	8969	483							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	1	329	288	74267	1045							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	2	496	399	153175	1528							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	3	365	312	89386	1154							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	4	384	319	94540	1185							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	5	556	456	194959	1799							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	6	325	273	68581	1040							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	7	424	334	107294	1283							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	8	364	311	89635	1150							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	9	385	323	94797	1284							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	10	387	323	97025	1193							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	11	454	376	131832	1404							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	12	356	302	81176	1226							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	13	319	279	65765	1105							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	14	442	367	127316	1366							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	15	324	268	67487	1049							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	16	84	72	4163	259							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	17	411	354	112387	1302							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	18	453	369	128784	1386							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	19	358	306	81028	1118							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	20	393	312	94885	1198							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	21	440	362	123667	1364							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	22	447	380	130150	1395							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	23	378	326	95101	1184							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	24	439	363	124056	1365							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	25	343	304	80149	1082							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	26	179	121	12540	628							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	27	292	256	55747	1156							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	28	364	311	86375	1124							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	29	580	471	207977	1769							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	3	30	357	308	83981	1102							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	1	341	287	74057	1055							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	2	285	257	56776	912							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	3	341	285	75518	1061							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	4	324	284	69976	1014							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	5	334	296	74656	1053							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	6	358	310	84766	1117							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	7	286	262	56527	909							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	8	305	275	63523	958							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	9	300	265	59541	975							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	10	392	340	100473	1226							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	11	324	274	70079	1010							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	12	319	279	67691	993							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	13	449	358	123005	1358							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	14	270	237	48408	843							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	15	300	270	63359	954							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	16	339	291	75030	1061							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	4	17	332	300	74586	1058							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	1	380	328	98290	1215							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	2	329	281	70430	1026							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	3	339	293	75747	1055							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	4	337	295	77996	1069							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	5	445	385	129242	1382							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	6	267	241	48862	839							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	7	496	409	157770	1547							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	8	424	346	112558	1298							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	9	455	355	125489	1375							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	10	387	319	94464	1193							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	11	430	357	117188	1319							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	12	323	286	69541	1016							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	13	323	285	70077	1016							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	14	318	278	66677	990							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	15	468	379	135946	1423							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	16	372	325	95114	1183							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	17	482	369	136533	1502							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	6	18	351	307	84049	1104							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	1	315	280	66960	997							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	2	264	27	3898	587							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	3	304	273	65864	971							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	4	373	311	89861	1149							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	5	216	178	29019	671							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	6	165	56	6658	398							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	7	343	276	67328	1054							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	8	326	284	69014	1030							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	9	290	250	56817	911							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	10	375	327	94503	1184							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	11	313	276	65855	979							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	12	309	259	63425	958							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	13	336	282	73047	1038							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	7	14	295	267	61287	943							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	1	653	526	264556	2001							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	2	309	275	65754	980							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	3	336	302	76826	1079							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	4	532	431	177641	1634							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	5	345	304	80962	1087							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	6	440	347	116555	1332							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	7	415	325	103772	1252							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	8	682	530	268918	2190							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	9	313	244	58015	933							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	10	313	277	65805	976							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	11	331	298	75618	1063							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	12	335	301	75709	1074							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	13	396	355	109907	1274							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	14	343	305	80689	1084							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	15	401	351	111194	1283							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90
+Low pH	Mytilus edulis	64	8	16	344	307	80546	1082							34	0	10	0	7.61	0.05	7.62	0.06	1900.0	2300.0	2014.0	80.0	2013.7	26	7.51	58.23	1324.45	1319.42	1917.98	37.49	0.57	0.90

@@ -1,0 +1,54 @@
+/* DATA DESCRIPTION:
+Citation:	Gutowska, Magdalena A; Melzner, Frank (2009): Seawater carbonate chemistry and biological parameters of Sepia officinalis during experiments, 2009. PANGAEA, https://doi.org/10.1594/PANGAEA.758066, 
+	Supplement to: Gutowska, MA; Melzner, F (2009): Abiotic conditions in cephalopod (Sepia officinalis) eggs: embryonic development at low pH and high pCO2. Marine Biology, 156(3), 515-519, https://doi.org/10.1007/s00227-008-1096-7
+Abstract:	Low pO2 values have been measured in the perivitelline fluids (PVF) of marine animal eggs on several occasions, especially towards the end of development, when embryonic oxygen consumption is at its peak and the egg case acts as a massive barrier to diffusion. Several authors have therefore suggested that oxygen availability is the key factor leading to hatching. However, there have been no measurements of PVF pCO2 so far. This is surprising, as elevated pCO2 could also constitute a major abiotic stressor for the developing embryo. As a first attempt to fill this gap in knowledge, we measured pO2, pCO2 and pH in the PVF of late cephalopod (Sepia officinalis) eggs. We found linear relationships between embryo wet mass and pO2, pCO2 and pH. pO2 declined from >12 kPa to less than 5 kPa, while pCO2 increased from 0.13 to 0.41 kPa. In the absence of active accumulation of bicarbonate in the PVF, pH decreased from 7.7 to 7.2. Our study supports the idea that oxygen becomes limiting in cephalopod eggs towards the end of development; however, pCO2 and pH shift to levels that have caused significant physiological disturbances in other marine ectothermic animals. Future research needs to address the physiological adaptations that enable the embryo to cope with the adverse abiotic conditions in their egg environment.
+Keyword(s):	Animalia; Containers and aquaria (20-1000 L or < 1 m**2); Laboratory experiment; Laboratory strains; Mollusca; Nekton; Not applicable; Pelagos; Reproduction; Sepia officinalis; Single species
+Project(s):	European network of excellence for Ocean Ecosystems Analysis (EUR-OCEANS) (URI: http://www.eur-oceans.eu/)
+	European Project on Ocean Acidification (EPOCA) (URI: https://en.wikipedia.org/wiki/European_Project_on_Ocean_Acidification)
+	Ocean Acidification International Coordination Centre (OA-ICC) (URI: http://www.iaea.org/ocean-acidification/page.php?page=2181)
+Funding:	Seventh Framework Programme (FP7), grant/award no. 211384: European Project on Ocean Acidification (URI: https://cordis.europa.eu/project/rcn/87798/factsheet/en)
+	Sixth Framework Programme (FP6), grant/award no. 511106: European network of excellence for Ocean Ecosystems Analysis (URI: https://cordis.europa.eu/project/rcn/75677/factsheet/en)
+Comment:	In order to allow full comparability with other ocean acidification data sets, the R package seacarb (Lavigne and Gattuso, 2011) was used to compute a complete and consistent set of carbonate system variables, as described by Nisumaa et al. (2010). In this dataset the original values were archived in addition with the recalculated parameters (see related PI).
+Parameter(s):	Salinity (Sal) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Temperature, water [°C] (Temp) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	pH (pH) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: WTW 340i pH-analyzer and WTW SenTix 81-electrode * COMMENT: NBS scale, H+ ion concentration in µmol/l
+	pH (pH) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Calculated * COMMENT: NBS scale, H+ ion concentration in µmol/kg
+	Carbon dioxide, partial pressure [Pa] (pCO2) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Calculated
+	Oxygen [mg/kg] (O2) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Conductivity meter (WTW, Weilheim, Gemany)
+	Ammonium [mg/l] ([NH4]+) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Nitrite [µg/l] ([NO2]-) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Nitrate [µg/l] ([NO3]-) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Alkalinity, total [µmol/kg] (AT) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbon, inorganic, dissolved [µmol/kg] (DIC) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de) * METHOD/DEVICE: Calculated using CO2SYS (URI: http://cdiac.ornl.gov/oceans/co2rprt.html)
+	Carbonate system computation flag (CSC flag) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	pH (pH) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010) * COMMENT: Total scale, H+ ion concentration in µmol/kg
+	Carbon dioxide [µmol/kg] (CO2) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Partial pressure of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (pCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Fugacity of carbon dioxide (water) at sea surface temperature (wet air) [µatm] (fCO2water_SST_wet) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Bicarbonate ion [µmol/kg] ([HCO3]-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Carbonate ion [µmol/kg] ([CO3]2-) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Aragonite saturation state (Omega Arg) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Calcite saturation state (Omega Cal) * PI: Nisumaa, Anne-Marin (annemarin@gmail.com) * METHOD/DEVICE: Calculated using seacarb after Nisumaa et al. (2010) (URI: https://doi.org/10.5194/essd-2-167-2010)
+	Sepia officinalis, embryo, mass, wet [g] (S. officinalis W) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Sepia officinalis, haemolymph O2 [kPa] (S. officinalis O2 (ha)) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Sepia officinalis, haemolymph pCO2 [kPa] (S. officinalis pCO2 (ha)) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Sepia officinalis, haemolymph pH (S. officinalis pH (ha)) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+	Sepia officinalis, haemolymph, bicarbonate ion [mmol/l] (S. officinalis [HCO3]- (ha)) * PI: Gutowska, Magdalena A (m.gutowska@physiologie.uni-kiel.de)
+License:	Creative Commons Attribution 3.0 Unported (CC-BY-3.0)
+Size:	338 data points
+*/
+Sal	Temp [°C]	pH (NBS scale, H+ ion concentrati...)	pH (NBS scale, H+ ion concentrati...)	pCO2 [Pa] (Calculated using CO2SYS)	pCO2water_SST_wet [µatm] (Calculated)	O2 [mg/kg] (Conductivity meter (WTW, Weil...)	[NH4]+ [mg/l]	[NO2]- [µg/l]	[NO3]- [µg/l]	AT [µmol/kg] (Calculated using CO2SYS)	DIC [µmol/kg] (Calculated using CO2SYS)	CSC flag (Calculated using seacarb afte...)	pH (Total scale, H+ ion concentra...)	CO2 [µmol/kg] (Calculated using seacarb afte...)	pCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	fCO2water_SST_wet [µatm] (Calculated using seacarb afte...)	[HCO3]- [µmol/kg] (Calculated using seacarb afte...)	[CO3]2- [µmol/kg] (Calculated using seacarb afte...)	Omega Arg (Calculated using seacarb afte...)	Omega Cal (Calculated using seacarb afte...)	S. officinalis W [g]	S. officinalis O2 (ha) [kPa]	S. officinalis pCO2 (ha) [kPa]	S. officinalis pH (ha)	S. officinalis [HCO3]- (ha) [mmol/l]
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.210	8.61	0.18	7.58	2.33
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.233	7.14	0.25	7.46	2.37
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.227	7.77	0.22	7.51	2.34
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.253	6.51	0.28	7.41	2.38
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.237	7.14	0.26	7.44	2.44
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.234	4.94	0.28	7.41	2.41
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.222	7.77	0.26	7.43	2.36
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.134	12.81	0.13	7.72	2.32
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.245	9.66	0.20	7.54	2.37
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.262	7.14	0.24	7.46	2.35
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.223	7.77	0.23	7.52	2.62
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.310	4.62	0.41	7.23	2.37
+32	17	8.1	7.9	42	414.51	197384.6	0.1	100	5000	1221.1	1142.9	29	7.79	14.80	413.87	412.44	1078.00	50.09	0.78	1.22	0.310	5.46	0.31	7.36	2.43
