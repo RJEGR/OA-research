@@ -29,6 +29,7 @@ bind_data <- read_csv(f, comment = "#", col_names = T, skip = 1)
 pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4", `8`= "#4575b4")
 
 bind_data %>% distinct(pH) %>% pull(pH)
+
 bind_data %>% distinct(hpf) %>% pull(hpf)
 
 pHL <- c(8.0, 7.8, 7.6)
@@ -170,8 +171,11 @@ Index= out$Index
 
 data <- data.frame(id = 1:length(Index), Index = sort(Index))
 
-nlsplot(data, model=8, start=c(250, 0.5, 0.1), 
+nlsplot(data, model=10, start=c(250, 0.5, 0.1), 
   xlab = "Time" , ylab = "Growth", position = 1)
+
+
+nlsfit(data, model=10, start=c(max(data[,-1]),4,0.05))
 
 pred_gompertz <- function(y) {
   
@@ -299,7 +303,7 @@ plot_data %>%
   facet_grid(~ hpf, scales = 'free' ) +
   # geom_point(aes(y = y), shape = 1, size = 0.4) +
   geom_line(size = 2, alpha = 0.7) +
-  # ggpubr::stat_cor(aes(y = y, x = Model)) +
+  ggpubr::stat_cor(aes(y = y, x = Model)) +
   # geom_line(aes(y = Model)) +
   scale_color_manual(values = pHpalette) +
   scale_fill_manual(values = pHpalette) +
@@ -317,11 +321,11 @@ values <- natparks.pals("Arches", 2, direction = 1) # "Yellowstone"
 
 plot_data %>%
   mutate(diag = y - Model, sign = sign(diag)) %>% # diag = n veces negativo que el modelo
-  group_by(pH,hpf, sign) %>% count() %>% 
-  mutate(sign = recode_factor(sign, !!!level_key)) %>% #view()
+  group_by(pH, sign) %>% count() %>%
+  mutate(sign = recode_factor(sign, !!!level_key)) %>% 
   pivot_wider(names_from = sign, values_from = n) %>%
-  mutate(Failure = Failure/sum(Failure+Success), Success = 1 - Failure) %>%
-  pivot_longer(cols = c('Failure','Success')) %>%
+  mutate(Failure = Failure/sum(Failure+Success), Success = 1 - Failure) %>% view()
+  pivot_longer(cols = c('Failure','Success')) %>% 
   mutate(name = factor(name, levels = c(c('Success', 'Failure')))) %>%
   mutate(pH = factor(pH, levels = pHL)) %>%
   mutate(hpf = factor(hpf, levels = hpfL)) %>% #view()
@@ -355,7 +359,7 @@ plot_data %>%
   group_by(pH, hpf) %>%
   ggplot(aes(diag, fill = pH, color = pH)) +
   # facet_grid(~ hpf, scales = 'free' ) +
-  geom_histogram(binwidth = 0.5)+
+  geom_histogram(binwidth = 0.5, )+
   # ggplot2::stat_ecdf(pad = F) +
   geom_rug(outside = F) +
   geom_vline(xintercept = 0, linetype="dashed", color = "black") +
@@ -372,6 +376,50 @@ ggsave(p2,
   width = 3, height = 3) 
 
 p2 + facet_grid(hpf ~ pH)
+
+# PLOT ONLY BY PH ====
+
+groups <- c(unique(out$pH))
+
+df <- list()
+
+for(i in sort(groups)) {
+  
+  cat('\nModeling', i,'group\n')
+  
+  y <-  out %>% filter(pH %in% i) %>% pull(Index)
+  
+  tbl <- pred_gompertz(y) %>%  mutate(g = i) %>% as_tibble()
+  
+  df[[i]] <- tbl
+}
+
+do.call(rbind, df) -> plot_data
+
+
+plot_data %>%
+  group_by(g) %>%
+  rstatix::cor_test(y, Model)
+
+# y~a*exp(-b*exp(-c*x))
+
+plot_data %>%
+  mutate(g = factor(g, levels = pHL)) %>%
+  ggplot(aes(x = x, color = g)) +
+  geom_point(aes(y = y), shape = 1, alpha = 0.3, size = 0.5) +
+  # geom_hex(aes(y = y, fill = g), alpha = 0.3) +
+  geom_line(aes(y = Model), size = 1) +
+  scale_color_manual("",values = pHpalette) +
+  scale_fill_manual("",values = pHpalette) +
+  theme_classic(base_family = "GillSans", base_size = 16) +
+  labs(x = expression('Rows'), y = expression('Growth Index')) +
+  theme(panel.border = element_blank(), legend.position = 'top', 
+    panel.grid.major = element_blank(),
+    strip.background = element_rect(color = 'white', fill = 'white')) -> ps
+
+ggsave(ps, 
+  filename = 'gompertz_modeling_growth.png', path = ggsavepath, 
+  width = 3.5, height = 3.5, dpi = 500, device = png) 
 
 # estos datos pueden testearse al modelo y hacer un estadistico de valores p, respecto al valor modelo. Entonces graficar valores (transformados) vs valores p
 
@@ -489,7 +537,7 @@ matplot(dd[, 1], dd[, -1], type = "l", bty = "n",
       1)))
 
 
-dd %>%
+# dd %>%
   
 # modeling delay in growth based on body index
 
