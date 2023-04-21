@@ -564,6 +564,8 @@ ggsave(psave,
   filename = 'oxygen_rate.png', path = ggsavepath,
   width = 5.5, height = 3.5)
 
+path_out <- '~/Documents/MIRNA_HALIOTIS/'
+save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
 
 # at the end
 
