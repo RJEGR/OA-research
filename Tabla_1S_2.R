@@ -1,5 +1,5 @@
 
-# Ricardo Gomez-Reyes
+# Ricardo Gomez-Reyes, 2023 April
 # Table_1S - hpf contiene las siguientes lista de tablas (30 hpf, 48 hpf y 60 hpf)
 # Cada tabla contiene las siguintes columnas:
 # hpf = Tiempo del muestreo en Horas pos fertilizacion (hpf)	
@@ -8,6 +8,13 @@
 # Count	= Valor absoluto de Larvas
 # Design = Estres Acumulativo (Cronico) y Agudo (Factor A)
 # Pct = Valor Relativo de Larvas
+
+
+# 30 hpf: Trochophore larvae were scored as one of four possible morpholo- gical groups, according to the presence/absence of larval shell, the occurrence of body abnormalities and/or delayed development:
+
+# 48 hpf: En este muestreo el aspecto 1 esta definido por individuos con aspecto trocoforal, donde destaca la cintura prototroncal, ciclios en la parte apical de la larva y protoconcha en la parte superior. El aspecto 2 esta defenido por individuos con tentaculo cefalico evidente cercano a los cilios asi como larvas con torcion de la masa cefalopedal definido.
+
+# 60 hpf: se vizualizan larvas con torcion de la masa cefalopedal definido de aspecto 1 = sin concha y aspecto 2 = con concha.
 
 library(tidyverse)
 
@@ -69,6 +76,14 @@ pHpalette <- pHpalette[match(pHL, names(pHpalette))]
 
 hpfL <- c(30, 48, 60)
 
+
+bind_data %>%
+  ggplot(aes(x = as.integer(Replicate), Count, fill = Development)) +
+  facet_grid(hpf ~ pH, scales = "free") +
+  geom_col()
+
+
+
 # Create pooled data ----
 
 .bind_data <- read_rds(bind_d_1)
@@ -101,6 +116,7 @@ file_out <- paste0(getwd(),'/Table_1S_Pooled.rds')
 
 write_rds(df, file = file_out)
 
+write_csv(df, paste0(getwd(),'/Table_1S_Pooled.csv'))
 
 # Global relationship to pH ----
 
@@ -175,12 +191,67 @@ bind_data %>%
 
 type_stats <- 'mean_se'
 
+
 bind_data %>%
   filter(Development %in% 'A') %>%
-  group_by(hpf, pH, Design) %>%
-  select(-Replicate, -Count, -Development) %>%
+  group_by(hpf, pH, Design, Development) %>%
+  select(-Replicate, -Count) %>%
   get_summary_stats(type = type_stats) %>%
   mutate(ymax = mean+se, ymin = mean-se) -> stat_out
+
+
+bind_data %>%
+  # filter(Development %in% 'A') %>%
+  group_by(hpf, pH, Design) %>%
+  select(-Replicate, -Pct) %>%
+  summarise(Total = sum(Count)) %>% view()
+
+# TEST STATS
+# Priori
+
+bind_data %>%
+  filter(Development %in% 'A') %>%
+  group_by(hpf) %>%
+  rstatix::welch_anova_test(Pct ~ pH) # (not assuming equal variance)
+
+# Posteriori
+
+bind_data %>%
+  filter(Development %in% 'A') %>%
+  group_by(hpf) %>%
+  pairwise_t_test(Pct ~ pH, paired = F, p.adjust.method = "bonferroni", ref.group = "8") %>%
+  filter(p.adj.signif != "ns") %>% rename("pH" = "group2")  %>%
+  select(hpf, pH, p.adj.signif) -> stars
+
+
+
+# PLOT
+
+stat_out %>% left_join(stars) %>%
+  mutate(pH = factor(pH, levels = pHL)) %>%
+  ggplot(aes(y = mean, x = pH, fill = pH)) +
+  ggh4x::facet_nested(~ hpf, nest_line = T) +
+  geom_bar(stat = "identity", width = 0.7, 
+    position = position_dodge(width = 0.7)) + 
+  scale_y_continuous(labels = scales::percent) +
+  geom_errorbar(aes(ymin = ymin, ymax = ymax),
+    width = 0.15,size = 0.7, position = position_dodge(width = 0.7), color = 'black') +
+  theme_classic(base_family = "GillSans", base_size = 18) +
+  labs(y = 'Success') +
+  theme(
+    strip.background = element_rect(fill = 'grey', color = 'white'),
+    panel.border = element_blank(), legend.position = 'none') +
+  scale_fill_manual("", values=pHpalette) -> ps
+
+ps <- ps + geom_text(aes(y = ymax + 0.05, label= p.adj.signif), 
+  size = 4.5, family = 'GillSans',fontface = "bold",
+  vjust= 0, color="black", position=position_dodge(width = .7))
+
+ggsavepath <- paste0(getwd(), '/Figures/')
+
+ggsave(ps, 
+  filename = 'development_success_30_48_60.png', path = ggsavepath, 
+  width = 5, height = 3, device = png) 
 
 # table
 
