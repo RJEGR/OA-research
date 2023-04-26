@@ -11,8 +11,8 @@ options(readr.show_col_types = FALSE, stringsAsFactors = FALSE)
 pHpalette <- c(`7.6`="#d73027", `7.8`= "#abdda4", `8`= "#4575b4")
 
 library(tidyverse)
-library(factoextra)
-library("FactoMineR")
+# library(factoextra)
+# library("FactoMineR")
 
 set.seed(123)
 
@@ -25,6 +25,8 @@ body_size <- read_rds(paste0(getwd(), '/length_width_dataset.rds')) %>%select(hp
   mutate(g = 'growth') %>% rename('measure' = 'Index')
 
 birefrigence <- read_rds(paste0(getwd(), '/birefrigence.rds')) %>% select(Area) %>% mutate(g = 'calcification') %>% rename('measure' = 'Area')
+
+
 
 # BODY SIZE ----
 
