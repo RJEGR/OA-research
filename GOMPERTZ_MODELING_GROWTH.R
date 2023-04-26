@@ -43,6 +43,8 @@ bind_data %>%
   mutate(hpf = factor(hpf, levels = hpfL)) %>%
   mutate(Design = factor(Design, levels = c('Chronic', 'Acute'))) -> bind_data
 
+
+
 # CALCIFICATIO AND GROWTH MEAN -----
 # WRAP CALCIFICATION AND GROWTH INDEX
 
@@ -62,31 +64,45 @@ bind_data %>%
   mutate(Assessment = recode_factor(Assessment, !!!level_key)) %>%
   filter(pH == 8) -> subset_dat
 
+
+hpf_key <- structure(c("Early", "Middle", "Mature", "Competent"), names = c(30, 48, 60, 108))
+
+
+source("https://raw.githubusercontent.com/NightingaleHealth/ggforestplot/master/R/geom_stripes.R")
+
 bind_data %>% 
   filter(Assessment %in% which_Assess) %>%
   mutate(Assessment = recode_factor(Assessment, !!!level_key))  %>%
+  mutate(Panel = recode_factor(hpf, !!!hpf_key)) %>%
   ggplot(aes(x = hpf, average, color = pH, group = pH, fill = pH)) +
-  facet_wrap(~ Assessment, nrow = 2, scales = 'free_y', 
-    strip.position = "left") +
+  # facet_wrap(~ Assessment, nrow = 2, scales = 'free_y',strip.position = "left") +
+  facet_grid(Assessment ~ Panel, scales = "free") +
   labs(y = "") +
   geom_point(position = position, size = 1.2) +
   # geom_bar(stat = "identity", width = 0.6, position = position) +
   geom_errorbar(aes(ymin = ymin, ymax = ymax),
     width = 0.1, size = 0.4, position = position) + #  color = "black"
-  geom_text(aes(x = hpf, y = ymax, label= star), size = 1.7, 
+  geom_text(aes(x = hpf, y = ymax, label= star), size = 1.9, 
     color = "black", family = "GillSans", position = position, vjust = -0.5) +
   # geom_path(data = subset_dat, size = 0.7,position = position_dodge2(width = -1)) 
   scale_color_manual("", values = pHpalette) +
   scale_fill_manual("", values = pHpalette) +
-  theme_classic(base_family = "GillSans", base_size = 14) +
+  theme_classic(base_family = "GillSans", base_size = 12) +
   theme(strip.background = element_rect(fill = 'white', color = 'white'),
-    panel.border = element_blank(), legend.position = 'none',
+    # panel.border = element_rect(linetype = "dashed", fill = NA),
+    panel.border = element_blank(),
+    legend.position = 'top',
     strip.placement = "outside") -> p
+
+
+# p +geom_stripes(odd = "#33333333", even = "#00000000", )
+
+# p 
 
 ggsavepath <- paste0(getwd(), '/Figures')
 
 ggsave(p, filename = 'growth_calcification_rate.png', path = ggsavepath, 
-  width = 3.5, height = 2.7, dpi = 300)  
+  width = 4, height = 3.7, dpi = 300, device = png)  
 
 # only 108
 
