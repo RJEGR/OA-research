@@ -9,12 +9,16 @@ pacific_df <- read_rds(paste0(path, '/pacific_codap_na_v2021.rds'))
 # CO3-2
 # the continental shelf of western North America from Queen Charlotte Sound, Canada, to San Gregorio Baja California Sur, Mexico
 
-vars <- c('Aragonite', 'Calcite', 'DIC') # 'pH', 'Carbonate',
+# Aragonite Calcite DIC fCO2 TALK
+
+vars <- c('fCO2','Aragonite', 'Calcite', 'DIC', 'TALK') # 'pH', 'Carbonate',
 
 var_levels <- c(
-  "Aragonite" = expression(Omega["ara"]),
-  "Calcite" = expression(Omega["cal"]),
-  "DIC")
+  'pCO[2]',
+  'Omega["ara"]',
+  'Omega["cal"]',
+  "DIC",
+  "TALK")
 
 caption <- c('Plataforma continental: Latitudes 25N a 32N, 20 to 200 meters depth')
 
@@ -33,7 +37,7 @@ viz <- pacific_df %>%
 viz$vars <- factor(viz$vars, levels = levels(factor(viz$vars)))
 
 
-levels(viz$vars) <- var_levels
+# levels(viz$vars) <- var_levels
   
 viz %>%
   # ggplot(aes(Aragonite, Carbonate, color = pH)) +
@@ -41,6 +45,7 @@ viz %>%
   facet_grid(~ vars, scales = "free_x", labeller=label_parsed) +
   # geom_vline(xintercept = 1, linetype = 'dashed') 
   geom_point(shape = 0.7) +
+  geom_smooth(method = 'lm', se = F, color = 'grey40', linetype = "dashed") +
   scale_color_viridis_c(option = "inferno", direction = -1) +
   labs(y = expression(CO[3]^{-2}~(µmol~Kg^{-1})),
     x = "Medición",
@@ -55,9 +60,10 @@ viz %>%
     frame.colour = "black",
     label.theme = element_text(size = 15))) -> ps
 
+ps
 
 ggsave(ps, path = path, 
-  filename = 'FIGURE_3_TESIS.png', width = 10, height = 5, device = png)
+  filename = 'FIGURE_3_TESIS.png', width = 12, height = 5, device = png)
 
 
 # 
