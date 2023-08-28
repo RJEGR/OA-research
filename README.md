@@ -1,3 +1,3 @@
-<img width="1134" alt="image" src="https://github.com/RJEGR/OA-research/assets/24900266/8675efd9-d796-41f5-b9bd-d1b9de4a42f2">
+<img width="1258" alt="image" src="https://github.com/RJEGR/OA-research/assets/24900266/42d4bbb3-4fff-421c-9d34-19e48e3b2895">
 
 # OA-research
