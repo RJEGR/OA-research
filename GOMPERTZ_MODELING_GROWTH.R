@@ -52,9 +52,9 @@ which_Assess <- c("Growth Index", "Birefrigence")
 
 position <- position_dodge(width = 0.7)
 
-label_a <- "A) Growth"
+label_a <- "A) Growth (Index)"
 
-label_b <- "B) Calcification"
+label_b <- "B) Calcification (Pixels)"
 
 
 level_key <- c("Growth Index" = label_a, "Birefrigence" = label_b)
@@ -76,9 +76,9 @@ bind_data %>%
   mutate(Panel = recode_factor(hpf, !!!hpf_key)) %>%
   ggplot(aes(x = hpf, average, color = pH, group = pH, fill = pH)) +
   # facet_wrap(~ Assessment, nrow = 2, scales = 'free_y',strip.position = "left") +
-  facet_grid(Assessment ~ Panel, scales = "free") +
+  facet_grid(Assessment ~ Panel, scales = "free", switch = "y") +
   labs(y = "") +
-  geom_point(position = position, size = 1.2) +
+  geom_point(position = position, size = 1.4, shape = 1) +
   # geom_bar(stat = "identity", width = 0.6, position = position) +
   geom_errorbar(aes(ymin = ymin, ymax = ymax),
     width = 0.1, size = 0.4, position = position) + #  color = "black"
@@ -97,12 +97,12 @@ bind_data %>%
 
 # p +geom_stripes(odd = "#33333333", even = "#00000000", )
 
-# p 
+p
 
 ggsavepath <- paste0(getwd(), '/Figures')
 
 ggsave(p, filename = 'growth_calcification_rate.png', path = ggsavepath, 
-  width = 4, height = 3.7, dpi = 300, device = png)  
+  width = 4, height = 4.5, dpi = 300, device = png)  
 
 # only 108
 
