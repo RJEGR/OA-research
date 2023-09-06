@@ -9,6 +9,7 @@
 # Oxygen consumption was measured over 1.5 to 2 h and checked for linearity. Respiration rates were corrected for oxygen consumption in the controls and normalized to the number of larvae (μmol O2⋅larva− 1 ⋅ h− 1).
 
 # CLEAR OBJECT LIST AND IMAGE CANVAS   
+
 rm(list = ls());
 
 
@@ -20,7 +21,7 @@ library(tidyverse)
 library(ggplot2)
 library(lubridate)
 library(rstatix)
-library(flextable)
+# library(flextable)
 
 ggsavepath <- paste0('~/Documents/GitHub/OA-research/rproject/Figures/')
 
@@ -133,7 +134,11 @@ df_longer %>%
   right_join(mtd_df, by = 'ID') %>%
   mutate(hpf = factor(hpf, levels = hpfL)) -> dfviz
 
-ylab <- expression(O[2]~ "(" ~ mu~"mol"~h^-1~L^-1~")")
+# ylab <- expression(O[2]~ "(" ~ mu~"mol"~h^-1~L^-1~")")
+
+# Oxygen [cO2 [µmol/L]]
+
+ylab <- expression(O[2]~ "(" ~ mu~"mol"~L^-1~")")
 
 dfviz %>%
   group_by(Spot, Design, hpf, pH) %>%
@@ -143,14 +148,39 @@ dfviz %>%
     outlier.shape = 1,outlier.size = 0.5) +
   stat_summary(fun = mean, geom ="line", aes(group = Design), size= 0.5) +
   facet_grid(. ~ hpf) +
-  labs(x = 'pH', y = ylab) +
-  theme(legend.position = 'top') -> p0
+  labs(x = 'pH', y = ylab) -> p0
+
+p0 <- p0 +
+  theme_bw(base_family = "GillSans", base_size = 12) +
+  theme(legend.position = "top",
+    strip.background = element_rect(fill = 'grey89', color = 'white'),
+    panel.border = element_blank(),
+    plot.title = element_text(hjust = 0),
+    plot.caption = element_text(hjust = 0),
+    panel.grid.minor.y = element_blank(),
+    # panel.grid.major.y = element_blank(),
+    # panel.grid.minor.x = element_blank(),
+    # panel.grid.major.x = element_blank(),
+    # strip.background.y = element_blank(),
+    axis.text.y = element_text(size = 10),
+    axis.text.x = element_text(size = 10))
 
 ggsave(p0, 
   filename = 'max_oxygen_raw.png', path = ggsavepath, 
-  width = 5, height = 2.5)
+  width = 5, height = 2.5, device = png, dpi = 300)
 
-#
+fun.data.trend <- "mean_se" # "mean_cl_boot", "mean_sdl"
+
+dfviz %>%
+  filter(hpf != "24") %>%
+  group_by(Spot, Design, hpf, pH) %>%
+  summarise(max = max(Ox)) %>% 
+  ggplot(aes(x = as.factor(pH), y = max, fill = Design, color = Design, group = Design)) + 
+  facet_grid(Design ~., scales = "free_y") +
+  geom_jitter(position=position_jitter(w=0.1,h=0), size = 1, alpha = 0.5) +
+  stat_summary(fun.data = fun.data.trend, linewidth = 0.7, size = 0.7, alpha = 0.7) +
+  stat_summary(fun = mean, geom = "line") +
+  labs(x = 'pH', y = ylab)
 
 
 dfviz %>%
@@ -168,9 +198,9 @@ dfviz %>%
 
 p0
 
-ggsave(p0, 
-  filename = 'max_oxygen_raw_hpf.png', path = ggsavepath, 
-  width = 5, height = 2.5)
+# ggsave(p0, 
+#   filename = 'max_oxygen_raw_hpf.png', path = ggsavepath, 
+#   width = 5, height = 2.5)
 
 # test differences between max ox
 # Design vs experimental inicial max values
@@ -565,7 +595,12 @@ ggsave(psave,
   width = 5.5, height = 3.5)
 
 path_out <- '~/Documents/MIRNA_HALIOTIS/'
+
 save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
+
+# save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
+
+saveRDS(list(df_stats, stats), file = paste0(path_out, 'resp_rates.Rdata'))
 
 # at the end
 
