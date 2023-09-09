@@ -17,6 +17,8 @@ set.seed(123)
 
 level_key <- c("24" = "30")
 
+setwd("~/Documents/GitHub/OA-research/rproject/")
+
 body_size <- read_rds(paste0(getwd(), '/length_width_dataset.rds')) %>%
   select(hpf, pH, Index) %>%
   # filter(hpf != 24) %>% 
