@@ -15,6 +15,9 @@ library(tidyverse)
 
 read_csv(f[8]) %>% filter(Code %in% 'Q_tlw') %>% select(Name_Es) %>% pull() -> MEASURE_UNITS
 
+# read_csv(f[5]) %>% filter(grepl('Haliotis', Scientific_Name)) %>%  count(ISSCAAP_Group_En)
+# view(read_csv(f[5]) %>% filter(grepl('Haliotis', Scientific_Name)))
+
 read_csv(f[5]) %>% filter(grepl('Haliotis', Scientific_Name)) %>% 
   distinct(`3A_Code`) %>% pull() -> ALPHA_3_CODE
 
@@ -68,7 +71,76 @@ summary_in %>%
   group_by(Scientific_Name) %>%
   summarise(VALUE = sum(VALUE)) %>%
   filter(!Scientific_Name %in% 'Haliotis spp') %>%
-  mutate(VALUE = VALUE/sum(VALUE)) 
+  mutate(PCT = VALUE/sum(VALUE)) %>% view()
+
+# Heatmap ====
+
+p1 <- summary_in %>%
+  filter(!Scientific_Name %in% 'Haliotis spp') %>%
+  # filter(PERIOD > 2000) %>%
+  group_by(Scientific_Name) %>%
+  # mutate(PCT = VALUE/sum(VALUE)) %>%
+  summarise(VALUE = sum(VALUE)) %>%
+  ggplot() +
+  geom_col(aes(y = Scientific_Name, x = VALUE)) +
+  theme_bw(base_family = "GillSans", base_size = 10) +
+  # guides(fill = "none") +
+  labs(y = "", x = "Peso vivo (Ton.)") +
+  scale_x_continuous(labels = scales::comma) +
+  scale_fill_viridis_c("", option = "inferno", direction = -1) +
+  theme(legend.position = "top",
+    # axis.text.y.left = element_blank(),
+    axis.ticks.y.left = element_blank(),
+    strip.background.x = element_rect(fill = 'grey89', color = 'white'),
+    strip.text.y.left = element_text(angle = 0, size = 10, hjust = 1),
+    strip.background.y = element_rect(fill = 'white', color = 'white'),
+    panel.border = element_blank(),
+    plot.title = element_text(hjust = 0),
+    plot.caption = element_text(hjust = 0),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.y = element_blank(),
+    axis.text.x = element_text(angle = 0, size = 10))
+
+  
+p2 <- summary_in %>%
+  filter(!Scientific_Name %in% 'Haliotis spp') %>%
+  # filter(PERIOD > 2000) %>%
+  group_by(PERIOD) %>%
+  mutate(VALUE = VALUE/sum(VALUE)) %>%
+  ungroup() %>%
+  # mutate(PERIOD = lubridate::as_date(PERIOD)) %>%
+  # summarise(VALUE = sum(VALUE))
+  ggplot() +
+  geom_tile(color = 'white', linewidth = 0.2, 
+    aes(fill = VALUE, y = Scientific_Name, x = PERIOD)) +
+  theme_bw(base_family = "GillSans", base_size = 10) +
+  # guides(fill = "none") +
+  labs(y = "sp", x = "Año") +
+  # guides(fill = guide_legend(title = "")) +
+  scale_fill_viridis_c("", option = "inferno", direction = -1) +
+  # scale_x_date(date_breaks =  '2 year') +
+  theme(legend.position = "top",
+    # axis.text.y.left = element_blank(),
+    # axis.ticks.y.left = element_blank(),
+    strip.background.x = element_rect(fill = 'grey89', color = 'white'),
+    strip.text.y.left = element_text(angle = 0, size = 10, hjust = 1),
+    strip.background.y = element_rect(fill = 'white', color = 'white'),
+    panel.border = element_blank(),
+    plot.title = element_text(hjust = 0),
+    plot.caption = element_text(hjust = 0),
+    panel.grid.minor.y = element_blank(),
+    panel.grid.major.y = element_blank(),
+    panel.grid.minor.x = element_blank(),
+    panel.grid.major.x = element_blank(),
+    axis.text.y = element_text(angle = 0, size = 10),
+    axis.text.x = element_text(angle = 0, size = 10))
+ 
+library(patchwork)
+
+p2 + p1 +  plot_layout(widths = c(10, 2.5))
 
 # porcentaje de los moluscos
 
@@ -94,11 +166,11 @@ input %>%
   summarise(VALUE = sum(VALUE)) %>%
   filter(VALUE > 0) %>%
   left_join(join_dat, by = c('SPECIES.ALPHA_3_CODE'='3A_Code')) %>% 
-  group_by(CPC_Class_En) %>%
+  group_by(ISSCAAP_Group_En) %>%
   summarise(VALUE = sum(VALUE)) %>%
   mutate(PCT = VALUE/sum(VALUE)) %>% filter(PCT > 0.01) %>%
-  mutate(CPC_Class_En = fct_reorder(CPC_Class_En, PCT, .desc = TRUE)) %>%
-  ggplot(aes(PCT, CPC_Class_En)) +
+  mutate(ISSCAAP_Group_En = fct_reorder(ISSCAAP_Group_En, PCT, .desc = TRUE)) %>%
+  ggplot(aes(PCT, ISSCAAP_Group_En)) +
   geom_col() +
   scale_x_continuous(labels = scales::percent)
   
@@ -117,7 +189,7 @@ input %>%
   group_by(CPC_Class_En, PERIOD) %>%
   summarise(VALUE = sum(VALUE)) %>%
   # filter(grepl(ommit, CPC_Class_En))
-  mutate(color = ifelse(grepl('Abalone', CPC_Class_En), 'Abalone', '')) %>%
+  mutate(color = ifelse(grepl('Abalone', ISSCAAP_Group_En), 'Abalone', '')) %>%
   ggplot(aes(x = PERIOD, y = VALUE, group = CPC_Class_En, color = color)) +
   geom_path(size = 6, lineend = 'round') +
   scale_y_log10() +
