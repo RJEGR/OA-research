@@ -129,7 +129,10 @@ pacific_df %>% distinct(var)
 
 # vars <- c('pH', 'TALK', 'DIC') # 'Temp', 'Oxygen', 'fCO2'
 
-vars <- c('pH', 'fCO2', 'Carbonate')
+vars <- c('pH', 'fCO2', 'Carbonate', 'Aragonite')
+
+vars <- c('Aragonite')
+
 
 pacific_df %>% 
   select(Year_UTC, Month_UTC, Latitude, Longitude, Depth, vars) %>% 
@@ -153,7 +156,9 @@ levels(sbt$var) <- c(expression(CO[3]^{-2}~(µmol~Kg^{-1})), expression(pCO[2]~(
 
 sbt %>% 
   filter(round(Latitude) == 25) %>%
+  # filter(round(Latitude) <= 32.5) %>%
   filter(value > 0) %>%
+  filter(Depth < 100) %>%
   ggplot(aes(y = Depth, x = value)) +
   facet_grid(.~ var, scales = 'free_x', labeller=label_parsed,  switch = 'x') +
   geom_point(shape = 0.7) +

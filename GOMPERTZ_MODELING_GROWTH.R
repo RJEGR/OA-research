@@ -52,9 +52,14 @@ which_Assess <- c("Growth Index", "Birefrigence")
 
 position <- position_dodge(width = 0.7)
 
-label_a <- "A) Growth (Index)"
+# label_a <- "A) Growth (Index)"
+# 
+# label_b <- "B) Calcification (Pixels)"
+# 
 
-label_b <- "B) Calcification (Pixels)"
+label_a <- "A) Crecimiento (Índice)"
+
+label_b <- "B) Calcificación (Píxeles)"
 
 
 level_key <- c("Growth Index" = label_a, "Birefrigence" = label_b)
@@ -65,8 +70,9 @@ bind_data %>%
   filter(pH == 8) -> subset_dat
 
 
-hpf_key <- structure(c("Early", "Middle", "Mature", "Competent"), names = c(30, 48, 60, 108))
+# hpf_key <- structure(c("Early", "Middle", "Mature", "Competent"), names = c(30, 48, 60, 108))
 
+hpf_key <- structure(c("Temprana", "Media", "Madura", "Competente"), names = c(30, 48, 60, 108))
 
 source("https://raw.githubusercontent.com/NightingaleHealth/ggforestplot/master/R/geom_stripes.R")
 
@@ -87,8 +93,9 @@ bind_data %>%
   # geom_path(data = subset_dat, size = 0.7,position = position_dodge2(width = -1)) 
   scale_color_manual("", values = pHpalette) +
   scale_fill_manual("", values = pHpalette) +
-  theme_classic(base_family = "GillSans", base_size = 12) +
-  theme(strip.background = element_rect(fill = 'white', color = 'white'),
+  theme_classic(base_family = "GillSans", base_size = 10) +
+  theme(strip.background.y = element_rect(fill = 'white', color = 'white'),
+    strip.background.x = element_rect(fill = 'grey86', color = 'white'),
     # panel.border = element_rect(linetype = "dashed", fill = NA),
     panel.border = element_blank(),
     legend.position = 'top',
@@ -101,8 +108,8 @@ p
 
 ggsavepath <- paste0(getwd(), '/Figures')
 
-ggsave(p, filename = 'growth_calcification_rate.png', path = ggsavepath, 
-  width = 4, height = 4.5, dpi = 300, device = png)  
+ggsave(p, filename = 'growth_calcification_rate_ES.png', path = ggsavepath, 
+  width = 4.5, height = 3.5, dpi = 300, device = png)  
 
 # only 108
 

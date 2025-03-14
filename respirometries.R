@@ -15,7 +15,7 @@ rm(list = ls());
 
 if(!is.null(dev.list())) dev.off()
 
-options(stringsAsFactors = FALSE)
+options(stringsAsFactors = FALSE, readr.show_col_types = FALSE)
 
 library(tidyverse)
 library(ggplot2)
@@ -50,7 +50,7 @@ pHpalette <- pHpalette[match(pHLevel, names(pHpalette))]
 
 
 # hpfL <- c("24",  "48",  "60", "108", "624")
-# Drop blanks spots were found larvae
+# Drop blanks spots were no larvae was found 
 
 mtd_df %>% 
   mutate(N = ifelse(Design %in% 'Blank' & N > 0, NA, N)) %>%
@@ -58,6 +58,22 @@ mtd_df %>%
 
 mtd_df %>% count(Design)
 
+mtd_df %>%
+  filter(Design %in% "Experimental") %>%
+  separate(ID, into = c("hpf", "pH", "spot"), sep = "-") %>%
+  count(hpf, pH)
+
+mtd_df %>%
+  filter(Design %in% "Experimental") %>%
+  separate(ID, into = c("hpf", "pH", "spot"), sep = "-") %>%
+  # group_by(pH, hpf) %>%
+  rstatix::get_summary_stats()
+  # summarise(mean = mean(N), sd = (N), n = n())
+
+
+mtd_df %>%
+  separate(ID, into = c("hpf", "pH", "spot"), sep = "-") %>%
+  ggplot()  + geom_boxplot(aes(y = N, x = pH))
 # namespH <- c("7.6","7.8","8")
 
 # recodeL <- c('Experimental-I', 'Experimental-II', 'Control')
@@ -87,7 +103,7 @@ read_sdr <- function(file) {
 
 df <- lapply(files, read_sdr)
 
-head(df <- do.call(rbind, df))
+print(df <- do.call(rbind, df))
 
 df %>% distinct(pH) %>% pull() %>% rev() -> pHLevel
 
@@ -101,11 +117,13 @@ df %>% distinct(hpf) %>% arrange(hpf) %>% pull() -> hpfL
 # average of , Tinternal ??
 # 
 df %>% group_by(pH, hpf) %>%
-  summarise(a = mean(`T_internal [°C]`), 
-    sd = sd(`T_internal [°C]`),
-    var = var((`T_internal [°C]`))) %>%
+  mutate(TEMP = `Tm [°C]`) %>%
+  # mutate(TEMP = `T_internal [°C]`) %>%
+  summarise(a = mean(TEMP), 
+    sd = sd(TEMP),
+    var = var(TEMP)) %>%
   mutate(ymin = a-sd, ymax = a+sd) %>%
-  mutate(hpf = factor(hpf, hpfL))
+  mutate(hpf = factor(hpf, hpfL)) %>% view()
 
 # Internal salinity
 
@@ -128,6 +146,12 @@ df %>%
   mutate(ID = paste0(hpf, '-', pH, '-', Spot)) %>%
   mutate(g = substr(Spot, 1,1)) -> df_longer
 
+# convert to picomol/L
+# df_longer <- df_longer %>% mutate(Ox = Ox*1E6)
+
+mtd_df %>% distinct(ID)
+
+sum(sort(unique(mtd_df$ID)) %in% sort(unique(df_longer$ID))) # must be 145 spots
 
 # Previz ----
 df_longer %>%
@@ -261,14 +285,14 @@ df_max %>%
   adjust_pvalue() %>%
   add_significance("p.adj") -> kruskal.stats
 
-library(flextable)
-
-# https://ardata-fr.github.io/flextable-book/
-
-flextable(kruskal.stats) %>%
-  bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center")
+# library(flextable)
+# 
+# # https://ardata-fr.github.io/flextable-book/
+# 
+# flextable(kruskal.stats) %>%
+#   bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+#   autofit(add_w = 0, add_h = 0) %>%
+#   align(align = "center")
 
 # 4) Posteriori (Also non parametric)
 
@@ -278,11 +302,11 @@ df_max %>%
   pairwise_wilcox_test(max ~ pH,  conf.level = 0.95) %>% # p.adjust.method = 'fdr'
   add_significance("p.adj") -> stats.test
 
-stats.test %>% filter(!p.adj.signif %in% 'ns') %>%
-  flextable() %>% 
-  bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center")
+# stats.test %>% filter(!p.adj.signif %in% 'ns') %>%
+#   flextable() %>% 
+#   bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+#   autofit(add_w = 0, add_h = 0) %>%
+#   align(align = "center")
 
 # test differences in max ox during the larval development (not between treatments)
 
@@ -303,17 +327,17 @@ df_max %>%
   geom_boxplot() +
   geom_point(aes(color = hpf))
 
-df_max %>% 
-  # arrange(pH)
-  group_by(pH) %>%
-  # ungroup() %>%
-  rstatix::kruskal_test(max ~ hpf) %>%
-  adjust_pvalue() %>%
-  add_significance("p.adj") %>%
-  flextable() %>% 
-  bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center")
+# df_max %>% 
+#   # arrange(pH)
+#   group_by(pH) %>%
+#   # ungroup() %>%
+#   rstatix::kruskal_test(max ~ hpf) %>%
+#   adjust_pvalue() %>%
+#   add_significance("p.adj") %>%
+#   flextable() %>% 
+#   bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+#   autofit(add_w = 0, add_h = 0) %>%
+#   align(align = "center")
 
 
 
@@ -360,7 +384,7 @@ ggsave(p2,
   filename = 'oxygen_rate_lm.png', path = ggsavepath, 
   width = 5, height = 3.5)
 
-# Summaries ----
+# CONTINUE HERE ----
 
 # Summarise average of rates (time and O2 consumption) by hpf, pH and Spot (ie Lane)
 # Using function rate and time_rate
@@ -384,16 +408,16 @@ scope_o2 <- function(x) { max(x) - min(x) } # cantidad de O2 consumido!!
 # cutoff times????
 
 
-df_longer %>% 
-  group_by(ID) %>% # hpf, pH, Spot
-  summarise(#sd = sd(Ox), n = n(), 
-    scope = scope_o2(Ox), delta_time(date, Ox)) %>%
-  mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>%
-  right_join(mtd_df, by = 'ID') %>%
-  separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
-  mutate(hpf = factor(hpf, hpfL)) %>%
-  ggplot(aes(x,y)) + geom_point(aes(color = pH)) + 
-  facet_wrap(~hpf, scales = 'free', nrow = 1) 
+# df_longer %>% 
+#   group_by(ID) %>% # hpf, pH, Spot
+#   summarise(#sd = sd(Ox), n = n(), 
+#     scope = scope_o2(Ox), delta_time(date, Ox)) %>%
+#   mutate(mins = abs(difftime(x,y)), hour = as.numeric(mins/60)) %>%
+#   right_join(mtd_df, by = 'ID') %>%
+#   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
+#   mutate(hpf = factor(hpf, hpfL)) %>%
+#   ggplot(aes(x,y)) + geom_point(aes(color = pH)) + 
+#   facet_wrap(~hpf, scales = 'free', nrow = 1) 
 
 
 df_longer %>% 
@@ -404,9 +428,11 @@ df_longer %>%
   right_join(mtd_df, by = 'ID') %>% 
   mutate(rate = scope/hour) %>%
   separate(ID, sep = '-',into = c('hpf', 'pH', 'Spot')) %>%
-  select(-Spot, -mins, -y,-x) %>%
+  select(-mins, -y,-x) %>%
   mutate(hpf = factor(hpf, hpfL)) %>%
   mutate(pH = factor(pH, levels = pHLevel)) -> df_stats 
+
+
 
 # df_stats %>% group_by(hpf, pH, Design) %>% tally() 
 
@@ -433,8 +459,21 @@ df_stats %>%
   select(!c(hour, Design, av_r_b, sd_r_b, av_scope_b, sd_scope_b, n)) -> df_stats
 
 
+# 0) Convertion of units:
+# From (μmol O2⋅larva− 1 ⋅ h− 1 L-1)
+# To (μmol O2⋅larva− 1 ⋅ h− 1).
+# Then ((pmol O2⋅larva− 1 ⋅ h− 1))
+
+# Vol of chamber: 1700 μL OR 0.0017 L
+
+df_stats <- df_stats %>% 
+  mutate(r_ind_adj = r_ind_adj * 0.0017) %>%
+  mutate(r_ind_adj = r_ind_adj * 1E6)
+
+
+
 df_stats %>%
-  select(-hpf, -pH) %>%
+  select(-hpf, -pH, -Spot) %>%
   cor_mat(method = 'spearman') %>%
   cor_reorder() %>%
   pull_lower_triangle() %>%
@@ -511,18 +550,18 @@ df_stats %>%
 
 # due to is gausian
 
-df_stats %>% 
-  summarise(a = mean(r_ind_adj), sd = sd(r_ind_adj), n = n()) %>%
-  mutate_if(is.double, function(x) round(x, digits = 3)) %>%
-  flextable() %>%
-  # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
-  autofit(add_w = 0, add_h = 0) %>%
-  align(align = "center") %>%
-  merge_v() %>%
-  footnote(i = 1, j = 2,
-    value = as_paragraph("Average"),
-    ref_symbols = "a",
-    part = "header",inline=T)
+# df_stats %>% 
+#   summarise(a = mean(r_ind_adj), sd = sd(r_ind_adj), n = n()) %>%
+#   mutate_if(is.double, function(x) round(x, digits = 3)) %>%
+#   flextable() %>%
+#   # bold(~ p < 0.05, ~ p, bold = TRUE) %>%
+#   autofit(add_w = 0, add_h = 0) %>%
+#   align(align = "center") %>%
+#   merge_v() %>%
+#   footnote(i = 1, j = 2,
+#     value = as_paragraph("Average"),
+#     ref_symbols = "a",
+#     part = "header",inline=T)
 
 # 2) Homocelasticidad (TRUE)  ----
 
@@ -559,7 +598,9 @@ subtitle <- get_test_label(prior.stats, detailed = F)
 # plor as boxplot
 # o2/Ind (Umol h-1 L-1)
 
-ylabs <- expression("Rate ("*O[2]~mu*"mol"~h^-1~L^-1~Ind^-1*")")
+# ylabs <- expression("Rate ("*O[2]~mu*"mol"~h^-1~L^-1~Ind^-1*")")
+
+ylabs <- expression("Rate ("*O[2]~"pmol"~h^-1~Ind^-1*")")
 
 df_stats %>% 
   ggplot(aes(x = pH, y = r_ind_adj, group = pH)) +
@@ -596,11 +637,13 @@ ggsave(psave,
 
 path_out <- '~/Documents/MIRNA_HALIOTIS/'
 
-save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
+# save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
 
 # save(df_stats, stats, file = paste0(path_out, 'resp_rates.Rdata'))
 
-saveRDS(list(df_stats, stats), file = paste0(path_out, 'resp_rates.Rdata'))
+# saveRDS(list(df_stats, stats), file = paste0(path_out, 'resp_rates.Rdata'))
+
+write_rds(list(df_stats, stats), file = paste0(path_out, 'resp_rates.rds'))
 
 # at the end
 

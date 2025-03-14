@@ -9,10 +9,11 @@ options(stringsAsFactors = FALSE, show_col_types = FALSE)
 library(tidyverse)
 library(ggplot2)
 library(rstatix)
-library(flextable)
+# library(flextable)
 library(lubridate)
 library(performance)
 
+setwd("~/Documents/GitHub/OA-research/rproject/")
 
 np_file <- '/pH_aLLdatasets_by_hour_stats.rds' 
 

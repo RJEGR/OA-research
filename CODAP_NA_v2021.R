@@ -89,6 +89,9 @@ names(pacific_df)[which(grepl('CTD', names(pacific_df)))] <- c('PRES', 'Temp')
 pathout <- "/Users/cigom/Documents/GitHub/OA-research/rproject"
 
 write_rds(pacific_df, file = paste0(pathout, '/pacific_codap_na_v2021.rds'))
+
+
+pacific_df <- read_rds(paste0(pathout, '/pacific_codap_na_v2021.rds'))
 # Carbonate_insitu_calculated
 # CO3-2
 # the continental shelf of western North America from Queen Charlotte Sound, Canada, to San Gregorio Baja California Sur, Mexico
@@ -174,6 +177,7 @@ pacific_df %>%
 # por lo tanto:
 
 library(geosphere)
+
 
 pacific_df %>%
   filter(round(Latitude) <= 32.5) %>%
@@ -281,23 +285,82 @@ ggsave(psave, path = path,
 
 # 14/10/21 -----
 
+library("ggExtra")
 
+col1 = "#d8e1cf" 
+col2 = "#438484"
+
+pacific_df %>% 
+  filter(round(Latitude) <= 32.5) %>% 
+  filter(fCO2 > 0) %>%
+  # rstatix::get_summary_stats(Depth)
+  ggplot(aes(Latitude)) +
+  geom_histogram()
+
+p1  <- pacific_df %>% 
+  filter(round(Latitude) <= 32.5) %>% 
+  filter(fCO2 > 0) %>%
+  # filter(Depth < 200) %>%
+  ggplot(aes(fCO2, pH)) +
+  geom_point(shape = 1, alpha = 0.5, size = 0.5) +
+  xlab(expression(CO[2]~(µatm))) +
+  ylab(expression(pH[T])) +
+  theme_minimal(base_size = 12, base_family = "GillSans") +
+  theme(legend.position = "top",
+    strip.background = element_rect(fill = 'grey89', color = 'white')) +
+  labs(subtitle = "Latitude: 25 - 32; Depth: 0 - 3000", caption = "CODAP-NA, Version 2021")
+  
+p1
+
+# Marginal histogram plot =====
+  
+empalmePlot <- ggExtra::ggMarginal(p1, type = "density",
+    fill = col1, color = 'black')
+
+empalmePlot
+
+outpath <- "~/Documents/MIRNA_HALIOTIS/"
+ggsave(empalmePlot, filename = 'CODAP_OCEANOGRAPHIC_PH.png', path = path, width = 2, height = 2.5, device = png, dpi = 300)
+
+
+#
+  
 pacific_df %>% 
   filter(round(Latitude) <= 32.5) %>%
   pivot_longer(cols = all_of(vars), names_to = 'var') %>%
   filter(var %in% c('fCO2', 'pH', 'Carbonate','Aragonite', 'Oxygen')) %>%
   filter(value > 0) -> pacific_mex
 
+pacific_mex %>% mutate(var = factor(var, levels = vars)) %>%
+  drop_na(oce) %>%
+  filter(value > 0) %>%
+  filter(Depth <= 100) %>%
+  filter(var %in% c('pH', 'Aragonite')) %>% # 'Temp', 
+  # ggplot(aes(x = as.factor(Month_UTC), y = value)) +
+  ggplot(aes(x = var, y = value)) +
+  facet_wrap(~ var, scales = 'free', labeller = labeller(var = label_parsed)) +
+  geom_jitter(alpha = 0.5) +
+  stat_boxplot(geom ='errorbar', width = 0.15,
+    position = position_dodge(0.6)) +
+  # geom_boxplot(width = 0.4, position = position_dodge(0.6),
+  #              outlier.alpha = 0.4) +
+  stat_summary(fun=mean, geom="point", shape=23, 
+    size=1, color = 'red', position = position_dodge(0.6)) +
+  labs(y = '') +
+  theme_light(base_size = 12, base_family = "GillSans") +
+  theme(legend.position = "top",
+    strip.background = element_rect(fill = 'grey89', color = 'white')) 
+
 # 
-# pacific_mex %>%
-#   ggplot(aes(value, Latitude)) +
-#   geom_density2d_filled(aes(color = value), contour_var = 'ndensity' ) +
-#   facet_grid(~ var, scales = 'free_x') +
-#   theme_classic() +
-#   labs(x = '') +
-#   theme(legend.position = "none",
-#     strip.background = element_blank(),
-#     panel.border = element_blank())
+pacific_mex %>%
+  ggplot(aes(value, Latitude)) +
+  geom_density2d_filled(aes(color = value), contour_var = 'ndensity' ) +
+  facet_grid(~ var, scales = 'free_x') +
+  theme_classic() +
+  labs(x = '') +
+  theme(legend.position = "none",
+    strip.background = element_blank(),
+    panel.border = element_blank())
 
 vars <- c('Temp','Oxygen','fCO2', 'pH', 'Carbonate','Aragonite', 'Calcite', 'Salinity','TALK', 'DIC')
 oceL <- c('Oc. Pacifico Norte', 'U.S. Costa Oeste', 'Golfo de Alaska', 'Mar de Bering')
@@ -469,10 +532,64 @@ pacific_df %>%
 
 pacific_df
 
+# remotes::install_github("MikkoVihtakari/ggOceanMapsData")
+# install.packages("ggOceanMaps")
+
+# https://mikkovihtakari.github.io/ggOceanMaps/articles/ggOceanMaps.html
+
+library(ggOceanMaps)
+#limits are given longitude min/max, latitude min/max
+p <- basemap(limits = c(-118, -100, 20, 43),
+  bathymetry = TRUE, 
+  bathy.style = "rcb",
+  land.col = "grey76") +
+  ggspatial::annotation_scale(location = "br") + 
+  ggspatial::annotation_north_arrow(location = "tr", which_north = "true") +
+  labs(x = "Longitud", y = "Latitud") +
+  guides(fill=guide_legend(title="Profundidad (m)")) +
+  theme(
+    text = element_text(family = "GillSans"))
+  # geom_point(data = subset(map_in, var == 'Temp'), 
+  #   aes(Longitude, Latitude,
+  #     color = a), 
+  #   alpha = 1, size = 0.5, fill = 'NA')
+
+ggsave(p, path = path, filename = 'FIGURE_4_TESIS_1.png', width = 10, height = 3.5, device = png, dpi = 300)
+
+basemap(limits = c(-118, -100, 20, 33),
+  bathymetry = TRUE, bathy.style = "poly_greys",
+  land.col = "#eeeac4", gla.col = "cadetblue", 
+  land.border.col = NA, gla.border.col = NA,
+  grid.size = 0.05)
+
+# # rcb synonym to "raster_continuous_blues"
+
+library(marmap)
+
+bat <- getNOAA.bathy(-118, -100, 20, 33, res = 4, keep = TRUE)
+bat_xyz <- as.xyz(bat)
+
+country <- ne_countries(scale = "medium", returnclass = "sf")
+
+ggplot() + 
+  geom_sf(data = country) +
+  geom_tile(data = bat_xyz, aes(x = V1, y = V2, fill = V3)) +
+  geom_contour(data = bat_xyz, 
+    aes(x = V1, y = V2, z = V3),
+    binwidth = 100, color = "grey85", size = 0.1) +
+  geom_contour(data = bat_xyz, 
+    aes(x = V1, y = V2, z = V3),
+    breaks = -200, color = "grey85", size = 0.5) +
+  geom_sf(data = country) +
+  coord_sf(xlim = c(-120, -100),  ylim = c(20, 33)) +
+  theme_minimal()
+
 library("rnaturalearthdata")
 library('rnaturalearth')
 library('ggspatial')
 library('sf')
+
+
 
 world <- ne_countries(scale = "medium", returnclass = "sf")
 
@@ -481,7 +598,8 @@ gg1 <- ggplot(data = world) +
   annotation_scale(location = "bl", width_hint = 0.5) +
   annotation_north_arrow(location = "bl", which_north = "true", 
                          pad_x = unit(0.75, "in"), pad_y = unit(0.5, "in"), style = north_arrow_fancy_orienteering) +
-  coord_sf(xlim = c(-180, -100),  ylim = c(18, 76))
+  coord_sf(xlim = c(-120, -100),  ylim = c(20, 33))
+  # coord_sf(xlim = c(-180, -100),  ylim = c(18, 76))
 
 gg <- ggplot(data = world) +
   geom_sf(fill = 'antiquewhite') +
